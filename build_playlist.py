@@ -69,19 +69,26 @@ def parse_m3u(text: str):
 
 
 def with_group(info: str, group: str) -> str:
-    if re.search(r'group-title="[^"]*"', info):
-        return re.sub(
-            r'group-title="[^"]*"',
+    # Сохраняем длительность сразу после #EXTINF:.
+    # group-title должен находиться после длительности.
+    match = re.match(r'^(#EXTINF:)(-?\d+(?:\.\d+)?)(.*)$', info)
+
+    if not match:
+        return info
+
+    prefix, duration, rest = match.groups()
+
+    if re.search(r'\bgroup-title="[^"]*"', rest):
+        rest = re.sub(
+            r'\bgroup-title="[^"]*"',
             lambda _: f'group-title="{group}"',
-            info,
+            rest,
             count=1,
         )
+    else:
+        rest = f' group-title="{group}"' + rest
 
-    return info.replace(
-        "#EXTINF:",
-        f'#EXTINF: group-title="{group}"',
-        1,
-    )
+    return prefix + duration + rest
 
 
 def get_attribute(info: str, attribute: str) -> str:
@@ -172,6 +179,19 @@ def main():
 
         except OSError as exc:
             print(f"Could not read regional.m3u: {exc}")
+
+    # Проверяем формат всех строк EXTINF до записи плейлиста.
+    invalid = [
+        line for line in output
+        if line.startswith("#EXTINF:")
+        and not re.match(r'^#EXTINF:-?\d+(?:\.\d+)?(?:\s|,)', line)
+    ]
+
+    if invalid:
+        raise ValueError(
+            f"Invalid EXTINF syntax detected ({len(invalid)} lines). "
+            f"First invalid line: {invalid[0]}"
+        )
 
     OUT.write_text("\n".join(output) + "\n", encoding="utf-8")
 
