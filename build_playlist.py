@@ -938,6 +938,10 @@ def check_from_russia(url, has_headers=False):
             ru_limit_reached.append(True)
             return "limit"
 
+        if "request_id" not in answer:
+            ru_answers["отказ: " + str(answer.get("error"))[:40]] += 1
+            return "unknown"
+
         request_id = answer["request_id"]
         result = {}
 
@@ -947,8 +951,8 @@ def check_from_russia(url, has_headers=False):
 
             if result and all(value is not None for value in result.values()):
                 break
-    except Exception:
-        ru_answers["ошибка запроса"] += 1
+    except Exception as error:
+        ru_answers[f"ошибка {type(error).__name__}: {str(error)[:40]}"] += 1
         return "unknown"
 
     if not result or all(value is None for value in result.values()):
