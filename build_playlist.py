@@ -928,7 +928,12 @@ def check_from_russia(url, has_headers=False):
 
     try:
         for _attempt in range(2):
-            answer = check_host_request("/check-http?" + query)
+            try:
+                answer = check_host_request("/check-http?" + query)
+            except HTTPError as error:
+                if error.code != 429:
+                    raise
+                answer = {"error": "limit_exceeded"}
 
             if answer.get("error") != "limit_exceeded":
                 break
