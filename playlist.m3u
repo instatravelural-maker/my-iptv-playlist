@@ -56,31 +56,6 @@ https://jmp2.uk/plu-5ebac49ce4dc8b00078b23bc.m3u8
 https://cdn.fast.jwp.services/v1/channel/1_jB6940Ei_TvhvIHDL/manifest.m3u8
 #EXTINF:-1 tvg-id="BilimIlim.kg" tvg-name="Bilim Ilim" group-title="Детские",Bilim Ilim [SD]
 http://gohoski.fvds.ru:3000/mediabay/611/index.m3u8
-#EXTINF:-1 tvg-id="karusel" tvg-name="Carousel" group-title="Детские",Carousel
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
-#EXTVLCOPT:http-referrer=https://televizor24tochka.ru/
-https://streaming.televizor-24-tochka.ru/live/11.m3u8
-#EXTINF:-1 tvg-id="karusel" tvg-name="Carousel" group-title="Детские",Carousel
-https://streaming.televizor-24-tochka.ru/live/232.m3u8
-#EXTINF:-1 tvg-id="karusel" tvg-name="Carousel" group-title="Детские",Carousel [Full HD]
-http://31.148.48.15/Karusel_HD/index.m3u8
-#EXTINF:-1 tvg-id="karusel" tvg-name="Carousel" group-title="Детские",Carousel
-#EXTVLCOPT:http-user-agent=WINK/1.44.1 (AndroidTV/9) HlsWinkPlayer
-https://zabava-htlive.cdn.ngenix.net/hls/CH_KARUSEL/variant.m3u8
-#EXTINF:-1 tvg-id="karusel" tvg-name="Carousel" group-title="Детские",Carousel [SD]
-http://31.148.5.241/kanal_8/index.m3u8
-#EXTINF:-1 tvg-id="karusel" tvg-name="Carousel" group-title="Детские",Carousel [SD]
-http://88.212.15.50/live/test_karusel/playlist.m3u8
-#EXTINF:-1 tvg-id="karusel" tvg-name="Carousel" group-title="Детские",Carousel [SD]
-http://flussonic.linkintel.ru/Karusel/index.m3u8
-#EXTINF:-1 tvg-id="karusel" tvg-name="Carousel" group-title="Детские",Carousel [SD]
-https://stream.smotrim.ru/hls2/karusel/playlist_3.m3u8
-#EXTINF:-1 tvg-id="karusel" tvg-name="Carousel" group-title="Детские",Carousel [SD]
-http://stream.mcquack.net/120/index.m3u8
-#EXTINF:-1 tvg-id="karusel" tvg-name="Carousel" group-title="Детские",Carousel [HD]
-http://185.37.150.46/Karusel/index.m3u8
-#EXTINF:-1 tvg-id="karusel-int" tvg-name="Carousel International" group-title="Детские",Carousel International [SD]
-https://fs.uplink.kz/karusel/mono.m3u8?token=onlinetv
 #EXTINF:-1 tvg-id="cartoon-classics" tvg-name="Cartoon Classics" group-title="Детские",Cartoon Classics
 http://88.218.242.237:8001/Cartoon_Classics
 #EXTINF:-1 tvg-id="boomerang" tvg-name="Cartoonito CEE" group-title="Детские",Cartoonito CEE
@@ -170,21 +145,6 @@ https://stream8.cinerama.uz/1425/tracks-v1a1/mono.m3u8
 https://player.smotrim.ru/iframe/stream/live_id/29d87e02-f367-48b1-b63e-6ce7923ab089
 #EXTINF:-1 tvg-id="smotrim-100-detskoe" tvg-name="Smotrim 100% Detskoe" group-title="Детские",Smotrim 100% Detskoe [HD]
 https://stream.smotrim.ru/hls/fasttv05/playlist_3.m3u8
-#EXTINF:-1 tvg-id="solnce" tvg-name="Solnce" group-title="Детские",Solnce
-#EXTVLCOPT:http-user-agent=WINK/1.40.1 (AndroidTV/9) HlsWinkPlayer
-http://zabava-htlive.cdn.ngenix.net/hls/CH_DISNEY/variant.m3u8
-#EXTINF:-1 tvg-id="solnce" tvg-name="Solnce" group-title="Детские",Solnce [SD]
-http://31.148.48.15/Solnce/index.m3u8
-#EXTINF:-1 tvg-id="solnce" tvg-name="Solnce" group-title="Детские",Solnce [SD]
-http://46.32.176.50/solnce/index.m3u8
-#EXTINF:-1 tvg-id="solnce" tvg-name="Solnce" group-title="Детские",Solnce [SD]
-http://217.114.191.150/Solnce/index.m3u8
-#EXTINF:-1 tvg-id="solnce" tvg-name="Solnce" group-title="Детские",Solnce [SD]
-http://stream.mcquack.net/118/index.m3u8
-#EXTINF:-1 tvg-id="solnce" tvg-name="Solnce" group-title="Детские",Solnce [SD]
-https://tv.mediacdn.ru/live/solntse/playlist.m3u8
-#EXTINF:-1 tvg-id="solnce" tvg-name="Solnce" group-title="Детские",Solnce [SD]
-http://tv.mediacdn.ru/live/solntse/playlist.m3u8
 #EXTINF:-1 tvg-id="sts-kids-hd" tvg-name="STS kids" group-title="Детские",STS kids [Full HD]
 http://31.148.48.15/STS_Kids_HD/index.m3u8
 #EXTINF:-1 tvg-id="sts-kids-hd" tvg-name="STS kids" group-title="Детские",STS kids [SD]
@@ -421,11 +381,6 @@ https://stream8.cinerama.uz/1051/tracks-v1a1/mono.m3u8
 http://stream.mcquack.net/214/index.m3u8
 #EXTINF:-1 tvg-id="patriot" tvg-name="Patriot" group-title="Кино",Patriot [HD]
 https://stream.smotrim.ru/hls2/static/playlist_4.m3u8
-#EXTINF:-1 tvg-id="pobeda" tvg-name="Pobeda" group-title="Кино",Pobeda [SD]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
-https://cdn4.skygo.mn/live/disk1/Pobeda/HLSv3-FTA/Pobeda.m3u8
-#EXTINF:-1 tvg-id="pobeda" tvg-name="Pobeda" group-title="Кино",Pobeda [SD]
-https://streaming.thestream.cyou/live/43.m3u8
 #EXTINF:-1 tvg-id="premialnoe" tvg-name="Premialnoe" group-title="Кино",Premialnoe [Full HD]
 http://stream.mcquack.net/421/index.m3u8
 #EXTINF:-1 tvg-id="rodnoe-kino" tvg-name="Rodnoe Kino" group-title="Кино",Rodnoe Kino
@@ -593,36 +548,6 @@ http://185.23.80.23:8080/ART/index.m3u8
 https://ngtrk.dc.beltelecom.by/ngtrk/smil:belarus3.smil/playlist.m3u8
 #EXTINF:-1 tvg-id="ministerstvo-idey" tvg-name="Ministerstvo idey" group-title="Культура",Ministerstvo idey [Full HD]
 https://live-minidey.cdnvideo.ru/minidey-srt/minidey/playlist.m3u8
-#EXTINF:-1 tvg-id="ntv-mir" tvg-name="NTV Mir" group-title="Культура",NTV Mir [SD]
-http://5.188.159.128:8070/ntvmir_TV/index.m3u8
-#EXTINF:-1 tvg-id="ntv-mir" tvg-name="NTV Mir" group-title="Культура",NTV Mir [SD]
-https://streaming.thestream.cyou/live/213.m3u8
-#EXTINF:-1 tvg-id="kultura" tvg-name="Russia-K" group-title="Культура",Russia-K [Full HD]
-https://live.smotrim.ru/vgtrk/0/kultura-hd/index.m3u8
-#EXTINF:-1 tvg-id="kultura" tvg-name="Russia-K" group-title="Культура",Russia-K [Full HD]
-https://stream.smotrim.ru/hls2/russia_k/playlist_5.m3u8
-#EXTINF:-1 tvg-id="kultura" tvg-name="Russia-K" group-title="Культура",Russia-K [Full HD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/2/kultura-hd/index.m3u8
-#EXTINF:-1 tvg-id="kultura" tvg-name="Russia-K" group-title="Культура",Russia-K [Full HD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/4/kultura-hd/index.m3u8
-#EXTINF:-1 tvg-id="kultura" tvg-name="Russia-K" group-title="Культура",Russia-K [Full HD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/7/kultura-hd/index.m3u8
-#EXTINF:-1 tvg-id="kultura" tvg-name="Russia-K" group-title="Культура",Russia-K
-#EXTVLCOPT:http-user-agent=WINK/1.40.1 (AndroidTV/9) HlsWinkPlayer
-http://zabava-htlive.cdn.ngenix.net/hls/CH_RUSSIAK/variant.m3u8
-#EXTINF:-1 tvg-id="kultura" tvg-name="Russia-K" group-title="Культура",Russia-K
-#EXTVLCOPT:http-user-agent=WINK/1.44.1 (AndroidTV/9) HlsWinkPlayer
-https://zabava-htlive.cdn.ngenix.net/hls/CH_RUSSIAK/variant.m3u8
-#EXTINF:-1 tvg-id="kultura" tvg-name="Russia-K" group-title="Культура",Russia-K [SD]
-http://31.148.5.241/kanal_6/index.m3u8
-#EXTINF:-1 tvg-id="kultura" tvg-name="Russia-K" group-title="Культура",Russia-K [SD]
-http://stream.mcquack.net/229/index.m3u8
-#EXTINF:-1 tvg-id="kultura" tvg-name="Russia-K" group-title="Культура",Russia-K [SD]
-https://stream8.cinerama.uz/1048/tracks-v1a1/mono.m3u8
-#EXTINF:-1 tvg-id="kultura" tvg-name="Russia-K" group-title="Культура",Russia-K [SD]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
-#EXTVLCOPT:http-referrer=https://televizor24tochka.ru/
-https://streaming.televizor-24-tochka.ru/live/9.m3u8
 #EXTINF:-1 tvg-id="teatr" tvg-name="Teatr" group-title="Культура",Teatr [SD]
 http://31.148.48.15/Sochi_HD/index.m3u8
 #EXTINF:-1 tvg-id="teatr" tvg-name="Teatr" group-title="Культура",Teatr [SD]
@@ -2566,8 +2491,6 @@ https://streaming.televizor-24-tochka.ru/live/20.m3u8
 #EXTINF:-1 tvg-id="muztv" tvg-name="Muz-TV" group-title="Музыка | Русская",Muz-TV
 https://streaming.televizor-24-tochka.ru/live/618.m3u8
 #EXTINF:-1 tvg-id="muztv" tvg-name="Muz-TV" group-title="Музыка | Русская",Muz-TV
-https://streaming102.interskytech.com/live/618.m3u8
-#EXTINF:-1 tvg-id="muztv" tvg-name="Muz-TV" group-title="Музыка | Русская",Muz-TV
 #EXTVLCOPT:http-user-agent=WINK/1.40.1 (AndroidTV/9) HlsWinkPlayer
 https://zabava-htlive.cdn.ngenix.net/hls/CH_MUZTV/variant.m3u8
 #EXTINF:-1 tvg-id="muztv" tvg-name="Muz-TV" group-title="Музыка | Русская",Muz-TV [SD]
@@ -2869,22 +2792,12 @@ http://tmptv.sunduk.tv/CH31/index.m3u8
 https://cdn-euronews.akamaized.net/live/eds/euronews-ru/25071/index.m3u8
 #EXTINF:-1 tvg-id="GovoritMoskva.ru" tvg-name="Govorit Moskva" group-title="Новости",Govorit Moskva [HD]
 https://video.govoritmoskva.ru/rufm/index.m3u8
-#EXTINF:-1 tvg-id="izvestia" tvg-name="Izvestia" group-title="Новости",Izvestia [Full HD]
-http://igi-hls.cdnvideo.ru/igi/igi_tcode/playlist.m3u8
 #EXTINF:-1 tvg-id="krik-tv" tvg-name="Krik-TV" group-title="Новости",Krik-TV [Full HD]
 http://cdn-01.bonus-tv.ru/kriktv_edge/playlist.m3u8
 #EXTINF:-1 tvg-id="legendarny24" tvg-name="Legendarnyy 24" group-title="Новости",Legendarnyy 24
 https://sevas.1tvcrimea.ru/legendarniy24.m3u8
 #EXTINF:-1 tvg-id="millet" tvg-name="Millet" group-title="Новости",Millet [HD]
 https://live1.1tvcrimea.ru/milletlive.m3u8
-#EXTINF:-1 tvg-id="mir-24" tvg-name="Mir 24" group-title="Новости",Mir 24
-https://stream8.cinerama.uz/1219/tracks-v1a1/mono.m3u8
-#EXTINF:-1 tvg-id="mir-24" tvg-name="Mir 24" group-title="Новости",Mir 24 [Full HD]
-http://hls.mirtv.cdnvideo.ru/mirtv-parampublish/mir24_2500/playlist.m3u8
-#EXTINF:-1 tvg-id="mir-24" tvg-name="Mir 24" group-title="Новости",Mir 24 [SD]
-http://5.188.159.128:8070/mir_24/index.m3u8
-#EXTINF:-1 tvg-id="mir-24" tvg-name="Mir 24" group-title="Новости",Mir 24 [SD]
-http://31.148.48.15/Mir_24/index.m3u8
 #EXTINF:-1 tvg-id="moskva-24" tvg-name="Moskva 24" group-title="Новости",Moskva 24
 https://stream.smotrim.ru/hls/moscow_24/playlist.m3u8?entity=channel&id=76&sign=e8e1bc15ce94ee7718ef8948500e5d21
 #EXTINF:-1 tvg-id="moskva-24" tvg-name="Moskva 24" group-title="Новости",Moskva 24 [Full HD]
@@ -2910,20 +2823,6 @@ http://stream.mcquack.net/455/index.m3u8
 https://ngtrk.dc.beltelecom.by/ngtrk/smil:informacionnyy.smil/playlist.m3u8
 #EXTINF:-1 tvg-id="PervyyRespublikanskiy.ru" tvg-name="Pervyy Respublikanskiy" group-title="Новости",Pervyy Respublikanskiy
 https://streaming.televizor-24-tochka.ru/live/27.m3u8
-#EXTINF:-1 tvg-id="RBKTV.ru" tvg-name="RBK-TV" group-title="Новости",RBK-TV
-http://online-video.rbc.ru/online2/rbctv.m3u8
-#EXTINF:-1 tvg-id="rbk" tvg-name="RBK-TV" group-title="Новости",RBK-TV [SD]
-http://92.50.128.180/utv/1358/index.m3u8
-#EXTINF:-1 tvg-id="RBKTV.ru" tvg-name="RBK-TV" group-title="Новости",RBK-TV [SD]
-http://176.118.197.101/RBK/index.m3u8
-#EXTINF:-1 tvg-id="rbk" tvg-name="RBK-TV" group-title="Новости",RBK-TV [SD]
-https://uiptv.do.am/1ufc/701293058/playlist.m3u8
-#EXTINF:-1 tvg-id="rbk" tvg-name="RBK-TV" group-title="Новости",RBK-TV [SD]
-https://online-video.rbc.ru/spb/rbctv_spb.m3u8
-#EXTINF:-1 tvg-id="rbk" tvg-name="RBK-TV" group-title="Новости",RBK-TV [SD]
-http://31.148.48.15/RBK/index.m3u8
-#EXTINF:-1 tvg-id="rt-news" tvg-name="RT" group-title="Новости",RT
-https://rt-glb.rttv.com/live/rtnews/playlist.m3u8
 #EXTINF:-1 tvg-id="RTArabic.ru" tvg-name="RT Arabic" group-title="Новости",RT Arabic
 https://rt-arb.rttv.com/dvr/rtarab/playlist.m3u8
 #EXTINF:-1 tvg-id="RTBalkan.ru" tvg-name="RT Balkan" group-title="Новости",RT Balkan [Full HD]
@@ -2932,203 +2831,6 @@ https://rt-srb.rttv.com/dvr/rtbalkan/playlist.m3u8
 https://rt-srb.rttv.com/live/rtbalkan/playlist.m3u8
 #EXTINF:-1 tvg-id="RTenEspanol.ru" tvg-name="RT en Espanol" group-title="Новости",RT en Espanol
 https://rt-esp.rttv.com/dvr/rtesp/playlist.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24
-http://dmi3y-tv.online/hls/smotrim/T2/CH_RUSSIA24_INT.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24
-https://stream8.cinerama.uz/1021/tracks-v1a1/mono.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24
-https://player.smotrim.ru/iframe/stream/live_id/3214d57c-8651-435a-938c-be13bfd00a04
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [Full HD]
-http://77.232.131.211/Rossiya24/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [Full HD]
-https://live.smotrim.ru/vgtrk/0/russia24-hd/1080p.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [Full HD]
-https://live.smotrim.ru/vgtrk/0/russia24-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [Full HD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/0/russia24-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [Full HD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/habarovsk/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24
-#EXTVLCOPT:http-user-agent=WINK/1.40.1 (AndroidTV/9) HlsWinkPlayer
-http://zabava-htlive.cdn.ngenix.net/hls/CH_RUSSIA24/variant.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-http://31.148.5.241/kanal_7/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-http://176.118.197.101/Rossiya24/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://uiptv.do.am/1ufc/000000006/playlist.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/0/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/abakan/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/anadyr/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/arhangelsk/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/astrahan/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/barnaul/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/belgorod/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/birobidgan/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/blagoveshensk/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/bryansk/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/velikiy-novgorod/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/vladivostok/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/vladikavkaz/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/vladimir/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/volgograd/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/vologda/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/voroneg/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/gornoaltaysk/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/grozniy/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/ekaterinburg/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/ivanovo/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/igevsk/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/irkutsk/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/yoshkar-ola/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/kazan/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/kaliningrad/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/kaluga/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/kemerovo/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/kirov/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/kostroma/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/krasnodar/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/krasnoyarsk/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/kurgan/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/kursk/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/kisil/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/lipetsk/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/magadan/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/maykop/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/mahachkala/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/murmansk/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/nazran/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/nalchik/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/nigniynovgorod/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/novosibirsk/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/omsk/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/orel/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/orenburg/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/penza/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/perm/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/petrozavodsk/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/petropavlosk/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/pskov/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/rostovdon/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/ryazan/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/salehad/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/samara/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/spb/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/saransk/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/saratov/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/simferopol/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/smolensk/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/sochi/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/stavropol/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/siktivkar/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/tambov/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/tver/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/tomsk/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/tula/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/tumen/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/ulanude/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/ulyanovsk/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/ufa/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/hantimansisk/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/cheboksar/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/chelyabinsk/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/cherkessk/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/chita/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/elista/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/ugnosahalinsk/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/yakutsk/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/yaroslavl/russia24-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
-#EXTVLCOPT:http-referrer=https://televizor24tochka.ru/
-https://streaming.televizor-24-tochka.ru/live/10.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-https://streaming.televizor-24-tochka.ru/live/30.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [SD]
-http://31.148.48.15/Rossiya_24/index.m3u8
-#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Новости",Russia-24 [HD]
-https://stream.smotrim.ru/hls2/russia24nl_smotrim/playlist_5.m3u8
 #EXTINF:-1 tvg-id="sochi24" tvg-name="Sochi24" group-title="Новости",Sochi24 [HD]
 http://serv30.vintera.tv:8081/sochi/sochi24_tv/playlist.m3u8
 #EXTINF:-1 tvg-id="solovjinypomiot" tvg-name="Solovyov Live" group-title="Новости",Solovyov Live
@@ -3181,47 +2883,6 @@ http://radio.tvs.by/TRO/index.m3u8
 https://tass-hls.servicecdn.ru/httpstreamer/tass-loop-main.stream/playlist.m3u8
 #EXTINF:-1 tvg-id="" tvg-name="Эхо" group-title="Новости",Эхо
 https://live-echotv.cdnvideo.ru/echotv/echotv.sdp/playlist.m3u8
-#EXTINF:-1 tvg-id="5kanal-ru" tvg-name="Channel 5" group-title="Общие",Channel 5
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
-#EXTVLCOPT:http-referrer=https://televizor24tochka.ru/
-https://streaming.televizor-24-tochka.ru/live/8.m3u8
-#EXTINF:-1 tvg-id="5kanal-ru" tvg-name="Channel 5" group-title="Общие",Channel 5
-#EXTVLCOPT:http-user-agent=WINK/1.44.1 (AndroidTV/9) HlsWinkPlayer
-https://zabava-htlive.cdn.ngenix.net/hls/CH_5TV/variant.m3u8
-#EXTINF:-1 tvg-id="5kanal-ru" tvg-name="Channel 5" group-title="Общие",Channel 5 [SD]
-http://31.148.5.241/kanal_5/index.m3u8
-#EXTINF:-1 tvg-id="piaty-int" tvg-name="Channel 5 International" group-title="Общие",Channel 5 International [SD]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
-https://cdn4.skygo.mn/live/disk1/Channel_5/HLSv3-FTA/Channel_5.m3u8
-#EXTINF:-1 tvg-id="piaty-int" tvg-name="Channel 5 International" group-title="Общие",Channel 5 International [SD]
-http://178.134.1.158:8081/5channel/index.m3u8
-#EXTINF:-1 tvg-id="piaty-int" tvg-name="Channel 5 International" group-title="Общие",Channel 5 International [SD]
-https://fs.uplink.kz/5_kanal/mono.m3u8?token=onlinetv
-#EXTINF:-1 tvg-id="pervy" tvg-name="Channel One" group-title="Общие",Channel One
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
-#EXTVLCOPT:http-referrer=https://televizor24tochka.ru/
-https://streaming.televizor-24-tochka.ru/live/4.m3u8
-#EXTINF:-1 tvg-id="pervy" tvg-name="Channel One" group-title="Общие",Channel One [Full HD]
-http://31.148.48.15/Pervii_kanal_HD/index.m3u8
-#EXTINF:-1 tvg-id="pervy" tvg-name="Channel One" group-title="Общие",Channel One
-#EXTVLCOPT:http-user-agent=WINK/1.40.1 (AndroidTV/9) HlsWinkPlayer
-https://zabava-htlive.cdn.ngenix.net/hls/CH_1TVSD/variant.m3u8
-#EXTINF:-1 tvg-id="pervy" tvg-name="Channel One" group-title="Общие",Channel One [SD]
-https://streaming.thestream.cyou/live/210-req_offset_28000000-req_window_0-1k_v5.m3u8
-#EXTINF:-1 tvg-id="pervy" tvg-name="Channel One" group-title="Общие",Channel One [SD]
-https://streaming.thestream.cyou/live/210.m3u8
-#EXTINF:-1 tvg-id="pervy" tvg-name="Channel One" group-title="Общие",Channel One [SD]
-http://31.148.5.241/kanal_1/index.m3u8
-#EXTINF:-1 tvg-id="pervy" tvg-name="Channel One" group-title="Общие",Channel One [SD]
-http://45.153.24.78/1TV/index.m3u8
-#EXTINF:-1 tvg-id="pervy" tvg-name="Channel One" group-title="Общие",Channel One [SD]
-http://178.217.49.7/1/index.m3u8
-#EXTINF:-1 tvg-id="pervy" tvg-name="Channel One" group-title="Общие",Channel One [HD]
-https://edge1.1internet.tv/dash-live2/streams/1tv-dvr/1tvdash.mpd
-#EXTINF:-1 tvg-id="pervy" tvg-name="Channel One" group-title="Общие",Channel One [HD]
-https://stream8.cinerama.uz/1214/tracks-v1a1/mono.m3u8
-#EXTINF:-1 tvg-id="ChannelOneCIS.ru" tvg-name="Channel One CIS" group-title="Общие",Channel One CIS [SD]
-https://fs.uplink.kz/perviy_kanal_sng/mono.m3u8?token=onlinetv
 #EXTINF:-1 tvg-id="kongresstv" tvg-name="Kongress TV" group-title="Общие",Kongress TV [Full HD]
 https://live-3.otcnet.ru/congresstv/index.m3u8
 #EXTINF:-1 tvg-id="kongresstv" tvg-name="Kongress TV" group-title="Общие",Kongress TV [Full HD]
@@ -3232,114 +2893,16 @@ http://46.46.143.222:1935/live/mp4:ldpr.stream/playlist.m3u8
 http://46.46.143.222:1935/live/mp4:ldpr.stream_480p/playlist.m3u8
 #EXTINF:-1 tvg-id="ldpr-tv" tvg-name="LDPR TV" group-title="Общие",LDPR TV [HD]
 http://46.46.143.222:1935/live/mp4:ldpr.stream_720p/playlist.m3u8
-#EXTINF:-1 tvg-id="mir" tvg-name="Mir" group-title="Общие",Mir
-https://stream8.cinerama.uz/1218/tracks-v1a1/mono.m3u8
-#EXTINF:-1 tvg-id="mir" tvg-name="Mir" group-title="Общие",Mir [Full HD]
-http://hls.mirtv.cdnvideo.ru/mirtv-parampublish/mirtv_2500/playlist.m3u8
-#EXTINF:-1 tvg-id="mir" tvg-name="Mir" group-title="Общие",Mir
-#EXTVLCOPT:http-user-agent=WINK/1.40.1 (AndroidTV/9) HlsWinkPlayer
-https://zabava-htlive.cdn.ngenix.net/hls/CH_MIR_7/variant.m3u8
-#EXTINF:-1 tvg-id="mir" tvg-name="Mir" group-title="Общие",Mir
-#EXTVLCOPT:http-user-agent=WINK/1.40.1 (AndroidTV/9) HlsWinkPlayer
-https://zabava-htlive.cdn.ngenix.net/hls/CH_MIR/variant.m3u8
-#EXTINF:-1 tvg-id="mir" tvg-name="Mir" group-title="Общие",Mir
-http://hls.mirtv.cdnvideo.ru/mirtv-parampublish/mirtv2_2500/playlist.m3u8
-#EXTINF:-1 tvg-id="mir" tvg-name="Mir" group-title="Общие",Mir
-http://hls.mirtv.cdnvideo.ru/mirtv-parampublish/mirtv3_2500/playlist.m3u8
-#EXTINF:-1 tvg-id="mir" tvg-name="Mir" group-title="Общие",Mir
-http://hls.mirtv.cdnvideo.ru/mirtv-parampublish/mirtv7_2500/playlist.m3u8
-#EXTINF:-1 tvg-id="mir" tvg-name="Mir" group-title="Общие",Mir [SD]
-http://31.148.48.15/Mir/index.m3u8
-#EXTINF:-1 tvg-id="mir" tvg-name="Mir" group-title="Общие",Mir [SD]
-http://31.148.5.241/kanal_18/index.m3u8
-#EXTINF:-1 tvg-id="mir" tvg-name="Mir" group-title="Общие",Mir [SD]
-http://45.153.24.78/MIR/index.m3u8
-#EXTINF:-1 tvg-id="mir" tvg-name="Mir" group-title="Общие",Mir [SD]
-https://fs.uplink.kz/mir/mono.m3u8?token=onlinetv
-#EXTINF:-1 tvg-id="mir" tvg-name="Mir" group-title="Общие",Mir [SD]
-https://tvcdn01.oktv.kz/tv/mir/index.m3u8
-#EXTINF:-1 tvg-id="mir" tvg-name="Mir" group-title="Общие",Mir [SD]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
-#EXTVLCOPT:http-referrer=https://televizor24tochka.ru/
-https://streaming.televizor-24-tochka.ru/live/22.m3u8
-#EXTINF:-1 tvg-id="mir" tvg-name="Mir" group-title="Общие",Mir [HD]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
-https://cdn4.skygo.mn/live/disk1/MIR/HLSv3-FTA/MIR.m3u8
 #EXTINF:-1 tvg-id="n-tv-hd-de" tvg-name="Naxcivan TV" group-title="Общие",Naxcivan TV [HD]
 https://str2.yodacdn.net/ntv/video.m3u8
-#EXTINF:-1 tvg-id="n-tv-hd-de" tvg-name="NTV" group-title="Общие",NTV
-https://stream8.cinerama.uz/1023/tracks-v1a1/mono.m3u8
-#EXTINF:-1 tvg-id="n-tv-hd-de" tvg-name="NTV" group-title="Общие",NTV
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
-#EXTVLCOPT:http-referrer=https://televizor24tochka.ru/
-https://streaming.televizor-24-tochka.ru/live/7.m3u8
-#EXTINF:-1 tvg-id="n-tv-hd-de" tvg-name="NTV" group-title="Общие",NTV [Full HD]
-http://flussonic.linkintel.ru/ntv/index.m3u8
-#EXTINF:-1 tvg-id="n-tv-hd-de" tvg-name="NTV" group-title="Общие",NTV [Full HD]
-https://bl.rutube.ru/livestream/c37cd74192c6bc3d6cd6077c0c4fd686/index.m3u8?e=2077050299&s=HSWg81JrQ3OqmwuWkEIDAQ&scheme=https
-#EXTINF:-1 tvg-id="n-tv-hd-de" tvg-name="NTV" group-title="Общие",NTV [Full HD]
-https://cdn-dvr.ntv.ru/ntv0_hd/index.m3u8
-#EXTINF:-1 tvg-id="n-tv-hd-de" tvg-name="NTV" group-title="Общие",NTV [Full HD]
-https://cdn.ntv.ru/ntv0/playlist.m3u8
-#EXTINF:-1 tvg-id="n-tv-hd-de" tvg-name="NTV" group-title="Общие",NTV
-#EXTVLCOPT:http-user-agent=WINK/1.44.1 (AndroidTV/9) HlsWinkPlayer
-https://zabava-htlive.cdn.ngenix.net/hls/CH_NTV/variant.m3u8
-#EXTINF:-1 tvg-id="n-tv-hd-de" tvg-name="NTV" group-title="Общие",NTV [SD]
-https://cdn.ntv.ru/ntv1/playlist.m3u8
-#EXTINF:-1 tvg-id="n-tv-hd-de" tvg-name="NTV" group-title="Общие",NTV [SD]
-https://cdn.ntv.ru/ntv2/playlist.m3u8
-#EXTINF:-1 tvg-id="n-tv-hd-de" tvg-name="NTV" group-title="Общие",NTV [SD]
-https://cdn.ntv.ru/ntv4/playlist.m3u8
-#EXTINF:-1 tvg-id="n-tv-hd-de" tvg-name="NTV" group-title="Общие",NTV [SD]
-https://cdn.ntv.ru/ntv7/playlist.m3u8
-#EXTINF:-1 tvg-id="n-tv-hd-de" tvg-name="NTV" group-title="Общие",NTV [SD]
-http://31.148.5.241/kanal_4/index.m3u8
-#EXTINF:-1 tvg-id="n-tv-hd-de" tvg-name="NTV" group-title="Общие",NTV [SD]
-http://176.118.197.101/NTV/index.m3u8
-#EXTINF:-1 tvg-id="n-tv-hd-de" tvg-name="NTV" group-title="Общие",NTV [SD]
-http://45.153.24.78/NTV/index.m3u8
-#EXTINF:-1 tvg-id="n-tv-hd-de" tvg-name="NTV" group-title="Общие",NTV [SD]
-https://cdn.ntv.ru/ntv-spb/index.m3u8
-#EXTINF:-1 tvg-id="n-tv-hd-de" tvg-name="NTV" group-title="Общие",NTV [SD]
-http://31.148.48.15/NTV/index.m3u8
 #EXTINF:-1 tvg-id="NTVVitrina.ru" tvg-name="NTV Vitrina" group-title="Общие",NTV Vitrina [HD]
 https://cdn.ntv.ru/vitrina/index.m3u8
-#EXTINF:-1 tvg-id="otr" tvg-name="OTR" group-title="Общие",OTR
-#EXTVLCOPT:http-user-agent=WINK/1.40.1 (AndroidTV/9) HlsWinkPlayer
-https://zabava-htlive.cdn.ngenix.net/hls/CH_OTR/variant.m3u8
-#EXTINF:-1 tvg-id="OTR.ru" tvg-name="OTR" group-title="Общие",OTR [SD]
-http://31.148.5.241/kanal_9/index.m3u8
-#EXTINF:-1 tvg-id="OTR.ru" tvg-name="OTR" group-title="Общие",OTR [SD]
-http://flussonic.linkintel.ru/otr/index.m3u8
-#EXTINF:-1 tvg-id="otr" tvg-name="OTR" group-title="Общие",OTR [SD]
-http://31.148.48.15/OTR/index.m3u8
 #EXTINF:-1 tvg-id="radio-1" tvg-name="Radio 1" group-title="Общие",Radio 1 [HD]
 https://stream.radio1.ru/memfs/49dee7fe-77ba-4e6b-8cdc-fa840535b242.m3u8
 #EXTINF:-1 tvg-id="radio-mir" tvg-name="Radio Mir" group-title="Общие",Radio Mir [HD]
 https://stream1.dc.beltelecom.by/radiomir/studio.stream/playlist.m3u8
 #EXTINF:-1 tvg-id="radio-rossii" tvg-name="Radio Rossii" group-title="Общие",Radio Rossii [HD]
 https://stream.smotrim.ru/hls2/radio_rus/playlist_4.m3u8
-#EXTINF:-1 tvg-id="rentv" tvg-name="REN TV" group-title="Общие",REN TV
-#EXTVLCOPT:http-user-agent=WINK/1.44.1 (AndroidTV/9) HlsWinkPlayer
-https://zabava-htlive.cdn.ngenix.net/hls/CH_RENTV/variant.m3u8
-#EXTINF:-1 tvg-id="rentv" tvg-name="REN TV" group-title="Общие",REN TV [SD]
-http://31.148.5.241/kanal_11/index.m3u8
-#EXTINF:-1 tvg-id="rentv" tvg-name="REN TV" group-title="Общие",REN TV [SD]
-http://31.148.48.15/REN-TV/index.m3u8
-#EXTINF:-1 tvg-id="rentv" tvg-name="REN TV" group-title="Общие",REN TV [SD]
-http://185.23.80.23:8080/REN/index.m3u8
-#EXTINF:-1 tvg-id="rentv" tvg-name="REN TV" group-title="Общие",REN TV [SD]
-http://flussonic.linkintel.ru/ren_tv/index.m3u8
-#EXTINF:-1 tvg-id="rentv-int" tvg-name="REN TV International" group-title="Общие",REN TV International [SD]
-http://178.134.1.158:8081/RENTV/index.m3u8
-#EXTINF:-1 tvg-id="RTRPlaneta.ru" tvg-name="RTR-Planeta" group-title="Общие",RTR-Planeta [SD]
-https://streaming.televizor-24-tochka.ru/live/211.m3u8
-#EXTINF:-1 tvg-id="RTRPlaneta.ru" tvg-name="RTR-Planeta" group-title="Общие",RTR-Planeta [HD]
-https://stream.smotrim.ru/hls/planeta_rtr_asia/playlist.m3u8?entity=channel&id=511&sign=d1fe06cd922b67e412719536998fa43d
-#EXTINF:-1 tvg-id="RTRPlaneta.ru" tvg-name="RTR-Planeta" group-title="Общие",RTR-Planeta [HD]
-https://stream.smotrim.ru/hls/planeta_rtr_sng/playlist.m3u8?entity=channel&id=512&sign=2abaa592de074d65809a10b6bacc4410
-#EXTINF:-1 tvg-id="RTRPlaneta.ru" tvg-name="RTR-Planeta" group-title="Общие",RTR-Planeta [HD]
-https://stream.smotrim.ru/hls/planeta_rtr_euro/playlist.m3u8?entity=channel&id=510&sign=5c0ac65d75140fac2fd938d77c92138d
 #EXTINF:-1 tvg-id="rtvi" tvg-name="RTVi" group-title="Общие",RTVi
 https://s70378.cdn.ngenix.net/rtvi/index.m3u8
 #EXTINF:-1 tvg-id="rtvi" tvg-name="RTVi" group-title="Общие",RTVi [SD]
@@ -3347,301 +2910,6 @@ https://s70378.cdn.ngenix.net/rtvi/index.m3u8
 https://shift03.isp.bg/RTVi/index.m3u8
 #EXTINF:-1 tvg-id="RTViUS.us" tvg-name="RTVi US" group-title="Общие",RTVi US [Full HD]
 https://amg17233-amg17233c1-wisptv-us-6409.playouts.now.amagi.tv/playlist.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1
-https://stream8.cinerama.uz/1020/tracks-v1a1/mono.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
-#EXTVLCOPT:http-referrer=https://televizor24tochka.ru/
-https://streaming.televizor-24-tochka.ru/live/5.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-http://176.118.197.101/RossiyaHD/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-https://live.smotrim.ru/vgtrk/0/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-https://stream.smotrim.ru/hls2/russia_hd/playlist_6.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/0/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/arhangelsk/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/astrahan/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/belgorod/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/blagoveshensk/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/bryansk/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/velikiy-novgorod/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/vladikavkaz/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/vladimir/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/voroneg/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/ekaterinburg/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/ivanovo/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/yoshkar-ola/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/kazan/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/kaliningrad/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/kaluga/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/kemerovo/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/kirov/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/kostroma/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/kurgan/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/kisil/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/lipetsk/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/magadan/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/maykop/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/nalchik/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/novosibirsk/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/omsk/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/orel/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/orenburg/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/penza/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/petrozavodsk/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/petropavlosk/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/pskov/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/rostovdon/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/ryazan/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/spb/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/saransk/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/saratov/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/smolensk/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/tambov/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/tver/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/tomsk/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/tula/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/ulanude/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/habarovsk/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/cheboksar/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/chita/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/ugnosahalinsk/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/yakutsk/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/4/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/5/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/6/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/7/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/8/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/9/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-http://vgtrkregion-reg.cdnvideo.ru/vgtrk/maykop/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-http://vgtrkregion-reg.cdnvideo.ru/vgtrk/vladikavkaz/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-http://vgtrkregion-reg.cdnvideo.ru/vgtrk/blagoveshensk/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-http://vgtrkregion-reg.cdnvideo.ru/vgtrk/belgorod/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-http://vgtrkregion-reg.cdnvideo.ru/vgtrk/bryansk/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-http://vgtrkregion-reg.cdnvideo.ru/vgtrk/ulanude/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-http://vgtrkregion-reg.cdnvideo.ru/vgtrk/vladimir/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-http://vgtrkregion-reg.cdnvideo.ru/vgtrk/volgograd/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-http://vgtrkregion-reg.cdnvideo.ru/vgtrk/voroneg/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-http://vgtrkregion-reg.cdnvideo.ru/vgtrk/kirov/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-http://vgtrkregion-reg.cdnvideo.ru/vgtrk/habarovsk/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-http://vgtrkregion-reg.cdnvideo.ru/vgtrk/rostovdon/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-http://vgtrkregion-reg.cdnvideo.ru/vgtrk/ivanovo/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-http://vgtrkregion-reg.cdnvideo.ru/vgtrk/omsk/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-http://vgtrkregion-reg.cdnvideo.ru/vgtrk/nalchik/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-http://vgtrkregion-reg.cdnvideo.ru/vgtrk/kaliningrad/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-http://vgtrkregion-reg.cdnvideo.ru/vgtrk/kaluga/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-http://vgtrkregion-reg.cdnvideo.ru/vgtrk/petropavlosk/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-http://vgtrkregion-reg.cdnvideo.ru/vgtrk/petrozavodsk/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-http://vgtrkregion-reg.cdnvideo.ru/vgtrk/kostroma/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-http://vgtrkregion-reg.cdnvideo.ru/vgtrk/kemerovo/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-http://vgtrkregion-reg.cdnvideo.ru/vgtrk/kurgan/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-http://vgtrkregion-reg.cdnvideo.ru/vgtrk/lipetsk/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-http://vgtrkregion-reg.cdnvideo.ru/vgtrk/astrahan/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-http://vgtrkregion-reg.cdnvideo.ru/vgtrk/magadan/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-http://vgtrkregion-reg.cdnvideo.ru/vgtrk/yoshkar-ola/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-http://vgtrkregion-reg.cdnvideo.ru/vgtrk/saransk/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-http://vgtrkregion-reg.cdnvideo.ru/vgtrk/novosibirsk/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-http://vgtrkregion-reg.cdnvideo.ru/vgtrk/ryazan/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-http://vgtrkregion-reg.cdnvideo.ru/vgtrk/orel/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-http://vgtrkregion-reg.cdnvideo.ru/vgtrk/orenburg/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-http://vgtrkregion-reg.cdnvideo.ru/vgtrk/penza/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-http://vgtrkregion-reg.cdnvideo.ru/vgtrk/arhangelsk/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-http://vgtrkregion-reg.cdnvideo.ru/vgtrk/pskov/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-http://vgtrkregion-reg.cdnvideo.ru/vgtrk/spb/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-http://vgtrkregion-reg.cdnvideo.ru/vgtrk/saratov/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-http://vgtrkregion-reg.cdnvideo.ru/vgtrk/yakutsk/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-http://vgtrkregion-reg.cdnvideo.ru/vgtrk/ugnosahalinsk/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-http://vgtrkregion-reg.cdnvideo.ru/vgtrk/velikiy-novgorod/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-http://vgtrkregion-reg.cdnvideo.ru/vgtrk/smolensk/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-http://vgtrkregion-reg.cdnvideo.ru/vgtrk/tambov/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-http://vgtrkregion-reg.cdnvideo.ru/vgtrk/kazan/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-http://vgtrkregion-reg.cdnvideo.ru/vgtrk/tver/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-http://vgtrkregion-reg.cdnvideo.ru/vgtrk/tomsk/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-http://vgtrkregion-reg.cdnvideo.ru/vgtrk/tula/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-http://vgtrkregion-reg.cdnvideo.ru/vgtrk/kisil/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-http://vgtrkregion-reg.cdnvideo.ru/vgtrk/ekaterinburg/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-http://vgtrkregion-reg.cdnvideo.ru/vgtrk/chita/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [Full HD]
-http://vgtrkregion-reg.cdnvideo.ru/vgtrk/cheboksar/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1
-#EXTVLCOPT:http-user-agent=WINK/1.40.1 (AndroidTV/9) HlsWinkPlayer
-https://zabava-htlive.cdn.ngenix.net/hls/CH_RUSSIA1/variant.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [SD]
-http://31.148.48.15/Rossiya_1/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [SD]
-http://31.148.5.241/kanal_2/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [SD]
-http://109.207.243.18/2/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/abakan/russia1-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/anadyr/russia1-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/barnaul/russia1-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/vladivostok/russia1-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/vologda/russia1-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/gornoaltaysk/russia1-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/grozniy/russia1-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/HO4y0CelYt0/russia1-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/igevsk/russia1-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/irkutsk/russia1-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/krasnodar/russia1-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/krasnoyarsk/russia1-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/kursk/russia1-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/HO3gcQAHbok/russia1-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/mahachkala/russia1-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/murmansk/russia1-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/nazran/russia1-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/nigniynovgorod/russia1-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/perm/russia1-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/salehad/russia1-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/samara/russia1-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/simferopol/russia1-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/sochi/russia1-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/stavropol/russia1-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/siktivkar/russia1-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/tumen/russia1-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/ulyanovsk/russia1-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/ufa/russia1-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/hantimansisk/russia1-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/chelyabinsk/russia1-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/cherkessk/russia1-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/elista/russia1-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Общие",Russia-1 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/yaroslavl/russia1-sd/index.m3u8
 #EXTINF:-1 tvg-id="tro" tvg-name="Soyuzny" group-title="Общие",Soyuzny [SD]
 http://178.124.179.122:8080/TRO/index.m3u8
 #EXTINF:-1 tvg-id="tro" tvg-name="Soyuzny" group-title="Общие",Soyuzny [SD]
@@ -3650,54 +2918,8 @@ https://souzny.mediacdn.ru/cdn/souzny/playlist.m3u8
 http://185.23.80.23:8080/TVBRICS/index.m3u8
 #EXTINF:-1 tvg-id="TVBRICSRussian.ru" tvg-name="TV BRICS Russian" group-title="Общие",TV BRICS Russian [Full HD]
 https://rusbrics.mediacdn.ru/cdn/brics/russian/playlist.m3u8
-#EXTINF:-1 tvg-id="tvcentr" tvg-name="TV Centr" group-title="Общие",TV Centr
-https://tvc-hls.cdnvideo.ru/tvc-res/smil:vd9221.smil/playlist.m3u8
-#EXTINF:-1 tvg-id="tvcentr" tvg-name="TV Centr" group-title="Общие",TV Centr
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
-#EXTVLCOPT:http-referrer=https://televizor24tochka.ru/
-https://streaming.televizor-24-tochka.ru/live/13.m3u8
-#EXTINF:-1 tvg-id="tvcentr" tvg-name="TV Centr" group-title="Общие",TV Centr
-#EXTVLCOPT:http-user-agent=WINK/1.40.1 (AndroidTV/9) HlsWinkPlayer
-https://zabava-htlive.cdn.ngenix.net/hls/CH_TVC/variant.m3u8
-#EXTINF:-1 tvg-id="tvcentr" tvg-name="TV Centr" group-title="Общие",TV Centr [SD]
-http://31.148.5.241/kanal_10/index.m3u8
-#EXTINF:-1 tvg-id="tvcentr" tvg-name="TV Centr" group-title="Общие",TV Centr [SD]
-http://flussonic.linkintel.ru/tvc/index.m3u8
-#EXTINF:-1 tvg-id="tvcentr" tvg-name="TV Centr" group-title="Общие",TV Centr [SD]
-https://fs.uplink.kz/tvc/mono.m3u8?token=onlinetv
-#EXTINF:-1 tvg-id="tvcentr" tvg-name="TV Centr" group-title="Общие",TV Centr [SD]
-https://stream8.cinerama.uz/1025/tracks-v1a1/mono.m3u8
-#EXTINF:-1 tvg-id="tvcentr" tvg-name="TV Centr" group-title="Общие",TV Centr [SD]
-http://185.71.81.6:8080/10/index.m3u8
-#EXTINF:-1 tvg-id="tvci" tvg-name="TV Centr International" group-title="Общие",TV Centr International [SD]
-https://stream8.cinerama.uz/1281/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="pervy-yaroslavsky" tvg-name="YaPervyy" group-title="Общие",YaPervyy [Full HD]
 https://yaroslavl.mediacdn.ru/cdn/pervyaroslavsk/playlist.m3u8
-#EXTINF:-1 tvg-id="zvezda" tvg-name="Zvezda" group-title="Общие",Zvezda
-https://stream8.cinerama.uz/1050/tracks-v1a1/mono.m3u8
-#EXTINF:-1 tvg-id="zvezda" tvg-name="Zvezda" group-title="Общие",Zvezda
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
-#EXTVLCOPT:http-referrer=https://televizor24tochka.ru/
-https://streaming.televizor-24-tochka.ru/live/21.m3u8
-#EXTINF:-1 tvg-id="zvezda" tvg-name="Zvezda" group-title="Общие",Zvezda
-https://streaming.televizor-24-tochka.ru/live/748.m3u8
-#EXTINF:-1 tvg-id="zvezda" tvg-name="Zvezda" group-title="Общие",Zvezda [Full HD]
-https://tvchannelstream1.tvzvezda.ru/cdn/tvzvezda/playlist.m3u8
-#EXTINF:-1 tvg-id="zvezda" tvg-name="Zvezda" group-title="Общие",Zvezda [Full HD]
-https://tvzvezda.bonus-tv.ru/cdn/tvzvezda/playlist.m3u8
-#EXTINF:-1 tvg-id="zvezda" tvg-name="Zvezda" group-title="Общие",Zvezda [Full HD]
-http://51.158.144.33:2021/zvezda/index.m3u8
-#EXTINF:-1 tvg-id="zvezda" tvg-name="Zvezda" group-title="Общие",Zvezda
-#EXTVLCOPT:http-user-agent=WINK/1.40.1 (AndroidTV/9) HlsWinkPlayer
-https://zabava-htlive.cdn.ngenix.net/hls/CH_ZVEZDA/variant.m3u8
-#EXTINF:-1 tvg-id="zvezda" tvg-name="Zvezda" group-title="Общие",Zvezda [SD]
-http://31.148.5.241/kanal_17/index.m3u8
-#EXTINF:-1 tvg-id="zvezda" tvg-name="Zvezda" group-title="Общие",Zvezda [SD]
-http://flussonic.linkintel.ru/zvezda/index.m3u8
-#EXTINF:-1 tvg-id="zvezda" tvg-name="Zvezda" group-title="Общие",Zvezda [SD]
-https://fs.uplink.kz/zvezda/mono.m3u8?token=onlinetv
-#EXTINF:-1 tvg-id="zvezda" tvg-name="Zvezda" group-title="Общие",Zvezda [SD]
-http://31.148.48.15/Zvezda/index.m3u8
 #EXTINF:-1 tvg-id="365-dnej" tvg-name="365 days TV" group-title="Познавательные",365 days TV [SD]
 http://stream.mcquack.net/70/index.m3u8
 #EXTINF:-1 tvg-id="365-dnej" tvg-name="365 days TV" group-title="Познавательные",365 days TV [SD]
@@ -3806,12 +3028,6 @@ http://88.212.15.50/live/test_poehali/playlist.m3u8
 https://cdn-01.bonus-tv.ru/prosveschenie_edge/playlist.m3u8
 #EXTINF:-1 tvg-id="prosveschenie" tvg-name="Prosveshchenie" group-title="Познавательные",Prosveshchenie [SD]
 http://cdn-01.bonus-tv.ru/prosveschenie_edge/index.m3u8
-#EXTINF:-1 tvg-id="rtd-ru" tvg-name="RT Documentary" group-title="Познавательные",RT Documentary
-https://streaming.thestream.cyou/live/554.m3u8
-#EXTINF:-1 tvg-id="rtd-ru" tvg-name="RT Documentary" group-title="Познавательные",RT Documentary
-https://rt-rtd.rttv.com/dvr/rtdoc/playlist.m3u8
-#EXTINF:-1 tvg-id="rtd-ru" tvg-name="RT Documentary" group-title="Познавательные",RT Documentary [Full HD]
-https://rt-doc.rttv.com/dvr/rtdru/playlist.m3u8
 #EXTINF:-1 tvg-id="rtd-ru" tvg-name="RT Д Русский" group-title="Познавательные",RT Д Русский
 https://hls.rt.com/hls/rtdru.m3u8
 #EXTINF:-1 tvg-id="rtg-tv" tvg-name="RTG TV" group-title="Познавательные",RTG TV [Full HD]
@@ -3937,6 +3153,12 @@ https://cdn-01.bonus-tv.ru/prosveschenie_edge/index.m3u8
 https://stream3.cinerama.uz/1230/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="oxotnik-i-rybolov" tvg-name="Rybolov" group-title="Природа и отдых",Rybolov [SD]
 http://stream.mcquack.net/264/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Россия 1 (+1)" group-title="Прочее",Россия 1 (+1) [Full HD]
+https://live.smotrim.ru/vgtrk/1/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Россия 1 (+2)" group-title="Прочее",Россия 1 (+2) [Full HD]
+https://live.smotrim.ru/vgtrk/2/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Россия 1 (+3)" group-title="Прочее",Россия 1 (+3) [Full HD]
+https://live.smotrim.ru/vgtrk/3/russia1-hd/index.m3u8
 #EXTINF:-1 tvg-id="glazami-turista" tvg-name="Glazami Turista" group-title="Путешествия",Glazami Turista [SD]
 https://stream8.cinerama.uz/1423/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="morskoy" tvg-name="Moya stikhiya" group-title="Путешествия",Moya stikhiya [Full HD]
@@ -3959,21 +3181,6 @@ http://178.134.1.158:8081/red/index.m3u8
 http://5.188.159.128:8070/RED/index.m3u8
 #EXTINF:-1 tvg-id="sony-tv" tvg-name=".red" group-title="Развлекательные",.red [SD]
 http://stream.mcquack.net/69/index.m3u8
-#EXTINF:-1 tvg-id="2na2" tvg-name="2x2" group-title="Развлекательные",2x2
-#EXTVLCOPT:http-user-agent=WINK/1.40.1 (AndroidTV/9) HlsWinkPlayer
-https://zabava-htlive.cdn.ngenix.net/hls/CH_2X2/variant.m3u8
-#EXTINF:-1 tvg-id="2na2" tvg-name="2x2" group-title="Развлекательные",2x2 [SD]
-https://bl.rutube.ru/livestream/392b4686b770bae2da6bf5ac4574add5/index.m3u8?e=2068731801&s=tenr-yHXUv1wibfka78s2A&scheme=https
-#EXTINF:-1 tvg-id="2na2" tvg-name="2x2" group-title="Развлекательные",2x2 [SD]
-http://176.118.197.101/2x2/index.m3u8
-#EXTINF:-1 tvg-id="2na2" tvg-name="2x2" group-title="Развлекательные",2x2 [SD]
-http://185.23.80.23:8080/2x2/index.m3u8
-#EXTINF:-1 tvg-id="2na2" tvg-name="2x2" group-title="Развлекательные",2x2 [SD]
-http://flussonic.mkpnet.ru/tv-17540fb90079a865/video.m3u8
-#EXTINF:-1 tvg-id="2na2" tvg-name="2x2" group-title="Развлекательные",2x2 [SD]
-http://stream.mcquack.net/187/index.m3u8
-#EXTINF:-1 tvg-id="2na2" tvg-name="2x2" group-title="Развлекательные",2x2 [SD]
-http://31.148.48.15/2x2/index.m3u8
 #EXTINF:-1 tvg-id="belarus2" tvg-name="Belarus-2" group-title="Развлекательные",Belarus-2 [Full HD]
 https://ngtrk.dc.beltelecom.by/ngtrk/smil:belarus2.smil/playlist.m3u8
 #EXTINF:-1 tvg-id="8kanal-by" tvg-name="Channel 8" group-title="Развлекательные",Channel 8 [SD]
@@ -3984,47 +3191,8 @@ http://tshift-1.telecoma.tv/8channel/index.m3u8
 http://v4.proofix.ru/okino-tv/index.m3u8
 #EXTINF:-1 tvg-id="8kanal-by" tvg-name="Channel 8" group-title="Развлекательные",Channel 8 [SD]
 https://v4.proofix.ru/8tv-russia/index.m3u8
-#EXTINF:-1 tvg-id="che" tvg-name="Che!" group-title="Развлекательные",Che!
-#EXTVLCOPT:http-user-agent=WINK/1.44.1 (AndroidTV/9) HlsWinkPlayer
-https://zabava-htlive.cdn.ngenix.net/hls/CH_PERETZ/variant.m3u8
-#EXTINF:-1 tvg-id="che" tvg-name="Che!" group-title="Развлекательные",Che! [SD]
-http://176.118.197.101/Che/index.m3u8
-#EXTINF:-1 tvg-id="che" tvg-name="Che!" group-title="Развлекательные",Che! [SD]
-http://flussonic.linkintel.ru/che/index.m3u8
-#EXTINF:-1 tvg-id="che" tvg-name="Che!" group-title="Развлекательные",Che! [SD]
-http://31.148.48.15/Che/index.m3u8
-#EXTINF:-1 tvg-id="domashny" tvg-name="Domashniy" group-title="Развлекательные",Domashniy
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
-#EXTVLCOPT:http-referrer=https://televizor24tochka.ru/
-https://streaming.televizor-24-tochka.ru/live/17.m3u8
-#EXTINF:-1 tvg-id="domashny" tvg-name="Domashniy" group-title="Развлекательные",Domashniy
-#EXTVLCOPT:http-user-agent=WINK/1.44.1 (AndroidTV/9) HlsWinkPlayer
-https://zabava-htlive.cdn.ngenix.net/hls/CH_DOMASHNIY/variant.m3u8
-#EXTINF:-1 tvg-id="domashny" tvg-name="Domashniy" group-title="Развлекательные",Domashniy [SD]
-http://31.148.5.241/kanal_14/index.m3u8
-#EXTINF:-1 tvg-id="domashny" tvg-name="Domashniy" group-title="Развлекательные",Domashniy [SD]
-https://fs.uplink.kz/domashniy/mono.m3u8?token=onlinetv
-#EXTINF:-1 tvg-id="domashny" tvg-name="Domashniy" group-title="Развлекательные",Domashniy [SD]
-http://stream.mcquack.net/227/index.m3u8
 #EXTINF:-1 tvg-id="ETVPlus.ee" tvg-name="ETV+" group-title="Развлекательные",ETV+ [HD]
 https://sb.err.ee/live/etvpluss.m3u8
-#EXTINF:-1 tvg-id="piatnica" tvg-name="Friday!" group-title="Развлекательные",Friday!
-#EXTVLCOPT:http-user-agent=WINK/1.44.1 (AndroidTV/9) HlsWinkPlayer
-https://zabava-htlive.cdn.ngenix.net/hls/CH_PYATNIZZA/variant.m3u8
-#EXTINF:-1 tvg-id="piatnica" tvg-name="Friday!" group-title="Развлекательные",Friday! [SD]
-http://31.148.5.241/kanal_16/index.m3u8
-#EXTINF:-1 tvg-id="piatnica" tvg-name="Friday!" group-title="Развлекательные",Friday! [SD]
-http://flussonic.linkintel.ru/Pyatnica/index.m3u8
-#EXTINF:-1 tvg-id="piatnica" tvg-name="Friday!" group-title="Развлекательные",Friday! [SD]
-http://stream.mcquack.net/181/index.m3u8
-#EXTINF:-1 tvg-id="piatnica" tvg-name="Friday!" group-title="Развлекательные",Friday! [SD]
-https://vod.tuva.ru/friday/index.m3u8
-#EXTINF:-1 tvg-id="piatnica" tvg-name="Friday!" group-title="Развлекательные",Friday! [SD]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
-#EXTVLCOPT:http-referrer=https://televizor24tochka.ru/
-https://streaming.televizor-24-tochka.ru/live/19.m3u8
-#EXTINF:-1 tvg-id="piatnica" tvg-name="Friday!" group-title="Развлекательные",Friday! [SD]
-http://31.148.48.15/Pyatnica/index.m3u8
 #EXTINF:-1 tvg-id="gags-network" tvg-name="Gagsnetwork" group-title="Развлекательные",Gagsnetwork [SD]
 http://stream.mcquack.net/458/index.m3u8
 #EXTINF:-1 tvg-id="komedijnoe" tvg-name="Komediynoe" group-title="Развлекательные",Komediynoe [Full HD]
@@ -4047,131 +3215,10 @@ http://stream.mcquack.net/121/index.m3u8
 https://player.smotrim.ru/iframe/stream/live_id/0cff8c9f-76c8-4b4a-9f23-90aa5a542564
 #EXTINF:-1 tvg-id="smotrim-100-prazdnik" tvg-name="Smotrim 100% Prazdnik" group-title="Развлекательные",Smotrim 100% Prazdnik [HD]
 https://stream.smotrim.ru/hls/fasttv04/playlist_3.m3u8
-#EXTINF:-1 tvg-id="sts" tvg-name="STS" group-title="Развлекательные",STS
-https://streaming.televizor-24-tochka.ru/live/296.m3u8
-#EXTINF:-1 tvg-id="sts" tvg-name="STS" group-title="Развлекательные",STS [Full HD]
-http://stream.mcquack.net/138/index.m3u8
-#EXTINF:-1 tvg-id="sts" tvg-name="STS" group-title="Развлекательные",STS
-#EXTVLCOPT:http-user-agent=WINK/1.44.1 (AndroidTV/9) HlsWinkPlayer
-https://zabava-htlive.cdn.ngenix.net/hls/CH_STS/variant.m3u8
-#EXTINF:-1 tvg-id="sts" tvg-name="STS" group-title="Развлекательные",STS [SD]
-http://31.148.5.241/kanal_13/index.m3u8
-#EXTINF:-1 tvg-id="sts" tvg-name="STS" group-title="Развлекательные",STS [SD]
-http://176.118.197.101/CTC/index.m3u8
-#EXTINF:-1 tvg-id="sts" tvg-name="STS" group-title="Развлекательные",STS [SD]
-http://flussonic.linkintel.ru/sts/index.m3u8
-#EXTINF:-1 tvg-id="sts" tvg-name="STS" group-title="Развлекательные",STS [SD]
-http://tshift-1.telecoma.tv/sts/index.m3u8
-#EXTINF:-1 tvg-id="sts" tvg-name="STS" group-title="Развлекательные",STS [SD]
-https://fs.uplink.kz/sts/mono.m3u8?token=onlinetv
-#EXTINF:-1 tvg-id="sts" tvg-name="STS" group-title="Развлекательные",STS [SD]
-http://45.153.24.78/STS/index.m3u8
-#EXTINF:-1 tvg-id="sts" tvg-name="STS" group-title="Развлекательные",STS [SD]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
-#EXTVLCOPT:http-referrer=https://televizor24tochka.ru/
-https://streaming.televizor-24-tochka.ru/live/16.m3u8
-#EXTINF:-1 tvg-id="sts" tvg-name="STS" group-title="Развлекательные",STS [SD]
-http://31.148.48.15/STS/index.m3u8
-#EXTINF:-1 tvg-id="sts-int-m7" tvg-name="STS International" group-title="Развлекательные",STS International [SD]
-http://178.134.1.158:8081/CTC/index.m3u8
-#EXTINF:-1 tvg-id="sts-love" tvg-name="STS Love" group-title="Развлекательные",STS Love
-#EXTVLCOPT:http-user-agent=WINK/1.44.1 (AndroidTV/9) HlsWinkPlayer
-https://zabava-htlive.cdn.ngenix.net/hls/CH_STSLOVE/variant.m3u8
-#EXTINF:-1 tvg-id="sts-love" tvg-name="STS Love" group-title="Развлекательные",STS Love [SD]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
-https://cdn4.skygo.mn/live/disk1/Fashion_TV/HLSv3-FTA/Fashion_TV.m3u8
-#EXTINF:-1 tvg-id="sts-love" tvg-name="STS Love" group-title="Развлекательные",STS Love [SD]
-http://stream.mcquack.net/183/index.m3u8
-#EXTINF:-1 tvg-id="sts-love" tvg-name="STS Love" group-title="Развлекательные",STS Love [SD]
-http://31.148.48.15/STS_Love/index.m3u8
-#EXTINF:-1 tvg-id="super" tvg-name="Subbota!" group-title="Развлекательные",Subbota! [Full HD]
-http://stream.mcquack.net/269/index.m3u8
-#EXTINF:-1 tvg-id="super" tvg-name="Subbota!" group-title="Развлекательные",Subbota! [Full HD]
-https://bl.rutube.ru/livestream/310744c10a5809da38aa445c952976da/index.m3u8?e=2066519758&s=dmUf6BUQzDBTwtQOseAfog&scheme=https
-#EXTINF:-1 tvg-id="super" tvg-name="Subbota!" group-title="Развлекательные",Subbota!
-#EXTVLCOPT:http-user-agent=WINK/1.44.1 (AndroidTV/9) HlsWinkPlayer
-https://zabava-htlive.cdn.ngenix.net/hls/CH_SUPER/variant.m3u8
-#EXTINF:-1 tvg-id="super" tvg-name="Subbota!" group-title="Развлекательные",Subbota! [SD]
-http://217.114.191.150/Subbota/index.m3u8
-#EXTINF:-1 tvg-id="super" tvg-name="Subbota!" group-title="Развлекательные",Subbota! [SD]
-http://46.32.176.50/subbota/index.m3u8
-#EXTINF:-1 tvg-id="super" tvg-name="Subbota!" group-title="Развлекательные",Subbota! [SD]
-http://31.148.48.15/Super/index.m3u8
-#EXTINF:-1 tvg-id="tnt" tvg-name="TNT" group-title="Развлекательные",TNT
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
-#EXTVLCOPT:http-referrer=https://televizor24tochka.ru/
-https://streaming.televizor-24-tochka.ru/live/23.m3u8
-#EXTINF:-1 tvg-id="tnt" tvg-name="TNT" group-title="Развлекательные",TNT
-https://streaming.televizor-24-tochka.ru/live/38.m3u8
-#EXTINF:-1 tvg-id="tnt" tvg-name="TNT" group-title="Развлекательные",TNT [Full HD]
-http://45.153.24.78/TNT/index.m3u8
-#EXTINF:-1 tvg-id="tnt" tvg-name="TNT" group-title="Развлекательные",TNT
-#EXTVLCOPT:http-user-agent=WINK/1.44.1 (AndroidTV/9) HlsWinkPlayer
-https://zabava-htlive.cdn.ngenix.net/hls/CH_TNT/variant.m3u8
-#EXTINF:-1 tvg-id="tnt" tvg-name="TNT" group-title="Развлекательные",TNT [SD]
-http://31.148.5.241/kanal_19/index.m3u8
-#EXTINF:-1 tvg-id="tnt" tvg-name="TNT" group-title="Развлекательные",TNT [SD]
-http://176.118.197.101/THT/index.m3u8
-#EXTINF:-1 tvg-id="tnt" tvg-name="TNT" group-title="Развлекательные",TNT [SD]
-http://flussonic.linkintel.ru/tnt/index.m3u8
-#EXTINF:-1 tvg-id="tnt" tvg-name="TNT" group-title="Развлекательные",TNT [SD]
-http://stream.mcquack.net/135/index.m3u8
-#EXTINF:-1 tvg-id="tnt" tvg-name="TNT" group-title="Развлекательные",TNT [SD]
-http://31.148.48.15/TNT/index.m3u8
-#EXTINF:-1 tvg-id="tnt-int-by" tvg-name="TNT International" group-title="Развлекательные",TNT International [SD]
-http://91.228.35.249:8001/1:0:1:6a7:3138:13e:820000:0:0:0:
-#EXTINF:-1 tvg-id="tnt-int-by" tvg-name="TNT International" group-title="Развлекательные",TNT International [SD]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
-https://cdn4.skygo.mn/live/disk1/THT/HLSv3-FTA/THT.m3u8
-#EXTINF:-1 tvg-id="tnt4" tvg-name="TNT4" group-title="Развлекательные",TNT4
-#EXTVLCOPT:http-user-agent=WINK/1.40.1 (AndroidTV/9) HlsWinkPlayer
-https://zabava-htlive.cdn.ngenix.net/hls/CH_TNT4/variant.m3u8
-#EXTINF:-1 tvg-id="tnt4" tvg-name="TNT4" group-title="Развлекательные",TNT4 [SD]
-http://176.118.197.101/TNT4/index.m3u8
-#EXTINF:-1 tvg-id="tnt4" tvg-name="TNT4" group-title="Развлекательные",TNT4 [SD]
-http://flussonic.linkintel.ru/tnt4/index.m3u8
-#EXTINF:-1 tvg-id="tnt4" tvg-name="TNT4" group-title="Развлекательные",TNT4 [SD]
-http://stream.mcquack.net/106/index.m3u8
-#EXTINF:-1 tvg-id="tnt4" tvg-name="TNT4" group-title="Развлекательные",TNT4 [SD]
-http://31.148.48.15/TNT4/index.m3u8
-#EXTINF:-1 tvg-id="tnt4-international" tvg-name="TNT4 International" group-title="Развлекательные",TNT4 International [SD]
-https://fs.uplink.kz/tnt4/mono.m3u8?token=onlinetv
-#EXTINF:-1 tvg-id="tv3-ru" tvg-name="TV-3" group-title="Развлекательные",TV-3
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
-#EXTVLCOPT:http-referrer=https://televizor24tochka.ru/
-https://streaming.televizor-24-tochka.ru/live/18.m3u8
-#EXTINF:-1 tvg-id="tv3-ru" tvg-name="TV-3" group-title="Развлекательные",TV-3 [Full HD]
-http://stream.mcquack.net/136/index.m3u8
-#EXTINF:-1 tvg-id="tv3-ru" tvg-name="TV-3" group-title="Развлекательные",TV-3
-#EXTVLCOPT:http-user-agent=WINK/1.44.1 (AndroidTV/9) HlsWinkPlayer
-https://zabava-htlive.cdn.ngenix.net/hls/CH_TV3/variant.m3u8
-#EXTINF:-1 tvg-id="tv3-ru" tvg-name="TV-3" group-title="Развлекательные",TV-3 [SD]
-http://178.124.179.122:8080/TB-3/index.m3u8
-#EXTINF:-1 tvg-id="tv3-ru" tvg-name="TV-3" group-title="Развлекательные",TV-3 [SD]
-http://31.148.5.241/kanal_15/index.m3u8
-#EXTINF:-1 tvg-id="tv3-ru" tvg-name="TV-3" group-title="Развлекательные",TV-3 [SD]
-http://176.118.197.101/TB3/index.m3u8
-#EXTINF:-1 tvg-id="tv3-ru" tvg-name="TV-3" group-title="Развлекательные",TV-3 [SD]
-http://flussonic.linkintel.ru/tv-3/index.m3u8
 #EXTINF:-1 tvg-id="tvoyo-tv-hd" tvg-name="Tvoe TV" group-title="Развлекательные",Tvoe TV [Full HD]
 http://tvoetv.space:8080/tvoetv/index.m3u8
 #EXTINF:-1 tvg-id="tvoetv-humor" tvg-name="Tvoye TV Yumor" group-title="Развлекательные",Tvoye TV Yumor [Full HD]
 http://tvoetv.space:8080/tvoetv_humor/index.m3u8
-#EXTINF:-1 tvg-id="yu" tvg-name="U" group-title="Развлекательные",U
-#EXTVLCOPT:http-user-agent=WINK/1.40.1 (AndroidTV/9) HlsWinkPlayer
-http://zabava-htlive.cdn.ngenix.net/hls/CH_U/variant.m3u8
-#EXTINF:-1 tvg-id="yu" tvg-name="U" group-title="Развлекательные",U [SD]
-http://178.134.1.158:8081/U/index.m3u8
-#EXTINF:-1 tvg-id="yu" tvg-name="U" group-title="Развлекательные",U [SD]
-http://stream.mcquack.net/230/index.m3u8
-#EXTINF:-1 tvg-id="yu" tvg-name="U" group-title="Развлекательные",U [SD]
-https://fs.uplink.kz/u/mono.m3u8?token=onlinetv
-#EXTINF:-1 tvg-id="yu" tvg-name="U" group-title="Развлекательные",U [SD]
-http://31.148.48.15/U/index.m3u8
-#EXTINF:-1 tvg-id="yu" tvg-name="U" group-title="Развлекательные",U [HD]
-https://bl.rutube.ru/livestream/5c9327074e25ca86f3111d4085cbbb65/index.m3u8?e=2066519758&s=9cPc1rCGu6M932eqrifRhQ&scheme=https
-#EXTINF:-1 tvg-id="yu" tvg-name="U" group-title="Развлекательные",U [HD]
-https://cdn-01.bonus-tv.ru/u/playlist.m3u8
 #EXTINF:-1 tvg-id="voprosy-i-otvety" tvg-name="Voprosy i Otvety" group-title="Развлекательные",Voprosy i Otvety [SD]
 http://stream.mcquack.net/76/index.m3u8
 #EXTINF:-1 tvg-id="nst" tvg-name="НСТ" group-title="Развлекательные",НСТ
@@ -4226,14 +3273,10 @@ http://serv25.vintera.tv:8081/test/aris/playlist.m3u8
 https://live.mediacdn.ru/sr1/arhis24/playlist_hdhigh.m3u8
 #EXTINF:-1 tvg-id="arxyz24" tvg-name="Arkhyz 24" group-title="Региональные",Arkhyz 24 [Full HD]
 https://live.mediacdn.ru/sr1/arhis24/playlist.m3u8
-#EXTINF:-1 tvg-id="arktika-24" tvg-name="Arktika 24" group-title="Региональные",Arktika 24 [Full HD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/arhangelsk/arktika24-hd/index.m3u8
 #EXTINF:-1 tvg-id="AstrahanRuTV.ru" tvg-name="Astrahan.Ru TV" group-title="Региональные",Astrahan.Ru TV [SD]
 https://streaming.astrakhan.ru/astrakhanrulivehd/playlist.m3u8
 #EXTINF:-1 tvg-id="" tvg-name="Astrakhan.RU | Астрахань" group-title="Региональные",Astrakhan.RU | Астрахань
 https://streaming.astrakhan.ru/astrakhanrulivehd/index.m3u8
-#EXTINF:-1 tvg-id="bashkortostan24" tvg-name="Bashkortostan 24" group-title="Региональные",Bashkortostan 24 [Full HD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/ufa/bashkortostan24-hd/index.m3u8
 #EXTINF:-1 tvg-id="belgorod24" tvg-name="Belgorod 24" group-title="Региональные",Belgorod 24
 http://belnovosti.cdn.easyhoster.ru:8080/stream.m3u8
 #EXTINF:-1 tvg-id="belgorod24" tvg-name="Belgorod 24" group-title="Региональные",Belgorod 24 [Full HD]
@@ -4291,8 +3334,6 @@ http://live.guberniatv.cdnvideo.ru/guberniatv/guberniatv.sdp/playlist.m3u8
 https://ingushetia.mediacdn.ru/cdn/ingushetia/playlist.m3u8
 #EXTINF:-1 tvg-id="rentv-istoki" tvg-name="Istoki" group-title="Региональные",Istoki [Full HD]
 https://istoki.tv/live/stream1/playlist.m3u8
-#EXTINF:-1 tvg-id="kavkaz24" tvg-name="Kavkaz 24" group-title="Региональные",Kavkaz 24 [SD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/stavropol/kavkaz24-hd/index.m3u8
 #EXTINF:-1 tvg-id="kuban-24" tvg-name="Kuban 24" group-title="Региональные",Kuban 24
 #EXTVLCOPT:http-user-agent=WINK/1.40.1 (AndroidTV/9) HlsWinkPlayer
 https://rt-sth-krdar-htlive.cdn.ngenix.net/hls/CH_R04_KUBAN24/variant.m3u8
@@ -4320,8 +3361,6 @@ http://hls.volgograd1vtv.cdnvideo.ru/volgograd1vtv/volgograd1vtv.sdp/playlist.m3
 https://s45177.cdn.ngenix.net/hls/CH_R01_NEXTTV/variant.m3u8
 #EXTINF:-1 tvg-id="nika-tv" tvg-name="Nika TV" group-title="Региональные",Nika TV [SD]
 https://live-nikatv.cdnvideo.ru/nikatv/nikatv.sdp/playlist.m3u8
-#EXTINF:-1 tvg-id="nn-24" tvg-name="Nizhniy Novgorod 24" group-title="Региональные",Nizhniy Novgorod 24 [Full HD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/nigniynovgorod/nigniynovgorod24-hd/index.m3u8
 #EXTINF:-1 tvg-id="nn-24" tvg-name="Nizhniy Novgorod 24" group-title="Региональные",Nizhniy Novgorod 24 [HD]
 https://live-vestinn.cdnvideo.ru/vestinn/nn24-khl/playlist.m3u8
 #EXTINF:-1 tvg-id="novgorodskoe-obl-tv" tvg-name="NovgorOblTV" group-title="Региональные",NovgorOblTV
@@ -4377,8 +3416,6 @@ http://hls.tva.cdnvideo.ru/tva/tva.sdp/playlist.m3u8
 https://sitv.ru/hls/stv.m3u8
 #EXTINF:-1 tvg-id="salam" tvg-name="Salyam" group-title="Региональные",Salyam [SD]
 https://bsttv.bonus-tv.ru/cdn/salyam/playlist.m3u8
-#EXTINF:-1 tvg-id="samara24" tvg-name="Samara 24" group-title="Региональные",Samara 24 [Full HD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/samara/samara24-hd/index.m3u8
 #EXTINF:-1 tvg-id="SamaraGIS.ru" tvg-name="Samara-GIS" group-title="Региональные",Samara-GIS [Full HD]
 https://tv.samaragis.ru/new/new/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="sankt-peterburg" tvg-name="Sankt-Peterburg" group-title="Региональные",Sankt-Peterburg
@@ -4404,10 +3441,6 @@ https://live.mediacdn.ru/sr1/sever/playlist.m3u8
 https://live2.mediacdn.ru/sr1/sever/playlist.m3u8
 #EXTINF:-1 tvg-id="ShchyolkovskoeTV.ru" tvg-name="Shchyolkovskoe TV" group-title="Региональные",Shchyolkovskoe TV [SD]
 http://stream0.tv41.ru/live.m3u8
-#EXTINF:-1 tvg-id="sibir24" tvg-name="Sibir 24" group-title="Региональные",Sibir 24 [Full HD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/krasnoyarsk/sibir24-hd/index.m3u8
-#EXTINF:-1 tvg-id="sibir24" tvg-name="Sibir 24" group-title="Региональные",Sibir 24 [Full HD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/novosibirsk/sibir24-hd/index.m3u8
 #EXTINF:-1 tvg-id="simfer24" tvg-name="Simferopol 24" group-title="Региональные",Simferopol 24
 https://simf.1tvcrimea.ru/simferopol24.m3u8
 #EXTINF:-1 tvg-id="SochiLive.ru" tvg-name="Sochi Live" group-title="Региональные",Sochi Live [HD]
@@ -4462,8 +3495,6 @@ https://s68149.cdn.ngenix.net/s68149-media-origin/lvs/tvgub/index.m3u8
 https://air.tvk6.ru/tvk24/playlist.m3u8
 #EXTINF:-1 tvg-id="yugra" tvg-name="Ugra-TV" group-title="Региональные",Ugra-TV [Full HD]
 https://live-ugratv.cdnvideo.ru/ugratv/ugratv/playlist.m3u8
-#EXTINF:-1 tvg-id="ural24" tvg-name="Ural 24" group-title="Региональные",Ural 24 [Full HD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/chelyabinsk/ural24-hd/index.m3u8
 #EXTINF:-1 tvg-id="vetta24" tvg-name="Vetta 24" group-title="Региональные",Vetta 24 [SD]
 http://serv24.vintera.tv:8081/vetta/vetta_office/playlist.m3u8
 #EXTINF:-1 tvg-id="vmeste-rf" tvg-name="Vmeste-RF" group-title="Региональные",Vmeste-RF [Full HD]
@@ -4472,23 +3503,15 @@ https://qcpdqumitwf.a.trbcdn.net/livemastersrt/pr4mw_lvie-vmesterf-srt.smil/play
 https://streaming.thestream.cyou/live/7006.m3u8
 #EXTINF:-1 tvg-id="volga" tvg-name="Volga" group-title="Региональные",Volga
 http://tele2dvrnat01-02.cdnvideo.ru/stream/NAT_Volga/hls/1920x1080@4504/playlist.m3u8
-#EXTINF:-1 tvg-id="volgograd-24" tvg-name="Volgograd 24" group-title="Региональные",Volgograd 24 [Full HD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/volgograd/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="volgograd-24" tvg-name="Volgograd 24" group-title="Региональные",Volgograd 24 [Full HD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/volgograd/volgograd24-hd/index.m3u8
 #EXTINF:-1 tvg-id="vostok-24" tvg-name="Vostok 24" group-title="Региональные",Vostok 24
 #EXTVLCOPT:http-user-agent=WINK/1.40.1 (AndroidTV/9) HlsWinkPlayer
 http://s91030.cdn.ngenix.net/hls/CH_R01_OTT_DV_VLD_VOSTOK24_OTT/variant.m3u8
-#EXTINF:-1 tvg-id="vostok-24" tvg-name="Vostok 24" group-title="Региональные",Vostok 24 [Full HD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/vladivostok/vostok24-hd/index.m3u8
 #EXTINF:-1 tvg-id="yakutia24" tvg-name="Yakutiya 24" group-title="Региональные",Yakutiya 24
 https://live-saha.cdnvideo.ru/saha2/yak24rtmp_live.smil/playlist.m3u8
 #EXTINF:-1 tvg-id="YaltaTV.ru" tvg-name="Yalta TV" group-title="Региональные",Yalta TV [SD]
 http://195.26.83.96:7029/play/a006
 #EXTINF:-1 tvg-id="ZaTV.ru" tvg-name="Za! TV" group-title="Региональные",Za! TV
 https://streaming.televizor-24-tochka.ru/live/25.m3u8
-#EXTINF:-1 tvg-id="zapad-24" tvg-name="Zapad 24" group-title="Региональные",Zapad 24 [Full HD]
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/kaliningrad/zapad24-hd/index.m3u8
 #EXTINF:-1 tvg-id="zvezda-plus" tvg-name="Zvezda Plus" group-title="Региональные",Zvezda Plus [Full HD]
 http://tvzvezda.bonus-tv.ru/cdn/zvezdaplus/playlist.m3u8
 #EXTINF:-1 tvg-id="" tvg-name="Аист (2) | Иркутская область" group-title="Региональные",Аист (2) | Иркутская область
@@ -4591,6 +3614,8 @@ https://cdn.ntv.ru/ntv1/index.m3u8
 https://cdn.ntv.ru/ntv2/index.m3u8
 #EXTINF:-1 tvg-id="" tvg-name="НТВ +4 (2)" group-title="Региональные",НТВ +4 (2)
 https://cdn.ntv.ru/ntv4/index.m3u8
+#EXTINF:-1 tvg-id="" tvg-name="НТВ +7 (2)" group-title="Региональные",НТВ +7 (2)
+https://cdn.ntv.ru/ntv7/index.m3u8
 #EXTINF:-1 tvg-id="" tvg-name="Обком | Омск" group-title="Региональные",Обком | Омск
 https://www.omsk-kprf.ru/hls/stream.m3u8
 #EXTINF:-1 tvg-id="" tvg-name="Осетия Ирыстон (3) | Владикавказ" group-title="Региональные",Осетия Ирыстон (3) | Владикавказ
@@ -4691,13 +3716,6 @@ https://lifetv.bitflip.ee/live/stream1.m3u8
 https://w2.manasat.com/tserkov-online/smil:tserkov-online.smil/playlist.m3u8
 #EXTINF:-1 tvg-id="soyuz" tvg-name="Soyuz" group-title="Религиозные",Soyuz [SD]
 https://hls-tvsoyuz.cdnvideo.ru/tvsoyuz/soyuz/playlist.m3u8
-#EXTINF:-1 tvg-id="spas" tvg-name="Spas" group-title="Религиозные",Spas
-#EXTVLCOPT:http-user-agent=WINK/1.40.1 (AndroidTV/9) HlsWinkPlayer
-https://zabava-htlive.cdn.ngenix.net/hls/CH_SPAS/variant.m3u8
-#EXTINF:-1 tvg-id="spas" tvg-name="Spas" group-title="Религиозные",Spas [SD]
-http://31.148.5.241/kanal_12/index.m3u8
-#EXTINF:-1 tvg-id="spas" tvg-name="Spas" group-title="Религиозные",Spas [SD]
-https://tvspas.mediacdn.ru/cdn/spas/playlist.m3u8
 #EXTINF:-1 tvg-id="TBNBaltia.ee" tvg-name="TBN Baltia" group-title="Религиозные",TBN Baltia [Full HD]
 http://dc.tbnbaltia.eu:8088/dvr/rewind-21600.m3u8
 #EXTINF:-1 tvg-id="TsargradTV.ru" tvg-name="Tsargrad TV" group-title="Религиозные",Tsargrad TV [Full HD]
@@ -5011,6 +4029,8 @@ https://fonbet.mediacdn.ru/live/volleyball/playlist.m3u8
 http://bl.video.matchtv.ru/media/playlist/free_d46d0cf1712c0542ec7fd4f0808f600a_hd/17_89756005/1080/e6bef86de8a133cd7b27deb040758a00/4796141934.m3u8
 #EXTINF:-1 tvg-id="match-football3" tvg-name="Матч! Футбол 3" group-title="Спорт",Матч! Футбол 3
 http://185.57.68.33/110/index.m3u8
+#EXTINF:-1 tvg-id="match-football3" tvg-name="Матч! Футбол 3 (2)" group-title="Спорт",Матч! Футбол 3 (2)
+http://176.100.46.245:90/matchfootball3/index.m3u8
 #EXTINF:-1 tvg-id="" tvg-name="Мото Драйв" group-title="Спорт",Мото Драйв
 https://stitch.teletarget.ru/vintera/motodrive/index.m3u8
 #EXTINF:-1 tvg-id="" tvg-name="Спорт" group-title="Спорт",Спорт
@@ -5041,6 +4061,550 @@ https://nonmirya7cc.a.trbcdn.net/livemaster/tzrz5_sazlypl5ot.smil/playlist.m3u8
 https://live-11cinema.cdnvideo.ru/11cinema/11cinema/playlist.m3u8
 #EXTINF:-1 tvg-id="yuvelirochka" tvg-name="Yuvelirochka" group-title="Телемагазины",Yuvelirochka [SD]
 https://live-uvelirochka.cdnvideo.ru/uvelirochka/uvelirochka_720p3/playlist.m3u8
+#EXTINF:-1 tvg-id="2na2" tvg-name="2x2" group-title="Федеральные",2x2
+#EXTVLCOPT:http-user-agent=WINK/1.40.1 (AndroidTV/9) HlsWinkPlayer
+https://zabava-htlive.cdn.ngenix.net/hls/CH_2X2/variant.m3u8
+#EXTINF:-1 tvg-id="2na2" tvg-name="2x2" group-title="Федеральные",2x2 [SD]
+https://bl.rutube.ru/livestream/392b4686b770bae2da6bf5ac4574add5/index.m3u8?e=2068731801&s=tenr-yHXUv1wibfka78s2A&scheme=https
+#EXTINF:-1 tvg-id="2na2" tvg-name="2x2" group-title="Федеральные",2x2 [SD]
+http://176.118.197.101/2x2/index.m3u8
+#EXTINF:-1 tvg-id="2na2" tvg-name="2x2" group-title="Федеральные",2x2 [SD]
+http://185.23.80.23:8080/2x2/index.m3u8
+#EXTINF:-1 tvg-id="2na2" tvg-name="2x2" group-title="Федеральные",2x2 [SD]
+http://flussonic.mkpnet.ru/tv-17540fb90079a865/video.m3u8
+#EXTINF:-1 tvg-id="2na2" tvg-name="2x2" group-title="Федеральные",2x2 [SD]
+http://stream.mcquack.net/187/index.m3u8
+#EXTINF:-1 tvg-id="2na2" tvg-name="2x2" group-title="Федеральные",2x2 [SD]
+http://31.148.48.15/2x2/index.m3u8
+#EXTINF:-1 tvg-id="karusel" tvg-name="Carousel" group-title="Федеральные",Carousel
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://televizor24tochka.ru/
+https://streaming.televizor-24-tochka.ru/live/11.m3u8
+#EXTINF:-1 tvg-id="karusel" tvg-name="Carousel" group-title="Федеральные",Carousel
+https://streaming.televizor-24-tochka.ru/live/232.m3u8
+#EXTINF:-1 tvg-id="karusel" tvg-name="Carousel" group-title="Федеральные",Carousel [Full HD]
+http://31.148.48.15/Karusel_HD/index.m3u8
+#EXTINF:-1 tvg-id="karusel" tvg-name="Carousel" group-title="Федеральные",Carousel
+#EXTVLCOPT:http-user-agent=WINK/1.44.1 (AndroidTV/9) HlsWinkPlayer
+https://zabava-htlive.cdn.ngenix.net/hls/CH_KARUSEL/variant.m3u8
+#EXTINF:-1 tvg-id="karusel" tvg-name="Carousel" group-title="Федеральные",Carousel [SD]
+http://31.148.5.241/kanal_8/index.m3u8
+#EXTINF:-1 tvg-id="karusel" tvg-name="Carousel" group-title="Федеральные",Carousel [SD]
+http://88.212.15.50/live/test_karusel/playlist.m3u8
+#EXTINF:-1 tvg-id="karusel" tvg-name="Carousel" group-title="Федеральные",Carousel [SD]
+http://flussonic.linkintel.ru/Karusel/index.m3u8
+#EXTINF:-1 tvg-id="karusel" tvg-name="Carousel" group-title="Федеральные",Carousel [SD]
+https://stream.smotrim.ru/hls2/karusel/playlist_3.m3u8
+#EXTINF:-1 tvg-id="karusel" tvg-name="Carousel" group-title="Федеральные",Carousel [SD]
+http://stream.mcquack.net/120/index.m3u8
+#EXTINF:-1 tvg-id="karusel" tvg-name="Carousel" group-title="Федеральные",Carousel [HD]
+http://185.37.150.46/Karusel/index.m3u8
+#EXTINF:-1 tvg-id="karusel-int" tvg-name="Carousel International" group-title="Федеральные",Carousel International [SD]
+https://fs.uplink.kz/karusel/mono.m3u8?token=onlinetv
+#EXTINF:-1 tvg-id="5kanal-ru" tvg-name="Channel 5" group-title="Федеральные",Channel 5
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://televizor24tochka.ru/
+https://streaming.televizor-24-tochka.ru/live/8.m3u8
+#EXTINF:-1 tvg-id="5kanal-ru" tvg-name="Channel 5" group-title="Федеральные",Channel 5
+#EXTVLCOPT:http-user-agent=WINK/1.44.1 (AndroidTV/9) HlsWinkPlayer
+https://zabava-htlive.cdn.ngenix.net/hls/CH_5TV/variant.m3u8
+#EXTINF:-1 tvg-id="5kanal-ru" tvg-name="Channel 5" group-title="Федеральные",Channel 5 [SD]
+http://31.148.5.241/kanal_5/index.m3u8
+#EXTINF:-1 tvg-id="piaty-int" tvg-name="Channel 5 International" group-title="Федеральные",Channel 5 International [SD]
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+https://cdn4.skygo.mn/live/disk1/Channel_5/HLSv3-FTA/Channel_5.m3u8
+#EXTINF:-1 tvg-id="piaty-int" tvg-name="Channel 5 International" group-title="Федеральные",Channel 5 International [SD]
+http://178.134.1.158:8081/5channel/index.m3u8
+#EXTINF:-1 tvg-id="piaty-int" tvg-name="Channel 5 International" group-title="Федеральные",Channel 5 International [SD]
+https://fs.uplink.kz/5_kanal/mono.m3u8?token=onlinetv
+#EXTINF:-1 tvg-id="pervy" tvg-name="Channel One" group-title="Федеральные",Channel One
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://televizor24tochka.ru/
+https://streaming.televizor-24-tochka.ru/live/4.m3u8
+#EXTINF:-1 tvg-id="pervy" tvg-name="Channel One" group-title="Федеральные",Channel One [Full HD]
+http://31.148.48.15/Pervii_kanal_HD/index.m3u8
+#EXTINF:-1 tvg-id="pervy" tvg-name="Channel One" group-title="Федеральные",Channel One
+#EXTVLCOPT:http-user-agent=WINK/1.40.1 (AndroidTV/9) HlsWinkPlayer
+https://zabava-htlive.cdn.ngenix.net/hls/CH_1TVSD/variant.m3u8
+#EXTINF:-1 tvg-id="pervy" tvg-name="Channel One" group-title="Федеральные",Channel One [SD]
+https://streaming.thestream.cyou/live/210-req_offset_28000000-req_window_0-1k_v5.m3u8
+#EXTINF:-1 tvg-id="pervy" tvg-name="Channel One" group-title="Федеральные",Channel One [SD]
+https://streaming.thestream.cyou/live/210.m3u8
+#EXTINF:-1 tvg-id="pervy" tvg-name="Channel One" group-title="Федеральные",Channel One [SD]
+http://31.148.5.241/kanal_1/index.m3u8
+#EXTINF:-1 tvg-id="pervy" tvg-name="Channel One" group-title="Федеральные",Channel One [SD]
+http://45.153.24.78/1TV/index.m3u8
+#EXTINF:-1 tvg-id="pervy" tvg-name="Channel One" group-title="Федеральные",Channel One [SD]
+http://178.217.49.7/1/index.m3u8
+#EXTINF:-1 tvg-id="pervy" tvg-name="Channel One" group-title="Федеральные",Channel One [HD]
+https://edge1.1internet.tv/dash-live2/streams/1tv-dvr/1tvdash.mpd
+#EXTINF:-1 tvg-id="pervy" tvg-name="Channel One" group-title="Федеральные",Channel One [HD]
+https://stream8.cinerama.uz/1214/tracks-v1a1/mono.m3u8
+#EXTINF:-1 tvg-id="ChannelOneCIS.ru" tvg-name="Channel One CIS" group-title="Федеральные",Channel One CIS [SD]
+https://fs.uplink.kz/perviy_kanal_sng/mono.m3u8?token=onlinetv
+#EXTINF:-1 tvg-id="che" tvg-name="Che!" group-title="Федеральные",Che!
+#EXTVLCOPT:http-user-agent=WINK/1.44.1 (AndroidTV/9) HlsWinkPlayer
+https://zabava-htlive.cdn.ngenix.net/hls/CH_PERETZ/variant.m3u8
+#EXTINF:-1 tvg-id="che" tvg-name="Che!" group-title="Федеральные",Che! [SD]
+http://176.118.197.101/Che/index.m3u8
+#EXTINF:-1 tvg-id="che" tvg-name="Che!" group-title="Федеральные",Che! [SD]
+http://flussonic.linkintel.ru/che/index.m3u8
+#EXTINF:-1 tvg-id="che" tvg-name="Che!" group-title="Федеральные",Che! [SD]
+http://31.148.48.15/Che/index.m3u8
+#EXTINF:-1 tvg-id="domashny" tvg-name="Domashniy" group-title="Федеральные",Domashniy
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://televizor24tochka.ru/
+https://streaming.televizor-24-tochka.ru/live/17.m3u8
+#EXTINF:-1 tvg-id="domashny" tvg-name="Domashniy" group-title="Федеральные",Domashniy
+#EXTVLCOPT:http-user-agent=WINK/1.44.1 (AndroidTV/9) HlsWinkPlayer
+https://zabava-htlive.cdn.ngenix.net/hls/CH_DOMASHNIY/variant.m3u8
+#EXTINF:-1 tvg-id="domashny" tvg-name="Domashniy" group-title="Федеральные",Domashniy [SD]
+http://31.148.5.241/kanal_14/index.m3u8
+#EXTINF:-1 tvg-id="domashny" tvg-name="Domashniy" group-title="Федеральные",Domashniy [SD]
+https://fs.uplink.kz/domashniy/mono.m3u8?token=onlinetv
+#EXTINF:-1 tvg-id="domashny" tvg-name="Domashniy" group-title="Федеральные",Domashniy [SD]
+http://stream.mcquack.net/227/index.m3u8
+#EXTINF:-1 tvg-id="piatnica" tvg-name="Friday!" group-title="Федеральные",Friday!
+#EXTVLCOPT:http-user-agent=WINK/1.44.1 (AndroidTV/9) HlsWinkPlayer
+https://zabava-htlive.cdn.ngenix.net/hls/CH_PYATNIZZA/variant.m3u8
+#EXTINF:-1 tvg-id="piatnica" tvg-name="Friday!" group-title="Федеральные",Friday! [SD]
+http://31.148.5.241/kanal_16/index.m3u8
+#EXTINF:-1 tvg-id="piatnica" tvg-name="Friday!" group-title="Федеральные",Friday! [SD]
+http://flussonic.linkintel.ru/Pyatnica/index.m3u8
+#EXTINF:-1 tvg-id="piatnica" tvg-name="Friday!" group-title="Федеральные",Friday! [SD]
+http://stream.mcquack.net/181/index.m3u8
+#EXTINF:-1 tvg-id="piatnica" tvg-name="Friday!" group-title="Федеральные",Friday! [SD]
+https://vod.tuva.ru/friday/index.m3u8
+#EXTINF:-1 tvg-id="piatnica" tvg-name="Friday!" group-title="Федеральные",Friday! [SD]
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://televizor24tochka.ru/
+https://streaming.televizor-24-tochka.ru/live/19.m3u8
+#EXTINF:-1 tvg-id="piatnica" tvg-name="Friday!" group-title="Федеральные",Friday! [SD]
+http://31.148.48.15/Pyatnica/index.m3u8
+#EXTINF:-1 tvg-id="izvestia" tvg-name="Izvestia" group-title="Федеральные",Izvestia [Full HD]
+http://igi-hls.cdnvideo.ru/igi/igi_tcode/playlist.m3u8
+#EXTINF:-1 tvg-id="mir" tvg-name="Mir" group-title="Федеральные",Mir
+https://stream8.cinerama.uz/1218/tracks-v1a1/mono.m3u8
+#EXTINF:-1 tvg-id="mir" tvg-name="Mir" group-title="Федеральные",Mir [Full HD]
+http://hls.mirtv.cdnvideo.ru/mirtv-parampublish/mirtv_2500/playlist.m3u8
+#EXTINF:-1 tvg-id="mir" tvg-name="Mir" group-title="Федеральные",Mir
+#EXTVLCOPT:http-user-agent=WINK/1.40.1 (AndroidTV/9) HlsWinkPlayer
+https://zabava-htlive.cdn.ngenix.net/hls/CH_MIR_7/variant.m3u8
+#EXTINF:-1 tvg-id="mir" tvg-name="Mir" group-title="Федеральные",Mir
+#EXTVLCOPT:http-user-agent=WINK/1.40.1 (AndroidTV/9) HlsWinkPlayer
+https://zabava-htlive.cdn.ngenix.net/hls/CH_MIR/variant.m3u8
+#EXTINF:-1 tvg-id="mir" tvg-name="Mir" group-title="Федеральные",Mir
+http://hls.mirtv.cdnvideo.ru/mirtv-parampublish/mirtv2_2500/playlist.m3u8
+#EXTINF:-1 tvg-id="mir" tvg-name="Mir" group-title="Федеральные",Mir
+http://hls.mirtv.cdnvideo.ru/mirtv-parampublish/mirtv3_2500/playlist.m3u8
+#EXTINF:-1 tvg-id="mir" tvg-name="Mir" group-title="Федеральные",Mir
+http://hls.mirtv.cdnvideo.ru/mirtv-parampublish/mirtv7_2500/playlist.m3u8
+#EXTINF:-1 tvg-id="mir" tvg-name="Mir" group-title="Федеральные",Mir [SD]
+http://31.148.48.15/Mir/index.m3u8
+#EXTINF:-1 tvg-id="mir" tvg-name="Mir" group-title="Федеральные",Mir [SD]
+http://31.148.5.241/kanal_18/index.m3u8
+#EXTINF:-1 tvg-id="mir" tvg-name="Mir" group-title="Федеральные",Mir [SD]
+http://45.153.24.78/MIR/index.m3u8
+#EXTINF:-1 tvg-id="mir" tvg-name="Mir" group-title="Федеральные",Mir [SD]
+https://fs.uplink.kz/mir/mono.m3u8?token=onlinetv
+#EXTINF:-1 tvg-id="mir" tvg-name="Mir" group-title="Федеральные",Mir [SD]
+https://tvcdn01.oktv.kz/tv/mir/index.m3u8
+#EXTINF:-1 tvg-id="mir" tvg-name="Mir" group-title="Федеральные",Mir [SD]
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://televizor24tochka.ru/
+https://streaming.televizor-24-tochka.ru/live/22.m3u8
+#EXTINF:-1 tvg-id="mir" tvg-name="Mir" group-title="Федеральные",Mir [HD]
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+https://cdn4.skygo.mn/live/disk1/MIR/HLSv3-FTA/MIR.m3u8
+#EXTINF:-1 tvg-id="mir-24" tvg-name="Mir 24" group-title="Федеральные",Mir 24
+https://stream8.cinerama.uz/1219/tracks-v1a1/mono.m3u8
+#EXTINF:-1 tvg-id="mir-24" tvg-name="Mir 24" group-title="Федеральные",Mir 24 [Full HD]
+http://hls.mirtv.cdnvideo.ru/mirtv-parampublish/mir24_2500/playlist.m3u8
+#EXTINF:-1 tvg-id="mir-24" tvg-name="Mir 24" group-title="Федеральные",Mir 24 [SD]
+http://5.188.159.128:8070/mir_24/index.m3u8
+#EXTINF:-1 tvg-id="mir-24" tvg-name="Mir 24" group-title="Федеральные",Mir 24 [SD]
+http://31.148.48.15/Mir_24/index.m3u8
+#EXTINF:-1 tvg-id="muztv" tvg-name="Muz-TV" group-title="Федеральные",Muz-TV
+https://streaming102.interskytech.com/live/618.m3u8
+#EXTINF:-1 tvg-id="n-tv-hd-de" tvg-name="NTV" group-title="Федеральные",NTV
+https://stream8.cinerama.uz/1023/tracks-v1a1/mono.m3u8
+#EXTINF:-1 tvg-id="n-tv-hd-de" tvg-name="NTV" group-title="Федеральные",NTV
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://televizor24tochka.ru/
+https://streaming.televizor-24-tochka.ru/live/7.m3u8
+#EXTINF:-1 tvg-id="n-tv-hd-de" tvg-name="NTV" group-title="Федеральные",NTV [Full HD]
+http://flussonic.linkintel.ru/ntv/index.m3u8
+#EXTINF:-1 tvg-id="n-tv-hd-de" tvg-name="NTV" group-title="Федеральные",NTV [Full HD]
+https://bl.rutube.ru/livestream/c37cd74192c6bc3d6cd6077c0c4fd686/index.m3u8?e=2077050299&s=HSWg81JrQ3OqmwuWkEIDAQ&scheme=https
+#EXTINF:-1 tvg-id="n-tv-hd-de" tvg-name="NTV" group-title="Федеральные",NTV [Full HD]
+https://cdn-dvr.ntv.ru/ntv0_hd/index.m3u8
+#EXTINF:-1 tvg-id="n-tv-hd-de" tvg-name="NTV" group-title="Федеральные",NTV [Full HD]
+https://cdn.ntv.ru/ntv0/playlist.m3u8
+#EXTINF:-1 tvg-id="n-tv-hd-de" tvg-name="NTV" group-title="Федеральные",NTV
+#EXTVLCOPT:http-user-agent=WINK/1.44.1 (AndroidTV/9) HlsWinkPlayer
+https://zabava-htlive.cdn.ngenix.net/hls/CH_NTV/variant.m3u8
+#EXTINF:-1 tvg-id="n-tv-hd-de" tvg-name="NTV" group-title="Федеральные",NTV [SD]
+https://cdn.ntv.ru/ntv1/playlist.m3u8
+#EXTINF:-1 tvg-id="n-tv-hd-de" tvg-name="NTV" group-title="Федеральные",NTV [SD]
+https://cdn.ntv.ru/ntv2/playlist.m3u8
+#EXTINF:-1 tvg-id="n-tv-hd-de" tvg-name="NTV" group-title="Федеральные",NTV [SD]
+https://cdn.ntv.ru/ntv4/playlist.m3u8
+#EXTINF:-1 tvg-id="n-tv-hd-de" tvg-name="NTV" group-title="Федеральные",NTV [SD]
+https://cdn.ntv.ru/ntv7/playlist.m3u8
+#EXTINF:-1 tvg-id="n-tv-hd-de" tvg-name="NTV" group-title="Федеральные",NTV [SD]
+http://31.148.5.241/kanal_4/index.m3u8
+#EXTINF:-1 tvg-id="n-tv-hd-de" tvg-name="NTV" group-title="Федеральные",NTV [SD]
+http://176.118.197.101/NTV/index.m3u8
+#EXTINF:-1 tvg-id="n-tv-hd-de" tvg-name="NTV" group-title="Федеральные",NTV [SD]
+https://cdn.ntv.ru/ntv-spb/index.m3u8
+#EXTINF:-1 tvg-id="n-tv-hd-de" tvg-name="NTV" group-title="Федеральные",NTV [SD]
+http://31.148.48.15/NTV/index.m3u8
+#EXTINF:-1 tvg-id="ntv-mir" tvg-name="NTV Mir" group-title="Федеральные",NTV Mir [SD]
+http://5.188.159.128:8070/ntvmir_TV/index.m3u8
+#EXTINF:-1 tvg-id="ntv-mir" tvg-name="NTV Mir" group-title="Федеральные",NTV Mir [SD]
+https://streaming.thestream.cyou/live/213.m3u8
+#EXTINF:-1 tvg-id="otr" tvg-name="OTR" group-title="Федеральные",OTR
+#EXTVLCOPT:http-user-agent=WINK/1.40.1 (AndroidTV/9) HlsWinkPlayer
+https://zabava-htlive.cdn.ngenix.net/hls/CH_OTR/variant.m3u8
+#EXTINF:-1 tvg-id="OTR.ru" tvg-name="OTR" group-title="Федеральные",OTR [SD]
+http://31.148.5.241/kanal_9/index.m3u8
+#EXTINF:-1 tvg-id="OTR.ru" tvg-name="OTR" group-title="Федеральные",OTR [SD]
+http://flussonic.linkintel.ru/otr/index.m3u8
+#EXTINF:-1 tvg-id="otr" tvg-name="OTR" group-title="Федеральные",OTR [SD]
+http://31.148.48.15/OTR/index.m3u8
+#EXTINF:-1 tvg-id="pobeda" tvg-name="Pobeda" group-title="Федеральные",Pobeda [SD]
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+https://cdn4.skygo.mn/live/disk1/Pobeda/HLSv3-FTA/Pobeda.m3u8
+#EXTINF:-1 tvg-id="pobeda" tvg-name="Pobeda" group-title="Федеральные",Pobeda [SD]
+https://streaming.thestream.cyou/live/43.m3u8
+#EXTINF:-1 tvg-id="RBKTV.ru" tvg-name="RBK-TV" group-title="Федеральные",RBK-TV
+http://online-video.rbc.ru/online2/rbctv.m3u8
+#EXTINF:-1 tvg-id="RBKTV.ru" tvg-name="RBK-TV" group-title="Федеральные",RBK-TV
+https://online-video.rbc.ru/online/rbctv.m3u8
+#EXTINF:-1 tvg-id="rbk" tvg-name="RBK-TV" group-title="Федеральные",RBK-TV [SD]
+http://92.50.128.180/utv/1358/index.m3u8
+#EXTINF:-1 tvg-id="RBKTV.ru" tvg-name="RBK-TV" group-title="Федеральные",RBK-TV [SD]
+http://176.118.197.101/RBK/index.m3u8
+#EXTINF:-1 tvg-id="rbk" tvg-name="RBK-TV" group-title="Федеральные",RBK-TV [SD]
+https://uiptv.do.am/1ufc/701293058/playlist.m3u8
+#EXTINF:-1 tvg-id="rbk" tvg-name="RBK-TV" group-title="Федеральные",RBK-TV [SD]
+https://online-video.rbc.ru/spb/rbctv_spb.m3u8
+#EXTINF:-1 tvg-id="rbk" tvg-name="RBK-TV" group-title="Федеральные",RBK-TV [SD]
+http://31.148.48.15/RBK/index.m3u8
+#EXTINF:-1 tvg-id="rentv" tvg-name="REN TV" group-title="Федеральные",REN TV
+#EXTVLCOPT:http-user-agent=WINK/1.44.1 (AndroidTV/9) HlsWinkPlayer
+https://zabava-htlive.cdn.ngenix.net/hls/CH_RENTV/variant.m3u8
+#EXTINF:-1 tvg-id="rentv" tvg-name="REN TV" group-title="Федеральные",REN TV [SD]
+http://31.148.5.241/kanal_11/index.m3u8
+#EXTINF:-1 tvg-id="rentv" tvg-name="REN TV" group-title="Федеральные",REN TV [SD]
+http://31.148.48.15/REN-TV/index.m3u8
+#EXTINF:-1 tvg-id="rentv" tvg-name="REN TV" group-title="Федеральные",REN TV [SD]
+http://185.23.80.23:8080/REN/index.m3u8
+#EXTINF:-1 tvg-id="rentv" tvg-name="REN TV" group-title="Федеральные",REN TV [SD]
+http://flussonic.linkintel.ru/ren_tv/index.m3u8
+#EXTINF:-1 tvg-id="rentv-int" tvg-name="REN TV International" group-title="Федеральные",REN TV International [SD]
+http://178.134.1.158:8081/RENTV/index.m3u8
+#EXTINF:-1 tvg-id="rt-news" tvg-name="RT" group-title="Федеральные",RT
+https://rt-glb.rttv.com/live/rtnews/playlist.m3u8
+#EXTINF:-1 tvg-id="rtd-ru" tvg-name="RT Documentary" group-title="Федеральные",RT Documentary
+https://streaming.thestream.cyou/live/554.m3u8
+#EXTINF:-1 tvg-id="rtd-ru" tvg-name="RT Documentary" group-title="Федеральные",RT Documentary
+https://rt-rtd.rttv.com/dvr/rtdoc/playlist.m3u8
+#EXTINF:-1 tvg-id="rtd-ru" tvg-name="RT Documentary" group-title="Федеральные",RT Documentary [Full HD]
+https://rt-doc.rttv.com/dvr/rtdru/playlist.m3u8
+#EXTINF:-1 tvg-id="RTRPlaneta.ru" tvg-name="RTR-Planeta" group-title="Федеральные",RTR-Planeta [SD]
+https://streaming.televizor-24-tochka.ru/live/211.m3u8
+#EXTINF:-1 tvg-id="RTRPlaneta.ru" tvg-name="RTR-Planeta" group-title="Федеральные",RTR-Planeta [HD]
+https://stream.smotrim.ru/hls/planeta_rtr_asia/playlist.m3u8?entity=channel&id=511&sign=d1fe06cd922b67e412719536998fa43d
+#EXTINF:-1 tvg-id="RTRPlaneta.ru" tvg-name="RTR-Planeta" group-title="Федеральные",RTR-Planeta [HD]
+https://stream.smotrim.ru/hls/planeta_rtr_sng/playlist.m3u8?entity=channel&id=512&sign=2abaa592de074d65809a10b6bacc4410
+#EXTINF:-1 tvg-id="RTRPlaneta.ru" tvg-name="RTR-Planeta" group-title="Федеральные",RTR-Planeta [HD]
+https://stream.smotrim.ru/hls/planeta_rtr_euro/playlist.m3u8?entity=channel&id=510&sign=5c0ac65d75140fac2fd938d77c92138d
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Федеральные",Russia-1
+https://stream8.cinerama.uz/1020/tracks-v1a1/mono.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Федеральные",Russia-1
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://televizor24tochka.ru/
+https://streaming.televizor-24-tochka.ru/live/5.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Федеральные",Russia-1 [Full HD]
+http://176.118.197.101/RossiyaHD/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Федеральные",Russia-1 [Full HD]
+https://live.smotrim.ru/vgtrk/0/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Федеральные",Russia-1 [Full HD]
+https://stream.smotrim.ru/hls2/russia_hd/playlist_6.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Федеральные",Russia-1 [Full HD]
+https://live.smotrim.ru/vgtrk/4/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Федеральные",Russia-1 [Full HD]
+https://live.smotrim.ru/vgtrk/5/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Федеральные",Russia-1 [Full HD]
+https://live.smotrim.ru/vgtrk/6/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Федеральные",Russia-1 [Full HD]
+https://live.smotrim.ru/vgtrk/7/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Федеральные",Russia-1 [Full HD]
+https://live.smotrim.ru/vgtrk/8/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Федеральные",Russia-1 [Full HD]
+https://live.smotrim.ru/vgtrk/9/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Федеральные",Russia-1
+#EXTVLCOPT:http-user-agent=WINK/1.40.1 (AndroidTV/9) HlsWinkPlayer
+https://zabava-htlive.cdn.ngenix.net/hls/CH_RUSSIA1/variant.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Федеральные",Russia-1 [SD]
+http://31.148.48.15/Rossiya_1/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Федеральные",Russia-1 [SD]
+http://31.148.5.241/kanal_2/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Федеральные",Russia-1 [SD]
+http://109.207.243.18/2/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Федеральные",Russia-24
+http://dmi3y-tv.online/hls/smotrim/T2/CH_RUSSIA24_INT.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Федеральные",Russia-24
+https://stream8.cinerama.uz/1021/tracks-v1a1/mono.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Федеральные",Russia-24
+https://player.smotrim.ru/iframe/stream/live_id/3214d57c-8651-435a-938c-be13bfd00a04
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Федеральные",Russia-24 [Full HD]
+http://77.232.131.211/Rossiya24/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Федеральные",Russia-24 [Full HD]
+https://live.smotrim.ru/vgtrk/0/russia24-hd/1080p.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Федеральные",Russia-24 [Full HD]
+https://live.smotrim.ru/vgtrk/0/russia24-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Федеральные",Russia-24
+#EXTVLCOPT:http-user-agent=WINK/1.40.1 (AndroidTV/9) HlsWinkPlayer
+http://zabava-htlive.cdn.ngenix.net/hls/CH_RUSSIA24/variant.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Федеральные",Russia-24 [SD]
+http://31.148.5.241/kanal_7/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Федеральные",Russia-24 [SD]
+http://176.118.197.101/Rossiya24/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Федеральные",Russia-24 [SD]
+https://uiptv.do.am/1ufc/000000006/playlist.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Федеральные",Russia-24 [SD]
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://televizor24tochka.ru/
+https://streaming.televizor-24-tochka.ru/live/10.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Федеральные",Russia-24 [SD]
+https://streaming.televizor-24-tochka.ru/live/30.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Федеральные",Russia-24 [SD]
+http://31.148.48.15/Rossiya_24/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Федеральные",Russia-24 [HD]
+https://stream.smotrim.ru/hls2/russia24nl_smotrim/playlist_5.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Федеральные",Russia-24 [HD]
+https://live.smotrim.ru/vgtrk/0/russia24-hd/720p.m3u8
+#EXTINF:-1 tvg-id="kultura" tvg-name="Russia-K" group-title="Федеральные",Russia-K [Full HD]
+https://live.smotrim.ru/vgtrk/0/kultura-hd/index.m3u8
+#EXTINF:-1 tvg-id="kultura" tvg-name="Russia-K" group-title="Федеральные",Russia-K [Full HD]
+https://stream.smotrim.ru/hls2/russia_k/playlist_5.m3u8
+#EXTINF:-1 tvg-id="kultura" tvg-name="Russia-K" group-title="Федеральные",Russia-K [Full HD]
+https://live.smotrim.ru/vgtrk/2/kultura-hd/index.m3u8
+#EXTINF:-1 tvg-id="kultura" tvg-name="Russia-K" group-title="Федеральные",Russia-K [Full HD]
+https://live.smotrim.ru/vgtrk/4/kultura-hd/index.m3u8
+#EXTINF:-1 tvg-id="kultura" tvg-name="Russia-K" group-title="Федеральные",Russia-K [Full HD]
+https://live.smotrim.ru/vgtrk/7/kultura-hd/index.m3u8
+#EXTINF:-1 tvg-id="kultura" tvg-name="Russia-K" group-title="Федеральные",Russia-K
+#EXTVLCOPT:http-user-agent=WINK/1.40.1 (AndroidTV/9) HlsWinkPlayer
+http://zabava-htlive.cdn.ngenix.net/hls/CH_RUSSIAK/variant.m3u8
+#EXTINF:-1 tvg-id="kultura" tvg-name="Russia-K" group-title="Федеральные",Russia-K
+#EXTVLCOPT:http-user-agent=WINK/1.44.1 (AndroidTV/9) HlsWinkPlayer
+https://zabava-htlive.cdn.ngenix.net/hls/CH_RUSSIAK/variant.m3u8
+#EXTINF:-1 tvg-id="kultura" tvg-name="Russia-K" group-title="Федеральные",Russia-K [SD]
+http://31.148.5.241/kanal_6/index.m3u8
+#EXTINF:-1 tvg-id="kultura" tvg-name="Russia-K" group-title="Федеральные",Russia-K [SD]
+http://stream.mcquack.net/229/index.m3u8
+#EXTINF:-1 tvg-id="kultura" tvg-name="Russia-K" group-title="Федеральные",Russia-K [SD]
+https://stream8.cinerama.uz/1048/tracks-v1a1/mono.m3u8
+#EXTINF:-1 tvg-id="kultura" tvg-name="Russia-K" group-title="Федеральные",Russia-K [SD]
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://televizor24tochka.ru/
+https://streaming.televizor-24-tochka.ru/live/9.m3u8
+#EXTINF:-1 tvg-id="solnce" tvg-name="Solnce" group-title="Федеральные",Solnce
+#EXTVLCOPT:http-user-agent=WINK/1.40.1 (AndroidTV/9) HlsWinkPlayer
+http://zabava-htlive.cdn.ngenix.net/hls/CH_DISNEY/variant.m3u8
+#EXTINF:-1 tvg-id="solnce" tvg-name="Solnce" group-title="Федеральные",Solnce [SD]
+http://31.148.48.15/Solnce/index.m3u8
+#EXTINF:-1 tvg-id="solnce" tvg-name="Solnce" group-title="Федеральные",Solnce [SD]
+http://46.32.176.50/solnce/index.m3u8
+#EXTINF:-1 tvg-id="solnce" tvg-name="Solnce" group-title="Федеральные",Solnce [SD]
+http://217.114.191.150/Solnce/index.m3u8
+#EXTINF:-1 tvg-id="solnce" tvg-name="Solnce" group-title="Федеральные",Solnce [SD]
+http://stream.mcquack.net/118/index.m3u8
+#EXTINF:-1 tvg-id="solnce" tvg-name="Solnce" group-title="Федеральные",Solnce [SD]
+https://tv.mediacdn.ru/live/solntse/playlist.m3u8
+#EXTINF:-1 tvg-id="solnce" tvg-name="Solnce" group-title="Федеральные",Solnce [SD]
+http://tv.mediacdn.ru/live/solntse/playlist.m3u8
+#EXTINF:-1 tvg-id="spas" tvg-name="Spas" group-title="Федеральные",Spas
+#EXTVLCOPT:http-user-agent=WINK/1.40.1 (AndroidTV/9) HlsWinkPlayer
+https://zabava-htlive.cdn.ngenix.net/hls/CH_SPAS/variant.m3u8
+#EXTINF:-1 tvg-id="spas" tvg-name="Spas" group-title="Федеральные",Spas [SD]
+http://31.148.5.241/kanal_12/index.m3u8
+#EXTINF:-1 tvg-id="spas" tvg-name="Spas" group-title="Федеральные",Spas [SD]
+https://tvspas.mediacdn.ru/cdn/spas/playlist.m3u8
+#EXTINF:-1 tvg-id="sts" tvg-name="STS" group-title="Федеральные",STS
+https://streaming.televizor-24-tochka.ru/live/296.m3u8
+#EXTINF:-1 tvg-id="sts" tvg-name="STS" group-title="Федеральные",STS [Full HD]
+http://stream.mcquack.net/138/index.m3u8
+#EXTINF:-1 tvg-id="sts" tvg-name="STS" group-title="Федеральные",STS
+#EXTVLCOPT:http-user-agent=WINK/1.44.1 (AndroidTV/9) HlsWinkPlayer
+https://zabava-htlive.cdn.ngenix.net/hls/CH_STS/variant.m3u8
+#EXTINF:-1 tvg-id="sts" tvg-name="STS" group-title="Федеральные",STS [SD]
+http://31.148.5.241/kanal_13/index.m3u8
+#EXTINF:-1 tvg-id="sts" tvg-name="STS" group-title="Федеральные",STS [SD]
+http://176.118.197.101/CTC/index.m3u8
+#EXTINF:-1 tvg-id="sts" tvg-name="STS" group-title="Федеральные",STS [SD]
+http://flussonic.linkintel.ru/sts/index.m3u8
+#EXTINF:-1 tvg-id="sts" tvg-name="STS" group-title="Федеральные",STS [SD]
+http://tshift-1.telecoma.tv/sts/index.m3u8
+#EXTINF:-1 tvg-id="sts" tvg-name="STS" group-title="Федеральные",STS [SD]
+https://fs.uplink.kz/sts/mono.m3u8?token=onlinetv
+#EXTINF:-1 tvg-id="sts" tvg-name="STS" group-title="Федеральные",STS [SD]
+http://45.153.24.78/STS/index.m3u8
+#EXTINF:-1 tvg-id="sts" tvg-name="STS" group-title="Федеральные",STS [SD]
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://televizor24tochka.ru/
+https://streaming.televizor-24-tochka.ru/live/16.m3u8
+#EXTINF:-1 tvg-id="sts" tvg-name="STS" group-title="Федеральные",STS [SD]
+http://31.148.48.15/STS/index.m3u8
+#EXTINF:-1 tvg-id="sts-int-m7" tvg-name="STS International" group-title="Федеральные",STS International [SD]
+http://178.134.1.158:8081/CTC/index.m3u8
+#EXTINF:-1 tvg-id="sts-love" tvg-name="STS Love" group-title="Федеральные",STS Love
+#EXTVLCOPT:http-user-agent=WINK/1.44.1 (AndroidTV/9) HlsWinkPlayer
+https://zabava-htlive.cdn.ngenix.net/hls/CH_STSLOVE/variant.m3u8
+#EXTINF:-1 tvg-id="sts-love" tvg-name="STS Love" group-title="Федеральные",STS Love [SD]
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+https://cdn4.skygo.mn/live/disk1/Fashion_TV/HLSv3-FTA/Fashion_TV.m3u8
+#EXTINF:-1 tvg-id="sts-love" tvg-name="STS Love" group-title="Федеральные",STS Love [SD]
+http://stream.mcquack.net/183/index.m3u8
+#EXTINF:-1 tvg-id="sts-love" tvg-name="STS Love" group-title="Федеральные",STS Love [SD]
+http://31.148.48.15/STS_Love/index.m3u8
+#EXTINF:-1 tvg-id="super" tvg-name="Subbota!" group-title="Федеральные",Subbota! [Full HD]
+http://stream.mcquack.net/269/index.m3u8
+#EXTINF:-1 tvg-id="super" tvg-name="Subbota!" group-title="Федеральные",Subbota! [Full HD]
+https://bl.rutube.ru/livestream/310744c10a5809da38aa445c952976da/index.m3u8?e=2066519758&s=dmUf6BUQzDBTwtQOseAfog&scheme=https
+#EXTINF:-1 tvg-id="super" tvg-name="Subbota!" group-title="Федеральные",Subbota!
+#EXTVLCOPT:http-user-agent=WINK/1.44.1 (AndroidTV/9) HlsWinkPlayer
+https://zabava-htlive.cdn.ngenix.net/hls/CH_SUPER/variant.m3u8
+#EXTINF:-1 tvg-id="super" tvg-name="Subbota!" group-title="Федеральные",Subbota! [SD]
+http://217.114.191.150/Subbota/index.m3u8
+#EXTINF:-1 tvg-id="super" tvg-name="Subbota!" group-title="Федеральные",Subbota! [SD]
+http://46.32.176.50/subbota/index.m3u8
+#EXTINF:-1 tvg-id="super" tvg-name="Subbota!" group-title="Федеральные",Subbota! [SD]
+http://31.148.48.15/Super/index.m3u8
+#EXTINF:-1 tvg-id="tnt" tvg-name="TNT" group-title="Федеральные",TNT
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://televizor24tochka.ru/
+https://streaming.televizor-24-tochka.ru/live/23.m3u8
+#EXTINF:-1 tvg-id="tnt" tvg-name="TNT" group-title="Федеральные",TNT
+https://streaming.televizor-24-tochka.ru/live/38.m3u8
+#EXTINF:-1 tvg-id="tnt" tvg-name="TNT" group-title="Федеральные",TNT [Full HD]
+http://45.153.24.78/TNT/index.m3u8
+#EXTINF:-1 tvg-id="tnt" tvg-name="TNT" group-title="Федеральные",TNT
+#EXTVLCOPT:http-user-agent=WINK/1.44.1 (AndroidTV/9) HlsWinkPlayer
+https://zabava-htlive.cdn.ngenix.net/hls/CH_TNT/variant.m3u8
+#EXTINF:-1 tvg-id="tnt" tvg-name="TNT" group-title="Федеральные",TNT [SD]
+http://31.148.5.241/kanal_19/index.m3u8
+#EXTINF:-1 tvg-id="tnt" tvg-name="TNT" group-title="Федеральные",TNT [SD]
+http://176.118.197.101/THT/index.m3u8
+#EXTINF:-1 tvg-id="tnt" tvg-name="TNT" group-title="Федеральные",TNT [SD]
+http://flussonic.linkintel.ru/tnt/index.m3u8
+#EXTINF:-1 tvg-id="tnt" tvg-name="TNT" group-title="Федеральные",TNT [SD]
+http://stream.mcquack.net/135/index.m3u8
+#EXTINF:-1 tvg-id="tnt" tvg-name="TNT" group-title="Федеральные",TNT [SD]
+http://31.148.48.15/TNT/index.m3u8
+#EXTINF:-1 tvg-id="tnt-int-by" tvg-name="TNT International" group-title="Федеральные",TNT International [SD]
+http://91.228.35.249:8001/1:0:1:6a7:3138:13e:820000:0:0:0:
+#EXTINF:-1 tvg-id="tnt-int-by" tvg-name="TNT International" group-title="Федеральные",TNT International [SD]
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+https://cdn4.skygo.mn/live/disk1/THT/HLSv3-FTA/THT.m3u8
+#EXTINF:-1 tvg-id="tnt4" tvg-name="TNT4" group-title="Федеральные",TNT4
+#EXTVLCOPT:http-user-agent=WINK/1.40.1 (AndroidTV/9) HlsWinkPlayer
+https://zabava-htlive.cdn.ngenix.net/hls/CH_TNT4/variant.m3u8
+#EXTINF:-1 tvg-id="tnt4" tvg-name="TNT4" group-title="Федеральные",TNT4 [SD]
+http://176.118.197.101/TNT4/index.m3u8
+#EXTINF:-1 tvg-id="tnt4" tvg-name="TNT4" group-title="Федеральные",TNT4 [SD]
+http://flussonic.linkintel.ru/tnt4/index.m3u8
+#EXTINF:-1 tvg-id="tnt4" tvg-name="TNT4" group-title="Федеральные",TNT4 [SD]
+http://stream.mcquack.net/106/index.m3u8
+#EXTINF:-1 tvg-id="tnt4" tvg-name="TNT4" group-title="Федеральные",TNT4 [SD]
+http://31.148.48.15/TNT4/index.m3u8
+#EXTINF:-1 tvg-id="tnt4-international" tvg-name="TNT4 International" group-title="Федеральные",TNT4 International [SD]
+https://fs.uplink.kz/tnt4/mono.m3u8?token=onlinetv
+#EXTINF:-1 tvg-id="tvcentr" tvg-name="TV Centr" group-title="Федеральные",TV Centr
+https://tvc-hls.cdnvideo.ru/tvc-res/smil:vd9221.smil/playlist.m3u8
+#EXTINF:-1 tvg-id="tvcentr" tvg-name="TV Centr" group-title="Федеральные",TV Centr
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://televizor24tochka.ru/
+https://streaming.televizor-24-tochka.ru/live/13.m3u8
+#EXTINF:-1 tvg-id="tvcentr" tvg-name="TV Centr" group-title="Федеральные",TV Centr
+#EXTVLCOPT:http-user-agent=WINK/1.40.1 (AndroidTV/9) HlsWinkPlayer
+https://zabava-htlive.cdn.ngenix.net/hls/CH_TVC/variant.m3u8
+#EXTINF:-1 tvg-id="tvcentr" tvg-name="TV Centr" group-title="Федеральные",TV Centr [SD]
+http://31.148.5.241/kanal_10/index.m3u8
+#EXTINF:-1 tvg-id="tvcentr" tvg-name="TV Centr" group-title="Федеральные",TV Centr [SD]
+http://flussonic.linkintel.ru/tvc/index.m3u8
+#EXTINF:-1 tvg-id="tvcentr" tvg-name="TV Centr" group-title="Федеральные",TV Centr [SD]
+https://fs.uplink.kz/tvc/mono.m3u8?token=onlinetv
+#EXTINF:-1 tvg-id="tvcentr" tvg-name="TV Centr" group-title="Федеральные",TV Centr [SD]
+https://stream8.cinerama.uz/1025/tracks-v1a1/mono.m3u8
+#EXTINF:-1 tvg-id="tvcentr" tvg-name="TV Centr" group-title="Федеральные",TV Centr [SD]
+http://185.71.81.6:8080/10/index.m3u8
+#EXTINF:-1 tvg-id="tvci" tvg-name="TV Centr International" group-title="Федеральные",TV Centr International [SD]
+https://stream8.cinerama.uz/1281/tracks-v1a1/mono.m3u8
+#EXTINF:-1 tvg-id="tv3-ru" tvg-name="TV-3" group-title="Федеральные",TV-3
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://televizor24tochka.ru/
+https://streaming.televizor-24-tochka.ru/live/18.m3u8
+#EXTINF:-1 tvg-id="tv3-ru" tvg-name="TV-3" group-title="Федеральные",TV-3 [Full HD]
+http://stream.mcquack.net/136/index.m3u8
+#EXTINF:-1 tvg-id="tv3-ru" tvg-name="TV-3" group-title="Федеральные",TV-3
+#EXTVLCOPT:http-user-agent=WINK/1.44.1 (AndroidTV/9) HlsWinkPlayer
+https://zabava-htlive.cdn.ngenix.net/hls/CH_TV3/variant.m3u8
+#EXTINF:-1 tvg-id="tv3-ru" tvg-name="TV-3" group-title="Федеральные",TV-3 [SD]
+http://178.124.179.122:8080/TB-3/index.m3u8
+#EXTINF:-1 tvg-id="tv3-ru" tvg-name="TV-3" group-title="Федеральные",TV-3 [SD]
+http://31.148.5.241/kanal_15/index.m3u8
+#EXTINF:-1 tvg-id="tv3-ru" tvg-name="TV-3" group-title="Федеральные",TV-3 [SD]
+http://176.118.197.101/TB3/index.m3u8
+#EXTINF:-1 tvg-id="tv3-ru" tvg-name="TV-3" group-title="Федеральные",TV-3 [SD]
+http://flussonic.linkintel.ru/tv-3/index.m3u8
+#EXTINF:-1 tvg-id="yu" tvg-name="U" group-title="Федеральные",U
+#EXTVLCOPT:http-user-agent=WINK/1.40.1 (AndroidTV/9) HlsWinkPlayer
+http://zabava-htlive.cdn.ngenix.net/hls/CH_U/variant.m3u8
+#EXTINF:-1 tvg-id="yu" tvg-name="U" group-title="Федеральные",U [SD]
+http://178.134.1.158:8081/U/index.m3u8
+#EXTINF:-1 tvg-id="yu" tvg-name="U" group-title="Федеральные",U [SD]
+http://stream.mcquack.net/230/index.m3u8
+#EXTINF:-1 tvg-id="yu" tvg-name="U" group-title="Федеральные",U [SD]
+https://fs.uplink.kz/u/mono.m3u8?token=onlinetv
+#EXTINF:-1 tvg-id="yu" tvg-name="U" group-title="Федеральные",U [SD]
+http://31.148.48.15/U/index.m3u8
+#EXTINF:-1 tvg-id="yu" tvg-name="U" group-title="Федеральные",U [HD]
+https://bl.rutube.ru/livestream/5c9327074e25ca86f3111d4085cbbb65/index.m3u8?e=2066519758&s=9cPc1rCGu6M932eqrifRhQ&scheme=https
+#EXTINF:-1 tvg-id="yu" tvg-name="U" group-title="Федеральные",U [HD]
+https://cdn-01.bonus-tv.ru/u/playlist.m3u8
+#EXTINF:-1 tvg-id="zvezda" tvg-name="Zvezda" group-title="Федеральные",Zvezda
+https://stream8.cinerama.uz/1050/tracks-v1a1/mono.m3u8
+#EXTINF:-1 tvg-id="zvezda" tvg-name="Zvezda" group-title="Федеральные",Zvezda
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://televizor24tochka.ru/
+https://streaming.televizor-24-tochka.ru/live/21.m3u8
+#EXTINF:-1 tvg-id="zvezda" tvg-name="Zvezda" group-title="Федеральные",Zvezda
+https://streaming.televizor-24-tochka.ru/live/748.m3u8
+#EXTINF:-1 tvg-id="zvezda" tvg-name="Zvezda" group-title="Федеральные",Zvezda [Full HD]
+https://tvchannelstream1.tvzvezda.ru/cdn/tvzvezda/playlist.m3u8
+#EXTINF:-1 tvg-id="zvezda" tvg-name="Zvezda" group-title="Федеральные",Zvezda [Full HD]
+https://tvzvezda.bonus-tv.ru/cdn/tvzvezda/playlist.m3u8
+#EXTINF:-1 tvg-id="zvezda" tvg-name="Zvezda" group-title="Федеральные",Zvezda [Full HD]
+http://51.158.144.33:2021/zvezda/index.m3u8
+#EXTINF:-1 tvg-id="zvezda" tvg-name="Zvezda" group-title="Федеральные",Zvezda
+#EXTVLCOPT:http-user-agent=WINK/1.40.1 (AndroidTV/9) HlsWinkPlayer
+https://zabava-htlive.cdn.ngenix.net/hls/CH_ZVEZDA/variant.m3u8
+#EXTINF:-1 tvg-id="zvezda" tvg-name="Zvezda" group-title="Федеральные",Zvezda [SD]
+http://31.148.5.241/kanal_17/index.m3u8
+#EXTINF:-1 tvg-id="zvezda" tvg-name="Zvezda" group-title="Федеральные",Zvezda [SD]
+http://flussonic.linkintel.ru/zvezda/index.m3u8
+#EXTINF:-1 tvg-id="zvezda" tvg-name="Zvezda" group-title="Федеральные",Zvezda [SD]
+https://fs.uplink.kz/zvezda/mono.m3u8?token=onlinetv
+#EXTINF:-1 tvg-id="zvezda" tvg-name="Zvezda" group-title="Федеральные",Zvezda [SD]
+http://31.148.48.15/Zvezda/index.m3u8
+#EXTINF:-1 tvg-id="arktika-24" tvg-name="Arktika 24" group-title="Не проверено",Arktika 24 [Full HD]
+https://live.smotrim.ru/vgtrk/arhangelsk/arktika24-hd/index.m3u8
+#EXTINF:-1 tvg-id="bashkortostan24" tvg-name="Bashkortostan 24" group-title="Не проверено",Bashkortostan 24 [Full HD]
+https://live.smotrim.ru/vgtrk/ufa/bashkortostan24-hd/index.m3u8
 #EXTINF:-1 tvg-id="belarus1" tvg-name="Belarus-1" group-title="Не проверено",Belarus-1
 https://edge55.dc.beltelecom.by/ngtrk/smil:belarus1.smil/playlist.m3u8
 #EXTINF:-1 tvg-id="belarus2" tvg-name="Belarus-2" group-title="Не проверено",Belarus-2
@@ -5056,12 +4620,16 @@ http://ott-cdn.ucom.am/s88/index.m3u8
 http://82.78.243.219:45739/play/a01p/index.m3u8
 #EXTINF:-1 tvg-id="eda-hd" tvg-name="FoodTime" group-title="Не проверено",FoodTime [Full HD]
 http://31.148.48.15/Eda_Premium_HD/index.m3u8
+#EXTINF:-1 tvg-id="kavkaz24" tvg-name="Kavkaz 24" group-title="Не проверено",Kavkaz 24 [SD]
+https://live.smotrim.ru/vgtrk/stavropol/kavkaz24-hd/index.m3u8
 #EXTINF:-1 tvg-id="kxl-hd" tvg-name="KHL Prime" group-title="Не проверено",KHL Prime [Full HD]
 https://fs.uplink.kz/khl_prime/mono.m3u8?token=onlinetv
 #EXTINF:-1 tvg-id="kxl-hd" tvg-name="KHL Prime" group-title="Не проверено",KHL Prime [HD]
 http://31.148.48.15/KHL_TV_HD/index.m3u8
 #EXTINF:-1 tvg-id="match-tv" tvg-name="Match!" group-title="Не проверено",Match!
 https://streaming.televizor-24-tochka.ru/live/6.m3u8
+#EXTINF:-1 tvg-id="nn-24" tvg-name="Nizhniy Novgorod 24" group-title="Не проверено",Nizhniy Novgorod 24 [Full HD]
+https://live.smotrim.ru/vgtrk/nigniynovgorod/nigniynovgorod24-hd/index.m3u8
 #EXTINF:-1 tvg-id="n-tv-hd-de" tvg-name="NTV" group-title="Не проверено",NTV
 http://ott-cdn.ucom.am/s17/index.m3u8
 #EXTINF:-1 tvg-id="ont-by" tvg-name="ONT" group-title="Не проверено",ONT
@@ -5074,8 +4642,424 @@ https://cdn4.skygo.mn/live/disk1/Che/HLSv3-FTA/Che.m3u8
 http://hithd.camsh.orsk.ru/hls/hithd.m3u8
 #EXTINF:-1 tvg-id="rentv" tvg-name="REN TV" group-title="Не проверено",REN TV
 https://streaming.televizor-24-tochka.ru/live/14.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+https://live.smotrim.ru/vgtrk/arhangelsk/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+https://live.smotrim.ru/vgtrk/astrahan/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+https://live.smotrim.ru/vgtrk/belgorod/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+https://live.smotrim.ru/vgtrk/blagoveshensk/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+https://live.smotrim.ru/vgtrk/bryansk/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+https://live.smotrim.ru/vgtrk/vladikavkaz/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+https://live.smotrim.ru/vgtrk/vladimir/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+https://live.smotrim.ru/vgtrk/voroneg/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+https://live.smotrim.ru/vgtrk/ekaterinburg/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+https://live.smotrim.ru/vgtrk/ivanovo/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+https://live.smotrim.ru/vgtrk/yoshkar-ola/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+https://live.smotrim.ru/vgtrk/kazan/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+https://live.smotrim.ru/vgtrk/kaliningrad/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+https://live.smotrim.ru/vgtrk/kemerovo/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+https://live.smotrim.ru/vgtrk/kirov/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+https://live.smotrim.ru/vgtrk/kostroma/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+https://live.smotrim.ru/vgtrk/kurgan/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+https://live.smotrim.ru/vgtrk/kisil/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+https://live.smotrim.ru/vgtrk/lipetsk/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+https://live.smotrim.ru/vgtrk/magadan/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+https://live.smotrim.ru/vgtrk/maykop/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+https://live.smotrim.ru/vgtrk/novosibirsk/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+https://live.smotrim.ru/vgtrk/omsk/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+https://live.smotrim.ru/vgtrk/orel/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+https://live.smotrim.ru/vgtrk/orenburg/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+https://live.smotrim.ru/vgtrk/penza/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+https://live.smotrim.ru/vgtrk/petrozavodsk/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+https://live.smotrim.ru/vgtrk/petropavlosk/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+https://live.smotrim.ru/vgtrk/pskov/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+https://live.smotrim.ru/vgtrk/ryazan/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+https://live.smotrim.ru/vgtrk/spb/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+https://live.smotrim.ru/vgtrk/saransk/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+https://live.smotrim.ru/vgtrk/saratov/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+https://live.smotrim.ru/vgtrk/smolensk/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+https://live.smotrim.ru/vgtrk/tambov/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+https://live.smotrim.ru/vgtrk/tver/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+https://live.smotrim.ru/vgtrk/tomsk/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+https://live.smotrim.ru/vgtrk/tula/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+https://live.smotrim.ru/vgtrk/ulanude/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+https://live.smotrim.ru/vgtrk/habarovsk/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+https://live.smotrim.ru/vgtrk/cheboksar/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+https://live.smotrim.ru/vgtrk/chita/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+https://live.smotrim.ru/vgtrk/ugnosahalinsk/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+https://live.smotrim.ru/vgtrk/yakutsk/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+http://live.smotrim.ru/vgtrk/maykop/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+http://live.smotrim.ru/vgtrk/vladikavkaz/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+http://live.smotrim.ru/vgtrk/blagoveshensk/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+http://live.smotrim.ru/vgtrk/belgorod/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+http://live.smotrim.ru/vgtrk/bryansk/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+http://live.smotrim.ru/vgtrk/ulanude/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+http://live.smotrim.ru/vgtrk/vladimir/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+http://live.smotrim.ru/vgtrk/volgograd/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+http://live.smotrim.ru/vgtrk/voroneg/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+http://live.smotrim.ru/vgtrk/kirov/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+http://live.smotrim.ru/vgtrk/rostovdon/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+http://live.smotrim.ru/vgtrk/ivanovo/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+http://live.smotrim.ru/vgtrk/omsk/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+http://live.smotrim.ru/vgtrk/nalchik/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+http://live.smotrim.ru/vgtrk/kaliningrad/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+http://live.smotrim.ru/vgtrk/kaluga/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+http://live.smotrim.ru/vgtrk/petropavlosk/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+http://live.smotrim.ru/vgtrk/petrozavodsk/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+http://live.smotrim.ru/vgtrk/kostroma/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+http://live.smotrim.ru/vgtrk/kemerovo/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+http://live.smotrim.ru/vgtrk/kurgan/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+http://live.smotrim.ru/vgtrk/astrahan/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+http://live.smotrim.ru/vgtrk/magadan/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+http://live.smotrim.ru/vgtrk/yoshkar-ola/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+http://live.smotrim.ru/vgtrk/saransk/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+http://live.smotrim.ru/vgtrk/novosibirsk/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+http://live.smotrim.ru/vgtrk/ryazan/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+http://live.smotrim.ru/vgtrk/orel/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+http://live.smotrim.ru/vgtrk/orenburg/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+http://live.smotrim.ru/vgtrk/penza/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+http://live.smotrim.ru/vgtrk/arhangelsk/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+http://live.smotrim.ru/vgtrk/pskov/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+http://live.smotrim.ru/vgtrk/spb/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+http://live.smotrim.ru/vgtrk/saratov/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+http://live.smotrim.ru/vgtrk/yakutsk/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+http://live.smotrim.ru/vgtrk/ugnosahalinsk/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+http://live.smotrim.ru/vgtrk/velikiy-novgorod/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+http://live.smotrim.ru/vgtrk/smolensk/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+http://live.smotrim.ru/vgtrk/tambov/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+http://live.smotrim.ru/vgtrk/kazan/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+http://live.smotrim.ru/vgtrk/tver/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+http://live.smotrim.ru/vgtrk/tomsk/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+http://live.smotrim.ru/vgtrk/tula/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+http://live.smotrim.ru/vgtrk/kisil/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+http://live.smotrim.ru/vgtrk/ekaterinburg/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+http://live.smotrim.ru/vgtrk/chita/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+http://live.smotrim.ru/vgtrk/cheboksar/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [SD]
+https://live.smotrim.ru/vgtrk/anadyr/russia1-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [SD]
+https://live.smotrim.ru/vgtrk/barnaul/russia1-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [SD]
+https://live.smotrim.ru/vgtrk/vladivostok/russia1-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [SD]
+https://live.smotrim.ru/vgtrk/vologda/russia1-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [SD]
+https://live.smotrim.ru/vgtrk/gornoaltaysk/russia1-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [SD]
+https://live.smotrim.ru/vgtrk/grozniy/russia1-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [SD]
+https://live.smotrim.ru/vgtrk/HO4y0CelYt0/russia1-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [SD]
+https://live.smotrim.ru/vgtrk/igevsk/russia1-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [SD]
+https://live.smotrim.ru/vgtrk/irkutsk/russia1-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [SD]
+https://live.smotrim.ru/vgtrk/krasnodar/russia1-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [SD]
+https://live.smotrim.ru/vgtrk/krasnoyarsk/russia1-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [SD]
+https://live.smotrim.ru/vgtrk/kursk/russia1-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [SD]
+https://live.smotrim.ru/vgtrk/HO3gcQAHbok/russia1-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [SD]
+https://live.smotrim.ru/vgtrk/mahachkala/russia1-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [SD]
+https://live.smotrim.ru/vgtrk/murmansk/russia1-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [SD]
+https://live.smotrim.ru/vgtrk/nazran/russia1-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [SD]
+https://live.smotrim.ru/vgtrk/nigniynovgorod/russia1-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [SD]
+https://live.smotrim.ru/vgtrk/perm/russia1-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [SD]
+https://live.smotrim.ru/vgtrk/salehad/russia1-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [SD]
+https://live.smotrim.ru/vgtrk/samara/russia1-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [SD]
+https://live.smotrim.ru/vgtrk/simferopol/russia1-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [SD]
+https://live.smotrim.ru/vgtrk/sochi/russia1-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [SD]
+https://live.smotrim.ru/vgtrk/stavropol/russia1-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [SD]
+https://live.smotrim.ru/vgtrk/siktivkar/russia1-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [SD]
+https://live.smotrim.ru/vgtrk/tumen/russia1-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [SD]
+https://live.smotrim.ru/vgtrk/ulyanovsk/russia1-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [SD]
+https://live.smotrim.ru/vgtrk/ufa/russia1-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [SD]
+https://live.smotrim.ru/vgtrk/hantimansisk/russia1-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [SD]
+https://live.smotrim.ru/vgtrk/chelyabinsk/russia1-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [SD]
+https://live.smotrim.ru/vgtrk/cherkessk/russia1-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [SD]
+https://live.smotrim.ru/vgtrk/elista/russia1-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [SD]
+https://live.smotrim.ru/vgtrk/yaroslavl/russia1-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [Full HD]
+https://live.smotrim.ru/vgtrk/habarovsk/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/0/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/abakan/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/anadyr/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/arhangelsk/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/astrahan/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/barnaul/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/belgorod/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/birobidgan/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/blagoveshensk/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/bryansk/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/velikiy-novgorod/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/vladivostok/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/vladikavkaz/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/vladimir/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/volgograd/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/vologda/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/voroneg/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/gornoaltaysk/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/grozniy/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/ekaterinburg/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/ivanovo/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/igevsk/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/irkutsk/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/yoshkar-ola/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/kazan/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/kaliningrad/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/kaluga/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/kemerovo/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/kirov/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/kostroma/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/krasnodar/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/krasnoyarsk/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/kurgan/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/kursk/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/kisil/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/lipetsk/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/magadan/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/maykop/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/mahachkala/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/murmansk/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/nazran/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/nalchik/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/nigniynovgorod/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/novosibirsk/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/omsk/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/orel/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/orenburg/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/penza/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/perm/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/petrozavodsk/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/petropavlosk/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/pskov/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/rostovdon/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/ryazan/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/salehad/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/samara/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/spb/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/saransk/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/saratov/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/simferopol/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/smolensk/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/sochi/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/stavropol/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/siktivkar/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/tambov/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/tver/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/tomsk/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/tula/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/tumen/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/ulanude/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/ulyanovsk/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/ufa/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/hantimansisk/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/cheboksar/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/chelyabinsk/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/cherkessk/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/chita/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/elista/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/ugnosahalinsk/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/yakutsk/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
+https://live.smotrim.ru/vgtrk/yaroslavl/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="samara24" tvg-name="Samara 24" group-title="Не проверено",Samara 24 [Full HD]
+https://live.smotrim.ru/vgtrk/samara/samara24-hd/index.m3u8
 #EXTINF:-1 tvg-id="saratov-24" tvg-name="Saratov 24" group-title="Не проверено",Saratov 24
 https://saratov24.tv/online/playlist.php
+#EXTINF:-1 tvg-id="sibir24" tvg-name="Sibir 24" group-title="Не проверено",Sibir 24 [Full HD]
+https://live.smotrim.ru/vgtrk/krasnoyarsk/sibir24-hd/index.m3u8
+#EXTINF:-1 tvg-id="sibir24" tvg-name="Sibir 24" group-title="Не проверено",Sibir 24 [Full HD]
+https://live.smotrim.ru/vgtrk/novosibirsk/sibir24-hd/index.m3u8
 #EXTINF:-1 tvg-id="sts" tvg-name="STS" group-title="Не проверено",STS
 http://ott-cdn.ucom.am/s52/04.m3u8
 #EXTINF:-1 tvg-id="tnt" tvg-name="TNT" group-title="Не проверено",TNT
@@ -5086,8 +5070,18 @@ https://tvtogliatti24.ru/hls/live1080/index.m3u8
 http://ott-cdn.ucom.am/s54/index.m3u8
 #EXTINF:-1 tvg-id="yu" tvg-name="U" group-title="Не проверено",U
 https://strm.yandex.ru/kal/utv/utv0.m3u8
+#EXTINF:-1 tvg-id="ural24" tvg-name="Ural 24" group-title="Не проверено",Ural 24 [Full HD]
+https://live.smotrim.ru/vgtrk/chelyabinsk/ural24-hd/index.m3u8
 #EXTINF:-1 tvg-id="vitebsk" tvg-name="Vitebsk" group-title="Не проверено",Vitebsk
 https://flu.vtv.by/tvt-non-by/tracks-v1a1/mono.m3u8
+#EXTINF:-1 tvg-id="volgograd-24" tvg-name="Volgograd 24" group-title="Не проверено",Volgograd 24 [Full HD]
+https://live.smotrim.ru/vgtrk/volgograd/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="volgograd-24" tvg-name="Volgograd 24" group-title="Не проверено",Volgograd 24 [Full HD]
+https://live.smotrim.ru/vgtrk/volgograd/volgograd24-hd/index.m3u8
+#EXTINF:-1 tvg-id="vostok-24" tvg-name="Vostok 24" group-title="Не проверено",Vostok 24 [Full HD]
+https://live.smotrim.ru/vgtrk/vladivostok/vostok24-hd/index.m3u8
+#EXTINF:-1 tvg-id="zapad-24" tvg-name="Zapad 24" group-title="Не проверено",Zapad 24 [Full HD]
+https://live.smotrim.ru/vgtrk/kaliningrad/zapad24-hd/index.m3u8
 #EXTINF:-1 tvg-id="belarus5-inet" tvg-name="Беларусь 5 Интернет" group-title="Не проверено",Беларусь 5 Интернет
 https://edge55.dc.beltelecom.by/ngtrk/smil:belarus5int.smil/playlist.m3u8
 #EXTINF:-1 tvg-id="" tvg-name="Жара TV" group-title="Не проверено",Жара TV [SD]
