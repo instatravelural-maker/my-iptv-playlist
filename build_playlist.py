@@ -68,9 +68,8 @@ def parse_m3u(text: str):
         i += 1
 
 
+
 def with_group(info: str, group: str) -> str:
-    # Сохраняем длительность сразу после #EXTINF:.
-    # group-title должен находиться после длительности.
     match = re.match(r'^(#EXTINF:)(-?\d+(?:\.\d+)?)(.*)$', info)
 
     if not match:
@@ -78,17 +77,17 @@ def with_group(info: str, group: str) -> str:
 
     prefix, duration, rest = match.groups()
 
-    if re.search(r'\bgroup-title="[^"]*"', rest):
-        rest = re.sub(
-            r'\bgroup-title="[^"]*"',
-            lambda _: f'group-title="{group}"',
-            rest,
-            count=1,
-        )
-    else:
-        rest = f' group-title="{group}"' + rest
+    # Удаляем старый group-title, где бы он ни находился.
+    rest = re.sub(
+        r'\s+group-title="[^"]*"',
+        '',
+        rest,
+        count=1,
+    )
 
-    return prefix + duration + rest
+    # Всегда ставим group-title сразу после длительности.
+    return f'{prefix}{duration} group-title="{group}"{rest}'
+
 
 
 def get_attribute(info: str, attribute: str) -> str:
