@@ -7,12 +7,13 @@ import os
 import re
 import socket
 import ssl
+import time
 import xml.etree.ElementTree as ET
 from collections import Counter, defaultdict
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from urllib.error import HTTPError, URLError
-from urllib.parse import urljoin, urlparse
+from urllib.parse import urlencode, urljoin, urlparse
 from urllib.request import Request, urlopen
 
 API = "https://iptv-org.github.io/api"
@@ -81,9 +82,50 @@ UNVERIFIED_GROUP = "Не проверено"
 
 # Каталожным и официальным спискам доверяем больше: при отказе похожем на
 # геоблокировку поток попадает в «Не проверено», а не исчезает.
-UNVERIFIED_SOURCES = {"iptv-org", "iptv-org без channel-id", "Free-TV"}
+UNVERIFIED_SOURCES = {
+    "iptv-org", "iptv-org без channel-id", "Free-TV", "Официальные сайты",
+}
 
 EPG_URL = "https://iptvx.one/epg/epg_lite.xml.gz"
+
+# Официальные публичные потоки вещателей, которых нет в каталоге iptv-org.
+OFFICIAL_STREAMS = [
+    ("RBKTV.ru", "RBK-TV", "https://online-video.rbc.ru/online/rbctv.m3u8"),
+]
+
+# Домен VGTRK без DNS: те же пути отдаёт live.smotrim.ru.
+HOST_REWRITES = {"vgtrkregion-reg.cdnvideo.ru": "live.smotrim.ru"}
+
+FEDERAL_GROUP = "Федеральные"
+
+# Федеральные каналы РФ (id каталога iptv-org), включая международные версии.
+FEDERAL_IDS = {
+    "ChannelOne.ru", "ChannelOneCIS.ru", "Russia1.ru", "RTRPlaneta.ru",
+    "Match.ru", "NTV.ru", "NTVMir.ru", "Channel5.ru",
+    "Channel5International.ru", "Russia24.ru", "RussiaK.ru", "Carousel.ru",
+    "CarouselInternational.ru", "OTR.ru", "TVCentr.ru",
+    "TVCentrInternational.ru", "RENTV.ru", "RENTVInternational.ru",
+    "Spas.ru", "STS.ru", "STSInternational.ru", "Domashniy.ru",
+    "DomashniyInternational.ru", "TV3.ru", "Friday.ru",
+    "FridayInternational.ru", "Zvezda.ru", "Mir.ru", "TNT.ru",
+    "TNTInternational.ru", "MuzTV.ru", "U.ru", "Subbota.ru", "Che.ru",
+    "2x2.ru", "STSLove.ru", "TNT4.ru", "TNT4International.ru", "Solnce.ru",
+    "Mir24.ru", "RT.ru", "RTDocumentary.ru", "RBKTV.ru", "Izvestia.ru",
+    "Pobeda.ru",
+}
+
+# Повторная проверка с узлов check-host.net в Москве (бесплатный API).
+CHECK_FROM_RUSSIA = os.environ.get("CHECK_FROM_RUSSIA", "1") != "0"
+CHECK_HOST_API = "https://check-host.net"
+CHECK_HOST_NODES = ("ru1.node.check-host.net", "ru2.node.check-host.net")
+RU_CHECK_LIMIT = int(os.environ.get("RU_CHECK_LIMIT", "200"))
+RU_CHECK_WORKERS = 2
+ru_limit_reached = []
+RU_DEAD_RE = re.compile(
+    r"no such device|not known|connection refused|no route",
+    re.IGNORECASE,
+)
+PROBE_ALL = os.environ.get("PROBE_ALL", "1") != "0"
 EPG_TIMEOUT = 120
 
 # Новые ссылки (которых ещё нет в playlist.m3u) проверяются перед
@@ -430,7 +472,19 @@ def group_by_name(channel, stream):
     return ""
 
 
+def catalog_id(channel):
+    return clean(channel.get("id")).split("@")[0]
+
+
+def is_international(channel):
+    country = str(channel.get("country") or "").upper()
+    return bool(country) and country != "RU" and not is_music_channel(channel)
+
+
 def channel_group(channel, stream):
+    if catalog_id(channel) in FEDERAL_IDS:
+        return FEDERAL_GROUP
+
     if is_music_channel(channel):
         return music_group(channel, stream)
 
@@ -851,6 +905,77 @@ def probe_stream(url, user_agent="", referrer="", depth=0):
     return "dead"
 
 
+def check_host_request(path):
+    request = Request(
+        CHECK_HOST_API + path,
+        headers={"Accept": "application/json", "User-Agent": "curl/8.5.0"},
+    )
+
+    with urlopen(request, timeout=30) as response:
+        return json.load(response)
+
+
+def check_from_russia(url, has_headers=False):
+    """"ok", "dead", "forbidden", "unknown" or "limit" by the answer of
+    check-host nodes in Russia."""
+    if ru_limit_reached:
+        return "limit"
+
+    query = urlencode(
+        [("host", url)] + [("node", node) for node in CHECK_HOST_NODES]
+    )
+
+    try:
+        for _attempt in range(2):
+            answer = check_host_request("/check-http?" + query)
+
+            if answer.get("error") != "limit_exceeded":
+                break
+
+            time.sleep(60)
+        else:
+            ru_limit_reached.append(True)
+            return "limit"
+
+        request_id = answer["request_id"]
+        result = {}
+
+        for _attempt in range(10):
+            time.sleep(3)
+            result = check_host_request("/check-result/" + request_id)
+
+            if result and all(value is not None for value in result.values()):
+                break
+    except Exception:
+        return "unknown"
+
+    answers = []
+
+    for value in result.values():
+        if not value or not value[0]:
+            continue
+
+        entry = list(value[0]) + [None, None, None, None]
+        message, code = str(entry[2] or ""), str(entry[3] or "")
+
+        if code.startswith("2"):
+            return "ok"
+
+        if code in ("404", "410") or (
+            not code and RU_DEAD_RE.search(message)
+        ):
+            answers.append("dead")
+        elif code in ("401", "403") and not has_headers:
+            answers.append("forbidden")
+        else:
+            answers.append("unknown")
+
+    if answers and len(set(answers)) == 1:
+        return answers[0]
+
+    return "unknown"
+
+
 def fetch_text(url):
     request = Request(
         url,
@@ -1021,6 +1146,13 @@ def main():
     entries = []
 
     def add_entry(channel, stream, group, stream_url, source):
+        parsed = urlparse(stream_url)
+
+        if parsed.hostname in HOST_REWRITES:
+            stream_url = parsed._replace(netloc=parsed.netloc.replace(
+                parsed.hostname, HOST_REWRITES[parsed.hostname],
+            )).geturl()
+
         if stream_url in seen_urls:
             duplicates[source] += 1
             return
@@ -1173,6 +1305,16 @@ def main():
         group = channel_group(channel, stream)
         add_entry(channel, stream, group, stream_url, "Free-TV")
 
+    for official_id, official_name, stream_url in OFFICIAL_STREAMS:
+        channel = channels_by_id.get(official_id) or {
+            "id": official_id, "name": official_name, "categories": [],
+        }
+        stream = {"title": official_name, "quality": ""}
+        add_entry(
+            channel, stream, channel_group(channel, stream), stream_url,
+            "Официальные сайты",
+        )
+
     for source, url in COMMUNITY_SOURCES.items():
         try:
             community = list(parse_m3u(fetch_text(url)))
@@ -1247,15 +1389,36 @@ def main():
     for item in entries:
         sources[item["source"]] += 1
 
-    new_entries = [
-        item for item in entries
-        if item["url"] not in previous_urls
-        or item["url"] in previous_unverified
-    ]
-    probe = Counter()
+    def is_new(item):
+        return (
+            item["url"] not in previous_urls
+            or item["url"] in previous_unverified
+        )
 
-    if CHECK_NEW_STREAMS and new_entries:
-        print(f"Проверяю новые потоки: {len(new_entries)} ...")
+    def has_headers(item):
+        return bool(
+            item["stream"].get("user_agent")
+            or item["stream"].get("referrer")
+            or item["stream"].get("http_referrer")
+        )
+
+    def ru_priority(item):
+        if catalog_id(item["channel"]) in FEDERAL_IDS:
+            return 0
+
+        if is_international(item["channel"]):
+            return 1
+
+        return 2 if is_new(item) else 3
+
+    probe = Counter()
+    ru_checked = Counter()
+
+    if CHECK_NEW_STREAMS:
+        targets = entries if PROBE_ALL else [
+            item for item in entries if is_new(item)
+        ]
+        print(f"Проверяю потоки из США: {len(targets)} ...")
 
         with ThreadPoolExecutor(PROBE_WORKERS) as pool:
             results = list(pool.map(
@@ -1267,19 +1430,62 @@ def main():
                         or item["stream"].get("http_referrer")
                     ),
                 ),
-                new_entries,
+                targets,
             ))
+
+        candidates = sorted(
+            (item for item, us in zip(targets, results) if us != "ok"),
+            key=ru_priority,
+        )
+        ru_status = {}
+
+        if CHECK_FROM_RUSSIA and candidates:
+            batch = candidates[:RU_CHECK_LIMIT]
+            print(f"Проверяю из России (check-host.net): {len(batch)} "
+                  f"из {len(candidates)} ...")
+
+            with ThreadPoolExecutor(RU_CHECK_WORKERS) as pool:
+                ru_results = list(pool.map(
+                    lambda item: check_from_russia(
+                        item["url"], has_headers(item),
+                    ),
+                    batch,
+                ))
+
+            ru_status = {
+                item["url"]: result
+                for item, result in zip(batch, ru_results)
+            }
+            ru_checked.update(ru_results)
 
         failed = set()
 
-        for item, status in zip(new_entries, results):
-            if status == "blocked" and item["source"] in UNVERIFIED_SOURCES:
-                status = "unverified"
-                item["group"] = UNVERIFIED_GROUP
-            elif status != "ok":
-                failed.add(item["url"])
+        for item, us in zip(targets, results):
+            ru = ru_status.get(item["url"], "")
+            new = is_new(item)
 
-            probe[(item["source"], status)] += 1
+            if us == "ok":
+                status = "ok"
+            elif ru == "ok":
+                status = "ok_ru"
+            elif ru == "dead" or (us == "dead" and new):
+                status = "dead"
+            elif ru == "forbidden" and new:
+                status = "forbidden"
+            else:
+                status = "unverified"
+
+            if status in ("dead", "forbidden"):
+                failed.add(item["url"])
+            elif status == "unverified" and new:
+                if item["source"] in UNVERIFIED_SOURCES:
+                    item["group"] = UNVERIFIED_GROUP
+                else:
+                    status = "blocked"
+                    failed.add(item["url"])
+
+            item["status"] = status
+            probe[("новые" if new else "уже были", status)] += 1
 
         entries = [item for item in entries if item["url"] not in failed]
         seen_urls -= failed
@@ -1394,17 +1600,52 @@ def main():
     print(f"  Всего: {sum(duplicates.values())}")
 
     if CHECK_NEW_STREAMS:
-        print("\nПроверка новых ссылок и ссылок из "
-              f"«{UNVERIFIED_GROUP}»:")
+        print("\nПроверка потоков (США, затем узлы check-host.net в Москве):")
         labels = {
-            "ok": "работает",
-            "unverified": f"похоже на геоблок, в «{UNVERIFIED_GROUP}»",
-            "blocked": "похоже на геоблок, не добавлен",
-            "dead": "не работает, не добавлен",
+            "ok": "работает (проверено из США)",
+            "ok_ru": "работает (проверено из России)",
+            "unverified": "требует проверки, оставлен",
+            "blocked": "требует проверки, не добавлен",
+            "dead": "не работает, удалён / не добавлен",
+            "forbidden": "доступ закрыт и из России (403), не добавлен",
         }
 
-        for (source, status), count in sorted(probe.items()):
-            print(f"  {source}: {labels[status]}: {count}")
+        for (kind, status), count in sorted(probe.items()):
+            print(f"  {kind}: {labels[status]}: {count}")
+
+        print(f"  Проверено из России: "
+              f"{sum(ru_checked.values()) - ru_checked['limit']} "
+              f"(работают {ru_checked['ok']}, не работают "
+              f"{ru_checked['dead']}, 403 {ru_checked['forbidden']}, "
+              f"неясно {ru_checked['unknown']}); не проверено из-за "
+              f"лимита check-host: {ru_checked['limit']}")
+
+        working = {"ok", "ok_ru"}
+        federal = defaultdict(Counter)
+        international = defaultdict(Counter)
+
+        for item in entries:
+            key = catalog_id(item["channel"]) or item["channel"].get("name")
+            state = "ok" if item.get("status") in working else "other"
+
+            if catalog_id(item["channel"]) in FEDERAL_IDS:
+                federal[key][state] += 1
+            elif is_international(item["channel"]):
+                international[key][state] += 1
+
+        print("\nУчёт каналов:")
+        for title, found in (("Федеральные каналы РФ", federal),
+                             ("Международные на русском", international)):
+            alive = sum(1 for value in found.values() if value["ok"])
+            print(f"  {title}: найдено {len(found)}, с работающим "
+                  f"потоком {alive}")
+
+        print("\nФедеральные каналы (работает / всего потоков):")
+        for key in sorted(FEDERAL_IDS):
+            value = federal.get(key, Counter())
+            total_streams = value["ok"] + value["other"]
+            print(f"  {key}: {value['ok']} / {total_streams}"
+                  + ("" if total_streams else " — нет публичного потока"))
     else:
         print("\nПроверка новых ссылок отключена (CHECK_NEW_STREAMS=0)")
 
