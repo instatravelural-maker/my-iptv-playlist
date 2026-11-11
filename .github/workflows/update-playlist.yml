@@ -1,0 +1,31 @@
+name: Build IPTV playlist
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 4 * * *'
+  push:
+    paths:
+      - 'build_playlist.py'
+      - 'regional.m3u'
+      - '.github/workflows/update-playlist.yml'
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Build playlist
+        run: python build_playlist.py
+      - name: Commit generated playlist
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add playlist.m3u
+          git diff --cached --quiet || git commit -m "Update IPTV playlist"
+          git push
