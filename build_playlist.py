@@ -121,6 +121,7 @@ CHECK_HOST_NODES = ("ru1.node.check-host.net", "ru2.node.check-host.net")
 RU_CHECK_LIMIT = int(os.environ.get("RU_CHECK_LIMIT", "200"))
 RU_CHECK_WORKERS = 2
 ru_limit_reached = []
+ru_answers = Counter()
 RU_DEAD_RE = re.compile(
     r"no such device|not known|connection refused|no route",
     re.IGNORECASE,
@@ -957,6 +958,7 @@ def check_from_russia(url, has_headers=False):
 
         entry = list(value[0]) + [None, None, None, None]
         message, code = str(entry[2] or ""), str(entry[3] or "")
+        ru_answers[code or message[:40] or "нет ответа"] += 1
 
         if code.startswith("2"):
             return "ok"
@@ -970,8 +972,9 @@ def check_from_russia(url, has_headers=False):
         else:
             answers.append("unknown")
 
-    if answers and len(set(answers)) == 1:
-        return answers[0]
+    for state in ("dead", "forbidden"):
+        if state in answers and set(answers) <= {state, "unknown"}:
+            return state
 
     return "unknown"
 
@@ -1619,6 +1622,9 @@ def main():
               f"{ru_checked['dead']}, 403 {ru_checked['forbidden']}, "
               f"неясно {ru_checked['unknown']}); не проверено из-за "
               f"лимита check-host: {ru_checked['limit']}")
+        print("  Ответы узлов в России: " + ", ".join(
+            f"{answer} — {count}" for answer, count in ru_answers.most_common(8)
+        ))
 
         working = {"ok", "ok_ru"}
         federal = defaultdict(Counter)
