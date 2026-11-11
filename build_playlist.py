@@ -11,8 +11,7 @@ BASE = "https://iptv-org.github.io/iptv"
 
 SOURCES = [
     ("Россия", f"{BASE}/countries/ru.m3u"),
-    ("Беларусь и Казахстан", f"{BASE}/countries/by.m3u"),
-    ("Беларусь и Казахстан", f"{BASE}/countries/kz.m3u"),
+    ("Беларусь", f"{BASE}/countries/by.m3u"),
     ("Кино", f"{BASE}/categories/movies.m3u"),
     ("Спорт", f"{BASE}/categories/sports.m3u"),
     ("Новости", f"{BASE}/categories/news.m3u"),
@@ -68,7 +67,6 @@ def parse_m3u(text: str):
         i += 1
 
 
-
 def with_group(info: str, group: str) -> str:
     match = re.match(r'^(#EXTINF:)(-?\d+(?:\.\d+)?)(.*)$', info)
 
@@ -77,17 +75,16 @@ def with_group(info: str, group: str) -> str:
 
     prefix, duration, rest = match.groups()
 
-    # Удаляем старый group-title, где бы он ни находился.
+    # Удаляем все старые group-title.
     rest = re.sub(
         r'\s+group-title="[^"]*"',
         '',
         rest,
-        count=1,
+        flags=re.IGNORECASE,
     )
 
-    # Всегда ставим group-title сразу после длительности.
+    # Ставим group-title сразу после длительности.
     return f'{prefix}{duration} group-title="{group}"{rest}'
-
 
 
 def get_attribute(info: str, attribute: str) -> str:
@@ -106,11 +103,11 @@ def music_group(info: str) -> str:
     region = "Мир"
 
     if (
-        re.search(r'\.(ru|by|kz)$', channel_id)
+        re.search(r'\.(ru|by)$', channel_id)
         or "russian" in language
         or "русский" in language
     ):
-        region = "Россия и СНГ"
+        region = "Россия и Беларусь"
 
     name = info.rsplit(",", 1)[-1].strip().lower()
     genre = "Другие"
