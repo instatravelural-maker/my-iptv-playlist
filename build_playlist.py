@@ -1021,6 +1021,12 @@ def main():
     entries = []
 
     def add_entry(channel, stream, group, stream_url, source):
+        host = (urlparse(stream_url).hostname or "").lower()
+
+        if host.endswith((".kz", ".ua")):
+            stats["Ретрансляция с сервера KZ/UA исключена"] += 1
+            return
+
         if stream_url in seen_urls:
             duplicates[source] += 1
             return
