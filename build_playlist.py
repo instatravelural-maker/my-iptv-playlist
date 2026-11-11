@@ -941,13 +941,18 @@ def check_from_russia(url, has_headers=False):
         request_id = answer["request_id"]
         result = {}
 
-        for _attempt in range(10):
-            time.sleep(3)
+        for _attempt in range(20):
+            time.sleep(4)
             result = check_host_request("/check-result/" + request_id)
 
             if result and all(value is not None for value in result.values()):
                 break
     except Exception:
+        ru_answers["ошибка запроса"] += 1
+        return "unknown"
+
+    if not result or all(value is None for value in result.values()):
+        ru_answers["узлы не ответили за 80 с"] += 1
         return "unknown"
 
     answers = []
