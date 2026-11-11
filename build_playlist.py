@@ -1,14 +1,17 @@
 #!/usr/bin/env python3
 """Build a Russian-language IPTV playlist with music preserved and categories."""
 
+import gzip
 import json
 import os
 import re
+import socket
 import ssl
+import xml.etree.ElementTree as ET
 from collections import Counter, defaultdict
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
-from urllib.error import HTTPError
+from urllib.error import HTTPError, URLError
 from urllib.parse import urljoin, urlparse
 from urllib.request import Request, urlopen
 
@@ -26,6 +29,62 @@ FREE_TV_URL = (
     "https://raw.githubusercontent.com/Free-TV/IPTV/master/playlist.m3u8"
 )
 FREE_TV_GROUPS = {"Russia", "Belarus"}
+
+# Публичные сборники русских каналов на GitHub. Берём только ссылки без
+# токенов и подписей, не с рестрим-хостов операторов, и только после
+# проверки: не ответившие ссылки отсюда в плейлист не попадают.
+COMMUNITY_SOURCES = {
+    "ngrch/iptv": "https://raw.githubusercontent.com/ngrch/iptv/main/ru.m3u",
+    "gdydg/iptv": "https://raw.githubusercontent.com/gdydg/iptv/main/ru.m3u",
+}
+
+COMMUNITY_GROUP_MAP = {
+    "основные": "Общие",
+    "основные (региональные)": "Региональные",
+    "региональные": "Региональные",
+    "кино": "Кино",
+    "путешествия": "Путешествия",
+    "развлекательные": "Развлекательные",
+    "документальные": "Познавательные",
+    "познавательные": "Познавательные",
+    "природа и животные": "Познавательные",
+    "охота и рыбалка": "Познавательные",
+    "детские": "Детские",
+    "новости": "Новости",
+    "спорт": "Спорт",
+    "мода и стиль": "Стиль жизни",
+    "здоровье и фитнес": "Стиль жизни",
+    "авто": "Авто",
+    "кулинария": "Кулинария",
+    "религиозные": "Религиозные",
+}
+
+# Кинозалы с зацикленными фильмами и прочие нелицензионные подборки.
+COMMUNITY_SKIP_GROUP_RE = re.compile(r"кинозал", re.IGNORECASE)
+
+# Ретрансляции платных пакетов операторов и пиратские рестримы.
+RESTREAM_HOST_RE = re.compile(
+    r"cinerama\.uz|mcquack|zabava|-htlive\.cdn\.ngenix|kinowalk|"
+    r"hopto\.org|vintera\.tv|bozztv|thestream\.cyou|vslive\.pw|"
+    r"\.do\.am$|skygo\.mn|tele2dvr|videoline\.ru|mylifeisgood",
+    re.IGNORECASE,
+)
+
+# Персональные/подписанные ссылки (токены, ключи, срок действия).
+SIGNED_URL_RE = re.compile(
+    r"[?&](token|key|auth|sign|signature|s|e|exp|expires|hash|md5|"
+    r"wmsauthsign|session|sid|uid|user|pass|password)=",
+    re.IGNORECASE,
+)
+
+UNVERIFIED_GROUP = "Не проверено"
+
+# Каталожным и официальным спискам доверяем больше: при отказе похожем на
+# геоблокировку поток попадает в «Не проверено», а не исчезает.
+UNVERIFIED_SOURCES = {"iptv-org", "iptv-org без channel-id", "Free-TV"}
+
+EPG_URL = "https://iptvx.one/epg/epg_lite.xml.gz"
+EPG_TIMEOUT = 120
 
 # Новые ссылки (которых ещё нет в playlist.m3u) проверяются перед
 # добавлением. Отключить: CHECK_NEW_STREAMS=0.
@@ -89,7 +148,8 @@ NAME_RULES = [
         r"кто есть кто|kto est kto|unknown russia|неизвестная россия|"
         r"^vremya$|^время|поехали|poehali|усадьба|usadba|загородн|"
         r"zagorodn|365 days|365 дней|\bterra\b|explorers|\bnano\b|"
-        r"доктор|\bdoctor\b|здоров|zdorov|medzdrav|fakty|факты"
+        r"доктор|\bdoctor\b|здоров|zdorov|medzdrav|fakty|факты|"
+        r"просвещ|prosveshch|univer ?tv|университет"
     )),
     ("Спорт", (
         r"спорт|sport|матч|\bmatch\b|\bkhl\b|кхл|футбол|futbol|"
@@ -110,7 +170,8 @@ NAME_RULES = [
         r"детектив|detektiv|мелодрам|melodram|тайны|tayny|fox life|"
         r"sony channel|bollywood|болливуд|\bindia\b|индия|epic drama|"
         r"true crime|amedia|pro lyubov|про любовь|sledstviye|"
-        r"следствие вели|нтв[- ]?хит|ntv[- ]?hit"
+        r"следствие вели|нтв[- ]?хит|ntv[- ]?hit|нтв[- ]?право|"
+        r"ntv[- ]?law"
     )),
     ("Кино", (
         r"\bкино|\bkino|cinema|\bcine|movie|\bfilm|фильм|tv ?1000|"
@@ -141,6 +202,20 @@ NAME_RULES = [
     (group, re.compile(pattern, re.IGNORECASE))
     for group, pattern in NAME_RULES
 ]
+
+# Федеральные общероссийские каналы; остальные «Общие» и «Прочее» из
+# России уходят в «Региональные».
+FEDERAL_RE = re.compile(
+    r"^(channel one|channel one cis|первый канал|первый|russia[- ]?1|"
+    r"россия[ -]?1|rossiya[ -]?1|rtr[- ]planeta|ртр[- ]планета|ntv|нтв|"
+    r"ntv vitrina|ren tv|рен ?тв|ren tv international|tv centr|"
+    r"тв центр|tvc|zvezda|звезда|mir|мир|otr|отр|channel 5|"
+    r"пятый канал|5 канал|rtvi|rtvi us|ldpr tv|soyuzny|союзный|"
+    r"tv brics russian|yapervyy|kongress tv|radio rossii|radio 1|"
+    r"radio mir|russia[- ]?k|россия[ -]?к|kultura|культура)"
+    r"( hd| international| cis)?$",
+    re.IGNORECASE,
+)
 
 CATEGORY_MAP = [
     ("music", "Музыка"),
@@ -195,6 +270,49 @@ MUSIC_GENRES = [
 MUSIC_GENRES = [
     (genre, re.compile(pattern, re.IGNORECASE))
     for genre, pattern in MUSIC_GENRES
+]
+
+MUSIC_STYLES = [
+    ("Фолк и народная", r"folk|folclor|folklor|народн|narod|volksmusik|"
+                        r"tambure|manele|slager|шлягер|chamame|"
+                        r"traditional|tiankov|disco polo|gugak|klape|"
+                        r"\borient"),
+    ("Религиозная", r"gospel|praise|worship|bibel|christ|peniel|"
+                    r"kuriakos|3abn|hope channel|spirit tv|nidae"),
+    ("Караоке и концерты", r"karaoke|concert|qello|live ?music|"
+                           r"livexlive|концерт|караоке"),
+]
+
+MUSIC_STYLES = [
+    (genre, re.compile(pattern, re.IGNORECASE))
+    for genre, pattern in MUSIC_STYLES
+]
+
+MUSIC_RADIO_RE = re.compile(
+    r"radio|\bfm\b|\d{2,3}[.,]\d ?fm|радио|estereo|stereo",
+    re.IGNORECASE,
+)
+
+MUSIC_REGIONS = [
+    ("Индия и Южная Азия", "IN PK BD NP LK"),
+    ("Арабская", "SA AE EG LB JO IQ SY KW QA BH OM YE MA DZ TN LY PS SD"),
+    ("Турецкая", "TR"),
+    ("Латино", "MX AR CO PE CL VE EC BO PY UY CR PA DO CU PR GT HN SV NI "
+               "BR ES"),
+    ("Африка и Карибы", "NG GH CI SN CM KE TZ UG ZA CD CG RW ET AO MZ "
+                        "ZW ZM ML BF BJ TG GA MG MU RE HT JM TT GP MQ "
+                        "AW CW BB BS LC GF"),
+    ("Англоязычная", "US CA GB IE AU NZ"),
+    ("Азиатская", "CN KR JP TH VN ID MY PH TW HK MN SG KH LA MM IR AF "
+                  "UZ TM TJ KG AZ AM GE"),
+    ("Европейская", "DE AT CH FR BE NL LU IT PT PL CZ SK HU RO BG GR RS "
+                    "HR SI BA ME MK AL XK MD LT LV EE FI SE NO DK IS "
+                    "MT CY"),
+]
+
+MUSIC_REGIONS = [
+    (genre, set(countries.split()))
+    for genre, countries in MUSIC_REGIONS
 ]
 
 POP_MUSIC_RE = re.compile(
@@ -284,8 +402,19 @@ def music_group(channel, stream):
     ):
         return "Музыка | Русская"
 
+    for genre, pattern in MUSIC_STYLES:
+        if pattern.search(text):
+            return f"Музыка | {genre}"
+
     if POP_MUSIC_RE.search(text):
         return "Музыка | Поп и хиты"
+
+    if MUSIC_RADIO_RE.search(text):
+        return "Музыка | Радио в эфире"
+
+    for genre, countries in MUSIC_REGIONS:
+        if country in countries:
+            return f"Музыка | {genre}"
 
     return "Музыка | Другие"
 
@@ -311,12 +440,39 @@ def channel_group(channel, stream):
         return group
 
     categories = set(channel.get("categories") or [])
+    group = "Прочее"
 
-    for category, group in CATEGORY_MAP:
+    for category, mapped in CATEGORY_MAP:
         if category in categories:
-            return group
+            group = mapped
+            break
 
-    return "Прочее"
+    if group == "Прочее" and channel.get("source_group"):
+        group = channel["source_group"]
+
+    if group in ("Общие", "Прочее", "Региональные"):
+        group = region_group(channel, group)
+
+    return group
+
+
+def region_group(channel, group):
+    """Federal channels stay in «Общие», others split by country."""
+    if any(FEDERAL_RE.match(name) for name in channel_names(channel)):
+        return "Общие"
+
+    country = str(channel.get("country") or "").upper()
+
+    if country == "RU":
+        return "Региональные"
+
+    if country == "BY":
+        return "Беларусь"
+
+    if country:
+        return "СНГ и зарубежье"
+
+    return group
 
 
 def quality_label(quality):
@@ -368,8 +524,8 @@ def normalize_manual_quality(info):
     return header + "," + display_name
 
 
-def make_extinf(channel, stream, group):
-    channel_id = clean(channel.get("id"))
+def make_extinf(channel, stream, group, tvg_id=""):
+    channel_id = clean(tvg_id or channel.get("id"))
     channel_name = clean(channel.get("name"))
 
     if not channel_name:
@@ -612,8 +768,30 @@ def open_following_redirects(url, headers, context, limit=5):
     raise HTTPError(url, 310, "Too many redirects", None, None)
 
 
+# Ответы, которые обычно означают геоблокировку или временный сбой, а не
+# мёртвую ссылку.
+BLOCKED_HTTP_CODES = {401, 403, 429, 451, 500, 502, 503, 504, 520, 521,
+                      522, 523, 524, 525, 526}
+
+
+def classify_probe_error(error):
+    if isinstance(error, HTTPError):
+        return "blocked" if error.code in BLOCKED_HTTP_CODES else "dead"
+
+    reason = getattr(error, "reason", error)
+
+    if isinstance(reason, (socket.gaierror, ConnectionRefusedError)):
+        return "dead"
+
+    if isinstance(error, URLError) and isinstance(reason, str):
+        return "dead"
+
+    return "blocked"
+
+
 def probe_stream(url, user_agent="", referrer="", depth=0):
-    """True if the URL answers with a playlist, manifest or media data."""
+    """"ok" if the URL answers with a playlist, manifest or media data,
+    "blocked" if it looks geo-blocked or temporarily down, else "dead"."""
     headers = {"User-Agent": user_agent or PROBE_USER_AGENT}
 
     if referrer:
@@ -628,15 +806,15 @@ def probe_stream(url, user_agent="", referrer="", depth=0):
 
         with response:
             if response.status >= 400:
-                return False
+                return "dead"
 
             final_url = response.geturl()
             content_type = response.headers.get(
                 "Content-Type", ""
             ).lower()
             head = response.read(16384)
-    except Exception:
-        return False
+    except Exception as error:
+        return classify_probe_error(error)
 
     text = head.decode("utf-8", errors="ignore")
 
@@ -649,25 +827,28 @@ def probe_stream(url, user_agent="", referrer="", depth=0):
             ]
 
             if variants:
-                return probe_stream(
+                # Мастер-плейлист ответил, но сегменты недоступны: обычно
+                # это геоблокировка CDN, а не мёртвый канал.
+                variant = probe_stream(
                     urljoin(final_url, variants[0]),
                     user_agent,
                     referrer,
                     depth + 1,
                 )
+                return "ok" if variant == "ok" else "blocked"
 
-        return True
+        return "ok"
 
-    if "<MPD" in text:
-        return True
+    if "<MPD" in text or head[:1] == b"\x47":
+        return "ok"
 
-    if head[:1] == b"\x47":
-        return True
-
-    return any(
+    if any(
         kind in content_type
         for kind in ("video/", "mp2t", "octet-stream", "audio/")
-    ) and not text.lstrip().startswith("<")
+    ) and not text.lstrip().startswith("<"):
+        return "ok"
+
+    return "dead"
 
 
 def fetch_text(url):
@@ -697,22 +878,83 @@ def split_title(info):
 
 
 def read_previous_playlist():
+    """URLs of the previous playlist, URLs in «Не проверено», entry count."""
     if not OUT.exists():
-        return set(), 0
+        return set(), set(), 0
 
-    lines = OUT.read_text(encoding="utf-8-sig").splitlines()
-    urls = {
-        line.strip()
-        for line in lines
-        if line.strip() and not line.startswith("#")
+    content = OUT.read_text(encoding="utf-8-sig")
+    urls = set()
+    unverified = set()
+    total = 0
+
+    for info, _extras, url in parse_m3u(content):
+        urls.add(url)
+        total += 1
+
+        if get_attribute(info, "group-title") == UNVERIFIED_GROUP:
+            unverified.add(url)
+
+    return urls, unverified, total
+
+
+def epg_key(name):
+    value = clean(name).lower().replace("ё", "е")
+    value = re.sub(r"\[[^\]]*\]|\([^)]*\)", "", value)
+    value = re.sub(r"\b(hd|sd|fhd|uhd|4k|full hd|orig)\b", "", value)
+    return re.sub(r"[^a-zа-я0-9+]", "", value)
+
+
+def load_epg_channels():
+    """Map of normalized channel names to EPG ids (only <channel> part)."""
+    names = {}
+
+    try:
+        with urlopen(
+            Request(EPG_URL, headers={"User-Agent": "Mozilla/5.0"}),
+            timeout=EPG_TIMEOUT,
+        ) as response:
+            with gzip.GzipFile(fileobj=response) as data:
+                for _event, element in ET.iterparse(data):
+                    if element.tag == "programme":
+                        break
+
+                    if element.tag != "channel":
+                        continue
+
+                    for display in element.findall("display-name"):
+                        key = epg_key(display.text)
+
+                        if key:
+                            names.setdefault(key, element.get("id"))
+
+                    element.clear()
+    except Exception as error:
+        print(f"EPG недоступен, пропускаю сопоставление: {error}")
+        return {}
+
+    print(f"EPG: каналов в программе: {len(set(names.values()))}")
+    return names
+
+
+def stream_from_m3u(info, extras, title, quality):
+    stream = {
+        "title": title,
+        "quality": quality,
+        "user_agent": get_attribute(info, "http-user-agent"),
+        "referrer": get_attribute(info, "http-referrer"),
     }
-    total = sum(1 for line in lines if line.startswith("#EXTINF:"))
 
-    return urls, total
+    for extra in extras:
+        if extra.lower().startswith("#extvlcopt:http-user-agent="):
+            stream["user_agent"] = extra.split("=", 1)[1]
+        elif extra.lower().startswith("#extvlcopt:http-referrer="):
+            stream["referrer"] = extra.split("=", 1)[1]
+
+    return stream
 
 
 def validate_m3u(output):
-    if not output or output[0] != "#EXTM3U":
+    if not output or not output[0].startswith("#EXTM3U"):
         raise ValueError("Ошибка формата M3U: нет заголовка #EXTM3U")
 
     expect_url = False
@@ -766,9 +1008,11 @@ def main():
         if feed_id:
             feeds_by_key[(channel_id, str(feed_id))] = feed
 
-    previous_urls, previous_total = read_previous_playlist()
+    previous_urls, previous_unverified, previous_total = (
+        read_previous_playlist()
+    )
 
-    output = ["#EXTM3U"]
+    output = [f'#EXTM3U url-tvg="{EPG_URL}" x-tvg-url="{EPG_URL}"']
     seen_urls = set()
     counts = Counter()
     stats = Counter()
@@ -925,21 +1169,80 @@ def main():
                 "country": get_attribute(info, "tvg-country"),
             }
 
-        stream = {
-            "title": title,
-            "quality": quality,
-            "user_agent": get_attribute(info, "http-user-agent"),
-            "referrer": get_attribute(info, "http-referrer"),
-        }
-
-        for extra in extras:
-            if extra.lower().startswith("#extvlcopt:http-user-agent="):
-                stream["user_agent"] = extra.split("=", 1)[1]
-            elif extra.lower().startswith("#extvlcopt:http-referrer="):
-                stream["referrer"] = extra.split("=", 1)[1]
-
+        stream = stream_from_m3u(info, extras, title, quality)
         group = channel_group(channel, stream)
         add_entry(channel, stream, group, stream_url, "Free-TV")
+
+    for source, url in COMMUNITY_SOURCES.items():
+        try:
+            community = list(parse_m3u(fetch_text(url)))
+            print(f"{source}: получено записей: {len(community)}")
+        except Exception as error:
+            print(f"{source} недоступен, пропускаю: {error}")
+            stats[f"{source}: недоступен"] += 1
+            continue
+
+        for info, extras, stream_url in community:
+            source_group = get_attribute(info, "group-title")
+
+            if COMMUNITY_SKIP_GROUP_RE.search(source_group):
+                stats[f"{source}: кинозалы/рестримы пропущены"] += 1
+                continue
+
+            if not stream_url.startswith(("http://", "https://")):
+                stats["Некорректные ссылки"] += 1
+                continue
+
+            host = urlparse(stream_url).hostname or ""
+
+            if is_page_url(stream_url) or RESTREAM_HOST_RE.search(host):
+                stats[f"{source}: кинозалы/рестримы пропущены"] += 1
+                continue
+
+            if SIGNED_URL_RE.search(stream_url):
+                stats[f"{source}: персональные/подписанные ссылки"] += 1
+                continue
+
+            tvg_id = get_attribute(info, "tvg-id")
+            title, quality = split_title(info)
+            channel = channels_by_id.get(tvg_id.split("@")[0])
+
+            if channel and channel.get("is_nsfw"):
+                continue
+
+            if (
+                excluded_country(channel=channel, channel_id=tvg_id)
+                or excluded_title(title)
+            ):
+                stats[f"{source}: Казахстан/Украина исключены"] += 1
+                continue
+
+            if channel:
+                if not (
+                    is_music_channel(channel)
+                    or channel_is_russian(channel, feeds_by_channel)
+                ):
+                    stats[f"{source}: не русскоязычные"] += 1
+                    continue
+            elif not CYRILLIC_RE.search(title):
+                stats[f"{source}: не русскоязычные"] += 1
+                continue
+            else:
+                mapped = COMMUNITY_GROUP_MAP.get(source_group.lower(), "")
+                channel = {
+                    "id": "",
+                    "name": title,
+                    "categories": (
+                        ["music"] if "музык" in source_group.lower()
+                        else source_group.lower().split(";")
+                    ),
+                    "country": "RU",
+                    "source_group": mapped,
+                }
+
+            stream = stream_from_m3u(info, extras, title, quality)
+            group = channel_group(channel, stream)
+            add_entry(channel, stream, group, stream_url, source)
 
     for item in entries:
         sources[item["source"]] += 1
@@ -947,6 +1250,7 @@ def main():
     new_entries = [
         item for item in entries
         if item["url"] not in previous_urls
+        or item["url"] in previous_unverified
     ]
     probe = Counter()
 
@@ -968,18 +1272,38 @@ def main():
 
         failed = set()
 
-        for item, ok in zip(new_entries, results):
-            probe[(item["source"], ok)] += 1
-
-            if not ok:
+        for item, status in zip(new_entries, results):
+            if status == "blocked" and item["source"] in UNVERIFIED_SOURCES:
+                status = "unverified"
+                item["group"] = UNVERIFIED_GROUP
+            elif status != "ok":
                 failed.add(item["url"])
+
+            probe[(item["source"], status)] += 1
 
         entries = [item for item in entries if item["url"] not in failed]
         seen_urls -= failed
+    else:
+        for item in entries:
+            if item["url"] in previous_unverified:
+                item["group"] = UNVERIFIED_GROUP
+
+    epg_names = load_epg_channels()
+    epg_matched = 0
+
+    for item in entries:
+        for name in channel_names(item["channel"], item["stream"]):
+            epg_id = epg_names.get(epg_key(name))
+
+            if epg_id:
+                item["epg_id"] = epg_id
+                epg_matched += 1
+                break
 
     entries.sort(
         key=lambda item: (
             item["group"] == ADULT_GROUP,
+            item["group"] == UNVERIFIED_GROUP,
             item["group"].lower(),
             item["channel"].get("name", "").lower(),
             item["quality"],
@@ -992,6 +1316,7 @@ def main():
                 item["channel"],
                 item["stream"],
                 item["group"],
+                item.get("epg_id", ""),
             )
         )
 
@@ -1069,12 +1394,21 @@ def main():
     print(f"  Всего: {sum(duplicates.values())}")
 
     if CHECK_NEW_STREAMS:
-        print("\nПроверка новых ссылок (нет в прошлой версии):")
-        for (source, ok), count in sorted(probe.items()):
-            status = "работает" if ok else "не ответил, не добавлен"
-            print(f"  {source}: {status}: {count}")
+        print("\nПроверка новых ссылок и ссылок из "
+              f"«{UNVERIFIED_GROUP}»:")
+        labels = {
+            "ok": "работает",
+            "unverified": f"похоже на геоблок, в «{UNVERIFIED_GROUP}»",
+            "blocked": "похоже на геоблок, не добавлен",
+            "dead": "не работает, не добавлен",
+        }
+
+        for (source, status), count in sorted(probe.items()):
+            print(f"  {source}: {labels[status]}: {count}")
     else:
         print("\nПроверка новых ссылок отключена (CHECK_NEW_STREAMS=0)")
+
+    print(f"\nEPG: сопоставлено {epg_matched} из {len(entries)} записей")
 
     print("\nКатегории:")
     for group, count in sorted(counts.items()):
