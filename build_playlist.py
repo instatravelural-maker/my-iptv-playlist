@@ -1,48 +1,211 @@
 
 #!/usr/bin/env python3
-"""Build one grouped M3U playlist, including categorized music channels."""
+"""Build a Russian-language IPTV playlist with music preserved and categories."""
 
+import json
+import re
+from collections import Counter, defaultdict
+from pathlib import Path
 from urllib.request import Request, urlopen
 from urllib.error import URLError, HTTPError
-from pathlib import Path
-import re
 
-BASE = "https://iptv-org.github.io/iptv"
-
-SOURCES = [
-    ("Россия", f"{BASE}/countries/ru.m3u"),
-    ("Беларусь", f"{BASE}/countries/by.m3u"),
-    ("Кино", f"{BASE}/categories/movies.m3u"),
-    ("Спорт", f"{BASE}/categories/sports.m3u"),
-    ("Новости", f"{BASE}/categories/news.m3u"),
-    ("Музыка", f"{BASE}/categories/music.m3u"),
-    ("Детские", f"{BASE}/categories/kids.m3u"),
-    ("Познавательные", f"{BASE}/categories/documentary.m3u"),
-    ("Познавательные", f"{BASE}/categories/education.m3u"),
-    ("Познавательные", f"{BASE}/categories/science.m3u"),
-]
+API = "https://iptv-org.github.io/api"
 
 OUT = Path("playlist.m3u")
+INTERNATIONAL_FILE = Path("russian-international.m3u")
 REGIONAL_FILE = Path("regional.m3u")
 
-MUSIC_GENRES = [
-    ("Рок", ("rock", "metal", "punk", "hard rock")),
-    ("Танцевальная", ("dance", "club", "edm", "techno", "trance", "house")),
-    ("Ретро", ("retro", "oldies", "classic hits", "80s", "90s", "70s")),
-    ("Джаз и блюз", ("jazz", "blues")),
-    ("Классическая", ("classical", "opera", "symphony")),
-    ("Поп и хиты", ("pop", "hits", "top", "music box", "muz-tv", "муз-тв")),
+# Язык русского вещания в формате ISO 639-3.
+RUSSIAN_CODES = {"rus", "ru", "russian", "русский"}
+
+# Приоритет категорий: если канал относится сразу к нескольким,
+# он попадёт только в первую подходящую категорию.
+CATEGORY_MAP = [
+    ("music", "Музыка"),
+    ("movies", "Кино"),
+    ("series", "Сериалы"),
+    ("sports", "Спорт"),
+    ("news", "Новости"),
+    ("entertainment", "Развлекательные"),
+    ("comedy", "Развлекательные"),
+    ("kids", "Детские"),
+    ("animation", "Мультфильмы"),
+    ("documentary", "Познавательные"),
+    ("education", "Познавательные"),
+    ("science", "Познавательные"),
+    ("cooking", "Кулинария"),
+    ("travel", "Путешествия"),
+    ("lifestyle", "Стиль жизни"),
+    ("auto", "Авто"),
+    ("business", "Бизнес"),
+    ("culture", "Культура"),
+    ("religious", "Религиозные"),
+    ("shop", "Телемагазины"),
+    ("weather", "Погода"),
+    ("outdoor", "Природа и отдых"),
+    ("relax", "Релакс"),
+    ("classic", "Классика"),
+    ("family", "Семейные"),
+    ("legislative", "Государственные"),
+    ("public", "Общественные"),
+    ("interactive", "Интерактивные"),
+    ("general", "Общие"),
 ]
 
+MUSIC_GENRES = [
+    ("Рок", ("rock", "metal", "punk")),
+    ("Танцевальная", ("dance", "club", "edm", "techno",
+                      "trance", "house")),
+    ("Ретро", ("retro", "oldies", "80s", "90s", "70s")),
+    ("Джаз и блюз", ("jazz", "blues")),
+    ("Классическая", ("classical", "opera", "symphony")),
+    ("Поп и хиты", ("pop", "hits", "top", "muz-tv",
+                    "муз-тв", "музыка")),
+]
 
-def fetch(url: str) -> str:
-    req = Request(url, headers={"User-Agent": "OTTPlayer-M3U-builder/1.0"})
-    with urlopen(req, timeout=45) as response:
-        return response.read().decode("utf-8-sig", errors="replace")
+MUSIC_NAME_RE = re.compile(
+    r"music|музык|муз[\s-]?тв|музон",
+    re.IGNORECASE,
+)
 
 
-def parse_m3u(text: str):
-    lines = [line.strip() for line in text.splitlines() if line.strip()]
+def fetch_json(name):
+    url = f"{API}/{name}.json"
+    request = Request(
+        url,
+        headers={"User-Agent": "OTTPlayer-Russian-Playlist/2.0"},
+    )
+
+    print(f"Загружаю {name}.json ...")
+
+    with urlopen(request, timeout=120) as response:
+        data = json.loads(response.read().decode("utf-8"))
+
+    if not isinstance(data, list):
+        raise ValueError(f"Некорректный ответ API: {name}.json")
+
+    print(f"  Получено записей: {len(data)}")
+    return data
+
+
+def clean(value):
+    """Remove characters that can break M3U attributes."""
+    return str(value or "").replace('"', "").replace(
+        "\r", " "
+    ).replace("\n", " ").strip()
+
+
+def language_is_russian(languages):
+    if isinstance(languages, str):
+        languages = [languages]
+
+    for language in languages or []:
+        value = str(language).strip().lower()
+
+        if value in RUSSIAN_CODES:
+            return True
+
+    return False
+
+
+def is_music_channel(channel):
+    categories = set(channel.get("categories") or [])
+
+    if "music" in categories:
+        return True
+
+    name = channel.get("name", "")
+    return bool(MUSIC_NAME_RE.search(name))
+
+
+def music_group(channel, stream):
+    name = (
+        str(channel.get("name", ""))
+        + " "
+        + str(stream.get("title", ""))
+    ).lower()
+
+    genre = "Другие"
+
+    for candidate, keywords in MUSIC_GENRES:
+        if any(keyword in name for keyword in keywords):
+            genre = candidate
+            break
+
+    return f"Музыка | {genre}"
+
+
+def channel_group(channel, stream):
+    if is_music_channel(channel):
+        return music_group(channel, stream)
+
+    categories = set(channel.get("categories") or [])
+
+    for category, group in CATEGORY_MAP:
+        if category in categories:
+            return group
+
+    return "Прочее"
+
+
+def make_extinf(channel, stream, group):
+    channel_id = clean(channel.get("id"))
+    channel_name = clean(channel.get("name"))
+
+    if not channel_name:
+        channel_name = clean(stream.get("title")) or channel_id
+
+    quality = clean(stream.get("quality"))
+
+    display_name = channel_name
+
+    if quality and quality.lower() not in display_name.lower():
+        display_name += f" [{quality}]"
+
+    return (
+        '#EXTINF:-1 '
+        f'tvg-id="{channel_id}" '
+        f'tvg-name="{channel_name}" '
+        f'group-title="{clean(group)}",'
+        f'{display_name}'
+    )
+
+
+def find_feed(channel_id, feed_id, feeds_by_key, feeds_by_channel):
+    if feed_id:
+        return feeds_by_key.get((channel_id, str(feed_id)))
+
+    # Если у потока нет feed ID, используем данные только тогда,
+    # когда все известные варианты канала имеют русский язык.
+    candidates = feeds_by_channel.get(channel_id, [])
+
+    if candidates and all(
+        language_is_russian(feed.get("languages"))
+        for feed in candidates
+    ):
+        return candidates[0]
+
+    return None
+
+
+def add_headers(output, stream):
+    user_agent = clean(stream.get("user_agent"))
+    referrer = clean(stream.get("referrer"))
+
+    if user_agent:
+        output.append(f"#EXTVLCOPT:http-user-agent={user_agent}")
+
+    if referrer:
+        output.append(f"#EXTVLCOPT:http-referrer={referrer}")
+
+
+def parse_m3u(content):
+    lines = [
+        line.strip()
+        for line in content.splitlines()
+        if line.strip()
+    ]
+
     i = 0
 
     while i < len(lines):
@@ -67,27 +230,7 @@ def parse_m3u(text: str):
         i += 1
 
 
-def with_group(info: str, group: str) -> str:
-    match = re.match(r'^(#EXTINF:)(-?\d+(?:\.\d+)?)(.*)$', info)
-
-    if not match:
-        return info
-
-    prefix, duration, rest = match.groups()
-
-    # Удаляем все старые group-title.
-    rest = re.sub(
-        r'\s+group-title="[^"]*"',
-        '',
-        rest,
-        flags=re.IGNORECASE,
-    )
-
-    # Ставим group-title сразу после длительности.
-    return f'{prefix}{duration} group-title="{group}"{rest}'
-
-
-def get_attribute(info: str, attribute: str) -> str:
+def get_attribute(info, attribute):
     match = re.search(
         r'\b' + re.escape(attribute) + r'="([^"]*)"',
         info,
@@ -96,106 +239,236 @@ def get_attribute(info: str, attribute: str) -> str:
     return match.group(1).strip() if match else ""
 
 
-def music_group(info: str) -> str:
-    channel_id = get_attribute(info, "tvg-id").lower()
-    language = get_attribute(info, "tvg-language").lower()
+def add_manual_file(path, default_group, output, seen_urls, counts):
+    if not path.exists():
+        return
 
-    region = "Мир"
+    print(f"Добавляю ручной список: {path}")
 
-    if (
-        re.search(r'\.(ru|by)$', channel_id)
-        or "russian" in language
-        or "русский" in language
-    ):
-        region = "Россия и Беларусь"
+    content = path.read_text(encoding="utf-8-sig")
 
-    name = info.rsplit(",", 1)[-1].strip().lower()
-    genre = "Другие"
+    for info, extras, stream_url in parse_m3u(content):
+        if not stream_url.startswith(("http://", "https://")):
+            continue
 
-    for candidate, keywords in MUSIC_GENRES:
-        if any(keyword in name for keyword in keywords):
-            genre = candidate
-            break
+        if stream_url in seen_urls:
+            continue
 
-    return f"Музыка | {region} | {genre}"
+        seen_urls.add(stream_url)
+
+        old_group = get_attribute(info, "group-title")
+
+        if "музык" in old_group.lower():
+            group = "Музыка | Другие"
+        else:
+            group = default_group
+
+        # Сохраняем исходные атрибуты канала, меняем только категорию.
+        rest = re.sub(
+            r'\s+group-title="[^"]*"',
+            "",
+            info,
+            flags=re.IGNORECASE,
+        )
+
+        match = re.match(
+            r"^(#EXTINF:)(-?\d+(?:\.\d+)?)(.*)$",
+            rest,
+        )
+
+        if match:
+            prefix, duration, tail = match.groups()
+            info = (
+                f'{prefix}{duration} '
+                f'group-title="{group}"{tail}'
+            )
+
+        output.append(info)
+        output.extend(extras)
+        output.append(stream_url)
+
+        counts[group] += 1
 
 
 def main():
-    output = ["#EXTM3U"]
-    counts = {}
+    # Все три источника обязательны.
+    # Если API недоступен, старый плейлист не перезаписываем.
+    channels = fetch_json("channels")
+    feeds = fetch_json("feeds")
+    streams = fetch_json("streams")
 
-    for group, url in SOURCES:
-        try:
-            content = fetch(url)
-        except (HTTPError, URLError, TimeoutError) as exc:
-            print(f"SKIP {url}: {exc}")
+    channels_by_id = {
+        channel["id"]: channel
+        for channel in channels
+        if channel.get("id")
+    }
+
+    feeds_by_key = {}
+    feeds_by_channel = defaultdict(list)
+
+    for feed in feeds:
+        channel_id = feed.get("channel")
+        feed_id = feed.get("id")
+
+        if not channel_id:
             continue
 
-        count = 0
-        seen_in_group = set()
+        feeds_by_channel[channel_id].append(feed)
 
-        for info, extras, stream_url in parse_m3u(content):
-            if not stream_url.startswith(("http://", "https://")):
-                continue
+        if feed_id:
+            feeds_by_key[(channel_id, str(feed_id))] = feed
 
-            if stream_url in seen_in_group:
-                continue
+    output = ["#EXTM3U"]
+    seen_urls = set()
+    counts = Counter()
 
-            seen_in_group.add(stream_url)
+    stats = Counter()
 
-            actual_group = (
-                music_group(info) if group == "Музыка" else group
+    entries = []
+
+    for stream in streams:
+        channel_id = stream.get("channel")
+        stream_url = str(stream.get("url") or "").strip()
+
+        if not channel_id or not stream_url:
+            stats["Без канала или ссылки"] += 1
+            continue
+
+        if not stream_url.startswith(("http://", "https://")):
+            stats["Некорректные ссылки"] += 1
+            continue
+
+        channel = channels_by_id.get(channel_id)
+
+        if not channel:
+            stats["Нет данных о канале"] += 1
+            continue
+
+        if channel.get("is_nsfw"):
+            stats["Взрослые каналы"] += 1
+            continue
+
+        music = is_music_channel(channel)
+
+        if music:
+            # Музыку сохраняем независимо от языковых метаданных.
+            group = music_group(channel, stream)
+            stats["Музыкальные потоки"] += 1
+
+        else:
+            feed = find_feed(
+                channel_id,
+                stream.get("feed"),
+                feeds_by_key,
+                feeds_by_channel,
             )
 
-            output.append(with_group(info, actual_group))
-            output.extend(extras)
-            output.append(stream_url)
+            if not feed:
+                stats["Нет подтверждения языка"] += 1
+                continue
 
-            counts[actual_group] = counts.get(actual_group, 0) + 1
-            count += 1
+            if not language_is_russian(feed.get("languages")):
+                stats["Другой язык"] += 1
+                continue
 
-        print(f"{group}: {count} entries from {url}")
+            group = channel_group(channel, stream)
+            stats["Русскоязычные потоки"] += 1
 
-    if REGIONAL_FILE.exists():
-        try:
-            local = REGIONAL_FILE.read_text(encoding="utf-8-sig")
-            regional_seen = set()
+        if stream_url in seen_urls:
+            stats["Дубликаты ссылок"] += 1
+            continue
 
-            for info, extras, stream_url in parse_m3u(local):
-                if (
-                    stream_url.startswith(("http://", "https://"))
-                    and stream_url not in regional_seen
-                ):
-                    regional_seen.add(stream_url)
-                    output.append(with_group(info, "Региональные"))
-                    output.extend(extras)
-                    output.append(stream_url)
+        seen_urls.add(stream_url)
 
-            counts["Региональные"] = len(regional_seen)
+        quality = clean(stream.get("quality"))
 
-        except OSError as exc:
-            print(f"Could not read regional.m3u: {exc}")
+        entries.append({
+            "channel": channel,
+            "stream": stream,
+            "group": group,
+            "url": stream_url,
+            "quality": quality,
+        })
 
-    # Проверяем формат всех строк EXTINF до записи плейлиста.
+    # Сортируем по категории, названию и качеству.
+    entries.sort(
+        key=lambda item: (
+            item["group"].lower(),
+            item["channel"].get("name", "").lower(),
+            item["quality"],
+        )
+    )
+
+    for item in entries:
+        output.append(
+            make_extinf(
+                item["channel"],
+                item["stream"],
+                item["group"],
+            )
+        )
+
+        add_headers(output, item["stream"])
+        output.append(item["url"])
+
+        counts[item["group"]] += 1
+
+    # Дополнительные списки, добавленные вручную.
+    # Считаем их проверенными пользователем.
+    add_manual_file(
+        INTERNATIONAL_FILE,
+        "Зарубежные на русском",
+        output,
+        seen_urls,
+        counts,
+    )
+
+    add_manual_file(
+        REGIONAL_FILE,
+        "Региональные",
+        output,
+        seen_urls,
+        counts,
+    )
+
+    if len(entries) < 100:
+        raise RuntimeError(
+            "Получено подозрительно мало каналов. "
+            "Старый playlist.m3u оставлен без изменений."
+        )
+
     invalid = [
         line for line in output
         if line.startswith("#EXTINF:")
-        and not re.match(r'^#EXTINF:-?\d+(?:\.\d+)?(?:\s|,)', line)
+        and not re.match(
+            r"^#EXTINF:-?\d+(?:\.\d+)?(?:\s|,)",
+            line,
+        )
     ]
 
     if invalid:
         raise ValueError(
-            f"Invalid EXTINF syntax detected ({len(invalid)} lines). "
-            f"First invalid line: {invalid[0]}"
+            f"Ошибка формата M3U: {invalid[0]}"
         )
 
-    OUT.write_text("\n".join(output) + "\n", encoding="utf-8")
+    OUT.write_text(
+        "\n".join(output) + "\n",
+        encoding="utf-8",
+    )
 
-    total = sum(counts.values())
-    print(f"Created {OUT}: {total} channel entries")
+    print("\n========== РЕЗУЛЬТАТ ==========")
+    print("Всего потоков:", len(entries))
+    print("Всего каналов в плейлисте:", sum(counts.values()))
 
+    print("\nФильтрация:")
+    for name, count in sorted(stats.items()):
+        print(f"  {name}: {count}")
+
+    print("\nКатегории:")
     for group, count in sorted(counts.items()):
         print(f"  {group}: {count}")
+
+    print("\nПлейлист успешно создан:", OUT)
 
 
 if __name__ == "__main__":
