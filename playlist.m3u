@@ -4047,6 +4047,8 @@ https://cdn.ntv.ru/th_style/playlist.m3u8
 http://31.148.48.15/Zhivi/index.m3u8
 #EXTINF:-1 tvg-id="zhivi" tvg-name="Zhivi!" group-title="Стиль жизни",Zhivi! [SD]
 https://fs.uplink.kz/zhivi/mono.m3u8?token=onlinetv
+#EXTINF:-1 tvg-id="ntv-style" tvg-name="НТВ Стиль" group-title="Стиль жизни",НТВ Стиль
+https://cdn.ntv.ru/th_style/index.m3u8
 #EXTINF:-1 tvg-id="" tvg-name="Тонус" group-title="Стиль жизни",Тонус
 http://194.143.148.28/Mir24/index.m3u8
 #EXTINF:-1 tvg-id="shop24" tvg-name="Leomax 24" group-title="Телемагазины",Leomax 24 [Full HD]
@@ -4222,8 +4224,6 @@ https://cdn4.skygo.mn/live/disk1/MIR/HLSv3-FTA/MIR.m3u8
 https://stream8.cinerama.uz/1219/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="mir-24" tvg-name="Mir 24" group-title="Федеральные",Mir 24 [Full HD]
 http://hls.mirtv.cdnvideo.ru/mirtv-parampublish/mir24_2500/playlist.m3u8
-#EXTINF:-1 tvg-id="mir-24" tvg-name="Mir 24" group-title="Федеральные",Mir 24 [SD]
-http://5.188.159.128:8070/mir_24/index.m3u8
 #EXTINF:-1 tvg-id="mir-24" tvg-name="Mir 24" group-title="Федеральные",Mir 24 [SD]
 http://31.148.48.15/Mir_24/index.m3u8
 #EXTINF:-1 tvg-id="muztv" tvg-name="Muz-TV" group-title="Федеральные",Muz-TV
@@ -4647,8 +4647,6 @@ https://streaming.televizor-24-tochka.ru/live/14.m3u8
 #EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
 https://live.smotrim.ru/vgtrk/arhangelsk/russia1-hd/index.m3u8
 #EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
-https://live.smotrim.ru/vgtrk/astrahan/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
 https://live.smotrim.ru/vgtrk/belgorod/russia1-hd/index.m3u8
 #EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
 https://live.smotrim.ru/vgtrk/blagoveshensk/russia1-hd/index.m3u8
@@ -4659,7 +4657,7 @@ https://live.smotrim.ru/vgtrk/velikiy-novgorod/russia1-hd/index.m3u8
 #EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
 https://live.smotrim.ru/vgtrk/vladikavkaz/russia1-hd/index.m3u8
 #EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
-https://live.smotrim.ru/vgtrk/vladimir/russia1-hd/index.m3u8
+https://live.smotrim.ru/vgtrk/voroneg/russia1-hd/index.m3u8
 #EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
 https://live.smotrim.ru/vgtrk/ekaterinburg/russia1-hd/index.m3u8
 #EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
@@ -4668,8 +4666,6 @@ https://live.smotrim.ru/vgtrk/ivanovo/russia1-hd/index.m3u8
 https://live.smotrim.ru/vgtrk/yoshkar-ola/russia1-hd/index.m3u8
 #EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
 https://live.smotrim.ru/vgtrk/kazan/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
-https://live.smotrim.ru/vgtrk/kaliningrad/russia1-hd/index.m3u8
 #EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
 https://live.smotrim.ru/vgtrk/kaluga/russia1-hd/index.m3u8
 #EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
@@ -4681,8 +4677,6 @@ https://live.smotrim.ru/vgtrk/kostroma/russia1-hd/index.m3u8
 #EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
 https://live.smotrim.ru/vgtrk/kurgan/russia1-hd/index.m3u8
 #EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
-https://live.smotrim.ru/vgtrk/kisil/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
 https://live.smotrim.ru/vgtrk/lipetsk/russia1-hd/index.m3u8
 #EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
 https://live.smotrim.ru/vgtrk/magadan/russia1-hd/index.m3u8
@@ -4691,15 +4685,13 @@ https://live.smotrim.ru/vgtrk/maykop/russia1-hd/index.m3u8
 #EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
 https://live.smotrim.ru/vgtrk/nalchik/russia1-hd/index.m3u8
 #EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
-https://live.smotrim.ru/vgtrk/novosibirsk/russia1-hd/index.m3u8
+https://live.smotrim.ru/vgtrk/omsk/russia1-hd/index.m3u8
 #EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
 https://live.smotrim.ru/vgtrk/orel/russia1-hd/index.m3u8
 #EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
 https://live.smotrim.ru/vgtrk/orenburg/russia1-hd/index.m3u8
 #EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
 https://live.smotrim.ru/vgtrk/penza/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
-https://live.smotrim.ru/vgtrk/petrozavodsk/russia1-hd/index.m3u8
 #EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
 https://live.smotrim.ru/vgtrk/petropavlosk/russia1-hd/index.m3u8
 #EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
@@ -4711,8 +4703,6 @@ https://live.smotrim.ru/vgtrk/ryazan/russia1-hd/index.m3u8
 #EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
 https://live.smotrim.ru/vgtrk/spb/russia1-hd/index.m3u8
 #EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
-https://live.smotrim.ru/vgtrk/saransk/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
 https://live.smotrim.ru/vgtrk/saratov/russia1-hd/index.m3u8
 #EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
 https://live.smotrim.ru/vgtrk/smolensk/russia1-hd/index.m3u8
@@ -4723,9 +4713,9 @@ https://live.smotrim.ru/vgtrk/tver/russia1-hd/index.m3u8
 #EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
 https://live.smotrim.ru/vgtrk/tomsk/russia1-hd/index.m3u8
 #EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
-https://live.smotrim.ru/vgtrk/tula/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
 https://live.smotrim.ru/vgtrk/ulanude/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+https://live.smotrim.ru/vgtrk/habarovsk/russia1-hd/index.m3u8
 #EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
 https://live.smotrim.ru/vgtrk/cheboksar/russia1-hd/index.m3u8
 #EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
@@ -4733,13 +4723,9 @@ https://live.smotrim.ru/vgtrk/chita/russia1-hd/index.m3u8
 #EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
 https://live.smotrim.ru/vgtrk/ugnosahalinsk/russia1-hd/index.m3u8
 #EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
-https://live.smotrim.ru/vgtrk/yakutsk/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
 http://live.smotrim.ru/vgtrk/maykop/russia1-hd/index.m3u8
 #EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
 http://live.smotrim.ru/vgtrk/vladikavkaz/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
-http://live.smotrim.ru/vgtrk/blagoveshensk/russia1-hd/index.m3u8
 #EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
 http://live.smotrim.ru/vgtrk/belgorod/russia1-hd/index.m3u8
 #EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
@@ -4748,6 +4734,8 @@ http://live.smotrim.ru/vgtrk/bryansk/russia1-hd/index.m3u8
 http://live.smotrim.ru/vgtrk/ulanude/russia1-hd/index.m3u8
 #EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
 http://live.smotrim.ru/vgtrk/vladimir/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+http://live.smotrim.ru/vgtrk/volgograd/russia1-hd/index.m3u8
 #EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
 http://live.smotrim.ru/vgtrk/voroneg/russia1-hd/index.m3u8
 #EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
@@ -4769,6 +4757,8 @@ http://live.smotrim.ru/vgtrk/kaluga/russia1-hd/index.m3u8
 #EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
 http://live.smotrim.ru/vgtrk/petropavlosk/russia1-hd/index.m3u8
 #EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+http://live.smotrim.ru/vgtrk/petrozavodsk/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
 http://live.smotrim.ru/vgtrk/kostroma/russia1-hd/index.m3u8
 #EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
 http://live.smotrim.ru/vgtrk/kemerovo/russia1-hd/index.m3u8
@@ -4780,6 +4770,8 @@ http://live.smotrim.ru/vgtrk/lipetsk/russia1-hd/index.m3u8
 http://live.smotrim.ru/vgtrk/astrahan/russia1-hd/index.m3u8
 #EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
 http://live.smotrim.ru/vgtrk/magadan/russia1-hd/index.m3u8
+#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
+http://live.smotrim.ru/vgtrk/yoshkar-ola/russia1-hd/index.m3u8
 #EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
 http://live.smotrim.ru/vgtrk/saransk/russia1-hd/index.m3u8
 #EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
@@ -4832,8 +4824,6 @@ https://live.smotrim.ru/vgtrk/abakan/russia1-sd/index.m3u8
 https://live.smotrim.ru/vgtrk/anadyr/russia1-sd/index.m3u8
 #EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [SD]
 https://live.smotrim.ru/vgtrk/barnaul/russia1-sd/index.m3u8
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [SD]
-https://live.smotrim.ru/vgtrk/vladivostok/russia1-sd/index.m3u8
 #EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [SD]
 https://live.smotrim.ru/vgtrk/vologda/russia1-sd/index.m3u8
 #EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [SD]
