@@ -118,7 +118,7 @@ FEDERAL_IDS = {
 CHECK_FROM_RUSSIA = os.environ.get("CHECK_FROM_RUSSIA", "1") != "0"
 CHECK_HOST_API = "https://check-host.net"
 CHECK_HOST_NODES = ("ru1.node.check-host.net", "ru2.node.check-host.net")
-RU_CHECK_LIMIT = int(os.environ.get("RU_CHECK_LIMIT", "200"))
+RU_CHECK_LIMIT = int(os.environ.get("RU_CHECK_LIMIT", "120"))
 RU_CHECK_WORKERS = 2
 ru_limit_reached = []
 ru_answers = Counter()
@@ -945,9 +945,18 @@ def check_from_russia(url, has_headers=False):
         request_id = answer["request_id"]
         result = {}
 
-        for _attempt in range(20):
-            time.sleep(4)
-            result = check_host_request("/check-result/" + request_id)
+        time.sleep(4)
+
+        for _attempt in range(12):
+            time.sleep(6)
+
+            try:
+                result = check_host_request("/check-result/" + request_id)
+            except HTTPError as error:
+                if error.code != 429:
+                    raise
+                time.sleep(20)
+                continue
 
             if result and all(value is not None for value in result.values()):
                 break
@@ -956,7 +965,7 @@ def check_from_russia(url, has_headers=False):
         return "unknown"
 
     if not result or all(value is None for value in result.values()):
-        ru_answers["узлы не ответили за 80 с"] += 1
+        ru_answers["узлы не ответили"] += 1
         return "unknown"
 
     answers = []
