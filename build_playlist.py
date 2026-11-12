@@ -1532,6 +1532,50 @@ def main():
                 epg_matched += 1
                 break
 
+    # Дубли одного канала в одном качестве внутри одной группы: оставляем
+    # одну ссылку, предпочитая проверенную (работает из США или из России),
+    # затем ссылку, которая уже была в плейлисте, затем остальные.
+    def dedupe_name(item):
+        name = clean(item["channel"].get("name")).lower()
+        name = re.sub(r"\[[^\]]*\]|\([^)]*\)", " ", name)
+        name = re.sub(r"\b(full\s*hd|fhd|uhd|4k|hd|sd)\b", " ", name)
+        return re.sub(r"[^\w]+", "", name)
+
+    def dedupe_rank(item):
+        status = item.get("status", "")
+
+        if status in ("ok", "ok_ru"):
+            return 0
+
+        return 1 if not status else 2
+
+    deduped = {}
+    quality_removed = 0
+
+    for item in entries:
+        key = (
+            item["group"],
+            dedupe_name(item),
+            quality_label(item["quality"]),
+        )
+
+        if not key[1]:
+            deduped[object()] = item
+            continue
+
+        current = deduped.get(key)
+
+        if current is None:
+            deduped[key] = item
+        else:
+            quality_removed += 1
+
+            if dedupe_rank(item) < dedupe_rank(current):
+                deduped[key] = item
+
+    entries = list(deduped.values())
+    print(f"Удалено дублей одного качества: {quality_removed}")
+
     entries.sort(
         key=lambda item: (
             item["group"] == ADULT_GROUP,
