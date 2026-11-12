@@ -59,7 +59,7 @@ https://autopilot.catcast.tv/content/38720/index.m3u8
 #EXTINF:-1 tvg-id="DetvoraPlus.ru" tvg-name="Detvora+" group-title="Детские",Detvora+ [Full HD]
 https://cdn.rostelekom-tv.xyz/live/WAYU4PTJ_VVz4wAQ.m3u8
 #EXTINF:-1 tvg-id="gulli-girl" tvg-name="Gulli Girl" group-title="Детские",Gulli Girl [SD]
-http://flussonic.linkintel.ru/gulli_girl/index.m3u8
+http://stream.mcquack.net/305/index.m3u8
 #EXTINF:-1 tvg-id="gulli-girl" tvg-name="Gulli Girl" group-title="Детские",Gulli Girl [HD]
 https://stream8.cinerama.uz/1445/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="ginger-hd" tvg-name="Kapitan Fantastika" group-title="Детские",Kapitan Fantastika [Full HD]
@@ -74,7 +74,7 @@ https://stream8.cinerama.uz/1244/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="mult" tvg-name="Mult" group-title="Детские",Mult [Full HD]
 http://31.148.48.15/Mult_HD/index.m3u8
 #EXTINF:-1 tvg-id="mult" tvg-name="Mult" group-title="Детские",Mult [SD]
-https://stream8.cinerama.uz/1246/tracks-v1a1/mono.m3u8
+http://stream.mcquack.net/232/index.m3u8
 #EXTINF:-1 tvg-id="multimuzyka" tvg-name="Mult i muzyka" group-title="Детские",Mult i muzyka [SD]
 http://stream.mcquack.net/82/index.m3u8
 #EXTINF:-1 tvg-id="multimania" tvg-name="Multilandia" group-title="Детские",Multilandia
@@ -257,7 +257,7 @@ http://stream.mcquack.net/278/index.m3u8
 #EXTINF:-1 tvg-id="russkaya-komedia" tvg-name="Komedia" group-title="Кино",Komedia [SD]
 http://176.118.197.101/Komediya/index.m3u8
 #EXTINF:-1 tvg-id="mosfilm" tvg-name="Mosfilm Gold Collection" group-title="Кино",Mosfilm Gold Collection [SD]
-http://31.222.235.15/mosfilm/index.m3u8
+http://stream.mcquack.net/369/index.m3u8
 #EXTINF:-1 tvg-id="movify-kino" tvg-name="Movify Kino" group-title="Кино",Movify Kino [SD]
 #EXTVLCOPT:http-referrer=https://void.greenhosting.ru/
 https://void.greenhosting.ru/MovifyKino_Mpeg4/index.m3u8
@@ -386,7 +386,7 @@ http://stream.mcquack.net/298/index.m3u8
 #EXTINF:-1 tvg-id="eda-hd" tvg-name="FoodTime" group-title="Кулинария",FoodTime [Full HD]
 http://stream.mcquack.net/216/index.m3u8
 #EXTINF:-1 tvg-id="Kuhnya.ru" tvg-name="Kuhnya" group-title="Кулинария",Kuhnya [SD]
-https://stream8.cinerama.uz/1236/tracks-v1a1/mono.m3u8
+http://stream.mcquack.net/179/index.m3u8
 #EXTINF:-1 tvg-id="KulinarTV.ru" tvg-name="Kulinar TV" group-title="Кулинария",Kulinar TV
 https://api.alpaca.t62a.com/hls/9110/index.m3u8
 #EXTINF:-1 tvg-id="KulinarTV.ru" tvg-name="Kulinar TV" group-title="Кулинария",Kulinar TV [SD]
@@ -649,7 +649,7 @@ https://cdn.global.elektamedia.com/live/c7eds/Totalmusic/SA_LIVE_hls_enc/master.
 #EXTINF:-1 tvg-id="Totalmusic2000s.uk" tvg-name="Totalmusic 2000s" group-title="Музыка | Другие",Totalmusic 2000s [HD]
 https://cdn.global.elektamedia.com/live/c7eds/Totalmusic_00s/SA_LIVE_hls_enc/master.m3u8
 #EXTINF:-1 tvg-id="TraceUK.uk" tvg-name="Trace UK" group-title="Музыка | Другие",Trace UK [Full HD]
-https://channels.trace.plus/Traceprod/UK_FAST_hd/index.m3u8
+https://d2l4tng0wskzvn.cloudfront.net/Trace_GB.m3u8
 #EXTINF:-1 tvg-id="TVCidade.cv" tvg-name="TV Cidade" group-title="Музыка | Другие",TV Cidade
 https://stmv1.srvif.com/tvcidade/tvcidade/playlist.m3u8
 #EXTINF:-1 tvg-id="liuks" tvg-name="2TV" group-title="Музыка | Европейская",2TV [Full HD]
@@ -1358,7 +1358,7 @@ http://38.87.224.20:2220/play/a02b/index.m3u8
 #EXTINF:-1 tvg-id="Totovision.gt" tvg-name="Totovision" group-title="Музыка | Латино",Totovision
 https://cdn.streamhispanatv.net:3652/live/totovisiongtlive.m3u8
 #EXTINF:-1 tvg-id="trace-latina-fr" tvg-name="Trace Latina" group-title="Музыка | Латино",Trace Latina [Full HD]
-https://channels.trace.plus/Traceprod/LATINA_hd/index.m3u8
+https://cdn-ue1-prod.tsv2.amagi.tv/linear/amg01131-tracetv-tracelatinait-samsungit/playlist.m3u8
 #EXTINF:-1 tvg-id="trace-latina-fr" tvg-name="Trace Latina" group-title="Музыка | Латино",Trace Latina [SD]
 https://mumbai-edge.smartplaytv.in/TraceLatina/index.m3u8
 #EXTINF:-1 tvg-id="trace-latina-fr" tvg-name="Trace Latina" group-title="Музыка | Латино",Trace Latina [HD]
@@ -1898,7 +1898,7 @@ http://31.148.48.15/Bridge_TV_HD/index.m3u8
 #EXTINF:-1 tvg-id="bridge-hd" tvg-name="BRIDGE Deluxe" group-title="Музыка | Русская",BRIDGE Deluxe [SD]
 http://stream.mcquack.net/92/index.m3u8
 #EXTINF:-1 tvg-id="BRIDGEHits.ru" tvg-name="BRIDGE Hits" group-title="Музыка | Русская",BRIDGE Hits [SD]
-http://5.188.159.128:8070/Bridge_TV_Hits/index.m3u8
+http://stream.mcquack.net/320/index.m3u8
 #EXTINF:-1 tvg-id="CityEdenBirmaPlay.ru" tvg-name="City Eden Birma Play" group-title="Музыка | Русская",City Eden Birma Play
 https://cityeden.catcast.tv/content/34364/index.m3u8
 #EXTINF:-1 tvg-id="CityEdenPlay.ru" tvg-name="City Eden Play" group-title="Музыка | Русская",City Eden Play
@@ -2087,7 +2087,7 @@ https://urbanrevolution.es:8443/live/TV/playlist.m3u8
 #EXTINF:-1 tvg-id="RadioItaliaTrendTV.it" tvg-name="Radio Italia Trend TV" group-title="Музыка | Хип-хоп и R&B",Radio Italia Trend TV [HD]
 https://amg00745-radioitailaspa-radioitalia-rakuten-sucsc.amagi.tv/hls/amagi_hls_data_rakutenAA-radioitalia-rakuten/CDN/master.m3u8
 #EXTINF:-1 tvg-id="trace-urban" tvg-name="Trace Urban" group-title="Музыка | Хип-хоп и R&B",Trace Urban [Full HD]
-https://channels.trace.plus/Traceprod/URBAN_AFRIC_FR_hd/index.m3u8
+https://lightning-traceurban-samsungau.amagi.tv/playlist.m3u8
 #EXTINF:-1 tvg-id="trace-urban" tvg-name="Trace Urban" group-title="Музыка | Хип-хоп и R&B",Trace Urban [HD]
 https://amg01131-tracetv-traceurban-klowdtv-utiqd.amagi.tv/playlist/amg01131-tracetv-traceurban-klowdtv/playlist.m3u8
 #EXTINF:-1 tvg-id="TropicalMoonUrbanTV.pa" tvg-name="Tropical Moon Urban TV" group-title="Музыка | Хип-хоп и R&B",Tropical Moon Urban TV
@@ -2179,7 +2179,7 @@ https://stream.smotrim.ru/hls2/givc9/playlist_4.m3u8
 #EXTINF:-1 tvg-id="NovorossiyaTV.ru" tvg-name="Novorossiya TV" group-title="Новости",Novorossiya TV [Full HD]
 http://31.131.139.253:9002/novoros/index.m3u8
 #EXTINF:-1 tvg-id="OplotTV.ru" tvg-name="Oplot TV" group-title="Новости",Oplot TV [Full HD]
-http://31.131.139.253:9002/oplot_hd/index.m3u8
+http://31.131.141.195:8000/play/a006/index.m3u8
 #EXTINF:-1 tvg-id="OSN.ru" tvg-name="OSN" group-title="Новости",OSN
 http://osnmedia.servicecdn.ru/streams/17603_88089/playlist.m3u8
 #EXTINF:-1 tvg-id="ostwest24" tvg-name="Ost West 24" group-title="Новости",Ost West 24 [Full HD]
@@ -2458,7 +2458,7 @@ http://s1.merlive.am/black/index.m3u8
 #EXTINF:-1 tvg-id="sony-tv" tvg-name=".red" group-title="Развлекательные",.red [Full HD]
 http://178.134.1.158:8081/red/index.m3u8
 #EXTINF:-1 tvg-id="sony-tv" tvg-name=".red" group-title="Развлекательные",.red [SD]
-http://5.188.159.128:8070/RED/index.m3u8
+http://stream.mcquack.net/69/index.m3u8
 #EXTINF:-1 tvg-id="belarus2" tvg-name="Belarus-2" group-title="Развлекательные",Belarus-2
 https://edge55.dc.beltelecom.by/ngtrk/smil:belarus2.smil/playlist.m3u8
 #EXTINF:-1 tvg-id="belarus2" tvg-name="Belarus-2" group-title="Развлекательные",Belarus-2 [Full HD]
@@ -2627,7 +2627,7 @@ https://live-vestinn.cdnvideo.ru/vestinn/nn24-khl/playlist.m3u8
 #EXTVLCOPT:http-user-agent=WINK/1.40.1 (AndroidTV/9) HlsWinkPlayer
 https://rt-nw-novg-htlive.cdn.ngenix.net/hls/CH_R02_NOVGORODTV/variant.m3u8
 #EXTINF:-1 tvg-id="nst" tvg-name="NST" group-title="Региональные",NST [SD]
-http://stream.mcquack.net/207/index.m3u8
+https://vod.tuva.ru/nst/index.m3u8
 #EXTINF:-1 tvg-id="NTK21.ru" tvg-name="NTK 21" group-title="Региональные",NTK 21
 #EXTVLCOPT:http-user-agent=WINK/1.40.1 (AndroidTV/9) HlsWinkPlayer
 https://s97982.cdn.ngenix.net/hls/CH_R79_OTT_DV_HVSK_NTK/variant.m3u8
@@ -3000,7 +3000,7 @@ http://stream.mcquack.net/204/index.m3u8
 #EXTINF:-1 tvg-id="russky-roman" tvg-name="Russkiy roman" group-title="Сериалы",Russkiy roman [Full HD]
 http://31.148.48.15/Russkiy_Roman_HD/index.m3u8
 #EXTINF:-1 tvg-id="russky-roman" tvg-name="Russkiy roman" group-title="Сериалы",Russkiy roman [SD]
-http://stream.mcquack.net/266/index.m3u8
+https://vod.tuva.ru/rusroman/index.m3u8
 #EXTINF:-1 tvg-id="sapfir" tvg-name="Saphire" group-title="Сериалы",Saphire [Full HD]
 http://46.53.200.153:7777/play/Sapfir_HD/index.m3u8
 #EXTINF:-1 tvg-id="sapfir" tvg-name="Saphire" group-title="Сериалы",Saphire [SD]
@@ -3396,7 +3396,9 @@ http://stream.mcquack.net/106/index.m3u8
 #EXTINF:-1 tvg-id="tnt4-international" tvg-name="TNT4 International" group-title="Федеральные",TNT4 International [SD]
 https://fs.uplink.kz/tnt4/mono.m3u8?token=onlinetv
 #EXTINF:-1 tvg-id="tvcentr" tvg-name="TV Centr" group-title="Федеральные",TV Centr
-https://tvc-hls.cdnvideo.ru/tvc-res/smil:vd9221.smil/playlist.m3u8
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://televizor24tochka.ru/
+https://streaming.televizor-24-tochka.ru/live/13.m3u8
 #EXTINF:-1 tvg-id="tvcentr" tvg-name="TV Centr" group-title="Федеральные",TV Centr [SD]
 http://31.148.5.241/kanal_10/index.m3u8
 #EXTINF:-1 tvg-id="tvci" tvg-name="TV Centr International" group-title="Федеральные",TV Centr International [SD]
@@ -3422,77 +3424,345 @@ https://stream8.cinerama.uz/1050/tracks-v1a1/mono.m3u8
 https://tvchannelstream1.tvzvezda.ru/cdn/tvzvezda/playlist.m3u8
 #EXTINF:-1 tvg-id="zvezda" tvg-name="Zvezda" group-title="Федеральные",Zvezda [SD]
 http://31.148.5.241/kanal_17/index.m3u8
+#EXTINF:-1 tvg-id="scifi-pl" tvg-name=".sci-fi" group-title="Не проверено",.sci-fi [SD]
+http://31.148.48.15/SONY_SCI_FI/index.m3u8
+#EXTINF:-1 tvg-id="2na2" tvg-name="2x2" group-title="Не проверено",2x2 [SD]
+http://31.148.48.15/2x2/index.m3u8
+#EXTINF:-1 tvg-id="30AMusic.us" tvg-name="30A Music" group-title="Не проверено",30A Music [HD]
+https://30a-tv.com/feeds/ceftech/30atvmusic.m3u8
+#EXTINF:-1 tvg-id="365-dnej" tvg-name="365 days TV" group-title="Не проверено",365 days TV [SD]
+https://fs.uplink.kz/365_dney/mono.m3u8?token=onlinetv
+#EXTINF:-1 tvg-id="7SMusic.in" tvg-name="7S Music" group-title="Не проверено",7S Music [SD]
+https://mumt03.tangotv.in/Dsly5z3H7SMUSIC/index.m3u8
+#EXTINF:-1 tvg-id="9XJalwa.in" tvg-name="9X Jalwa" group-title="Не проверено",9X Jalwa [SD]
+https://mumt03.tangotv.in/Dsly5z3H9XJALWA/index.m3u8
+#EXTINF:-1 tvg-id="9XJhakaas.in" tvg-name="9X Jhakaas" group-title="Не проверено",9X Jhakaas [SD]
+https://mumt03.tangotv.in/Dsly5z3H9XJHAKAAS/index.m3u8
+#EXTINF:-1 tvg-id="9XM.in" tvg-name="9XM" group-title="Не проверено",9XM [Full HD]
+https://9xjio.wiseplayout.com/9XM/master.m3u8
+#EXTINF:-1 tvg-id="ani" tvg-name="Ani" group-title="Не проверено",Ani [SD]
+http://46.32.176.50/anitv/index.m3u8
 #EXTINF:-1 tvg-id="arktika-24" tvg-name="Arktika 24" group-title="Не проверено",Arktika 24 [Full HD]
 https://live.smotrim.ru/vgtrk/arhangelsk/arktika24-hd/index.m3u8
+#EXTINF:-1 tvg-id="avto24" tvg-name="Avto24" group-title="Не проверено",Avto24 [SD]
+https://fs.uplink.kz/avto24/mono.m3u8?token=onlinetv
+#EXTINF:-1 tvg-id="B4UMusic.in" tvg-name="B4U Music" group-title="Не проверено",B4U Music [SD]
+http://66.102.126.10:8000/play/a01e/index.m3u8
 #EXTINF:-1 tvg-id="bashkortostan24" tvg-name="Bashkortostan 24" group-title="Не проверено",Bashkortostan 24 [Full HD]
 https://live.smotrim.ru/vgtrk/ufa/bashkortostan24-hd/index.m3u8
+#EXTINF:-1 tvg-id="belarus24" tvg-name="Belarus-24" group-title="Не проверено",Belarus-24 [SD]
+http://31.148.48.15/Belarus_24/index.m3u8
+#EXTINF:-1 tvg-id="belarus5" tvg-name="Belarus-5" group-title="Не проверено",Belarus-5 [Full HD]
+https://edge59.dc.beltelecom.by/ngtrk/smil:belarus5int.smil/playlist.m3u8
+#EXTINF:-1 tvg-id="bobior" tvg-name="Bober" group-title="Не проверено",Bober [SD]
+https://fs.uplink.kz/bober/mono.m3u8?token=onlinetv
 #EXTINF:-1 tvg-id="bollywood-hd" tvg-name="Bollywood HD" group-title="Не проверено",Bollywood HD [Full HD]
 http://103.213.31.109:90/BollywoodHD/playlist.m3u8
+#EXTINF:-1 tvg-id="bridge-hd" tvg-name="BRIDGE" group-title="Не проверено",BRIDGE [SD]
+http://31.148.48.15/Bridge_TV/index.m3u8
+#EXTINF:-1 tvg-id="bridge-tv-classic" tvg-name="BRIDGE Classic" group-title="Не проверено",BRIDGE Classic [SD]
+http://stream.mcquack.net/272/index.m3u8
+#EXTINF:-1 tvg-id="BRIDGEHits.ru" tvg-name="BRIDGE Hits" group-title="Не проверено",BRIDGE Hits [SD]
+http://31.148.48.15/Bridge_TV_Dance/index.m3u8
+#EXTINF:-1 tvg-id="karusel" tvg-name="Carousel" group-title="Не проверено",Carousel [SD]
+http://flussonic.linkintel.ru/Karusel/index.m3u8
+#EXTINF:-1 tvg-id="piaty-int" tvg-name="Channel 5 International" group-title="Не проверено",Channel 5 International [SD]
+https://fs.uplink.kz/5_kanal/mono.m3u8?token=onlinetv
+#EXTINF:-1 tvg-id="pervy" tvg-name="Channel One" group-title="Не проверено",Channel One [SD]
+http://45.153.24.78/1TV/index.m3u8
+#EXTINF:-1 tvg-id="pervy" tvg-name="Channel One" group-title="Не проверено",Channel One [HD]
+https://edge1.1internet.tv/dash-live2/streams/1tv-dvr/1tvdash.mpd
+#EXTINF:-1 tvg-id="che" tvg-name="Che!" group-title="Не проверено",Che! [SD]
+http://flussonic.linkintel.ru/che/index.m3u8
+#EXTINF:-1 tvg-id="cinema-ru" tvg-name="Cinema" group-title="Не проверено",Cinema
+http://catchup.videoline.ru/cinema/playlist.m3u8
+#EXTINF:-1 tvg-id="da-vinci" tvg-name="Da Vinci" group-title="Не проверено",Da Vinci [SD]
+https://fs.uplink.kz/da_vinci/mono.m3u8?token=onlinetv
+#EXTINF:-1 tvg-id="domkino" tvg-name="Dom kino" group-title="Не проверено",Dom kino [SD]
+https://fs.uplink.kz/dom_kino/mono.m3u8?token=onlinetv
+#EXTINF:-1 tvg-id="domkino-premium" tvg-name="Dom kino Premium" group-title="Не проверено",Dom kino Premium [Full HD]
+https://fs.uplink.kz/dom_kino_premium/mono.m3u8?token=onlinetv
+#EXTINF:-1 tvg-id="domashnie-zhivotnye" tvg-name="Domashnie Zhivotnye" group-title="Не проверено",Domashnie Zhivotnye [SD]
+https://fs.uplink.kz/domashnie_zhivotnie/mono.m3u8?token=onlinetv
 #EXTINF:-1 tvg-id="domashny" tvg-name="Domashniy" group-title="Не проверено",Domashniy
 http://ott-cdn.ucom.am/s88/index.m3u8
+#EXTINF:-1 tvg-id="domashny" tvg-name="Domashniy" group-title="Не проверено",Domashniy [SD]
+https://fs.uplink.kz/domashniy/mono.m3u8?token=onlinetv
 #EXTINF:-1 tvg-id="epic-drama-pl" tvg-name="Epic Drama" group-title="Не проверено",Epic Drama
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36
 http://82.78.243.219:45739/play/a01p/index.m3u8
-#EXTINF:-1 tvg-id="FONTV.ru" tvg-name="FON TV" group-title="Не проверено",FON TV [Full HD]
-https://fontvlive.mediacdn.ru/stream/fontv/playlist.m3u8
+#EXTINF:-1 tvg-id="EpicMusic.in" tvg-name="Epic Music" group-title="Не проверено",Epic Music [SD]
+http://66.102.126.10:8000/play/a01i/index.m3u8
+#EXTINF:-1 tvg-id="europa-plus-tv" tvg-name="Europa Plus TV" group-title="Не проверено",Europa Plus TV [SD]
+https://fs.uplink.kz/europa_plus/mono.m3u8?token=onlinetv
+#EXTINF:-1 tvg-id="evrokino" tvg-name="Evrokino" group-title="Не проверено",Evrokino [SD]
+https://fs.uplink.kz/eurokino/mono.m3u8?token=onlinetv
+#EXTINF:-1 tvg-id="ExtremeSportsChannel.ru" tvg-name="Extreme Sports Channel" group-title="Не проверено",Extreme Sports Channel [SD]
+https://fs.uplink.kz/extreme_sports/mono.m3u8?token=onlinetv
 #EXTINF:-1 tvg-id="eda-hd" tvg-name="FoodTime" group-title="Не проверено",FoodTime [Full HD]
 http://31.148.48.15/Eda_Premium_HD/index.m3u8
+#EXTINF:-1 tvg-id="piatnica" tvg-name="Friday!" group-title="Не проверено",Friday! [SD]
+http://flussonic.linkintel.ru/Pyatnica/index.m3u8
+#EXTINF:-1 tvg-id="GEMMifaPlus.tr" tvg-name="GEM Mifa +" group-title="Не проверено",GEM Mifa +
+https://ca-rt.onetv.app/gemmifaplus/index-0.m3u8?token=onetv202
+#EXTINF:-1 tvg-id="illuzion-plus" tvg-name="Illusion+" group-title="Не проверено",Illusion+ [SD]
+http://31.148.48.15/Illusion_plus/index.m3u8
+#EXTINF:-1 tvg-id="zee-tv" tvg-name="India" group-title="Не проверено",India [SD]
+http://31.148.48.15/Zee_TV_Russia/index.m3u8
+#EXTINF:-1 tvg-id="indiyskoe-kino" tvg-name="Indiyskoye Kino" group-title="Не проверено",Indiyskoye Kino [SD]
+https://fs.uplink.kz/indiyskoe_kino/mono.m3u8?token=onlinetv
+#EXTINF:-1 tvg-id="istoria" tvg-name="Istoriya" group-title="Не проверено",Istoriya [SD]
+http://31.148.48.15/Istoriya/index.m3u8
 #EXTINF:-1 tvg-id="kavkaz24" tvg-name="Kavkaz 24" group-title="Не проверено",Kavkaz 24 [SD]
 https://live.smotrim.ru/vgtrk/stavropol/kavkaz24-hd/index.m3u8
+#EXTINF:-1 tvg-id="kxl" tvg-name="KHL" group-title="Не проверено",KHL [SD]
+https://fs.uplink.kz/telekanal_khl/mono.m3u8?token=onlinetv
 #EXTINF:-1 tvg-id="kxl-hd" tvg-name="KHL Prime" group-title="Не проверено",KHL Prime [Full HD]
 https://fs.uplink.kz/khl_prime/mono.m3u8?token=onlinetv
 #EXTINF:-1 tvg-id="kxl-hd" tvg-name="KHL Prime" group-title="Не проверено",KHL Prime [HD]
 http://31.148.48.15/KHL_TV_HD/index.m3u8
+#EXTINF:-1 tvg-id="kino-tv-pl" tvg-name="Kino TV" group-title="Не проверено",Kino TV [SD]
+http://stream.mcquack.net/221/index.m3u8
+#EXTINF:-1 tvg-id="kinoxit" tvg-name="KinoHit" group-title="Не проверено",KinoHit [SD]
+https://fs.uplink.kz/kinohit/mono.m3u8?token=onlinetv
+#EXTINF:-1 tvg-id="kinokomedia" tvg-name="Kinokomedija" group-title="Не проверено",Kinokomedija [SD]
+https://fs.uplink.kz/kinokomedia/mono.m3u8?token=onlinetv
+#EXTINF:-1 tvg-id="kinomiks" tvg-name="Kinomix" group-title="Не проверено",Kinomix [SD]
+http://stream.mcquack.net/133/index.m3u8
+#EXTINF:-1 tvg-id="kinopokaz" tvg-name="Kinopokaz" group-title="Не проверено",Kinopokaz [SD]
+http://31.148.48.15/Kinopokaz/index.m3u8
+#EXTINF:-1 tvg-id="kinosemiya" tvg-name="Kinosemja" group-title="Не проверено",Kinosemja [SD]
+https://fs.uplink.kz/kinosemya/mono.m3u8?token=onlinetv
+#EXTINF:-1 tvg-id="kinosvidanie" tvg-name="Kinosvidanie" group-title="Не проверено",Kinosvidanie [SD]
+http://stream.mcquack.net/171/index.m3u8
+#EXTINF:-1 tvg-id="kinouzhas" tvg-name="Kinouzhas" group-title="Не проверено",Kinouzhas [SD]
+https://fs.uplink.kz/kinouzhas/mono.m3u8?token=onlinetv
+#EXTINF:-1 tvg-id="kvn-tv" tvg-name="KVN TV" group-title="Не проверено",KVN TV [SD]
+http://31.148.48.15/KVN_TV/index.m3u8
+#EXTINF:-1 tvg-id="mama" tvg-name="Mama" group-title="Не проверено",Mama [SD]
+http://flussonic.linkintel.ru/mama/index.m3u8
+#EXTINF:-1 tvg-id="Mastiii.in" tvg-name="Mastiii" group-title="Не проверено",Mastiii [SD]
+https://tvsen3.aynaott.com/er7jmpVF/index.m3u8
 #EXTINF:-1 tvg-id="match-tv" tvg-name="Match!" group-title="Не проверено",Match!
 https://streaming.televizor-24-tochka.ru/live/6.m3u8
+#EXTINF:-1 tvg-id="match-arena" tvg-name="Match! Arena" group-title="Не проверено",Match! Arena [SD]
+http://31.148.48.15/Match_Arena/index.m3u8
+#EXTINF:-1 tvg-id="match-boets" tvg-name="Match! Boets" group-title="Не проверено",Match! Boets [SD]
+http://31.148.48.15/Match_Boec/index.m3u8
+#EXTINF:-1 tvg-id="match-igra" tvg-name="Match! Igra" group-title="Не проверено",Match! Igra [SD]
+http://31.148.48.15/Match_Igra/index.m3u8
+#EXTINF:-1 tvg-id="match-planeta" tvg-name="Match! Planeta" group-title="Не проверено",Match! Planeta
+http://212.0.211.102:9999/play/a00b/index.m3u8
+#EXTINF:-1 tvg-id="match-nash-sport" tvg-name="Match! Strana" group-title="Не проверено",Match! Strana [SD]
+http://31.148.48.15/Match_Nash_Sport/index.m3u8
+#EXTINF:-1 tvg-id="MatchUltra.ru" tvg-name="Match! Ultra" group-title="Не проверено",Match! Ultra [SD]
+http://flussonic.linkintel.ru/match/index.m3u8
+#EXTINF:-1 tvg-id="MiMusicaRomantica.us" tvg-name="Mi Musica Romantica" group-title="Не проверено",Mi Musica Romantica [Full HD]
+http://168.228.44.241:9999/play/a054/index.m3u8
+#EXTINF:-1 tvg-id="mir" tvg-name="Mir" group-title="Не проверено",Mir
+http://hls.mirtv.cdnvideo.ru/mirtv-parampublish/mirtv2_2500/playlist.m3u8
+#EXTINF:-1 tvg-id="mir" tvg-name="Mir" group-title="Не проверено",Mir [SD]
+http://31.148.48.15/Mir/index.m3u8
+#EXTINF:-1 tvg-id="mir-seriala" tvg-name="Mir Seriala" group-title="Не проверено",Mir Seriala [SD]
+http://31.148.48.15/Mir_Seriala/index.m3u8
+#EXTINF:-1 tvg-id="mosfilm" tvg-name="Mosfilm Gold Collection" group-title="Не проверено",Mosfilm Gold Collection [SD]
+https://fs.uplink.kz/mosfilm/mono.m3u8?token=onlinetv
+#EXTINF:-1 tvg-id="moskva-24" tvg-name="Moskva 24" group-title="Не проверено",Moskva 24 [SD]
+https://fs.uplink.kz/moskva24/mono.m3u8?token=onlinetv
+#EXTINF:-1 tvg-id="moya-planeta" tvg-name="Moya Planeta" group-title="Не проверено",Moya Planeta [SD]
+https://fs.uplink.kz/moya_planeta/mono.m3u8?token=onlinetv
+#EXTINF:-1 tvg-id="mult" tvg-name="Mult" group-title="Не проверено",Mult [SD]
+https://fs.uplink.kz/mult/mono.m3u8?token=onlinetv
+#EXTINF:-1 tvg-id="multimuzyka" tvg-name="Mult i muzyka" group-title="Не проверено",Mult i muzyka [SD]
+http://31.148.48.15/Multimuzika/index.m3u8
+#EXTINF:-1 tvg-id="multimania" tvg-name="Multilandia" group-title="Не проверено",Multilandia [SD]
+http://31.148.48.15/Multilandiya/index.m3u8
+#EXTINF:-1 tvg-id="MusicIndia.in" tvg-name="Music India" group-title="Не проверено",Music India [SD]
+https://tvsen3.aynaott.com/Ydvf4ppw/index.m3u8
+#EXTINF:-1 tvg-id="muztv" tvg-name="Muz-TV" group-title="Не проверено",Muz-TV [SD]
+http://46.32.176.50/muztv/index.m3u8
+#EXTINF:-1 tvg-id="muzhskoe-kino" tvg-name="Muzhskoe kino" group-title="Не проверено",Muzhskoe kino [SD]
+https://fs.uplink.kz/muzhskoe_kino/mono.m3u8?token=onlinetv
+#EXTINF:-1 tvg-id="national-geographic" tvg-name="National Geographic" group-title="Не проверено",National Geographic [SD]
+https://fs.uplink.kz/nat_geo/mono.m3u8?token=onlinetv
 #EXTINF:-1 tvg-id="nn-24" tvg-name="Nizhniy Novgorod 24" group-title="Не проверено",Nizhniy Novgorod 24 [Full HD]
 https://live.smotrim.ru/vgtrk/nigniynovgorod/nigniynovgorod24-hd/index.m3u8
+#EXTINF:-1 tvg-id="nostalgia" tvg-name="Nostalgia" group-title="Не проверено",Nostalgia [SD]
+http://31.148.48.15/Nostalgiya/index.m3u8
 #EXTINF:-1 tvg-id="n-tv-hd-de" tvg-name="NTV" group-title="Не проверено",NTV
 http://ott-cdn.ucom.am/s17/index.m3u8
+#EXTINF:-1 tvg-id="n-tv-hd-de" tvg-name="NTV" group-title="Не проверено",NTV [Full HD]
+http://flussonic.linkintel.ru/ntv/index.m3u8
+#EXTINF:-1 tvg-id="n-tv-hd-de" tvg-name="NTV" group-title="Не проверено",NTV [SD]
+https://cdn.ntv.ru/ntv-spb/index.m3u8
+#EXTINF:-1 tvg-id="ntv-serial" tvg-name="NTV Series" group-title="Не проверено",NTV Series [SD]
+https://cdn.ntv.ru/th_serial/playlist.m3u8
+#EXTINF:-1 tvg-id="ntv-xit" tvg-name="NTV-Hit" group-title="Не проверено",NTV-Hit [SD]
+https://cdn.ntv.ru/th_hit/playlist.m3u8
+#EXTINF:-1 tvg-id="nr1-tr" tvg-name="Number 1 TV" group-title="Не проверено",Number 1 TV [HD]
+https://mn-nl.mncdn.com/blutv_nr12/live.m3u8
+#EXTINF:-1 tvg-id="OckoGold.cz" tvg-name="Ocko Gold" group-title="Не проверено",Ocko Gold
+https://ocko-live.ssl.cdn.cra.cz/cra_live2/ocko_gold.stream.1.smil/playlist.m3u8
 #EXTINF:-1 tvg-id="ont-by" tvg-name="ONT" group-title="Не проверено",ONT
 https://ngtrk.dc.beltelecom.by/ngtrk/smil:ont.smil/playlist.m3u8
 #EXTINF:-1 tvg-id="otr" tvg-name="OTR" group-title="Не проверено",OTR
 https://streaming.televizor-24-tochka.ru/live/12.m3u8
+#EXTINF:-1 tvg-id="OTR.ru" tvg-name="OTR" group-title="Не проверено",OTR [SD]
+http://flussonic.linkintel.ru/otr/index.m3u8
 #EXTINF:-1 tvg-id="perec-int" tvg-name="Peretz International" group-title="Не проверено",Peretz International
 https://cdn4.skygo.mn/live/disk1/Che/HLSv3-FTA/Che.m3u8
 #EXTINF:-1 tvg-id="RadioHit.ru" tvg-name="Radio Hit" group-title="Не проверено",Radio Hit
 http://hithd.camsh.orsk.ru/hls/hithd.m3u8
+#EXTINF:-1 tvg-id="radost-moya" tvg-name="Radost Moya" group-title="Не проверено",Radost Moya [SD]
+http://31.148.48.15/Radost_moya/index.m3u8
+#EXTINF:-1 tvg-id="rbk" tvg-name="RBK-TV" group-title="Не проверено",RBK-TV [SD]
+http://92.50.128.180/utv/1358/index.m3u8
 #EXTINF:-1 tvg-id="rentv" tvg-name="REN TV" group-title="Не проверено",REN TV
 https://streaming.televizor-24-tochka.ru/live/14.m3u8
+#EXTINF:-1 tvg-id="rentv" tvg-name="REN TV" group-title="Не проверено",REN TV [SD]
+http://31.148.48.15/REN-TV/index.m3u8
+#EXTINF:-1 tvg-id="retro-music-cz" tvg-name="Retro Music TV" group-title="Не проверено",Retro Music TV [SD]
+http://89.185.253.55/retrotv/retrotvHQ1/playlist.m3u8
+#EXTINF:-1 tvg-id="rodnoe-kino" tvg-name="Rodnoe Kino" group-title="Не проверено",Rodnoe Kino [SD]
+http://31.148.48.15/Rodnoe_kino/index.m3u8
+#EXTINF:-1 tvg-id="ru-tv" tvg-name="RU.TV" group-title="Не проверено",RU.TV [SD]
+http://31.148.48.15/RU_TV/index.m3u8
 #EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [Full HD]
 https://live.smotrim.ru/vgtrk/arhangelsk/russia1-hd/index.m3u8
 #EXTINF:-1 tvg-id="rossia1" tvg-name="Russia-1" group-title="Не проверено",Russia-1 [SD]
-https://live.smotrim.ru/vgtrk/abakan/russia1-sd/index.m3u8
+http://31.148.48.15/Rossiya_1/index.m3u8
 #EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [Full HD]
-https://live.smotrim.ru/vgtrk/habarovsk/russia24-sd/index.m3u8
+http://77.232.131.211/Rossiya24/index.m3u8
 #EXTINF:-1 tvg-id="rossia-24" tvg-name="Russia-24" group-title="Не проверено",Russia-24 [SD]
 https://live.smotrim.ru/vgtrk/0/russia24-sd/index.m3u8
+#EXTINF:-1 tvg-id="russky-bestseller" tvg-name="Russkiy Bestseller" group-title="Не проверено",Russkiy Bestseller [SD]
+http://31.148.48.15/Russkiy_Bestseller/index.m3u8
+#EXTINF:-1 tvg-id="russky-detektiv" tvg-name="Russkiy Detektiv" group-title="Не проверено",Russkiy Detektiv [SD]
+http://31.148.48.15/Russkiy_Detektiv/index.m3u8
+#EXTINF:-1 tvg-id="russky-roman" tvg-name="Russkiy roman" group-title="Не проверено",Russkiy roman [SD]
+http://31.148.48.15/Russkiy_Roman/index.m3u8
+#EXTINF:-1 tvg-id="ryzhy" tvg-name="Ryzhiy" group-title="Не проверено",Ryzhiy [SD]
+http://31.148.48.15/Rizhiy/index.m3u8
 #EXTINF:-1 tvg-id="samara24" tvg-name="Samara 24" group-title="Не проверено",Samara 24 [Full HD]
 https://live.smotrim.ru/vgtrk/samara/samara24-hd/index.m3u8
+#EXTINF:-1 tvg-id="SangeetBangla.in" tvg-name="Sangeet Bangla" group-title="Не проверено",Sangeet Bangla [SD]
+http://103.165.93.31:8095/sangeetBangla/index.m3u8
+#EXTINF:-1 tvg-id="sapfir" tvg-name="Saphire" group-title="Не проверено",Saphire [Full HD]
+http://77.232.131.211/Sapfir/manifest.m3u8
+#EXTINF:-1 tvg-id="sarafan" tvg-name="Sarafan" group-title="Не проверено",Sarafan [SD]
+http://31.148.48.15/Sarafan/index.m3u8
 #EXTINF:-1 tvg-id="saratov-24" tvg-name="Saratov 24" group-title="Не проверено",Saratov 24
 https://saratov24.tv/online/playlist.php
+#EXTINF:-1 tvg-id="ShansonTV.ru" tvg-name="Shanson TV" group-title="Не проверено",Shanson TV [SD]
+https://fs.uplink.kz/shanson/mono.m3u8?token=onlinetv
 #EXTINF:-1 tvg-id="sibir24" tvg-name="Sibir 24" group-title="Не проверено",Sibir 24 [Full HD]
 https://live.smotrim.ru/vgtrk/krasnoyarsk/sibir24-hd/index.m3u8
+#EXTINF:-1 tvg-id="solnce" tvg-name="Solnce" group-title="Не проверено",Solnce [SD]
+http://31.148.48.15/Solnce/index.m3u8
 #EXTINF:-1 tvg-id="sts" tvg-name="STS" group-title="Не проверено",STS
 http://ott-cdn.ucom.am/s52/04.m3u8
+#EXTINF:-1 tvg-id="sts" tvg-name="STS" group-title="Не проверено",STS [SD]
+http://flussonic.linkintel.ru/sts/index.m3u8
+#EXTINF:-1 tvg-id="sts-love" tvg-name="STS Love" group-title="Не проверено",STS Love [SD]
+http://31.148.48.15/STS_Love/index.m3u8
+#EXTINF:-1 tvg-id="super" tvg-name="Subbota!" group-title="Не проверено",Subbota! [SD]
+http://46.32.176.50/subbota/index.m3u8
+#EXTINF:-1 tvg-id="ct24-cz" tvg-name="T24" group-title="Не проверено",T24 [SD]
+https://fs.uplink.kz/tehno_24/mono.m3u8?token=onlinetv
+#EXTINF:-1 tvg-id="teatr" tvg-name="Teatr" group-title="Не проверено",Teatr [SD]
+http://31.148.48.15/Sochi_HD/video.m3u8
+#EXTINF:-1 tvg-id="telekafe" tvg-name="Telecafe" group-title="Не проверено",Telecafe [Full HD]
+http://s1.merlive.am/telekafe/index.m3u8
+#EXTINF:-1 tvg-id="telekafe" tvg-name="Telecafe" group-title="Не проверено",Telecafe [SD]
+https://fs.uplink.kz/telecafe/mono.m3u8?token=onlinetv
+#EXTINF:-1 tvg-id="tiji" tvg-name="TiJi" group-title="Не проверено",TiJi [SD]
+http://flussonic.linkintel.ru/tiji/index.m3u8
 #EXTINF:-1 tvg-id="tnt" tvg-name="TNT" group-title="Не проверено",TNT
 http://ott-cdn.ucom.am/s19/index.m3u8
+#EXTINF:-1 tvg-id="tnt" tvg-name="TNT" group-title="Не проверено",TNT [SD]
+http://flussonic.linkintel.ru/tnt/index.m3u8
+#EXTINF:-1 tvg-id="tnt4" tvg-name="TNT4" group-title="Не проверено",TNT4 [SD]
+http://flussonic.linkintel.ru/tnt4/index.m3u8
+#EXTINF:-1 tvg-id="tnv-planeta" tvg-name="TNV-Planet" group-title="Не проверено",TNV-Planet [SD]
+https://fs.uplink.kz/tnv/mono.m3u8?token=onlinetv
+#EXTINF:-1 tvg-id="tochka-otryva" tvg-name="Tochka otryva" group-title="Не проверено",Tochka otryva [SD]
+https://fs.uplink.kz/tochka_otriva/mono.m3u8?token=onlinetv
 #EXTINF:-1 tvg-id="tolyatti24" tvg-name="Tolyatti 24" group-title="Не проверено",Tolyatti 24
 https://tvtogliatti24.ru/hls/live1080/index.m3u8
+#EXTINF:-1 tvg-id="Tonus.ru" tvg-name="Tonus" group-title="Не проверено",Tonus [SD]
+http://31.148.48.15/Zdorovie/index.m3u8
+#EXTINF:-1 tvg-id="trace-brasil" tvg-name="Trace Brazuca" group-title="Не проверено",Trace Brazuca [Full HD]
+https://channels.trace.plus/Traceprod/BRAZIL_hd/index.m3u8
+#EXTINF:-1 tvg-id="trace-gospel-fr" tvg-name="Trace Gospel" group-title="Не проверено",Trace Gospel [Full HD]
+https://channels.trace.plus/Traceprod/GOSPEL_FR_hd/index.m3u8
+#EXTINF:-1 tvg-id="trace-urban" tvg-name="Trace Urban" group-title="Не проверено",Trace Urban [Full HD]
+https://channels.trace.plus/Traceprod/URBAN_DOM_hd/index.m3u8
+#EXTINF:-1 tvg-id="travel-adventure" tvg-name="Travel+Adventure" group-title="Не проверено",Travel+Adventure [Full HD]
+http://77.232.131.211/TravelAdventureHD/index.m3u8
+#EXTINF:-1 tvg-id="tvxxi" tvg-name="TV 21" group-title="Не проверено",TV 21 [SD]
+https://fs.uplink.kz/tvxxi/mono.m3u8?token=onlinetv
 #EXTINF:-1 tvg-id="tvcentr" tvg-name="TV Centr" group-title="Не проверено",TV Centr
 http://ott-cdn.ucom.am/s54/index.m3u8
+#EXTINF:-1 tvg-id="tvcentr" tvg-name="TV Centr" group-title="Не проверено",TV Centr [SD]
+http://flussonic.linkintel.ru/tvc/index.m3u8
+#EXTINF:-1 tvg-id="tv3-ru" tvg-name="TV-3" group-title="Не проверено",TV-3 [SD]
+http://flussonic.linkintel.ru/tv-3/index.m3u8
 #EXTINF:-1 tvg-id="yu" tvg-name="U" group-title="Не проверено",U
 https://strm.yandex.ru/kal/utv/utv0.m3u8
+#EXTINF:-1 tvg-id="yu" tvg-name="U" group-title="Не проверено",U [SD]
+https://fs.uplink.kz/u/mono.m3u8?token=onlinetv
+#EXTINF:-1 tvg-id="yu" tvg-name="U" group-title="Не проверено",U [HD]
+https://cdn-01.bonus-tv.ru/u/playlist.m3u8
+#EXTINF:-1 tvg-id="neizvestnaya-rosia" tvg-name="Unknown Russia" group-title="Не проверено",Unknown Russia [Full HD]
+https://cdn.ntv.ru/unknown_russia/playlist.m3u8
 #EXTINF:-1 tvg-id="ural24" tvg-name="Ural 24" group-title="Не проверено",Ural 24 [Full HD]
 https://live.smotrim.ru/vgtrk/chelyabinsk/ural24-hd/index.m3u8
+#EXTINF:-1 tvg-id="usadba" tvg-name="Usadba" group-title="Не проверено",Usadba [SD]
+http://stream.mcquack.net/211/index.m3u8
+#EXTINF:-1 tvg-id="v-gostiax-u-skazki" tvg-name="V gostyakh u skazki" group-title="Не проверено",V gostyakh u skazki [SD]
+https://fs.uplink.kz/v_gostyah_u_skazki/mono.m3u8?token=onlinetv
+#EXTINF:-1 tvg-id="vantage-classic" tvg-name="Vantage Classic" group-title="Не проверено",Vantage Classic [HD]
+https://cdn-backup.lulzy.eu/vclassic_stream/index.m3u8
+#EXTINF:-1 tvg-id="vantage-dance" tvg-name="Vantage Dance" group-title="Не проверено",Vantage Dance [HD]
+https://cdn-backup.lulzy.eu/vdance_stream/index.m3u8
+#EXTINF:-1 tvg-id="vantage-music" tvg-name="Vantage Music" group-title="Не проверено",Vantage Music [HD]
+https://cdn-backup.lulzy.eu/vmusic_stream/index.m3u8
+#EXTINF:-1 tvg-id="viasat-explore" tvg-name="viju Explore" group-title="Не проверено",viju Explore [SD]
+http://stream.mcquack.net/239/index.m3u8
+#EXTINF:-1 tvg-id="viasat-history" tvg-name="viju History" group-title="Не проверено",viju History [SD]
+https://fs.uplink.kz/viju_history/mono.m3u8?token=onlinetv
+#EXTINF:-1 tvg-id="viasat-nature" tvg-name="viju Nature" group-title="Не проверено",viju Nature [SD]
+https://fs.uplink.kz/viju_nature/mono.m3u8?token=onlinetv
+#EXTINF:-1 tvg-id="tv1000" tvg-name="viju TV1000" group-title="Не проверено",viju TV1000 [SD]
+https://fs.uplink.kz/viju_tv1000/mono.m3u8?token=onlinetv
+#EXTINF:-1 tvg-id="tv1000-action" tvg-name="viju TV1000 action" group-title="Не проверено",viju TV1000 action [SD]
+https://fs.uplink.kz/viju_tv1000_action/mono.m3u8?token=onlinetv
+#EXTINF:-1 tvg-id="tv1000-russkoe-kino" tvg-name="viju TV1000 russkoe" group-title="Не проверено",viju TV1000 russkoe [SD]
+https://fs.uplink.kz/viju_tv1000_russkoe/mono.m3u8?token=onlinetv
+#EXTINF:-1 tvg-id="vip-megahit" tvg-name="viju+ Megahit" group-title="Не проверено",viju+ Megahit [Full HD]
+http://stream.mcquack.net/200/index.m3u8
+#EXTINF:-1 tvg-id="viasat-sport" tvg-name="viju+ Sport" group-title="Не проверено",viju+ Sport [SD]
+https://fs.uplink.kz/viju_sport/mono.m3u8?token=onlinetv
 #EXTINF:-1 tvg-id="vitebsk" tvg-name="Vitebsk" group-title="Не проверено",Vitebsk
 https://flu.vtv.by/tvt-non-by/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="volgograd-24" tvg-name="Volgograd 24" group-title="Не проверено",Volgograd 24 [Full HD]
 https://live.smotrim.ru/vgtrk/volgograd/russia1-hd/index.m3u8
 #EXTINF:-1 tvg-id="vostok-24" tvg-name="Vostok 24" group-title="Не проверено",Vostok 24 [Full HD]
 https://live.smotrim.ru/vgtrk/vladivostok/vostok24-hd/index.m3u8
+#EXTINF:-1 tvg-id="vremia" tvg-name="Vremya" group-title="Не проверено",Vremya [SD]
+https://fs.uplink.kz/vremya/mono.m3u8?token=onlinetv
 #EXTINF:-1 tvg-id="zapad-24" tvg-name="Zapad 24" group-title="Не проверено",Zapad 24 [Full HD]
 https://live.smotrim.ru/vgtrk/kaliningrad/zapad24-hd/index.m3u8
+#EXTINF:-1 tvg-id="zdorovoe-tv" tvg-name="Zdorovoe TV" group-title="Не проверено",Zdorovoe TV [SD]
+http://31.148.48.15/Zdorovoe_TV/index.m3u8
+#EXTINF:-1 tvg-id="zhivaya-planeta" tvg-name="Zhivaya Planeta" group-title="Не проверено",Zhivaya Planeta [SD]
+http://31.148.48.15/Zhivaya_Planeta/index.m3u8
+#EXTINF:-1 tvg-id="zoopark" tvg-name="Zoopark" group-title="Не проверено",Zoopark [SD]
+https://fs.uplink.kz/zoopark/mono.m3u8?token=onlinetv
+#EXTINF:-1 tvg-id="zvezda" tvg-name="Zvezda" group-title="Не проверено",Zvezda [Full HD]
+http://51.158.144.33:2021/zvezda/index.m3u8
+#EXTINF:-1 tvg-id="zvezda" tvg-name="Zvezda" group-title="Не проверено",Zvezda [SD]
+http://flussonic.linkintel.ru/zvezda/index.m3u8
 #EXTINF:-1 tvg-id="belarus5-inet" tvg-name="Беларусь 5 Интернет" group-title="Не проверено",Беларусь 5 Интернет
 https://edge55.dc.beltelecom.by/ngtrk/smil:belarus5int.smil/playlist.m3u8
 #EXTINF:-1 tvg-id="" tvg-name="Жара TV" group-title="Не проверено",Жара TV [SD]
