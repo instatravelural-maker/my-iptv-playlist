@@ -1,3 +1,9 @@
 #EXTM3U
-#EXTINF:-1 tvg-name="Miami TV" group-title="Для взрослых",Miami TV [проверка]
-https://59ec5453559f0.streamlock.net/LIVE1/LIVE/playlist.m3u8
+#EXTINF:-1 tvg-name="Miami TV" group-title="Для взрослых",Miami TV
+http://59ec5453559f0.streamlock.net/miamitv/smil:miamitv/playlist.m3u8
+#EXTINF:-1 tvg-name="Miami TV 18" group-title="Для взрослых",Miami TV 18
+http://59ec5453559f0.streamlock.net/canal18/smil:canal18/playlist.m3u8
+#EXTINF:-1 tvg-name="Miami TV Mexico" group-title="Для взрослых",Miami TV Mexico
+http://mexicoserver.miamitvchannel.com/miamitv/smil:miamitvmexico/playlist.m3u8
+#EXTINF:-1 tvg-name="Miami TV Spain" group-title="Для взрослых",Miami TV Spain
+http://spainserver.miamitvchannel.com/miamitv/smil:miamitvspain/playlist.m3u8
