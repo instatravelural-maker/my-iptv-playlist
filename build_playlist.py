@@ -430,6 +430,88 @@ def channel_names(channel, stream=None):
     return [clean(name) for name in names if clean(name)]
 
 
+# Канонические русские названия федеральных телеканалов.
+# Меняется только отображаемое имя; tvg-id и адрес потока не затрагиваются.
+RUSSIAN_OFFICIAL_NAMES = {
+    "ChannelOne.ru": "Первый канал",
+    "ChannelOneCIS.ru": "Первый канал",
+    "Russia1.ru": "Россия 1",
+    "RTRPlaneta.ru": "РТР-Планета",
+    "Match.ru": "Матч ТВ",
+    "NTV.ru": "НТВ",
+    "NTVMir.ru": "НТВ Мир",
+    "Channel5.ru": "Пятый канал",
+    "Channel5International.ru": "Пятый канал",
+    "Russia24.ru": "Россия 24",
+    "RussiaK.ru": "Россия Культура",
+    "Carousel.ru": "Карусель",
+    "CarouselInternational.ru": "Карусель",
+    "OTR.ru": "Общественное телевидение России",
+    "TVCentr.ru": "ТВ Центр",
+    "TVCentrInternational.ru": "ТВ Центр",
+    "RENTV.ru": "РЕН ТВ",
+    "RENTVInternational.ru": "РЕН ТВ",
+    "Spas.ru": "Спас",
+    "STS.ru": "СТС",
+    "STSInternational.ru": "СТС",
+    "Domashniy.ru": "Домашний",
+    "DomashniyInternational.ru": "Домашний",
+    "TV3.ru": "ТВ-3",
+    "Friday.ru": "Пятница!",
+    "FridayInternational.ru": "Пятница!",
+    "Zvezda.ru": "Звезда",
+    "Mir.ru": "МИР",
+    "TNT.ru": "ТНТ",
+    "TNTInternational.ru": "ТНТ",
+    "MuzTV.ru": "МУЗ-ТВ",
+    "U.ru": "Ю",
+    "Subbota.ru": "Суббота!",
+    "Che.ru": "Че!",
+    "2x2.ru": "2х2",
+    "STSLove.ru": "СТС Love",
+    "TNT4.ru": "ТНТ4",
+    "TNT4International.ru": "ТНТ4",
+    "Solnce.ru": "Солнце",
+    "Mir24.ru": "МИР 24",
+    "RT.ru": "RT",
+    "RTDocumentary.ru": "RT Док",
+    "RBKTV.ru": "РБК",
+    "Izvestia.ru": "Известия",
+    "Pobeda.ru": "Победа",
+}
+
+
+def display_channel_name(channel, stream):
+    """Выбирает русское официальное имя, не меняя ID и оригинальные бренды."""
+    channel_id = catalog_id(channel)
+    official = RUSSIAN_OFFICIAL_NAMES.get(channel_id)
+    if official:
+        return official
+
+    original = clean(channel.get("name"))
+    if not original:
+        original = clean(stream.get("title")) or channel_id
+
+    country = str(channel.get("country") or "").upper()
+    if country in {"RU", "BY"}:
+        # У каталога могут быть русские альтернативные названия.
+        aliases = channel.get("alt_names") or []
+        if isinstance(aliases, str):
+            aliases = [aliases]
+
+        candidates = [original] + [
+            clean(alias) for alias in aliases if clean(alias)
+        ]
+        # Предпочитаем исходное русское имя; иначе первую русскую альтернативу.
+        for candidate in candidates:
+            if CYRILLIC_RE.search(candidate):
+                return candidate
+
+    # Международные бренды (Discovery, National Geographic и т.п.)
+    # оставляем под официальным оригинальным названием.
+    return original
+
+
 def music_group(channel, stream):
     names = channel_names(channel, stream)
     text = " | ".join(names)
@@ -581,10 +663,7 @@ def normalize_manual_quality(info):
 
 def make_extinf(channel, stream, group, tvg_id=""):
     channel_id = clean(tvg_id or channel.get("id"))
-    channel_name = clean(channel.get("name"))
-
-    if not channel_name:
-        channel_name = clean(stream.get("title")) or channel_id
+    channel_name = display_channel_name(channel, stream)
 
     quality = quality_label(stream.get("quality"))
     display_name = channel_name
