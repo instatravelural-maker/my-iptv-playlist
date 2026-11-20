@@ -101,6 +101,8 @@ https://5f05e059699ae.streamlock.net/WEB_Smilik/ngrp:Smilik.stream-adaptive/play
 https://5d23269b3ec0c.streamlock.net/WEB_Smilik/ngrp:Smilik.stream-adaptive/playlist.m3u8
 #EXTINF:-1 tvg-id="smotrim-100-detskoe" tvg-name="Смотрим 100% Детское" group-title="Детские",Смотрим 100% Детское
 https://player.smotrim.ru/iframe/stream/live_id/29d87e02-f367-48b1-b63e-6ce7923ab089
+#EXTINF:-1 tvg-id="smotrim-100-detskoe" tvg-name="Смотрим 100% Детское" group-title="Детские",Смотрим 100% Детское [Full HD]
+https://stream.smotrim.ru/hls2/fasttv05/playlist_3.m3u8
 #EXTINF:-1 tvg-id="smotrim-100-detskoe" tvg-name="Смотрим 100% Детское" group-title="Детские",Смотрим 100% Детское [HD]
 https://stream.smotrim.ru/hls/fasttv05/playlist_3.m3u8
 #EXTINF:-1 tvg-id="sts-kids-hd" tvg-name="СТС kids" group-title="Детские",СТС kids [Full HD]
@@ -134,7 +136,7 @@ http://194.26.229.213/chip-n-dale-rescue-rangers/index.m3u8
 #EXTINF:-1 tvg-id="" tvg-name="Шаян" group-title="Детские",Шаян
 http://s45177.cdn.ngenix.net/hls/CH_R03_SHAYNTV/variant.m3u8
 #EXTINF:-1 tvg-id="scifi-pl" tvg-name=".sci-fi" group-title="Кино",.sci-fi [SD]
-http://stream.mcquack.net/180/index.m3u8
+http://116.90.120.149:8000/play/a0ao/index.m3u8
 #EXTINF:-1 tvg-id="312-kino" tvg-name="312 Kino" group-title="Кино",312 Kino
 http://176.126.166.43:1935/live/312kino/playlist.m3u8
 #EXTINF:-1 tvg-id="alphaCinema.ru" tvg-name="Альфа Синема" group-title="Кино",Альфа Синема [Full HD]
@@ -287,8 +289,12 @@ http://stream.mcquack.net/208/index.m3u8
 http://31.148.48.15/Russkiy_illusion/index.m3u8
 #EXTINF:-1 tvg-id="shokiruyushchee" tvg-name="Шокирующее" group-title="Кино",Шокирующее [Full HD]
 http://stream.mcquack.net/75/index.m3u8
+#EXTINF:-1 tvg-id="smotrim-100-gorkogo" tvg-name="Смотрим 100% Горького" group-title="Кино",Смотрим 100% Горького [Full HD]
+https://stream.smotrim.ru/hls2/fasttv07/playlist_3.m3u8
 #EXTINF:-1 tvg-id="smotrim-100-klassika" tvg-name="Смотрим 100% Классика" group-title="Кино",Смотрим 100% Классика
 https://player.smotrim.ru/iframe/stream/live_id/78a66c7c-df38-4091-b2e1-9eeeb4c96338
+#EXTINF:-1 tvg-id="smotrim-100-klassika" tvg-name="Смотрим 100% Классика" group-title="Кино",Смотрим 100% Классика [Full HD]
+https://stream.smotrim.ru/hls2/fasttv03/playlist_3.m3u8
 #EXTINF:-1 tvg-id="smotrim-100-klassika" tvg-name="Смотрим 100% Классика" group-title="Кино",Смотрим 100% Классика [HD]
 https://stream.smotrim.ru/hls/fasttv03/playlist_3.m3u8
 #EXTINF:-1 tvg-id="star-cinema" tvg-name="Star Cinema" group-title="Кино",Star Cinema
@@ -651,7 +657,9 @@ https://cdn.global.elektamedia.com/live/c7eds/Totalmusic/SA_LIVE_hls_enc/master.
 #EXTINF:-1 tvg-id="Totalmusic2000s.uk" tvg-name="Totalmusic 2000s" group-title="Музыка | Другие",Totalmusic 2000s [HD]
 https://cdn.global.elektamedia.com/live/c7eds/Totalmusic_00s/SA_LIVE_hls_enc/master.m3u8
 #EXTINF:-1 tvg-id="TraceUK.uk" tvg-name="Trace UK" group-title="Музыка | Другие",Trace UK [Full HD]
-https://d2l4tng0wskzvn.cloudfront.net/Trace_GB.m3u8
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://trace.plus
+https://channels.trace.plus/Traceprod/UK_FAST_hd/index.m3u8
 #EXTINF:-1 tvg-id="TVCidade.cv" tvg-name="TV Cidade" group-title="Музыка | Другие",TV Cidade
 https://stmv1.srvif.com/tvcidade/tvcidade/playlist.m3u8
 #EXTINF:-1 tvg-id="liuks" tvg-name="2TV" group-title="Музыка | Европейская",2TV [Full HD]
@@ -706,12 +714,9 @@ https://dbmtv.vedge.infomaniak.com/livecast/dbmtv/playlist.m3u8
 https://sdn-global-live-streaming-packager-cache.3qsdn.com/13456/13456_264_live.m3u8
 #EXTINF:-1 tvg-id="DiscoMix.ro" tvg-name="Disco Mix" group-title="Музыка | Европейская",Disco Mix [SD]
 https://vs2129.vcdn.biz/781da550c3e711e56f17de33318050f9_megogo/live/hls/b/700_2490_4000/u_sid/0/o/183395021/rsid/39f910cb-e9d4-46a0-b2fb-a12bfc104baf/u_uid/2260062697/u_vod/0/u_device/cms_html5/u_devicekey/_site/lip/81.196.174.41*asn/u_srvc/109126/u_did/web_c02d0d195494991ada83b5ae2a2f87d6041c11b1b8f79fc86ae5b7b557894fa0/type.live/playlist.m3u8
-#EXTINF:-1 tvg-id="DMSat.rs" tvg-name="DM Sat" group-title="Музыка | Европейская",DM Sat
+#EXTINF:-1 tvg-id="DMSat.rs" tvg-name="DM Sat" group-title="Музыка | Европейская",DM Sat [SD]
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.3
 http://85.14.32.26:8800/udp/239.100.10.40:5000
-#EXTINF:-1 tvg-id="DMSat.rs" tvg-name="DM Sat" group-title="Музыка | Европейская",DM Sat [SD]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36
-https://shift03.isp.bg/DMSat/index.m3u8
 #EXTINF:-1 tvg-id="DMF.de" tvg-name="DMF" group-title="Музыка | Европейская",DMF [Full HD]
 https://d-m-f.iptv-playoutcenter.de/dmf/dmf1/playlist.m3u8
 #EXTINF:-1 tvg-id="dstv-bg" tvg-name="DSTV" group-title="Музыка | Европейская",DSTV
@@ -741,7 +746,7 @@ http://hitmusic.hu/hitmusic.m3u8
 #EXTINF:-1 tvg-id="HitMixMusic.bg" tvg-name="Hit Mix Music" group-title="Музыка | Европейская",Hit Mix Music
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.3
 http://213.91.179.28:8000/play/a0cl
-#EXTINF:-1 tvg-id="IDJTV.rs" tvg-name="IDJTV" group-title="Музыка | Европейская",IDJTV
+#EXTINF:-1 tvg-id="IDJTV.rs" tvg-name="IDJTV" group-title="Музыка | Европейская",IDJTV [SD]
 https://best-str.umn.cdn.united.cloud/stream?channel=idjhd&p=In$trum300na765ta&player=m3u8&sp=idjtv&stream=hp1400&u=idjtv
 #EXTINF:-1 tvg-id="ImpactTV.ro" tvg-name="Impact TV" group-title="Музыка | Европейская",Impact TV [Full HD]
 #EXTVLCOPT:http-referrer=https://tvimpact.ro/
@@ -851,8 +856,6 @@ https://dd782ed59e2a4e86aabf6fc508674b59.msvdn.net/live/S51100361/0Fb4R3k82b5Z/p
 https://dd782ed59e2a4e86aabf6fc508674b59.msvdn.net/live/S27134503/0f9AhuwKlhnZ/playlist_video.m3u8
 #EXTINF:-1 tvg-id="RTL1025Traffic.it" tvg-name="RTL 102.5 Traffic" group-title="Музыка | Европейская",RTL 102.5 Traffic [Full HD]
 https://dd782ed59e2a4e86aabf6fc508674b59.msvdn.net/live/S38122967/2lyQRIAAGgRR/playlist_video.m3u8
-#EXTINF:-1 tvg-id="RTSMuzika.rs" tvg-name="RTS Muzika" group-title="Музыка | Европейская",RTS Muzika [SD]
-https://de1.dstv.cx/RTSMuzika/index.m3u8
 #EXTINF:-1 tvg-id="RTVGlasDrine.ba" tvg-name="RTV Glas Drine" group-title="Музыка | Европейская",RTV Glas Drine
 http://glasdrine.cutuk.net:8081/433ssdsw/GlasDrineSD/playlist.m3u8
 #EXTINF:-1 tvg-id="SaltoBrasaMusic.nl" tvg-name="Salto Brasa Music" group-title="Музыка | Европейская",Salto Brasa Music [Full HD]
@@ -877,34 +880,62 @@ https://bss1.neterra.tv/thevoice/thevoice.m3u8
 #EXTINF:-1 tvg-id="TMF.nl" tvg-name="TMF" group-title="Музыка | Европейская",TMF [Full HD]
 https://tmf-nl-nl.fast.rakuten.tv/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-hls-aes128-yourchannels-10-restreaming/bitok/eyJzdGlkIjoiMzUzNGNiZTAtNWY4MS00ZmU4LWE1NGYtYjgyMjJmMTM3ZmZjIiwibWt0IjoibmwiLCJjaCI6IjEwIiwicHRmIjo1fQ%3D%3D/mpgmedia/TMF/TMF_NL/TMF_NL.m3u8
 #EXTINF:-1 tvg-id="TraceAfrica.fr" tvg-name="Trace Africa" group-title="Музыка | Европейская",Trace Africa [Full HD]
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://trace.plus
 https://channels.trace.plus/Traceprod/AFRICA_FR_hd/index.m3u8
 #EXTINF:-1 tvg-id="TraceAfrikora.fr" tvg-name="Trace Afrikora" group-title="Музыка | Европейская",Trace Afrikora [Full HD]
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://trace.plus
 https://channels.trace.plus/Traceprod/TERANGA_hd/index.m3u8
 #EXTINF:-1 tvg-id="TraceAyiti.fr" tvg-name="Trace Ayiti" group-title="Музыка | Европейская",Trace Ayiti [Full HD]
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://trace.plus
 https://channels.trace.plus/Traceprod/AYITI_hd/index.m3u8
 #EXTINF:-1 tvg-id="trace-brasil" tvg-name="Trace Brazuca" group-title="Музыка | Европейская",Trace Brazuca [Full HD]
 https://cdn-uw2-prod.tsv2.amagi.tv/linear/amg01131-tracetv-tracebrazuca-samsungbr/playlist.m3u8
 #EXTINF:-1 tvg-id="trace-carib-fr" tvg-name="Trace Caribbean" group-title="Музыка | Европейская",Trace Caribbean [Full HD]
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://trace.plus
 https://channels.trace.plus/Traceprod/CARIBBEAN_hd/index.m3u8
 #EXTINF:-1 tvg-id="TraceIvoire.fr" tvg-name="Trace Ivoire" group-title="Музыка | Европейская",Trace Ivoire [Full HD]
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://trace.plus
 https://channels.trace.plus/Traceprod/TRACE_IVOIRE_hd/index.m3u8
 #EXTINF:-1 tvg-id="TraceJama.fr" tvg-name="Trace Jama" group-title="Музыка | Европейская",Trace Jama [Full HD]
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://trace.plus
 https://channels.trace.plus/Traceprod/JAMA_hd/index.m3u8
 #EXTINF:-1 tvg-id="TraceKitoko.fr" tvg-name="Trace Kitoko" group-title="Музыка | Европейская",Trace Kitoko [Full HD]
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://trace.plus
 https://channels.trace.plus/Traceprod/KITOKO_hd/index.m3u8
 #EXTINF:-1 tvg-id="TraceMboa.fr" tvg-name="Trace Mboa" group-title="Музыка | Европейская",Trace Mboa [Full HD]
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://trace.plus
 https://channels.trace.plus/Traceprod/MBOA_hd/index.m3u8
 #EXTINF:-1 tvg-id="TraceMuzika.fr" tvg-name="Trace Muzika" group-title="Музыка | Европейская",Trace Muzika [Full HD]
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://trace.plus
 https://channels.trace.plus/Traceprod/MUZIKA_hd/index.m3u8
 #EXTINF:-1 tvg-id="TraceMziki.fr" tvg-name="Trace Mziki" group-title="Музыка | Европейская",Trace Mziki [Full HD]
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://trace.plus
 https://channels.trace.plus/Traceprod/MZIKI_hd/index.m3u8
 #EXTINF:-1 tvg-id="TraceNaija.fr" tvg-name="Trace Naija" group-title="Музыка | Европейская",Trace Naija [Full HD]
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://trace.plus
 https://channels.trace.plus/Traceprod/NAIJA_hd/index.m3u8
 #EXTINF:-1 tvg-id="TraceNgoma.fr" tvg-name="Trace Ngoma" group-title="Музыка | Европейская",Trace Ngoma [Full HD]
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://trace.plus
 https://channels.trace.plus/Traceprod/AFRICA_EN_hd/index.m3u8
 #EXTINF:-1 tvg-id="trace-toca-pt" tvg-name="Trace Toca" group-title="Музыка | Европейская",Trace Toca [Full HD]
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://trace.plus
 https://channels.trace.plus/Traceprod/TOCA_hd/index.m3u8
 #EXTINF:-1 tvg-id="TraceVanillaIslands.fr" tvg-name="Trace Vanilla Islands" group-title="Музыка | Европейская",Trace Vanilla Islands [Full HD]
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://trace.plus
 https://channels.trace.plus/Traceprod/VANILLA_hd/index.m3u8
 #EXTINF:-1 tvg-id="TVArberia4Muzike.xk" tvg-name="TV Arberia 4 Muzike" group-title="Музыка | Европейская",TV Arberia 4 Muzike [HD]
 https://ssh101.bozztv.com/ssh101/rtvarberia4/playlist.m3u8
@@ -912,8 +943,8 @@ https://ssh101.bozztv.com/ssh101/rtvarberia4/playlist.m3u8
 https://hls01ns.antenaplay.ro/hls/tv-as-sd/index.m3u8
 #EXTINF:-1 tvg-id="TVBozsikeHamburgHD.de" tvg-name="TV Bozsike Hamburg HD" group-title="Музыка | Европейская",TV Bozsike Hamburg HD [Full HD]
 https://rtmp.radiobozsike.com/hls/stream1.m3u8
-#EXTINF:-1 tvg-id="TVDugaPlus.rs" tvg-name="TV Duga+" group-title="Музыка | Европейская",TV Duga+ [SD]
-http://109.92.29.10:1935/tvduga/tvduga/playlist.m3u8
+#EXTINF:-1 tvg-id="TVDugaPlus.rs" tvg-name="TV Duga+" group-title="Музыка | Европейская",TV Duga+ [HD]
+http://135.125.238.20:8080/memfs/6c06b323-a7db-443a-a75f-b745da6ca308.m3u8
 #EXTINF:-1 tvg-id="TVRodina.bg" tvg-name="TV Rodina" group-title="Музыка | Европейская",TV Rodina [Full HD]
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36
 https://shift03.isp.bg/RodinaTV/index.m3u8
@@ -949,6 +980,8 @@ https://7xshreeshyam.akamaized.net/7XPunjabi/index.m3u8
 https://cdn2.in/7xPunjabihls/live.m3u8
 #EXTINF:-1 tvg-id="8XM.pk" tvg-name="8XM" group-title="Музыка | Индия и Южная Азия",8XM
 https://cdn4.mjunoon.tv:8087/streamtest/131M/chunks.m3u8
+#EXTINF:-1 tvg-id="8XM.pk" tvg-name="8XM" group-title="Музыка | Индия и Южная Азия",8XM [SD]
+http://116.90.120.149:8000/play/a0tw/index.m3u8
 #EXTINF:-1 tvg-id="9XJalwa.in" tvg-name="9X Jalwa" group-title="Музыка | Индия и Южная Азия",9X Jalwa [Full HD]
 https://wiselp.wiseplayout.com/9X_Jalwa/master.m3u8
 #EXTINF:-1 tvg-id="9XJalwa.in" tvg-name="9X Jalwa" group-title="Музыка | Индия и Южная Азия",9X Jalwa [SD]
@@ -957,7 +990,7 @@ https://fta.ektv.in/live/161/master.m3u8
 #EXTINF:-1 tvg-id="9XJhakaas.in" tvg-name="9X Jhakaas" group-title="Музыка | Индия и Южная Азия",9X Jhakaas [Full HD]
 https://amg01281-9xmediapvtltd-9xjhakaas-samsungin-ci2cs.amagi.tv/playlist/amg01281-9xmediapvtltd-9xjhakaas-samsungin/playlist.m3u8
 #EXTINF:-1 tvg-id="9XJhakaas.in" tvg-name="9X Jhakaas" group-title="Музыка | Индия и Южная Азия",9X Jhakaas [SD]
-https://yupplivegcp2.yuppcdn.net/28072023/smil:9xjhakaas.smil/playlist.m3u8?hdnts=st=1735898689~exp=1835898688~acl=*~hmac=f5fe24724fe05481e3841f9eb5ab8efdee0a3dd83645ae9dcf45703f525bab7b
+https://cdn.pishow.tv/ott/live/6/master.m3u8
 #EXTINF:-1 tvg-id="9XTashan.in" tvg-name="9X Tashan" group-title="Музыка | Индия и Южная Азия",9X Tashan [Full HD]
 https://amg01281-9xmediapvtltd-9xtashan-samsungin-xz1sd.amagi.tv/playlist/amg01281-9xmediapvtltd-9xtashan-samsungin/playlist.m3u8
 #EXTINF:-1 tvg-id="9XTashan.in" tvg-name="9X Tashan" group-title="Музыка | Индия и Южная Азия",9X Tashan [SD]
@@ -1014,6 +1047,8 @@ https://d1msejlow1t3l4.cloudfront.net/fta/insync/playlist.m3u8
 https://segment.yuppcdn.net/140622/isaiaruvi/playlist.m3u8
 #EXTINF:-1 tvg-id="JalwaTV.pk" tvg-name="Jalwa TV" group-title="Музыка | Индия и Южная Азия",Jalwa TV
 https://vodzong.mjunoon.tv:8087/streamtest/JalwaTV-135/live/135M/chunks.m3u8
+#EXTINF:-1 tvg-id="JalwaTV.pk" tvg-name="Jalwa TV" group-title="Музыка | Индия и Южная Азия",Jalwa TV [SD]
+http://116.90.120.149:8000/play/a0tv/index.m3u8
 #EXTINF:-1 tvg-id="JooMusic.pk" tvg-name="JooMusic" group-title="Музыка | Индия и Южная Азия",JooMusic [HD]
 https://livecdn.live247stream.com/joomusic/tv/playlist.m3u8
 #EXTINF:-1 tvg-id="KalikaTV.in" tvg-name="Kalika TV" group-title="Музыка | Индия и Южная Азия",Kalika TV [SD]
@@ -1365,7 +1400,9 @@ http://38.87.224.20:2220/play/a02b/index.m3u8
 #EXTINF:-1 tvg-id="Totovision.gt" tvg-name="Totovision" group-title="Музыка | Латино",Totovision
 https://cdn.streamhispanatv.net:3652/live/totovisiongtlive.m3u8
 #EXTINF:-1 tvg-id="trace-latina-fr" tvg-name="Trace Latina" group-title="Музыка | Латино",Trace Latina [Full HD]
-https://cdn-ue1-prod.tsv2.amagi.tv/linear/amg01131-tracetv-tracelatinait-samsungit/playlist.m3u8
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://trace.plus
+https://channels.trace.plus/Traceprod/LATINA_hd/index.m3u8
 #EXTINF:-1 tvg-id="trace-latina-fr" tvg-name="Trace Latina" group-title="Музыка | Латино",Trace Latina [SD]
 https://mumbai-edge.smartplaytv.in/TraceLatina/index.m3u8
 #EXTINF:-1 tvg-id="trace-latina-fr" tvg-name="Trace Latina" group-title="Музыка | Латино",Trace Latina [HD]
@@ -1484,8 +1521,6 @@ https://lotus.stingray.com/manifest/ose-317ads-montreal/samsungtvplus/master.m3u
 https://livingindiaottlive.akamaized.net/tabbarhits/index.m3u8
 #EXTINF:-1 tvg-id="TabbarHits.in" tvg-name="Tabbar Hits" group-title="Музыка | Поп и хиты",Tabbar Hits [SD]
 https://mumt04.tangotv.in/m18aqlK4TABBARHITS/index.m3u8
-#EXTINF:-1 tvg-id="TopTV.rs" tvg-name="Top TV" group-title="Музыка | Поп и хиты",Top TV [Full HD]
-http://82.165.71.58:8081/TopTV/live/playlist.m3u8
 #EXTINF:-1 tvg-id="TopEstradaTV.mk" tvg-name="TopEstrada TV" group-title="Музыка | Поп и хиты",TopEstrada TV [HD]
 http://live.topestrada.com/live/topestrada/playlist.m3u8
 #EXTINF:-1 tvg-id="TopicalMoonRD.do" tvg-name="Topical Moon RD" group-title="Музыка | Поп и хиты",Topical Moon RD [HD]
@@ -1797,6 +1832,8 @@ https://s.emisoras.tv:8081/penielmusical/index.m3u8
 #EXTINF:-1 tvg-id="SpiritTV.us" tvg-name="Spirit TV" group-title="Музыка | Религиозная",Spirit TV [HD]
 https://cdnlive.myspirit.tv/LS-ATL-43240-2/index.m3u8
 #EXTINF:-1 tvg-id="trace-gospel-fr" tvg-name="Trace Gospel" group-title="Музыка | Религиозная",Trace Gospel [Full HD]
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://trace.plus
 https://channels.trace.plus/Traceprod/GOSPEL_ROA_hd/index.m3u8
 #EXTINF:-1 tvg-id="7080TV.it" tvg-name="70-80 TV" group-title="Музыка | Ретро",70-80 TV [Full HD]
 https://585b674743bbb.streamlock.net/9050/9050/playlist.m3u8
@@ -2102,7 +2139,9 @@ https://urbanrevolution.es:8443/live/TV/playlist.m3u8
 #EXTINF:-1 tvg-id="RadioItaliaTrendTV.it" tvg-name="Radio Italia Trend TV" group-title="Музыка | Хип-хоп и R&B",Radio Italia Trend TV [HD]
 https://amg00745-radioitailaspa-radioitalia-rakuten-sucsc.amagi.tv/hls/amagi_hls_data_rakutenAA-radioitalia-rakuten/CDN/master.m3u8
 #EXTINF:-1 tvg-id="trace-urban" tvg-name="Trace Urban" group-title="Музыка | Хип-хоп и R&B",Trace Urban [Full HD]
-https://lightning-traceurban-samsungau.amagi.tv/playlist.m3u8
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://trace.plus
+https://channels.trace.plus/Traceprod/URBAN_AFRIC_FR_hd/index.m3u8
 #EXTINF:-1 tvg-id="trace-urban" tvg-name="Trace Urban" group-title="Музыка | Хип-хоп и R&B",Trace Urban [HD]
 https://amg01131-tracetv-traceurban-klowdtv-utiqd.amagi.tv/playlist/amg01131-tracetv-traceurban-klowdtv/playlist.m3u8
 #EXTINF:-1 tvg-id="TropicalMoonUrbanTV.pa" tvg-name="Tropical Moon Urban TV" group-title="Музыка | Хип-хоп и R&B",Tropical Moon Urban TV
@@ -2158,7 +2197,7 @@ https://english-livetx.cgtn.com/hls/LSvexABhNipibK5KRuUkvHZ7220802LSTeze9o8tdFXM
 #EXTINF:-1 tvg-id="9kanal-israel" tvg-name="Channel 9" group-title="Новости",Channel 9 [Full HD]
 https://contact.gostreaming.tv/Con-11/index.m3u8
 #EXTINF:-1 tvg-id="krym24" tvg-name="Крым 24" group-title="Новости",Крым 24
-https://streaming.televizor-24-tochka.ru/live/28.m3u8
+https://cdn.1tvcrimea.ru/24tvcrimea.m3u8
 #EXTINF:-1 tvg-id="nastoyaschee-vremia" tvg-name="Current Time TV" group-title="Новости",Current Time TV
 https://dash3.antik.sk/live/test_current_time_atktv/playlist.m3u8
 #EXTINF:-1 tvg-id="nastoyaschee-vremia" tvg-name="Current Time TV" group-title="Новости",Current Time TV [Full HD]
@@ -2257,7 +2296,7 @@ https://tass-hls.servicecdn.ru/httpstreamer/tass-loop-main.stream/playlist.m3u8
 #EXTINF:-1 tvg-id="" tvg-name="Эхо" group-title="Новости",Эхо
 https://live-echotv.cdnvideo.ru/echotv/echotv.sdp/playlist.m3u8
 #EXTINF:-1 tvg-id="kongresstv" tvg-name="Конгресс ТВ" group-title="Общие",Конгресс ТВ [Full HD]
-https://live-3.otcnet.ru/congresstv/index.m3u8
+https://stitch.teletarget.ru/api/v1/hls/504/158/index.m3u8
 #EXTINF:-1 tvg-id="ldpr-tv" tvg-name="ЛДПР ТВ" group-title="Общие",ЛДПР ТВ [Full HD]
 http://46.46.143.222:1935/live/mp4:ldpr.stream/playlist.m3u8
 #EXTINF:-1 tvg-id="ldpr-tv" tvg-name="ЛДПР ТВ" group-title="Общие",ЛДПР ТВ [SD]
@@ -2298,7 +2337,7 @@ https://cityeden.catcast.tv/content/47519/index.m3u8
 #EXTINF:-1 tvg-id="da-vinci" tvg-name="Da Vinci" group-title="Познавательные",Da Vinci
 https://stream8.cinerama.uz/1231/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="da-vinci" tvg-name="Da Vinci" group-title="Познавательные",Da Vinci [SD]
-https://fs.uplink.kz/da_vinci/mono.m3u8?token=onlinetv
+http://116.90.120.149:8000/play/a0s6/index.m3u8
 #EXTINF:-1 tvg-id="dikaya-oxota-hd" tvg-name="Дикая охота" group-title="Познавательные",Дикая охота [Full HD]
 http://stream.mcquack.net/274/index.m3u8
 #EXTINF:-1 tvg-id="dikaya-rybalka-hd" tvg-name="Дикая рыбалка" group-title="Познавательные",Дикая рыбалка [Full HD]
@@ -2379,6 +2418,8 @@ https://rt-rtd.rttv.com/live/rtdoc/playlist.m3u8
 https://fs.uplink.kz/ohota_i_ribalka/index.m3u8?token=onlinetv2
 #EXTINF:-1 tvg-id="smotrim-100-fakty" tvg-name="Смотрим 100% Факты" group-title="Познавательные",Смотрим 100% Факты
 https://player.smotrim.ru/iframe/stream/live_id/02cbebc5-c55d-4a02-9370-7330c9e5d34f
+#EXTINF:-1 tvg-id="smotrim-100-fakty" tvg-name="Смотрим 100% Факты" group-title="Познавательные",Смотрим 100% Факты [Full HD]
+https://stream.smotrim.ru/hls2/fasttv06/playlist_3.m3u8
 #EXTINF:-1 tvg-id="smotrim-100-fakty" tvg-name="Смотрим 100% Факты" group-title="Познавательные",Смотрим 100% Факты [HD]
 https://stream.smotrim.ru/hls/fasttv06/playlist_3.m3u8
 #EXTINF:-1 tvg-id="terra-ru" tvg-name="TERRA" group-title="Познавательные",TERRA [Full HD]
@@ -2470,12 +2511,14 @@ http://178.134.1.158:8081/vkus/index.m3u8
 http://stitch.teletarget.ru/api/v1/hls/vintera/neplaneta/index.m3u8
 #EXTINF:-1 tvg-id="" tvg-name="Полет" group-title="Путешествия",Полет
 http://stitch.teletarget.ru/vintera/flighttv/index.m3u8
+#EXTINF:-1 tvg-id="sony-turbo" tvg-name=".black" group-title="Развлекательные",.black [Full HD]
+http://116.90.120.149:8000/play/a0ac/index.m3u8
 #EXTINF:-1 tvg-id="sony-turbo" tvg-name=".black" group-title="Развлекательные",.black [SD]
-http://stream.mcquack.net/263/index.m3u8
+http://116.90.120.149:8000/play/a0s4/index.m3u8
 #EXTINF:-1 tvg-id="sony-tv" tvg-name=".red" group-title="Развлекательные",.red [Full HD]
 http://178.134.1.158:8081/red/index.m3u8
 #EXTINF:-1 tvg-id="sony-tv" tvg-name=".red" group-title="Развлекательные",.red [SD]
-http://stream.mcquack.net/69/index.m3u8
+http://116.90.120.149:8000/play/a0an/index.m3u8
 #EXTINF:-1 tvg-id="belarus2" tvg-name="Беларусь 2" group-title="Развлекательные",Беларусь 2
 https://edge55.dc.beltelecom.by/ngtrk/smil:belarus2.smil/playlist.m3u8
 #EXTINF:-1 tvg-id="belarus2" tvg-name="Беларусь 2" group-title="Развлекательные",Беларусь 2 [Full HD]
@@ -2498,10 +2541,16 @@ http://88.212.7.14/live/otv/playlist.m3u8
 https://jz2lo90hnpy.a.trbcdn.net/livemaster/yo8gr_live-5gorrrfpouq.smil/playlist.m3u8
 #EXTINF:-1 tvg-id="perec-int" tvg-name="Перец International" group-title="Развлекательные",Перец International [SD]
 http://stream.mcquack.net/121/index.m3u8
+#EXTINF:-1 tvg-id="Smotrim100k1.ru" tvg-name="Смотрим 100% к 1" group-title="Развлекательные",Смотрим 100% к 1 [Full HD]
+https://stream.smotrim.ru/hls2/fasttv08/playlist_2.m3u8
 #EXTINF:-1 tvg-id="smotrim-100-prazdnik" tvg-name="Смотрим 100% Праздник" group-title="Развлекательные",Смотрим 100% Праздник
 https://player.smotrim.ru/iframe/stream/live_id/0cff8c9f-76c8-4b4a-9f23-90aa5a542564
+#EXTINF:-1 tvg-id="smotrim-100-prazdnik" tvg-name="Смотрим 100% Праздник" group-title="Развлекательные",Смотрим 100% Праздник [Full HD]
+https://stream.smotrim.ru/hls2/fasttv04/playlist_3.m3u8
 #EXTINF:-1 tvg-id="smotrim-100-prazdnik" tvg-name="Смотрим 100% Праздник" group-title="Развлекательные",Смотрим 100% Праздник [HD]
 https://stream.smotrim.ru/hls/fasttv04/playlist_3.m3u8
+#EXTINF:-1 tvg-id="smotrim-100-talkshow" tvg-name="Смотрим 100% Ток-шоу" group-title="Развлекательные",Смотрим 100% Ток-шоу [Full HD]
+https://stream.smotrim.ru/hls2/fasttv09/playlist_3.m3u8
 #EXTINF:-1 tvg-id="tvoyo-tv-hd" tvg-name="Твое ТВ" group-title="Развлекательные",Твое ТВ [Full HD]
 http://tvoetv.space:8080/tvoetv/index.m3u8
 #EXTINF:-1 tvg-id="tvoetv-humor" tvg-name="Твое ТВ Юмор" group-title="Развлекательные",Твое ТВ Юмор [Full HD]
@@ -2528,8 +2577,8 @@ https://flussonic.mkpnet.ru/tv-3b21847ece4b1c19/video.m3u8
 http://rmhkuzbass.ru:8082/10kanal/10kanal_720/playlist.m3u8
 #EXTINF:-1 tvg-id="" tvg-name="11 канал (2) | Пенза" group-title="Региональные",11 канал (2) | Пенза
 http://85.234.33.64/stream/c11.m3u8
-#EXTINF:-1 tvg-id="12-omsk" tvg-name="12 канал (3) | Омск" group-title="Региональные",12 канал (3) | Омск
-https://gtrkomsk-live.cdnvideo.ru/gtrkomsk/gtrkomsk.smil/playlist.m3u8
+#EXTINF:-1 tvg-id="12-omsk" tvg-name="12 канал (2) | Омск" group-title="Региональные",12 канал (2) | Омск
+https://12channel.bonus-tv.ru/cdn/omskchannel/playlist.m3u8
 #EXTINF:-1 tvg-id="" tvg-name="24 | Луганск" group-title="Региональные",24 | Луганск
 https://streaming.televizor-24-tochka.ru/live/29.m3u8
 #EXTINF:-1 tvg-id="" tvg-name="41 | Щелково" group-title="Региональные",41 | Щелково
@@ -2888,8 +2937,6 @@ https://s45177.cdn.ngenix.net/hls/CH_R02_SALYAM/variant.m3u8
 http://109.248.11.19:8081/web/c24/playlist.m3u8
 #EXTINF:-1 tvg-id="spas" tvg-name="Спас (2)" group-title="Региональные",Спас (2)
 https://bonusspas.mediacdn.ru/cdn/spas/playlist.m3u8
-#EXTINF:-1 tvg-id="stv-by" tvg-name="СТВ (2) | Беларусь" group-title="Региональные",СТВ (2) | Беларусь
-http://86.57.147.236/HLS/ctvby/playlist.m3u8
 #EXTINF:-1 tvg-id="" tvg-name="Тамыр | Башкортостан" group-title="Региональные",Тамыр | Башкортостан
 https://s45177.cdn.ngenix.net/hls/CH_R03_TAMYRTV/variant.m3u8
 #EXTINF:-1 tvg-id="" tvg-name="Тверской проспект (2) | Тверская область" group-title="Региональные",Тверской проспект (2) | Тверская область
@@ -3026,10 +3073,14 @@ https://cdn-dvr.ntv.ru/Shef/index.m3u8
 https://cdn-dvr.ntv.ru/Skoraja_pomosh/index.m3u8
 #EXTINF:-1 tvg-id="smotrim-100-lubov" tvg-name="Смотрим 100% Любовь" group-title="Сериалы",Смотрим 100% Любовь
 https://player.smotrim.ru/iframe/stream/live_id/0d85159d-e782-4260-ac99-ac8c55df4248
+#EXTINF:-1 tvg-id="smotrim-100-lubov" tvg-name="Смотрим 100% Любовь" group-title="Сериалы",Смотрим 100% Любовь [Full HD]
+https://stream.smotrim.ru/hls2/fasttv01/playlist_2.m3u8
 #EXTINF:-1 tvg-id="smotrim-100-lubov" tvg-name="Смотрим 100% Любовь" group-title="Сериалы",Смотрим 100% Любовь [HD]
 https://stream.smotrim.ru/hls/fasttv01/playlist_2.m3u8
 #EXTINF:-1 tvg-id="smotrim-100-muzhskoe" tvg-name="Смотрим 100% Мужское" group-title="Сериалы",Смотрим 100% Мужское
 https://player.smotrim.ru/iframe/stream/live_id/30acd0b6-e010-4230-bad1-3af77619226d
+#EXTINF:-1 tvg-id="smotrim-100-muzhskoe" tvg-name="Смотрим 100% Мужское" group-title="Сериалы",Смотрим 100% Мужское [Full HD]
+https://stream.smotrim.ru/hls2/fasttv02/playlist_3.m3u8
 #EXTINF:-1 tvg-id="smotrim-100-muzhskoe" tvg-name="Смотрим 100% Мужское" group-title="Сериалы",Смотрим 100% Мужское [HD]
 https://stream.smotrim.ru/hls/fasttv02/playlist_3.m3u8
 #EXTINF:-1 tvg-id="SmotrimChestnyyDetektiv.ru" tvg-name="Смотрим Честный Детектив" group-title="Сериалы",Смотрим Честный Детектив [Full HD]
@@ -3279,7 +3330,8 @@ http://igi-hls.cdnvideo.ru/igi/igi_tcode/playlist.m3u8
 #EXTINF:-1 tvg-id="mir" tvg-name="МИР" group-title="Федеральные",МИР [Full HD]
 http://hls.mirtv.cdnvideo.ru/mirtv-parampublish/mirtv_2500/playlist.m3u8
 #EXTINF:-1 tvg-id="mir" tvg-name="МИР" group-title="Федеральные",МИР
-http://hls.mirtv.cdnvideo.ru/mirtv-parampublish/mirtv2_2500/playlist.m3u8
+#EXTVLCOPT:http-user-agent=WINK/1.40.1 (AndroidTV/9) HlsWinkPlayer
+https://zabava-htlive.cdn.ngenix.net/hls/CH_MIR_7/variant.m3u8
 #EXTINF:-1 tvg-id="mir" tvg-name="МИР" group-title="Федеральные",МИР [SD]
 http://31.148.5.241/kanal_18/index.m3u8
 #EXTINF:-1 tvg-id="mir" tvg-name="МИР" group-title="Федеральные",МИР [HD]
@@ -3431,7 +3483,7 @@ http://31.148.48.15/SONY_SCI_FI/index.m3u8
 #EXTINF:-1 tvg-id="2na2" tvg-name="2х2" group-title="Не проверено",2х2 [SD]
 http://31.148.48.15/2x2/index.m3u8
 #EXTINF:-1 tvg-id="365-dnej" tvg-name="365 дней ТВ" group-title="Не проверено",365 дней ТВ [SD]
-http://31.148.48.15/365_dney/index.m3u8
+http://stream.mcquack.net/70/index.m3u8
 #EXTINF:-1 tvg-id="7SMusic.in" tvg-name="7S Music" group-title="Не проверено",7S Music [SD]
 https://mumt03.tangotv.in/Dsly5z3H7SMUSIC/index.m3u8
 #EXTINF:-1 tvg-id="9XJalwa.in" tvg-name="9X Jalwa" group-title="Не проверено",9X Jalwa [SD]
@@ -3444,6 +3496,8 @@ https://9xjio.wiseplayout.com/9XM/master.m3u8
 http://46.32.176.50/anitv/index.m3u8
 #EXTINF:-1 tvg-id="arktika-24" tvg-name="Арктика 24" group-title="Не проверено",Арктика 24 [Full HD]
 https://live.smotrim.ru/vgtrk/arhangelsk/arktika24-hd/index.m3u8
+#EXTINF:-1 tvg-id="avto24" tvg-name="Авто24" group-title="Не проверено",Авто24 [SD]
+http://stream.mcquack.net/78/index.m3u8
 #EXTINF:-1 tvg-id="B4UMusic.in" tvg-name="B4U Music" group-title="Не проверено",B4U Music [SD]
 http://66.102.126.10:8000/play/a01e/index.m3u8
 #EXTINF:-1 tvg-id="bashkortostan24" tvg-name="Башкортостан 24" group-title="Не проверено",Башкортостан 24 [Full HD]
@@ -3451,7 +3505,7 @@ https://live.smotrim.ru/vgtrk/ufa/bashkortostan24-hd/index.m3u8
 #EXTINF:-1 tvg-id="belarus24" tvg-name="Беларусь 24" group-title="Не проверено",Беларусь 24 [SD]
 http://31.148.48.15/Belarus_24/index.m3u8
 #EXTINF:-1 tvg-id="belarus5" tvg-name="Беларусь 5" group-title="Не проверено",Беларусь 5 [Full HD]
-https://edge59.dc.beltelecom.by/ngtrk/smil:belarus5int.smil/playlist.m3u8
+http://stream.mcquack.net/33/index.m3u8
 #EXTINF:-1 tvg-id="bollywood-hd" tvg-name="Bollywood HD" group-title="Не проверено",Bollywood HD [Full HD]
 http://103.213.31.109:90/BollywoodHD/playlist.m3u8
 #EXTINF:-1 tvg-id="bridge-hd" tvg-name="BRIDGE" group-title="Не проверено",BRIDGE [SD]
@@ -3470,8 +3524,6 @@ https://edge1.1internet.tv/dash-live2/streams/1tv-dvr/1tvdash.mpd
 http://flussonic.linkintel.ru/che/index.m3u8
 #EXTINF:-1 tvg-id="cinema-ru" tvg-name="Cinema" group-title="Не проверено",Cinema
 http://catchup.videoline.ru/cinema/playlist.m3u8
-#EXTINF:-1 tvg-id="krym24" tvg-name="Крым 24" group-title="Не проверено",Крым 24
-https://cdn.1tvcrimea.ru/24tvcrimea.m3u8
 #EXTINF:-1 tvg-id="da-vinci" tvg-name="Da Vinci" group-title="Не проверено",Da Vinci [SD]
 http://stream.mcquack.net/238/index.m3u8
 #EXTINF:-1 tvg-id="doktor" tvg-name="Доктор" group-title="Не проверено",Доктор [SD]
@@ -3482,6 +3534,8 @@ http://stream.mcquack.net/236/index.m3u8
 http://stream.mcquack.net/108/index.m3u8
 #EXTINF:-1 tvg-id="domashny" tvg-name="Домашний" group-title="Не проверено",Домашний
 http://ott-cdn.ucom.am/s88/index.m3u8
+#EXTINF:-1 tvg-id="domashny" tvg-name="Домашний" group-title="Не проверено",Домашний [SD]
+http://stream.mcquack.net/227/index.m3u8
 #EXTINF:-1 tvg-id="epic-drama-pl" tvg-name="Epic Drama" group-title="Не проверено",Epic Drama
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36
 http://82.78.243.219:45739/play/a01p/index.m3u8
@@ -3557,10 +3611,16 @@ http://31.148.48.15/Match_Nash_Sport/index.m3u8
 http://flussonic.linkintel.ru/match/index.m3u8
 #EXTINF:-1 tvg-id="MiMusicaRomantica.us" tvg-name="Mi Musica Romantica" group-title="Не проверено",Mi Musica Romantica [Full HD]
 http://168.228.44.241:9999/play/a054/index.m3u8
+#EXTINF:-1 tvg-id="mir" tvg-name="МИР" group-title="Не проверено",МИР
+http://hls.mirtv.cdnvideo.ru/mirtv-parampublish/mirtv3_2500/playlist.m3u8
 #EXTINF:-1 tvg-id="mir" tvg-name="МИР" group-title="Не проверено",МИР [SD]
 http://31.148.48.15/Mir/index.m3u8
 #EXTINF:-1 tvg-id="mir-seriala" tvg-name="Мир Сериала" group-title="Не проверено",Мир Сериала [SD]
 http://31.148.48.15/Mir_Seriala/index.m3u8
+#EXTINF:-1 tvg-id="mosfilm" tvg-name="Мосфильм Золотая коллекция" group-title="Не проверено",Мосфильм Золотая коллекция [SD]
+http://stream.mcquack.net/369/index.m3u8
+#EXTINF:-1 tvg-id="moya-planeta" tvg-name="Моя Планета" group-title="Не проверено",Моя Планета [SD]
+http://stream.mcquack.net/124/index.m3u8
 #EXTINF:-1 tvg-id="mult" tvg-name="Мульт" group-title="Не проверено",Мульт [SD]
 http://flussonic.linkintel.ru/Mult/index.m3u8
 #EXTINF:-1 tvg-id="multimuzyka" tvg-name="Мультимузыка" group-title="Не проверено",Мультимузыка [SD]
@@ -3577,18 +3637,22 @@ http://stream.mcquack.net/153/index.m3u8
 http://stream.mcquack.net/419/index.m3u8
 #EXTINF:-1 tvg-id="national-geographic" tvg-name="National Geographic Россия" group-title="Не проверено",National Geographic Россия [SD]
 http://stream.mcquack.net/116/index.m3u8
+#EXTINF:-1 tvg-id="nick-jr" tvg-name="Nick Jr." group-title="Не проверено",Nick Jr. [SD]
+http://stream.mcquack.net/220/index.m3u8
 #EXTINF:-1 tvg-id="nn-24" tvg-name="Нижний Новгород 24" group-title="Не проверено",Нижний Новгород 24 [Full HD]
 https://live.smotrim.ru/vgtrk/nigniynovgorod/nigniynovgorod24-hd/index.m3u8
 #EXTINF:-1 tvg-id="nostalgia" tvg-name="Ностальгия" group-title="Не проверено",Ностальгия [SD]
 http://31.148.48.15/Nostalgiya/index.m3u8
+#EXTINF:-1 tvg-id="nst" tvg-name="НСТ" group-title="Не проверено",НСТ [SD]
+http://stream.mcquack.net/207/index.m3u8
 #EXTINF:-1 tvg-id="n-tv-hd-de" tvg-name="НТВ" group-title="Не проверено",НТВ
 http://ott-cdn.ucom.am/s17/index.m3u8
 #EXTINF:-1 tvg-id="n-tv-hd-de" tvg-name="НТВ" group-title="Не проверено",НТВ [Full HD]
 http://flussonic.linkintel.ru/ntv/index.m3u8
 #EXTINF:-1 tvg-id="n-tv-hd-de" tvg-name="НТВ" group-title="Не проверено",НТВ [SD]
-http://31.148.48.15/NTV/index.m3u8
-#EXTINF:-1 tvg-id="ntv-serial" tvg-name="НТВ Сериал" group-title="Не проверено",НТВ Сериал [SD]
-https://cdn.ntv.ru/th_serial/playlist.m3u8
+https://cdn.ntv.ru/ntv7/playlist.m3u8
+#EXTINF:-1 tvg-id="ntv-xit" tvg-name="НТВ-Хит" group-title="Не проверено",НТВ-Хит [SD]
+https://cdn.ntv.ru/th_hit/playlist.m3u8
 #EXTINF:-1 tvg-id="nr1-tr" tvg-name="Number 1 TV" group-title="Не проверено",Number 1 TV [HD]
 https://mn-nl.mncdn.com/blutv_nr12/live.m3u8
 #EXTINF:-1 tvg-id="OckoGold.cz" tvg-name="Ocko Gold" group-title="Не проверено",Ocko Gold
@@ -3606,7 +3670,7 @@ http://hithd.camsh.orsk.ru/hls/hithd.m3u8
 #EXTINF:-1 tvg-id="radost-moya" tvg-name="Радость Моя" group-title="Не проверено",Радость Моя [SD]
 http://31.148.48.15/Radost_moya/index.m3u8
 #EXTINF:-1 tvg-id="rbk" tvg-name="РБК" group-title="Не проверено",РБК [SD]
-http://31.148.48.15/RBK/index.m3u8
+http://92.50.128.180/utv/1358/index.m3u8
 #EXTINF:-1 tvg-id="rentv" tvg-name="РЕН ТВ" group-title="Не проверено",РЕН ТВ
 https://streaming.televizor-24-tochka.ru/live/14.m3u8
 #EXTINF:-1 tvg-id="rentv" tvg-name="РЕН ТВ" group-title="Не проверено",РЕН ТВ [SD]
@@ -3624,7 +3688,7 @@ http://31.148.48.15/RU_TV/index.m3u8
 #EXTINF:-1 tvg-id="RumbaTV.co" tvg-name="Rumba TV" group-title="Не проверено",Rumba TV [Full HD]
 http://138.94.3.106:8000/play/a04r/index.m3u8
 #EXTINF:-1 tvg-id="rossia1" tvg-name="Россия 1" group-title="Не проверено",Россия 1 [Full HD]
-https://live.smotrim.ru/vgtrk/yoshkar-ola/russia1-hd/index.m3u8
+https://live.smotrim.ru/vgtrk/arhangelsk/russia1-hd/index.m3u8
 #EXTINF:-1 tvg-id="rossia1" tvg-name="Россия 1" group-title="Не проверено",Россия 1 [SD]
 http://31.148.48.15/Rossiya_1/index.m3u8
 #EXTINF:-1 tvg-id="rossia-24" tvg-name="Россия 24" group-title="Не проверено",Россия 24 [Full HD]
@@ -3638,7 +3702,7 @@ http://31.148.48.15/Russkiy_Bestseller/index.m3u8
 #EXTINF:-1 tvg-id="russky-detektiv" tvg-name="Русский детектив" group-title="Не проверено",Русский детектив [SD]
 http://31.148.48.15/Russkiy_Detektiv/index.m3u8
 #EXTINF:-1 tvg-id="russky-roman" tvg-name="Русский роман" group-title="Не проверено",Русский роман [SD]
-http://31.148.48.15/Russkiy_Roman/index.m3u8
+http://stream.mcquack.net/266/index.m3u8
 #EXTINF:-1 tvg-id="ryzhy" tvg-name="Рыжий" group-title="Не проверено",Рыжий [SD]
 http://31.148.48.15/Rizhiy/index.m3u8
 #EXTINF:-1 tvg-id="samara24" tvg-name="Самара 24" group-title="Не проверено",Самара 24 [Full HD]
@@ -3651,8 +3715,6 @@ http://77.232.131.211/Sapfir/manifest.m3u8
 http://31.148.48.15/Sarafan/index.m3u8
 #EXTINF:-1 tvg-id="saratov-24" tvg-name="Саратов 24" group-title="Не проверено",Саратов 24
 https://saratov24.tv/online/playlist.php
-#EXTINF:-1 tvg-id="ShansonTV.ru" tvg-name="Шансон ТВ" group-title="Не проверено",Шансон ТВ
-https://hls-shansontv.cdnvideo.ru/shansontv/smil:shansontv.smil/playlist.m3u8
 #EXTINF:-1 tvg-id="sibir24" tvg-name="Сибирь 24" group-title="Не проверено",Сибирь 24 [Full HD]
 https://live.smotrim.ru/vgtrk/krasnoyarsk/sibir24-hd/index.m3u8
 #EXTINF:-1 tvg-id="solnce" tvg-name="Солнце" group-title="Не проверено",Солнце [SD]
@@ -3663,6 +3725,8 @@ http://ott-cdn.ucom.am/s52/04.m3u8
 http://flussonic.linkintel.ru/sts/index.m3u8
 #EXTINF:-1 tvg-id="sts-love" tvg-name="СТС Love" group-title="Не проверено",СТС Love [SD]
 http://stream.mcquack.net/183/index.m3u8
+#EXTINF:-1 tvg-id="super" tvg-name="Суббота!" group-title="Не проверено",Суббота! [Full HD]
+http://stream.mcquack.net/269/index.m3u8
 #EXTINF:-1 tvg-id="super" tvg-name="Суббота!" group-title="Не проверено",Суббота! [SD]
 http://46.32.176.50/subbota/index.m3u8
 #EXTINF:-1 tvg-id="ct24-cz" tvg-name="Т24" group-title="Не проверено",Т24 [SD]
@@ -3685,16 +3749,6 @@ http://flussonic.linkintel.ru/tnt4/index.m3u8
 https://tvtogliatti24.ru/hls/live1080/index.m3u8
 #EXTINF:-1 tvg-id="Tonus.ru" tvg-name="Тонус" group-title="Не проверено",Тонус [SD]
 http://31.148.48.15/Zdorovie/index.m3u8
-#EXTINF:-1 tvg-id="trace-brasil" tvg-name="Trace Brazuca" group-title="Не проверено",Trace Brazuca [Full HD]
-https://channels.trace.plus/Traceprod/BRAZIL_hd/index.m3u8
-#EXTINF:-1 tvg-id="trace-gospel-fr" tvg-name="Trace Gospel" group-title="Не проверено",Trace Gospel [Full HD]
-https://channels.trace.plus/Traceprod/GOSPEL_FR_hd/index.m3u8
-#EXTINF:-1 tvg-id="trace-latina-fr" tvg-name="Trace Latina" group-title="Не проверено",Trace Latina [Full HD]
-https://channels.trace.plus/Traceprod/LATINA_hd/index.m3u8
-#EXTINF:-1 tvg-id="TraceUK.uk" tvg-name="Trace UK" group-title="Не проверено",Trace UK [Full HD]
-https://channels.trace.plus/Traceprod/UK_FAST_hd/index.m3u8
-#EXTINF:-1 tvg-id="trace-urban" tvg-name="Trace Urban" group-title="Не проверено",Trace Urban [Full HD]
-https://channels.trace.plus/Traceprod/URBAN_AFRIC_FR_hd/index.m3u8
 #EXTINF:-1 tvg-id="travel-adventure" tvg-name="Travel+Adventure" group-title="Не проверено",Travel+Adventure [Full HD]
 http://77.232.131.211/TravelAdventureHD/index.m3u8
 #EXTINF:-1 tvg-id="TV21International.ru" tvg-name="TV 21 International" group-title="Не проверено",TV 21 International [SD]
@@ -3711,6 +3765,8 @@ https://strm.yandex.ru/kal/utv/utv0.m3u8
 http://stream.mcquack.net/230/index.m3u8
 #EXTINF:-1 tvg-id="yu" tvg-name="Ю" group-title="Не проверено",Ю [HD]
 https://cdn-01.bonus-tv.ru/u/playlist.m3u8
+#EXTINF:-1 tvg-id="neizvestnaya-rosia" tvg-name="Неизвестная Россия" group-title="Не проверено",Неизвестная Россия [Full HD]
+https://cdn.ntv.ru/unknown_russia/playlist.m3u8
 #EXTINF:-1 tvg-id="ural24" tvg-name="Урал 24" group-title="Не проверено",Урал 24 [Full HD]
 https://live.smotrim.ru/vgtrk/chelyabinsk/ural24-hd/index.m3u8
 #EXTINF:-1 tvg-id="usadba" tvg-name="Усадьба" group-title="Не проверено",Усадьба [SD]
