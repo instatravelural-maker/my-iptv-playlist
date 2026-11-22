@@ -1,14 +1,10 @@
 #EXTM3U url-tvg="https://iptvx.one/epg/epg_lite.xml.gz" x-tvg-url="https://iptvx.one/epg/epg_lite.xml.gz"
-#EXTINF:-1 tvg-id="avto-plus" tvg-name="Авто Плюс" group-title="Авто",Авто Плюс
-https://stream8.cinerama.uz/1036/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="avto-plus" tvg-name="Авто Плюс" group-title="Авто",Авто Плюс [SD]
 http://31.148.48.15/Avto_Plus/index.m3u8
 #EXTINF:-1 tvg-id="avto24" tvg-name="Авто24" group-title="Авто",Авто24 [SD]
 https://fs.uplink.kz/avto24/mono.m3u8?token=onlinetv
 #EXTINF:-1 tvg-id="CityEdenAutoGid.ru" tvg-name="Сити Эдем АвтоГид" group-title="Авто",Сити Эдем АвтоГид
 https://cityeden.catcast.tv/content/47515/index.m3u8
-#EXTINF:-1 tvg-id="drive" tvg-name="Драйв" group-title="Авто",Драйв [SD]
-https://stream8.cinerama.uz/1421/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="avto24" tvg-name="Авто 24 (2)" group-title="Авто",Авто 24 (2)
 https://flussonic.mkpnet.ru/tv-a5fa84789fc4add5/video.m3u8
 #EXTINF:-1 tvg-id="belviasat-plustv" tvg-name="+TV" group-title="Беларусь",+TV [SD]
@@ -38,8 +34,6 @@ https://dumatv.iptv2022.com/playlist.m3u8
 http://185.23.80.23:8080/DumaTV/index.m3u8
 #EXTINF:-1 tvg-id="ani" tvg-name="Ani" group-title="Детские",Ani [SD]
 http://stream.mcquack.net/306/index.m3u8
-#EXTINF:-1 tvg-id="Aqlvoy.uz" tvg-name="Aqlvoy" group-title="Детские",Aqlvoy
-https://stream8.cinerama.uz/1205/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="BabyFirst.us" tvg-name="BabyFirst" group-title="Детские",BabyFirst
 https://jmp2.uk/plu-5ebac49ce4dc8b00078b23bc.m3u8
 #EXTINF:-1 tvg-id="BabyFirst.us" tvg-name="BabyFirst" group-title="Детские",BabyFirst [HD]
@@ -50,41 +44,27 @@ http://gohoski.fvds.ru:3000/mediabay/611/index.m3u8
 http://88.218.242.237:8001/Cartoon_Classics
 #EXTINF:-1 tvg-id="boomerang" tvg-name="Cartoonito CEE" group-title="Детские",Cartoonito CEE
 http://193.33.39.108:9019/play/a00t
-#EXTINF:-1 tvg-id="detsky" tvg-name="Детский" group-title="Детские",Детский [SD]
-https://stream8.cinerama.uz/1033/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="detkino-tviksel" tvg-name="Детское кино" group-title="Детские",Детское кино
 https://autopilot.catcast.tv/content/38720/index.m3u8
 #EXTINF:-1 tvg-id="DetvoraPlus.ru" tvg-name="ДетвораПлюс" group-title="Детские",ДетвораПлюс [Full HD]
 https://cdn.rostelekom-tv.xyz/live/WAYU4PTJ_VVz4wAQ.m3u8
 #EXTINF:-1 tvg-id="gulli-girl" tvg-name="Gulli Girl" group-title="Детские",Gulli Girl [SD]
 http://stream.mcquack.net/305/index.m3u8
-#EXTINF:-1 tvg-id="gulli-girl" tvg-name="Gulli Girl" group-title="Детские",Gulli Girl [HD]
-https://stream8.cinerama.uz/1445/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="ginger-hd" tvg-name="Капитан Фантастика" group-title="Детские",Капитан Фантастика [Full HD]
 http://stream.mcquack.net/144/index.m3u8
-#EXTINF:-1 tvg-id="ginger-hd" tvg-name="Капитан Фантастика" group-title="Детские",Капитан Фантастика [SD]
-https://stream8.cinerama.uz/1406/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="kidzone" tvg-name="KidZone Max" group-title="Детские",KidZone Max [Full HD]
 #EXTVLCOPT:http-referrer=https://kidzonemax.lt
 https://v4-pan-n79-cdn-01.live.cdn.cgates.lt/live/dash/560706/index.mpd
-#EXTINF:-1 tvg-id="mama" tvg-name="Мама" group-title="Детские",Мама [SD]
-https://stream8.cinerama.uz/1244/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="mult" tvg-name="Мульт" group-title="Детские",Мульт [Full HD]
 http://31.148.48.15/Mult_HD/index.m3u8
 #EXTINF:-1 tvg-id="mult" tvg-name="Мульт" group-title="Детские",Мульт [SD]
 https://fs.uplink.kz/mult/mono.m3u8?token=onlinetv
 #EXTINF:-1 tvg-id="multimuzyka" tvg-name="Мультимузыка" group-title="Детские",Мультимузыка [SD]
 http://stream.mcquack.net/82/index.m3u8
-#EXTINF:-1 tvg-id="multimania" tvg-name="Мультиландия" group-title="Детские",Мультиландия
-https://stream8.cinerama.uz/1440/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="multimania" tvg-name="Мультиландия" group-title="Детские",Мультиландия [SD]
 https://fs.uplink.kz/multilandia/mono.m3u8?token=onlinetv
-#EXTINF:-1 tvg-id="nick-jr" tvg-name="Nick Jr." group-title="Детские",Nick Jr. [SD]
-https://stream8.cinerama.uz/1501/playlist.m3u8
 #EXTINF:-1 tvg-id="nickelodeon-ru" tvg-name="Nickelodeon Россия" group-title="Детские",Nickelodeon Россия [SD]
 http://stream.mcquack.net/443/index.m3u8
-#EXTINF:-1 tvg-id="NicktoonsCIS.ru" tvg-name="Nicktoons CIS" group-title="Детские",Nicktoons CIS [Full HD]
-https://stream8.cinerama.uz/1502/playlist.m3u8
 #EXTINF:-1 tvg-id="o_" tvg-name="О!" group-title="Детские",О! [SD]
 http://stream.mcquack.net/60/index.m3u8
 #EXTINF:-1 tvg-id="o_" tvg-name="О!" group-title="Детские",О! [HD]
@@ -93,8 +73,6 @@ http://88.212.15.50/live/test_telekanal_o/playlist.m3u8
 https://radm.mediacdn.ru/cdn/radost/playlist_sdhigh.m3u8
 #EXTINF:-1 tvg-id="RUTVKids.ru" tvg-name="РУ.ТВ Кидс" group-title="Детские",РУ.ТВ Кидс [HD]
 https://rutvkids.ru/live/efir/index.m3u8
-#EXTINF:-1 tvg-id="ryzhy" tvg-name="Рыжий" group-title="Детские",Рыжий [SD]
-https://stream8.cinerama.uz/1407/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="smaylik-tv" tvg-name="Смайл ТВ" group-title="Детские",Смайл ТВ
 https://5f05e059699ae.streamlock.net/WEB_Smilik/ngrp:Smilik.stream-adaptive/playlist.m3u8
 #EXTINF:-1 tvg-id="smaylik-tv" tvg-name="Смайл ТВ" group-title="Детские",Смайл ТВ [HD]
@@ -115,14 +93,10 @@ http://31.148.48.15/Malish_TV/index.m3u8
 http://109.94.1.3:8080/132/index.m3u8
 #EXTINF:-1 tvg-id="tamyr" tvg-name="Тамыр" group-title="Детские",Тамыр
 https://bsttv.bonus-tv.ru/cdn/tamyr/playlist.m3u8
-#EXTINF:-1 tvg-id="tiji" tvg-name="TiJi" group-title="Детские",TiJi [SD]
-https://stream8.cinerama.uz/1441/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="tooku" tvg-name="Тооку" group-title="Детские",Тооку [Full HD]
 http://live-saha.cdnvideo.ru/saha/tooky/playlist.m3u8
 #EXTINF:-1 tvg-id="detsky" tvg-name="Уникум" group-title="Детские",Уникум [SD]
 http://31.148.48.15/Detskiy/index.m3u8
-#EXTINF:-1 tvg-id="v-gostiax-u-skazki" tvg-name="В гостях у сказки" group-title="Детские",В гостях у сказки [Full HD]
-https://stream8.cinerama.uz/1270/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="v-gostiax-u-skazki" tvg-name="В гостях у сказки" group-title="Детские",В гостях у сказки [SD]
 https://fs.uplink.kz/v_gostyah_u_skazki/mono.m3u8?token=onlinetv
 #EXTINF:-1 tvg-id="karusel" tvg-name="Карусель" group-title="Детские",Карусель
@@ -143,8 +117,6 @@ http://176.126.166.43:1935/live/312kino/playlist.m3u8
 https://live.15plusmg.ru/memfs/b389173a-df4e-4171-8904-e249893e71eb.m3u8
 #EXTINF:-1 tvg-id="blokbaster" tvg-name="Блокбастер" group-title="Кино",Блокбастер [Full HD]
 http://stream.mcquack.net/364/index.m3u8
-#EXTINF:-1 tvg-id="cinema-ru" tvg-name="Cinema" group-title="Кино",Cinema
-https://stream8.cinerama.uz/1227/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="cinema-ru" tvg-name="Cinema" group-title="Кино",Cinema [SD]
 http://flussonic.linkintel.ru/cinema/index.m3u8
 #EXTINF:-1 tvg-id="cityedem-kinoact" tvg-name="Сити Эдем КиноЭкшен" group-title="Кино",Сити Эдем КиноЭкшен
@@ -167,16 +139,12 @@ https://cityeden.catcast.tv/content/41331/index.m3u8
 https://cityeden.catcast.tv/content/40783/index.m3u8
 #EXTINF:-1 tvg-id="cityedem-kinosem" tvg-name="Сити Эдем КиноСемья" group-title="Кино",Сити Эдем КиноСемья
 https://v2.catcast.tv/content/38128/index.m3u8
-#EXTINF:-1 tvg-id="domkino" tvg-name="Дом кино" group-title="Кино",Дом кино
-https://stream8.cinerama.uz/1054/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="domkino" tvg-name="Дом кино" group-title="Кино",Дом кино [SD]
 https://fs.uplink.kz/dom_kino/mono.m3u8?token=onlinetv
 #EXTINF:-1 tvg-id="domkino-premium" tvg-name="Дом кино Премиум" group-title="Кино",Дом кино Премиум [Full HD]
 https://fs.uplink.kz/dom_kino_premium/mono.m3u8?token=onlinetv
 #EXTINF:-1 tvg-id="domkino-premium" tvg-name="Дом кино Премиум" group-title="Кино",Дом кино Премиум [SD]
 http://88.212.15.50/live/test_dom_kino_premium/playlist.m3u8
-#EXTINF:-1 tvg-id="dorama" tvg-name="Дорама" group-title="Кино",Дорама
-https://stream8.cinerama.uz/1273/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="dorama" tvg-name="Дорама" group-title="Кино",Дорама [Full HD]
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36
 http://stream.mcquack.net/412/index.m3u8
@@ -206,8 +174,6 @@ http://31.148.48.15/AMC/index.m3u8
 https://live-rian.cdnvideo.ru/rian/rus-radio/playlist.m3u8
 #EXTINF:-1 tvg-id="illuzion-plus" tvg-name="Иллюзион+" group-title="Кино",Иллюзион+ [SD]
 http://176.118.197.101/Illuzion+/index.m3u8
-#EXTINF:-1 tvg-id="indiyskoe-kino" tvg-name="Индийское кино" group-title="Кино",Индийское кино
-https://stream8.cinerama.uz/1060/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="indiyskoe-kino" tvg-name="Индийское кино" group-title="Кино",Индийское кино [SD]
 http://188.113.190.12/329/index.m3u8
 #EXTINF:-1 tvg-id="kineko" tvg-name="Кинеко" group-title="Кино",Кинеко [Full HD]
@@ -224,20 +190,14 @@ http://176.118.197.101/KinoTvHD/playlist.m3u8
 http://flussonic.linkintel.ru/kino-tv/index.m3u8
 #EXTINF:-1 tvg-id="kino-tv-pl" tvg-name="Кино ТВ" group-title="Кино",Кино ТВ [HD]
 http://31.148.48.15/Kino_TV_HD/index.m3u8
-#EXTINF:-1 tvg-id="kinoxit" tvg-name="Кинохит" group-title="Кино",Кинохит
-https://stream8.cinerama.uz/1055/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="kinoxit" tvg-name="Кинохит" group-title="Кино",Кинохит [SD]
 https://fs.uplink.kz/kinohit/mono.m3u8?token=onlinetv
 #EXTINF:-1 tvg-id="kinokomedia" tvg-name="Кинокомедия" group-title="Кино",Кинокомедия [SD]
 https://fs.uplink.kz/kinokomedia/mono.m3u8?token=onlinetv
 #EXTINF:-1 tvg-id="kinomiks" tvg-name="Киномикс" group-title="Кино",Киномикс [SD]
 https://fs.uplink.kz/kinomix/mono.m3u8?token=onlinetv
-#EXTINF:-1 tvg-id="kinopokaz" tvg-name="Кинопоказ" group-title="Кино",Кинопоказ
-https://stream8.cinerama.uz/1057/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="kinopokaz" tvg-name="Кинопоказ" group-title="Кино",Кинопоказ [SD]
 http://stream.mcquack.net/64/index.m3u8
-#EXTINF:-1 tvg-id="kinopremiera-hd" tvg-name="Кинопремьера" group-title="Кино",Кинопремьера
-https://stream8.cinerama.uz/1207/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="kinopremiera-hd" tvg-name="Кинопремьера" group-title="Кино",Кинопремьера [Full HD]
 https://fs.uplink.kz/kinopremiera_hd/mono.m3u8?token=onlinetv
 #EXTINF:-1 tvg-id="kinosat" tvg-name="КиноСат" group-title="Кино",КиноСат [SD]
@@ -246,8 +206,6 @@ http://31.148.48.15/Kineko/index.m3u8
 https://fs.uplink.kz/kinosemya/mono.m3u8?token=onlinetv
 #EXTINF:-1 tvg-id="kinoseria" tvg-name="Киносерия" group-title="Кино",Киносерия [SD]
 https://fs.uplink.kz/kinoseria/mono.m3u8?token=onlinetv
-#EXTINF:-1 tvg-id="kinosvidanie" tvg-name="Киносвидание" group-title="Кино",Киносвидание
-https://stream8.cinerama.uz/1203/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="kinosvidanie" tvg-name="Киносвидание" group-title="Кино",Киносвидание [SD]
 https://fs.uplink.kz/kinosvidanie/mono.m3u8?token=onlinetv
 #EXTINF:-1 tvg-id="kinouzhas" tvg-name="Киноужас" group-title="Кино",Киноужас [Full HD]
@@ -271,16 +229,12 @@ http://46.53.200.153:7777/play/SRT_Nash_kinopokaz/index.m3u8
 http://stream.mcquack.net/217/index.m3u8
 #EXTINF:-1 tvg-id="nashe-muzhskoe" tvg-name="Наше мужское" group-title="Кино",Наше мужское [Full HD]
 http://stream.mcquack.net/362/index.m3u8
-#EXTINF:-1 tvg-id="nashe-novoe-kino" tvg-name="Наше новое кино" group-title="Кино",Наше новое кино
-https://stream8.cinerama.uz/1051/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="ostrosiuzhetnoe" tvg-name="Остросюжетное" group-title="Кино",Остросюжетное [Full HD]
 http://stream.mcquack.net/214/index.m3u8
 #EXTINF:-1 tvg-id="patriot" tvg-name="Патриот" group-title="Кино",Патриот [HD]
 https://stream.smotrim.ru/hls2/static/playlist_4.m3u8
 #EXTINF:-1 tvg-id="premialnoe" tvg-name="Премиальное" group-title="Кино",Премиальное [Full HD]
 http://stream.mcquack.net/421/index.m3u8
-#EXTINF:-1 tvg-id="rodnoe-kino" tvg-name="Родное Кино" group-title="Кино",Родное Кино
-https://stream8.cinerama.uz/1052/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="rodnoe-kino" tvg-name="Родное Кино" group-title="Кино",Родное Кино [SD]
 http://stream.mcquack.net/242/index.m3u8
 #EXTINF:-1 tvg-id="russky-bestseller" tvg-name="Русский бестселлер" group-title="Кино",Русский бестселлер [SD]
@@ -325,16 +279,12 @@ https://cdn.rostelekom-tv.xyz/live/NImhIFLevxCbtcP-.m3u8
 https://cdn.rostelekom-tv.xyz/live/nF4sFCa49nFPHSF_.m3u8
 #EXTINF:-1 tvg-id="tv1000" tvg-name="viju TV1000" group-title="Кино",viju TV1000 [SD]
 http://46.53.200.153:7777/play/TV_1000/index.m3u8
-#EXTINF:-1 tvg-id="tv1000-action" tvg-name="viju TV1000 action" group-title="Кино",viju TV1000 action
-https://stream8.cinerama.uz/1225/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="tv1000-action" tvg-name="viju TV1000 action" group-title="Кино",viju TV1000 action [SD]
 http://46.53.200.153:7777/play/a01h/index.m3u8
 #EXTINF:-1 tvg-id="viju-tv1000-novella" tvg-name="viju TV1000 новелла" group-title="Кино",viju TV1000 новелла [Full HD]
 http://46.53.200.153:7777/play/VIJU_TV_1000_novella/index.m3u8
 #EXTINF:-1 tvg-id="viju-tv1000-romantica" tvg-name="viju TV1000 romantica" group-title="Кино",viju TV1000 romantica [Full HD]
 http://46.53.200.153:7777/play/Viju_Drama/index.m3u8
-#EXTINF:-1 tvg-id="tv1000-russkoe-kino" tvg-name="viju TV1000 русское" group-title="Кино",viju TV1000 русское
-https://stream8.cinerama.uz/1058/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="tv1000-russkoe-kino" tvg-name="viju TV1000 русское" group-title="Кино",viju TV1000 русское [SD]
 http://46.53.200.153:7777/play/a01g/index.m3u8
 #EXTINF:-1 tvg-id="tv1000-russkoe-kino" tvg-name="Viju TV1000 Русское" group-title="Кино",Viju TV1000 Русское
@@ -381,8 +331,6 @@ https://cdn-dvr.ntv.ru/Skoraja_pomosh/tracks-v1a1/rewind-240.ts.m3u8
 http://stitch.teletarget.ru/vintera/sovietmovie/index.m3u8
 #EXTINF:-1 tvg-id="nostalgia" tvg-name="Ностальгия" group-title="Классика",Ностальгия [SD]
 http://176.118.197.101/Nostalgiya/index.m3u8
-#EXTINF:-1 tvg-id="retro-tv" tvg-name="Ретро" group-title="Классика",Ретро
-https://stream8.cinerama.uz/1047/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="retro-tv" tvg-name="Ретро" group-title="Классика",Ретро [SD]
 http://176.118.197.101/Retro/index.m3u8
 #EXTINF:-1 tvg-id="CityEdenReceptyGurmana.ru" tvg-name="Сити Эдем Рецепты Гурмана" group-title="Кулинария",Сити Эдем Рецепты Гурмана
@@ -391,14 +339,10 @@ https://cityeden.catcast.tv/content/47516/index.m3u8
 http://stream.mcquack.net/298/index.m3u8
 #EXTINF:-1 tvg-id="eda-hd" tvg-name="Еда Премиум" group-title="Кулинария",Еда Премиум [Full HD]
 http://stream.mcquack.net/216/index.m3u8
-#EXTINF:-1 tvg-id="Kuhnya.ru" tvg-name="Кухня" group-title="Кулинария",Кухня [SD]
-https://stream8.cinerama.uz/1236/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="KulinarTV.ru" tvg-name="Кулинар HD" group-title="Кулинария",Кулинар HD
 https://api.alpaca.t62a.com/hls/9110/index.m3u8
 #EXTINF:-1 tvg-id="KulinarTV.ru" tvg-name="Кулинар HD" group-title="Кулинария",Кулинар HD [SD]
 https://api.alpaca.t62a.com/hls/9110/stream0.m3u8
-#EXTINF:-1 tvg-id="telekafe" tvg-name="Телекафе" group-title="Кулинария",Телекафе
-https://stream8.cinerama.uz/1035/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="telekafe" tvg-name="Телекафе" group-title="Кулинария",Телекафе [SD]
 http://88.212.15.50/live/test_telecafe_tv/playlist.m3u8
 #EXTINF:-1 tvg-id="telekafe" tvg-name="Телекафе" group-title="Кулинария",Телекафе [HD]
@@ -418,8 +362,6 @@ http://31.148.48.15/Sochi_HD/index.m3u8
 https://bozztv.com/1gbw5/tintv2/tintv2/playlist.m3u8
 #EXTINF:-1 tvg-id="amc" tvg-name="AMC" group-title="Музыка | Азиатская",AMC [Full HD]
 https://amchls.wns.live/hls/stream.m3u8
-#EXTINF:-1 tvg-id="BIZMusic.uz" tvg-name="BIZ Music" group-title="Музыка | Азиатская",BIZ Music
-https://stream8.cinerama.uz/1212/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="BIZMusic.uz" tvg-name="BIZ Music" group-title="Музыка | Азиатская",BIZ Music [Full HD]
 https://fl.biztv.media/music_720_QAKpGmVUjaPApCNjpsgBxrdqNihAkl/index.m3u8
 #EXTINF:-1 tvg-id="CCTV11.cn" tvg-name="CCTV-11" group-title="Музыка | Азиатская",CCTV-11 [HD]
@@ -430,8 +372,6 @@ http://74.91.26.218:82/live/cctv15hd.m3u8
 http://38.75.136.137:98/gslb/dsdqpub/fyyy.m3u8?auth=testpub
 #EXTINF:-1 tvg-id="DMusic.kh" tvg-name="D Music" group-title="Музыка | Азиатская",D Music
 http://43.252.18.195:5080/live/streams/WCVNews.playlist.m3u8
-#EXTINF:-1 tvg-id="fashion-tv-eu" tvg-name="FTV" group-title="Музыка | Азиатская",FTV [SD]
-https://stream8.cinerama.uz/1018/playlist.m3u8
 #EXTINF:-1 tvg-id="KayhanTV.af" tvg-name="Kayhan TV" group-title="Музыка | Азиатская",Kayhan TV [HD]
 https://playout395.livestreamingcdn.com/live/Stream1/playlist.m3u8
 #EXTINF:-1 tvg-id="LingkarTV.id" tvg-name="Lingkar TV" group-title="Музыка | Азиатская",Lingkar TV
@@ -441,8 +381,6 @@ https://livefta.malimarcdn.com/ftaedge00/lookthoongtv.sdp/playlist.m3u8
 #EXTINF:-1 tvg-id="MusicInformationChannel.id" tvg-name="Music Information Channel" group-title="Музыка | Азиатская",Music Information Channel [HD]
 #EXTVLCOPT:http-referrer=https://mic-indo.com/live
 https://mic.siar.us/mic/live/mic.m3u8
-#EXTINF:-1 tvg-id="MuzTVUzbekistan.uz" tvg-name="Muz TV Uzbekistan" group-title="Музыка | Азиатская",Muz TV Uzbekistan
-https://stream8.cinerama.uz/1063/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="ONMusic.vn" tvg-name="ON Music" group-title="Музыка | Азиатская",ON Music [Full HD]
 https://freem3u.xyz/api/live/play.m3u8?vid=185
 #EXTINF:-1 tvg-id="OnlineTVNusantara.id" tvg-name="Online TV Nusantara" group-title="Музыка | Азиатская",Online TV Nusantara [HD]
@@ -455,8 +393,6 @@ https://alpha.tv.online.tm/hls/ch005.m3u8
 https://freem3u.xyz/api/live/play.m3u8?vid=91
 #EXTINF:-1 tvg-id="VinhLongTV5.vn" tvg-name="Vinh Long TV 5" group-title="Музыка | Азиатская",Vinh Long TV 5 [HD]
 https://dethich.pw/thvl5/index.m3u8
-#EXTINF:-1 tvg-id="ZorTV.uz" tvg-name="Zo'r TV" group-title="Музыка | Азиатская",Zo'r TV [SD]
-https://stream8.cinerama.uz/1016/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="30AMusic.us" tvg-name="30A Music" group-title="Музыка | Англоязычная",30A Music [HD]
 https://30a-tv.com/music.m3u8
 #EXTINF:-1 tvg-id="AvangTV.us" tvg-name="Avang TV" group-title="Музыка | Англоязычная",Avang TV [Full HD]
@@ -1975,8 +1911,6 @@ http://hz1.teleport.cc/HLS/HD.m3u8
 http://rtmp.one.by:2300
 #EXTINF:-1 tvg-id="FirstMusicChannelRussia.by" tvg-name="Первый Музыкальный Канал Россия" group-title="Музыка | Русская",Первый Музыкальный Канал Россия [SD]
 http://rtmp.one.by:2200
-#EXTINF:-1 tvg-id="tnt-music" tvg-name="ТНТ Music" group-title="Музыка | Русская",ТНТ Music [SD]
-https://stream8.cinerama.uz/1272/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="live-music-channel" tvg-name="Live Music Channel" group-title="Музыка | Русская",Live Music Channel [Full HD]
 http://46.53.200.153:7777/play/Live_music_channel/index.m3u8
 #EXTINF:-1 tvg-id="maydan" tvg-name="Майдан" group-title="Музыка | Русская",Майдан [HD]
@@ -1987,8 +1921,6 @@ https://public.streaming.matur-tv.ru/hls/h264_aac/stream.m3u8
 http://46.32.176.50/mcmtop/index.m3u8
 #EXTINF:-1 tvg-id="muzsoyuz" tvg-name="Муз Союз" group-title="Музыка | Русская",Муз Союз [SD]
 https://hls-tvsoyuz.cdnvideo.ru/tvsoyuz2/muzsoyuz.6fw0-58xp-acts-esy0/playlist.m3u8
-#EXTINF:-1 tvg-id="muztv" tvg-name="МУЗ-ТВ" group-title="Музыка | Русская",МУЗ-ТВ
-https://stream8.cinerama.uz/1200/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="muztv" tvg-name="МУЗ-ТВ" group-title="Музыка | Русская",МУЗ-ТВ [SD]
 http://31.148.5.241/kanal_20/index.m3u8
 #EXTINF:-1 tvg-id="Muzyka1.ru" tvg-name="Музыка 1" group-title="Музыка | Русская",Музыка 1
@@ -1997,14 +1929,10 @@ https://kino-1.catcast.tv/content/37745/index.m3u8
 https://kino-1.catcast.tv/content/37739/index.m3u8
 #EXTINF:-1 tvg-id="la-minor" tvg-name="Музыка Live" group-title="Музыка | Русская",Музыка Live [SD]
 http://stream.mcquack.net/303/index.m3u8
-#EXTINF:-1 tvg-id="muzyka-pervogo" tvg-name="Музыка Первого" group-title="Музыка | Русская",Музыка Первого
-https://stream8.cinerama.uz/1201/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="muzyka-pervogo" tvg-name="Музыка Первого" group-title="Музыка | Русская",Музыка Первого [SD]
 http://88.212.15.50/live/test_muzyka_pervogo/playlist.m3u8
 #EXTINF:-1 tvg-id="o2tv" tvg-name="о2тв" group-title="Музыка | Русская",о2тв [HD]
 http://31.148.48.15/O2_HD/index.m3u8
-#EXTINF:-1 tvg-id="ru-tv" tvg-name="РУ.ТВ" group-title="Музыка | Русская",РУ.ТВ
-https://stream8.cinerama.uz/1202/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="ru-tv" tvg-name="РУ.ТВ" group-title="Музыка | Русская",РУ.ТВ [Full HD]
 https://bl.rutube.ru/livestream/b1eb8e90d7e636677b3eb73b4fcbb717/index.m3u8?e=2069285076&s=d-E-bxKy2v3EEJ94RQX9CA&scheme=https
 #EXTINF:-1 tvg-id="ru-tv" tvg-name="РУ.ТВ" group-title="Музыка | Русская",РУ.ТВ [SD]
@@ -2095,8 +2023,6 @@ https://livetv.powerapp.com.tr/pturkakustik/akustik.smil/playlist.m3u8
 https://livetv.powerapp.com.tr/pturkslow/slow.smil/playlist.m3u8
 #EXTINF:-1 tvg-id="PowerTurkTaptaze.tr" tvg-name="PowerTurk Taptaze" group-title="Музыка | Турецкая",PowerTurk Taptaze [Full HD]
 https://livetv.powerapp.com.tr/pturktaptaze/taptaze.smil/playlist.m3u8
-#EXTINF:-1 tvg-id="trt-muzik-tr" tvg-name="TRT Muzik" group-title="Музыка | Турецкая",TRT Muzik
-https://stream8.cinerama.uz/1208/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="trt-muzik-tr" tvg-name="TRT Muzik" group-title="Музыка | Турецкая",TRT Muzik [HD]
 https://tv-trtmuzik.medya.trt.com.tr/master.m3u8
 #EXTINF:-1 tvg-id="ChamameTV.ar" tvg-name="Chamame TV" group-title="Музыка | Фолк и народная",Chamame TV
@@ -2210,8 +2136,6 @@ http://stream.mcquack.net/384/index.m3u8
 https://donmedia.bonus-tv.ru/cdn/donmedia/playlist.m3u8
 #EXTINF:-1 tvg-id="DW.de" tvg-name="DW" group-title="Новости",DW [Full HD]
 https://dwamdstream110.akamaized.net/hls/live/2017971/dwstream110/master.m3u8
-#EXTINF:-1 tvg-id="EuronewsRussian.fr" tvg-name="Euronews Russian" group-title="Новости",Euronews Russian
-https://stream8.cinerama.uz/1024/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="EuronewsRussian.fr" tvg-name="Euronews Russian" group-title="Новости",Euronews Russian [SD]
 http://tmptv.sunduk.tv/CH31/index.m3u8
 #EXTINF:-1 tvg-id="EuronewsRussian.fr" tvg-name="Euronews Russian" group-title="Новости",Euronews Russian [HD]
@@ -2263,8 +2187,6 @@ http://88.212.15.50/live/svoboda/index.m3u8
 http://live-tolknews.cdnvideo.ru/tolknews/stream/playlist.m3u8
 #EXTINF:-1 tvg-id="dozhd" tvg-name="TV Rain" group-title="Новости",TV Rain [Full HD]
 https://wl.tvrain.tv/transcode/ngrp:ses_all/playlist.m3u8
-#EXTINF:-1 tvg-id="UzReportTV.uz" tvg-name="UzReport TV" group-title="Новости",UzReport TV [Full HD]
-https://stream8.cinerama.uz/1015/tracks-v1a1/playlist.m3u8
 #EXTINF:-1 tvg-id="VestiFM.ru" tvg-name="Вести FM" group-title="Новости",Вести FM
 https://player.smotrim.ru/iframe/stream/live_id/0487fd79-60e6-4333-a545-909d6e015173
 #EXTINF:-1 tvg-id="VestiFM.ru" tvg-name="Вести FM" group-title="Новости",Вести FM [HD]
@@ -2330,14 +2252,10 @@ https://yaroslavl.mediacdn.ru/cdn/pervyaroslavsk/playlist.m3u8
 https://fs.uplink.kz/365_dney/mono.m3u8?token=onlinetv
 #EXTINF:-1 tvg-id="animal-planet-eu" tvg-name="Animal Planet" group-title="Познавательные",Animal Planet [Full HD]
 http://stream.mcquack.net/114/index.m3u8
-#EXTINF:-1 tvg-id="arsenaltv" tvg-name="Арсенал" group-title="Познавательные",Арсенал [SD]
-https://stream8.cinerama.uz/1414/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="big-planet" tvg-name="Big Planet" group-title="Познавательные",Big Planet [SD]
 https://fs.uplink.kz/big_planet/mono.m3u8?token=onlinetv
 #EXTINF:-1 tvg-id="CityEdenMedZdrav.ru" tvg-name="Сити Эдем МедЗдрав" group-title="Познавательные",Сити Эдем МедЗдрав
 https://cityeden.catcast.tv/content/47519/index.m3u8
-#EXTINF:-1 tvg-id="da-vinci" tvg-name="Da Vinci" group-title="Познавательные",Da Vinci
-https://stream8.cinerama.uz/1231/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="da-vinci" tvg-name="Da Vinci" group-title="Познавательные",Da Vinci [SD]
 https://fs.uplink.kz/da_vinci/mono.m3u8?token=onlinetv
 #EXTINF:-1 tvg-id="dikaya-oxota-hd" tvg-name="Дикая охота" group-title="Познавательные",Дикая охота [Full HD]
@@ -2390,10 +2308,6 @@ http://31.148.48.15/Nauka_2.0/index.m3u8
 http://stream.mcquack.net/125/index.m3u8
 #EXTINF:-1 tvg-id="oxotnik-i-rybolov" tvg-name="Охотник и рыболов" group-title="Познавательные",Охотник и рыболов [Full HD]
 http://stream.mcquack.net/194/index.m3u8
-#EXTINF:-1 tvg-id="oxotnik-i-rybolov" tvg-name="Охотник и рыболов" group-title="Познавательные",Охотник и рыболов [SD]
-https://stream8.cinerama.uz/1413/tracks-v1a1/mono.m3u8
-#EXTINF:-1 tvg-id="oxota-i-rybalka" tvg-name="Охота и рыбалка" group-title="Познавательные",Охота и рыбалка
-https://stream8.cinerama.uz/1038/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="oxota-i-rybalka" tvg-name="Охота и рыбалка" group-title="Познавательные",Охота и рыбалка [SD]
 http://stream.mcquack.net/155/index.m3u8
 #EXTINF:-1 tvg-id="OtkritiymirZdorove.ru" tvg-name="Открытый мир. Здоровье" group-title="Познавательные",Открытый мир. Здоровье [SD]
@@ -2446,16 +2360,12 @@ http://cdn.universmotri.ru/live/smil:mbr.smil/playlist.m3u8
 https://cdn.universmotri.ru/live/smil:univer.smil/playlist.m3u8
 #EXTINF:-1 tvg-id="neizvestnaya-rosia" tvg-name="Неизвестная Россия" group-title="Познавательные",Неизвестная Россия [Full HD]
 http://185.23.80.23:8080/NeizvestnayaRossia/index.m3u8
-#EXTINF:-1 tvg-id="usadba" tvg-name="Усадьба" group-title="Познавательные",Усадьба [SD]
-https://stream8.cinerama.uz/1427/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="v-mire-zhivotnyx-hd" tvg-name="В мире животных" group-title="Познавательные",В мире животных [Full HD]
 http://stream.mcquack.net/241/index.m3u8
 #EXTINF:-1 tvg-id="viasat-explore" tvg-name="viju Explore" group-title="Познавательные",viju Explore [SD]
 http://46.53.200.153:7777/play/a01i/index.m3u8
 #EXTINF:-1 tvg-id="viasat-history" tvg-name="viju History" group-title="Познавательные",viju History [SD]
 http://46.53.200.153:7777/play/a01j/index.m3u8
-#EXTINF:-1 tvg-id="viasat-nature" tvg-name="viju Nature" group-title="Познавательные",viju Nature
-https://stream8.cinerama.uz/1228/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="viasat-nature" tvg-name="viju Nature" group-title="Познавательные",viju Nature [SD]
 http://46.53.200.153:7777/play/a01k/index.m3u8
 #EXTINF:-1 tvg-id="viasat-nature-history-hd" tvg-name="viju+ Planet" group-title="Познавательные",viju+ Planet [Full HD]
@@ -2465,14 +2375,8 @@ http://88.212.15.50/live/test_vremya/playlist.m3u8
 #EXTINF:-1 tvg-id="vremia" tvg-name="Время" group-title="Познавательные",Время [HD]
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
 https://cdn4.skygo.mn/live/disk1/Vremya/HLSv3-FTA/Vremya.m3u8
-#EXTINF:-1 tvg-id="zagorodnaya-zhizn" tvg-name="Загородная жизнь" group-title="Познавательные",Загородная жизнь
-https://stream8.cinerama.uz/1044/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="zagorodnaya-zhizn" tvg-name="Загородная жизнь" group-title="Познавательные",Загородная жизнь [SD]
 http://185.57.68.33/40/index.m3u8
-#EXTINF:-1 tvg-id="zdorovoe-tv" tvg-name="Здоровое ТВ" group-title="Познавательные",Здоровое ТВ [SD]
-https://stream8.cinerama.uz/1428/tracks-v1a1/mono.m3u8
-#EXTINF:-1 tvg-id="zhivaya-planeta" tvg-name="Живая Планета" group-title="Познавательные",Живая Планета [SD]
-https://stream8.cinerama.uz/1250/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="zhivaya-priroda" tvg-name="Живая природа" group-title="Познавательные",Живая природа [Full HD]
 http://stream.mcquack.net/225/index.m3u8
 #EXTINF:-1 tvg-id="zootv" tvg-name="Зоо ТВ" group-title="Познавательные",Зоо ТВ [SD]
@@ -2493,14 +2397,10 @@ http://185.121.1.163:8083/OhotaRybalka/index.m3u8
 https://cdn-01.bonus-tv.ru/prosveschenie_edge/index.m3u8
 #EXTINF:-1 tvg-id="ChassePeche.fr" tvg-name="Chasse & Peche" group-title="Природа и отдых",Chasse & Peche
 https://r.eu.cdn-redge.media/livehls/oeu/mt/live/chasse_et_peche/live.livx/playlist.m3u8
-#EXTINF:-1 tvg-id="dikiy" tvg-name="Дикий" group-title="Природа и отдых",Дикий [SD]
-https://stream3.cinerama.uz/1230/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="oxotnik-i-rybolov" tvg-name="Рыболов" group-title="Природа и отдых",Рыболов [SD]
 http://stream.mcquack.net/264/index.m3u8
 #EXTINF:-1 tvg-id="rossia1" tvg-name="Россия 1 (+1)" group-title="Прочее",Россия 1 (+1) [Full HD]
 https://live.smotrim.ru/vgtrk/1/russia1-hd/index.m3u8
-#EXTINF:-1 tvg-id="glazami-turista" tvg-name="Глазами Туриста" group-title="Путешествия",Глазами Туриста [SD]
-https://stream8.cinerama.uz/1423/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="morskoy" tvg-name="Моя стихия" group-title="Путешествия",Моя стихия [Full HD]
 http://stream.mcquack.net/141/index.m3u8
 #EXTINF:-1 tvg-id="nasha-tema" tvg-name="Наша Тема" group-title="Путешествия",Наша Тема [Full HD]
@@ -2535,8 +2435,6 @@ http://stream.mcquack.net/458/index.m3u8
 http://stream.mcquack.net/74/index.m3u8
 #EXTINF:-1 tvg-id="kvn-tv" tvg-name="КВН ТВ" group-title="Развлекательные",КВН ТВ [SD]
 https://fs.uplink.kz/kvn_tv/mono.m3u8?token=onlinetv
-#EXTINF:-1 tvg-id="MakonTV.uz" tvg-name="Makon TV" group-title="Развлекательные",Makon TV [SD]
-https://stream8.cinerama.uz/1497/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="otv-lv" tvg-name="OTV" group-title="Развлекательные",OTV
 http://88.212.7.14/live/otv/playlist.m3u8
 #EXTINF:-1 tvg-id="otv-primorie" tvg-name="ОТВ-Прим" group-title="Развлекательные",ОТВ-Прим [HD]
@@ -2709,8 +2607,6 @@ https://osir.mediacdn.ru/cdn/osetia/playlist.m3u8
 https://live1.1tvcrimea.ru/1tvcrimea.m3u8
 #EXTINF:-1 tvg-id="prikluchenia-hd" tvg-name="Приключения" group-title="Региональные",Приключения [Full HD]
 http://stream.mcquack.net/198/index.m3u8
-#EXTINF:-1 tvg-id="prikluchenia-hd" tvg-name="Приключения" group-title="Региональные",Приключения [SD]
-https://stream8.cinerama.uz/1420/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="prima" tvg-name="Прима" group-title="Региональные",Прима [Full HD]
 https://tele2dvrnat01-02.cdnvideo.ru/stream/NAT_Prima/hls/index.m3u8
 #EXTINF:-1 tvg-id="prodvizhenie" tvg-name="Продвижение" group-title="Региональные",Продвижение [Full HD]
@@ -2760,8 +2656,6 @@ http://serv30.vintera.tv:8081/sochi/sochi_stream/playlist.m3u8
 https://sitv.ru/vgtrk/stv.m3u8
 #EXTINF:-1 tvg-id="SvoyoTV.ru" tvg-name="Своё ТВ" group-title="Региональные",Своё ТВ [Full HD]
 https://svoetv.mediacdn.ru/cdn/svoetv/playlist.m3u8
-#EXTINF:-1 tvg-id="ct24-cz" tvg-name="Т24" group-title="Региональные",Т24
-https://stream8.cinerama.uz/1037/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="ct24-cz" tvg-name="Т24" group-title="Региональные",Т24 [SD]
 http://178.134.1.158:8081/t24/index.m3u8
 #EXTINF:-1 tvg-id="tavria" tvg-name="Таврия" group-title="Региональные",Таврия
@@ -2776,8 +2670,6 @@ https://krasnodar.mediacdn.ru/live/cdn/krasnodar/playlist.m3u8
 https://streaming.astrakhan.ru/telplushd/playlist.m3u8
 #EXTINF:-1 tvg-id="TKR.ru" tvg-name="ТКР" group-title="Региональные",ТКР [Full HD]
 http://live.tkr.cdnvideo.ru/tkr/tkr.sdp/playlist.m3u8
-#EXTINF:-1 tvg-id="tnv-planeta" tvg-name="ТНВ-Планета" group-title="Региональные",ТНВ-Планета
-https://stream8.cinerama.uz/1062/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="tnv-planeta" tvg-name="ТНВ-Планета" group-title="Региональные",ТНВ-Планета [SD]
 https://fs.uplink.kz/tnv/mono.m3u8?token=onlinetv
 #EXTINF:-1 tvg-id="tnv" tvg-name="ТНВ-Татарстан" group-title="Региональные",ТНВ-Татарстан [HD]
@@ -3009,8 +2901,6 @@ http://hls-tvsoyuz.cdnvideo.ru/tvsoyuz2/muzsoyuz.6fw0-58xp-acts-esy0/playlist.m3
 http://hls-tvsoyuz.cdnvideo.ru/tvsoyuz/soyuz/playlist.m3u8
 #EXTINF:-1 tvg-id="" tvg-name="ТБН" group-title="Религиозные",ТБН
 https://5d23269b3ec0c.streamlock.net/WEB_TBN/TBN.stream/playlist.m3u8
-#EXTINF:-1 tvg-id="SevimliTV.uz" tvg-name="Sevimli TV" group-title="Семейные",Sevimli TV [Full HD]
-https://stream8.cinerama.uz/1017/tracks-v1a1/playlist.m3u8
 #EXTINF:-1 tvg-id="312-serial" tvg-name="312 TV" group-title="Сериалы",312 TV
 http://176.126.166.43:1935/live/312musik/playlist.m3u8
 #EXTINF:-1 tvg-id="5minuttishiny.ru" tvg-name="Пять минут тишины" group-title="Сериалы",Пять минут тишины [Full HD]
@@ -3117,8 +3007,6 @@ https://gcmx3v3owcj.a.trbcdn.net/livemaster/ba7pu_fgej0zelpw.smil/playlist.m3u8?
 http://stream.mcquack.net/175/index.m3u8
 #EXTINF:-1 tvg-id="ARTNTV.us" tvg-name="ARTN TV" group-title="СНГ и зарубежье",ARTN TV [Full HD]
 https://streamer1.connectto.com/ARTN_mobile/index.m3u8
-#EXTINF:-1 tvg-id="DasturxonTV.uz" tvg-name="Dasturxon TV" group-title="СНГ и зарубежье",Dasturxon TV [SD]
-https://stream8.cinerama.uz/1206/tracks-v1a1/playlist.m3u8
 #EXTINF:-1 tvg-id="eltr-kg" tvg-name="ElTR" group-title="СНГ и зарубежье",ElTR [SD]
 http://gohoski.fvds.ru:3000/mediabay/162/index.m3u8
 #EXTINF:-1 tvg-id="xo4u-vsio-znat" tvg-name="Gribu visu zinat" group-title="СНГ и зарубежье",Gribu visu zinat [SD]
@@ -3133,14 +3021,10 @@ https://v0.trm.md/static/streaming-playlists/hls/9b79338b-1870-4cd7-91d4-0f6ce5c
 https://v0.trm.md/static/streaming-playlists/hls/d5fafab0-9c37-4746-9e7a-b2d6c0427015/master.m3u8
 #EXTINF:-1 tvg-id="next-tv" tvg-name="Next TV" group-title="СНГ и зарубежье",Next TV [Full HD]
 http://gohoski.fvds.ru:3000/mediabay/601/playlist.m3u8
-#EXTINF:-1 tvg-id="ozbekiston-uz" tvg-name="O'zbekiston" group-title="СНГ и зарубежье",O'zbekiston [SD]
-https://stream8.cinerama.uz/1001/tracks-v1a1/playlist.m3u8
 #EXTINF:-1 tvg-id="osh-pirim-kg" tvg-name="Osh Pirim" group-title="СНГ и зарубежье",Osh Pirim [Full HD]
 http://gohoski.fvds.ru:3000/mediabay/697/playlist.m3u8
 #EXTINF:-1 tvg-id="RTN.us" tvg-name="RTN" group-title="СНГ и зарубежье",RTN
 http://4.59.210.197:8815/udp/127.0.0.1:6002
-#EXTINF:-1 tvg-id="TaraqqiyotTV.uz" tvg-name="Taraqqiyot TV" group-title="СНГ и зарубежье",Taraqqiyot TV
-https://stream8.cinerama.uz/1204/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="tcb" tvg-name="TSV" group-title="СНГ и зарубежье",TSV [Full HD]
 https://tsv.md/stream/hls/tsv-online/index.m3u8
 #EXTINF:-1 tvg-id="Turkmenistan.tm" tvg-name="Turkmenistan" group-title="СНГ и зарубежье",Turkmenistan
@@ -3204,8 +3088,6 @@ http://31.148.5.241/kanal_3/index.m3u8
 http://45.132.87.69:8080/match/index.m3u8
 #EXTINF:-1 tvg-id="MatchUltra.ru" tvg-name="Матч! Ультра" group-title="Спорт",Матч! Ультра [HD]
 http://stream.mcquack.net/169/index.m3u8
-#EXTINF:-1 tvg-id="m1global" tvg-name="MMA-TV.com" group-title="Спорт",MMA-TV.com
-https://stream8.cinerama.uz/1226/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="m1global" tvg-name="MMA-TV.com" group-title="Спорт",MMA-TV.com [Full HD]
 https://streams2.sofast.tv/vglive-sk-462904/playlist.m3u8
 #EXTINF:-1 tvg-id="m1global" tvg-name="MMA-TV.com" group-title="Спорт",MMA-TV.com [SD]
@@ -3230,12 +3112,8 @@ https://st2.mediabay.tv/KG_KTRK-Sport/index.m3u8
 https://live-3.otcnet.ru/sportivny/index.m3u8
 #EXTINF:-1 tvg-id="start-triumf" tvg-name="Старт Триумф" group-title="Спорт",Старт Триумф [Full HD]
 https://bl.webcaster.pro/media/playlist/free_fe8dc1b768a84b8b0333db826471f17e_hd/33_85479982/1080p/8666c3e935faf6ef47ffd601e8e48868/4821408969.m3u8
-#EXTINF:-1 tvg-id="trace-sport-stars" tvg-name="Trace Sport Stars" group-title="Спорт",Trace Sport Stars [HD]
-https://stream8.cinerama.uz/1274/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="UDAR.ru" tvg-name="UDAR" group-title="Спорт",UDAR [Full HD]
 http://stream.mcquack.net/279/index.m3u8
-#EXTINF:-1 tvg-id="viasat-sport" tvg-name="viju+ Sport" group-title="Спорт",viju+ Sport
-https://stream8.cinerama.uz/1229/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="viasat-sport" tvg-name="viju+ Sport" group-title="Спорт",viju+ Sport [Full HD]
 http://46.53.200.153:7777/play/a01l/index.m3u8
 #EXTINF:-1 tvg-id="viasat-sport" tvg-name="viju+ Sport" group-title="Спорт",viju+ Sport [SD]
@@ -3311,8 +3189,6 @@ http://31.148.48.15/Pervii_kanal_HD/index.m3u8
 https://zabava-htlive.cdn.ngenix.net/hls/CH_1TVSD/variant.m3u8
 #EXTINF:-1 tvg-id="pervy" tvg-name="Первый канал" group-title="Федеральные",Первый канал [SD]
 https://streaming.thestream.cyou/live/210-req_offset_28000000-req_window_0-1k_v5.m3u8
-#EXTINF:-1 tvg-id="pervy" tvg-name="Первый канал" group-title="Федеральные",Первый канал [HD]
-https://stream8.cinerama.uz/1214/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="ChannelOneCIS.ru" tvg-name="Первый канал" group-title="Федеральные",Первый канал [SD]
 https://fs.uplink.kz/perviy_kanal_sng/mono.m3u8?token=onlinetv
 #EXTINF:-1 tvg-id="che" tvg-name="Че!" group-title="Федеральные",Че!
@@ -3340,16 +3216,12 @@ http://31.148.5.241/kanal_18/index.m3u8
 #EXTINF:-1 tvg-id="mir" tvg-name="МИР" group-title="Федеральные",МИР [HD]
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
 https://cdn4.skygo.mn/live/disk1/MIR/HLSv3-FTA/MIR.m3u8
-#EXTINF:-1 tvg-id="mir-24" tvg-name="МИР 24" group-title="Федеральные",МИР 24
-https://stream8.cinerama.uz/1219/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="mir-24" tvg-name="МИР 24" group-title="Федеральные",МИР 24 [Full HD]
 http://hls.mirtv.cdnvideo.ru/mirtv-parampublish/mir24_2500/playlist.m3u8
 #EXTINF:-1 tvg-id="mir-24" tvg-name="МИР 24" group-title="Федеральные",МИР 24 [SD]
 http://31.148.48.15/Mir_24/index.m3u8
 #EXTINF:-1 tvg-id="muztv" tvg-name="МУЗ-ТВ" group-title="Федеральные",МУЗ-ТВ
 https://streaming102.interskytech.com/live/618.m3u8
-#EXTINF:-1 tvg-id="n-tv-hd-de" tvg-name="НТВ" group-title="Федеральные",НТВ
-https://stream8.cinerama.uz/1023/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="n-tv-hd-de" tvg-name="НТВ" group-title="Федеральные",НТВ [Full HD]
 https://bl.rutube.ru/livestream/c37cd74192c6bc3d6cd6077c0c4fd686/index.m3u8?e=2077050299&s=HSWg81JrQ3OqmwuWkEIDAQ&scheme=https
 #EXTINF:-1 tvg-id="n-tv-hd-de" tvg-name="НТВ" group-title="Федеральные",НТВ [SD]
@@ -3383,8 +3255,6 @@ https://rt-doc.rttv.com/dvr/rtdru/playlist.m3u8
 https://streaming.televizor-24-tochka.ru/live/211.m3u8
 #EXTINF:-1 tvg-id="RTRPlaneta.ru" tvg-name="РТР-Планета" group-title="Федеральные",РТР-Планета [HD]
 https://stream.smotrim.ru/hls/planeta_rtr_asia/playlist.m3u8?entity=channel&id=511&sign=d1fe06cd922b67e412719536998fa43d
-#EXTINF:-1 tvg-id="rossia1" tvg-name="Россия 1" group-title="Федеральные",Россия 1
-https://stream8.cinerama.uz/1020/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="rossia1" tvg-name="Россия 1" group-title="Федеральные",Россия 1 [Full HD]
 http://176.118.197.101/RossiyaHD/index.m3u8
 #EXTINF:-1 tvg-id="rossia1" tvg-name="Россия 1" group-title="Федеральные",Россия 1 [SD]
@@ -3456,8 +3326,6 @@ https://fs.uplink.kz/tnt4/mono.m3u8?token=onlinetv
 https://streaming.televizor-24-tochka.ru/live/13.m3u8
 #EXTINF:-1 tvg-id="tvcentr" tvg-name="ТВ Центр" group-title="Федеральные",ТВ Центр [SD]
 http://31.148.5.241/kanal_10/index.m3u8
-#EXTINF:-1 tvg-id="tvci" tvg-name="ТВ Центр" group-title="Федеральные",ТВ Центр [SD]
-https://stream8.cinerama.uz/1281/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="tv3-ru" tvg-name="ТВ-3" group-title="Федеральные",ТВ-3
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
 #EXTVLCOPT:http-referrer=https://televizor24tochka.ru/
@@ -3473,8 +3341,6 @@ http://zabava-htlive.cdn.ngenix.net/hls/CH_U/variant.m3u8
 http://178.134.1.158:8081/U/index.m3u8
 #EXTINF:-1 tvg-id="yu" tvg-name="Ю" group-title="Федеральные",Ю [HD]
 https://bl.rutube.ru/livestream/5c9327074e25ca86f3111d4085cbbb65/index.m3u8?e=2066519758&s=9cPc1rCGu6M932eqrifRhQ&scheme=https
-#EXTINF:-1 tvg-id="zvezda" tvg-name="Звезда" group-title="Федеральные",Звезда
-https://stream8.cinerama.uz/1050/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="zvezda" tvg-name="Звезда" group-title="Федеральные",Звезда [Full HD]
 https://tvchannelstream1.tvzvezda.ru/cdn/tvzvezda/playlist.m3u8
 #EXTINF:-1 tvg-id="zvezda" tvg-name="Звезда" group-title="Федеральные",Звезда [SD]
@@ -3890,3 +3756,9 @@ http://live.adultiptv.net/blonde.m3u8
 http://live.adultiptv.net/gay.m3u8
 #EXTINF:-1 group-title="Для взрослых" tvg-id="" tvg-name="AdultIPTV.net Asian" tvg-language="English" tvg-logo="https://files.adultiptv.net/adultiptvnet.jpg",AdultIPTV.net Asian
 http://live.adultiptv.net/asian.m3u8
+
+# Альтернативные российские потоки из публичного каталога iptv-org; не проверены в реальном времени
+#EXTINF:-1 tvg-id="FashionTV.ru@SD" tvg-name="Fashion TV" group-title="Музыкальные",Fashion TV [SD]
+http://fashionlive.mediacdn.ru/cdn/fashiontv/playlist.m3u8
+#EXTINF:-1 tvg-id="TVCentr.ru@SD" tvg-name="ТВ Центр" group-title="Общероссийские",ТВ Центр [SD]
+http://185.71.81.6:8080/10/index.m3u8
