@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Build a Russian-language IPTV playlist with music preserved and categories."""
 
+import csv
 import gzip
 import json
 import os
@@ -19,6 +20,7 @@ from urllib.request import Request, urlopen
 API = "https://iptv-org.github.io/api"
 
 OUT = Path("playlist.m3u")
+CHECK_REPORT = Path("stream_check_report.csv")
 INTERNATIONAL_FILE = Path("russian-international.m3u")
 REGIONAL_FILE = Path("regional.m3u")
 ADULT_FILE = Path("adult.m3u")
@@ -778,16 +780,18 @@ def excluded_country(channel=None, channel_id=""):
     return ""
 
 
-def add_manual_file(path, default_group, output, seen_urls, counts, stats):
+def add_manual_file(path, default_group, entries, seen_urls, stats):
+    """Load manual M3U entries into the common pipeline (including probes)."""
     if not path.exists():
         return
 
-    print(f"Добавляю ручной список: {path}")
+    print(f"Добавляю ручной список в общую проверку: {path}")
 
     content = path.read_text(encoding="utf-8-sig")
 
     for info, extras, stream_url in parse_m3u(content):
         if not stream_url.startswith(("http://", "https://")):
+            stats["Ручные списки: некорректная ссылка"] += 1
             continue
 
         manual_channel_id = get_attribute(info, "tvg-id")
@@ -802,7 +806,6 @@ def add_manual_file(path, default_group, output, seen_urls, counts, stats):
             continue
 
         seen_urls.add(stream_url)
-
         old_group = get_attribute(info, "group-title")
 
         if default_group == ADULT_GROUP:
@@ -813,31 +816,33 @@ def add_manual_file(path, default_group, output, seen_urls, counts, stats):
             group = default_group
 
         info = normalize_manual_quality(info)
-
         rest = re.sub(
-            r'\s+group-title="[^"]*"',
-            "",
-            info,
+            r'\s+group-title="[^"]*"', "", info,
             flags=re.IGNORECASE,
         )
-
-        match = re.match(
-            r"^(#EXTINF:)(-?\d+(?:\.\d+)?)(.*)$",
-            rest,
-        )
-
+        match = re.match(r"^(#EXTINF:)(-?\d+(?:\.\d+)?)(.*)$", rest)
         if match:
             prefix, duration, tail = match.groups()
-            info = (
-                f'{prefix}{duration} '
-                f'group-title="{group}"{tail}'
-            )
+            info = f'{prefix}{duration} group-title="{group}"{tail}'
 
-        output.append(info)
-        output.extend(extras)
-        output.append(stream_url)
-
-        counts[group] += 1
+        title, quality = split_title(info)
+        stream = stream_from_m3u(info, extras, title, quality)
+        channel = {
+            "id": manual_channel_id,
+            "name": get_attribute(info, "tvg-name") or title,
+            "categories": [],
+            "country": "RU" if default_group != ADULT_GROUP else "",
+        }
+        entries.append({
+            "channel": channel,
+            "stream": stream,
+            "group": group,
+            "url": stream_url,
+            "quality": clean(quality),
+            "source": f"Ручной список: {path.name}",
+            "manual_info": info,
+            "manual_extras": extras,
+        })
 
 
 def excluded_feed(feed):
@@ -923,11 +928,37 @@ def classify_probe_error(error):
     return "blocked"
 
 
-def probe_stream(url, user_agent="", referrer="", depth=0):
-    """"ok" if the URL answers with a playlist, manifest or media data,
-    "blocked" if it looks geo-blocked or temporarily down, else "dead"."""
-    headers = {"User-Agent": user_agent or PROBE_USER_AGENT}
+def _read_url_bytes(url, headers, context, limit=262144, byte_range=None):
+    request_headers = dict(headers)
+    if byte_range:
+        request_headers["Range"] = byte_range
+    response = open_following_redirects(url, request_headers, context)
+    with response:
+        if response.status >= 400:
+            raise HTTPError(url, response.status, "HTTP error", response.headers, None)
+        return response.geturl(), response.headers, response.read(limit)
 
+
+def _is_media_segment(data, content_type=""):
+    """Reject HTML/error pages; accept MPEG-TS, fMP4 and recognizable media."""
+    if not data or len(data) < 188:
+        return False
+    prefix = data[:512].lstrip().lower()
+    if prefix.startswith((b"<!doctype html", b"<html", b"<head", b"<body", b"{")):
+        return False
+    # MPEG-TS packets have a 0x47 sync byte every 188 bytes.
+    if len(data) >= 376 and data[0] == 0x47 and data[188] == 0x47:
+        return True
+    # ISO-BMFF / fragmented MP4 boxes.
+    if any(marker in data[:256] for marker in (b"ftyp", b"styp", b"moof", b"mdat")):
+        return True
+    media_types = ("video/", "audio/", "mp2t", "mp4", "octet-stream")
+    return any(value in (content_type or "").lower() for value in media_types) and len(data) >= 1024
+
+
+def probe_stream(url, user_agent="", referrer="", depth=0):
+    """Confirm actual media: HLS playlist + at least one real media segment."""
+    headers = {"User-Agent": user_agent or PROBE_USER_AGENT, "Accept": "*/*"}
     if referrer:
         headers["Referer"] = referrer
 
@@ -935,54 +966,67 @@ def probe_stream(url, user_agent="", referrer="", depth=0):
     context.check_hostname = False
     context.verify_mode = ssl.CERT_NONE
 
-    try:
-        response = open_following_redirects(url, headers, context)
+    last_state = "blocked"
+    for attempt in range(2):
+        try:
+            final_url, response_headers, head = _read_url_bytes(
+                url, headers, context, limit=262144,
+            )
+            content_type = response_headers.get("Content-Type", "")
+            text = head.decode("utf-8-sig", errors="ignore")
 
-        with response:
-            if response.status >= 400:
-                return "dead"
+            if "#EXTM3U" in text:
+                lines = [line.strip() for line in text.splitlines() if line.strip()]
+                if "#EXT-X-STREAM-INF" in text:
+                    if depth >= 2:
+                        return "blocked"
+                    variants = []
+                    for index, line in enumerate(lines):
+                        if line.startswith("#EXT-X-STREAM-INF"):
+                            for candidate in lines[index + 1:]:
+                                if not candidate.startswith("#"):
+                                    variants.append(candidate)
+                                    break
+                    if not variants:
+                        return "dead"
+                    # Try up to two variants in case the first rendition is stale.
+                    states = [probe_stream(urljoin(final_url, item), user_agent, referrer, depth + 1)
+                              for item in variants[:2]]
+                    return "ok" if "ok" in states else ("dead" if all(x == "dead" for x in states) else "blocked")
 
-            final_url = response.geturl()
-            content_type = response.headers.get(
-                "Content-Type", ""
-            ).lower()
-            head = response.read(16384)
-    except Exception as error:
-        return classify_probe_error(error)
+                segments = [
+                    line for line in lines
+                    if not line.startswith("#") and re.match(r"^(https?://|/|[^#])", line)
+                ]
+                if not segments:
+                    return "blocked"
+                checked = 0
+                for segment in segments[:2]:
+                    segment_url = urljoin(final_url, segment)
+                    try:
+                        _segment_url, segment_headers, data = _read_url_bytes(
+                            segment_url, headers, context, limit=65536,
+                            byte_range="bytes=0-65535",
+                        )
+                        if _is_media_segment(data, segment_headers.get("Content-Type", "")):
+                            checked += 1
+                    except Exception as error:
+                        last_state = classify_probe_error(error)
+                if checked:
+                    return "ok"
+                return last_state if last_state != "blocked" else "dead"
 
-    text = head.decode("utf-8", errors="ignore")
-
-    if "#EXTM3U" in text:
-        if "#EXT-X-STREAM-INF" in text and depth == 0:
-            variants = [
-                line.strip()
-                for line in text.splitlines()
-                if line.strip() and not line.startswith("#")
-            ]
-
-            if variants:
-                # Мастер-плейлист ответил, но сегменты недоступны: обычно
-                # это геоблокировка CDN, а не мёртвый канал.
-                variant = probe_stream(
-                    urljoin(final_url, variants[0]),
-                    user_agent,
-                    referrer,
-                    depth + 1,
-                )
-                return "ok" if variant == "ok" else "blocked"
-
-        return "ok"
-
-    if "<MPD" in text or head[:1] == b"\x47":
-        return "ok"
-
-    if any(
-        kind in content_type
-        for kind in ("video/", "mp2t", "octet-stream", "audio/")
-    ) and not text.lstrip().startswith("<"):
-        return "ok"
-
-    return "dead"
+            if "<MPD" in text:
+                # DASH manifest requires resolving BaseURL/SegmentURL, not just HTTP 200.
+                return "blocked"
+            if _is_media_segment(head, content_type):
+                return "ok"
+            last_state = "dead"
+        except Exception as error:
+            last_state = classify_probe_error(error)
+        if attempt == 0:
+            time.sleep(1.5)
+    return last_state
 
 
 def check_host_request(path):
@@ -1491,6 +1535,11 @@ def main():
             group = channel_group(channel, stream)
             add_entry(channel, stream, group, stream_url, source)
 
+    # Manual M3U files must pass through exactly the same media probe as API feeds.
+    add_manual_file(INTERNATIONAL_FILE, "Зарубежные на русском", entries, seen_urls, stats)
+    add_manual_file(REGIONAL_FILE, "Региональные", entries, seen_urls, stats)
+    add_manual_file(ADULT_FILE, ADULT_GROUP, entries, seen_urls, stats)
+
     for item in entries:
         sources[item["source"]] += 1
 
@@ -1569,31 +1618,45 @@ def main():
             ru = ru_status.get(item["url"], "")
             new = is_new(item)
 
+            # A check-host HTTP 200 only proves that the URL responds; it does not
+            # prove that HLS media segments are playable. Only the segment-aware
+            # local probe may mark a stream as publishable.
             if us == "ok":
                 status = "ok"
-            elif ru == "ok":
-                status = "ok_ru"
-            elif ru == "dead" or (us == "dead" and new):
+            elif us == "dead" or ru == "dead":
                 status = "dead"
-            elif ru == "forbidden" and new:
+            elif ru == "forbidden":
                 status = "forbidden"
             else:
                 status = "unverified"
 
-            if status in ("dead", "forbidden"):
+            if status != "ok":
                 failed.add(item["url"])
-            elif status == "unverified" and new:
-                if item["source"] in UNVERIFIED_SOURCES:
-                    item["group"] = UNVERIFIED_GROUP
-                else:
-                    status = "blocked"
-                    failed.add(item["url"])
 
             item["status"] = status
             probe[("новые" if new else "уже были", status)] += 1
 
         entries = [item for item in entries if item["url"] not in failed]
         seen_urls -= failed
+
+        # Human-readable audit trail: one row for every tested candidate.
+        report_rows = []
+        for item, result in zip(targets, results):
+            report_rows.append({
+                "channel": clean(item["channel"].get("name")),
+                "url": item["url"],
+                "source": item["source"],
+                "probe_result": result,
+                "published": "yes" if result == "ok" else "no",
+            })
+        with CHECK_REPORT.open("w", newline="", encoding="utf-8-sig") as report_file:
+            writer = csv.DictWriter(
+                report_file,
+                fieldnames=["channel", "url", "source", "probe_result", "published"],
+            )
+            writer.writeheader()
+            writer.writerows(report_rows)
+        print(f"Отчёт проверки сохранён: {CHECK_REPORT} ({len(report_rows)} ссылок)")
     else:
         for item in entries:
             if item["url"] in previous_unverified:
@@ -1666,46 +1729,21 @@ def main():
     )
 
     for item in entries:
-        output.append(
-            make_extinf(
-                item["channel"],
-                item["stream"],
-                item["group"],
-                item.get("epg_id", ""),
+        if item.get("manual_info"):
+            output.append(item["manual_info"])
+            output.extend(item.get("manual_extras", []))
+        else:
+            output.append(
+                make_extinf(
+                    item["channel"],
+                    item["stream"],
+                    item["group"],
+                    item.get("epg_id", ""),
+                )
             )
-        )
-
-        add_headers(output, item["stream"])
+            add_headers(output, item["stream"])
         output.append(item["url"])
-
         counts[item["group"]] += 1
-
-    add_manual_file(
-        INTERNATIONAL_FILE,
-        "Зарубежные на русском",
-        output,
-        seen_urls,
-        counts,
-        stats,
-    )
-
-    add_manual_file(
-        REGIONAL_FILE,
-        "Региональные",
-        output,
-        seen_urls,
-        counts,
-        stats,
-    )
-
-    add_manual_file(
-        ADULT_FILE,
-        ADULT_GROUP,
-        output,
-        seen_urls,
-        counts,
-        stats,
-    )
 
     if len(entries) < 100:
         raise RuntimeError(
@@ -1752,9 +1790,9 @@ def main():
         print("\nПроверка потоков (США, затем узлы check-host.net в Москве):")
         labels = {
             "ok": "работает (проверено из США)",
-            "ok_ru": "работает (проверено из России)",
-            "unverified": "требует проверки, оставлен",
-            "blocked": "требует проверки, не добавлен",
+            "ok_ru": "HTTP доступен из России (сегмент не подтверждён)",
+            "unverified": "не подтверждено сегментами, не опубликован",
+            "blocked": "не подтверждено, не опубликован",
             "dead": "не работает, удалён / не добавлен",
             "forbidden": "доступ закрыт и из России (403), не добавлен",
         }
