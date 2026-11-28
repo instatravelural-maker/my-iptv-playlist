@@ -1,4 +1,3 @@
-
 #!/usr/bin/env python3
 """Create a separate music-category preview for OTTPlayer."""
 
@@ -92,19 +91,22 @@ def genre_for(info):
 
 
 def replace_group(info, group):
-    if re.search(r'group-title="[^"]*"', info):
+    """Set group-title without breaking the EXTINF duration syntax."""
+    if re.search(r'\bgroup-title="[^"]*"', info, re.IGNORECASE):
         return re.sub(
-            r'group-title="[^"]*"',
+            r'\bgroup-title="[^"]*"',
             lambda _: f'group-title="{group}"',
             info,
             count=1,
+            flags=re.IGNORECASE,
         )
 
-    return info.replace(
-        "#EXTINF:",
-        f'#EXTINF: group-title="{group}"',
-        1,
-    )
+    match = re.match(r'^(#EXTINF:)(-?\d+(?:\.\d+)?)(.*)$', info)
+    if not match:
+        raise ValueError(f"Invalid EXTINF line: {info}")
+
+    prefix, duration, tail = match.groups()
+    return f'{prefix}{duration} group-title="{group}"{tail}'
 
 
 def main():
@@ -120,15 +122,16 @@ def main():
             continue
 
         seen_urls.add(stream_url)
-
-        group = (
-            f"Музыка | {region_for(info)} | {genre_for(info)}"
-        )
-
+        group = f"Музыка | {region_for(info)} | {genre_for(info)}"
         output.append(replace_group(info, group))
-        output.extend(extra_lines)
+        # OTTPlayer documents #EXTGRP as the M3U grouping marker. It is placed
+        # directly after EXTINF and kept alongside group-title for portability.
+        output.append(f"#EXTGRP:{group}")
+        output.extend(
+            line for line in extra_lines
+            if not line.upper().startswith("#EXTGRP:")
+        )
         output.append(stream_url)
-
         counts[group] = counts.get(group, 0) + 1
 
     OUTPUT_FILE.write_text(
