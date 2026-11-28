@@ -6,7 +6,9 @@ import gzip
 import json
 import os
 import re
+import shutil
 import socket
+import subprocess
 import ssl
 import time
 import xml.etree.ElementTree as ET
@@ -136,6 +138,8 @@ EPG_TIMEOUT = 120
 CHECK_NEW_STREAMS = os.environ.get("CHECK_NEW_STREAMS", "1") != "0"
 PROBE_TIMEOUT = 12
 PROBE_WORKERS = 32
+AUDIO_PROBE_TIMEOUT = int(os.environ.get("AUDIO_PROBE_TIMEOUT", "12"))
+AUDIO_PROBE_WORKERS = int(os.environ.get("AUDIO_PROBE_WORKERS", "6"))
 PROBE_USER_AGENT = "VLC/3.0.20 LibVLC/3.0.20"
 
 # Защита рабочего плейлиста: не перезаписывать его, если новая сборка
@@ -568,6 +572,19 @@ def is_international(channel):
 
 def channel_group(channel, stream):
     if catalog_id(channel) in FEDERAL_IDS:
+        return FEDERAL_GROUP
+
+    # Time-shifted versions of national Russia 1 are still federal channels.
+    shifted_russia_one = re.compile(
+        r"^(?:россия|russia|rossiya)[\s-]*1\s*\(\+\d+\)$",
+        re.IGNORECASE,
+    )
+    if any(
+        shifted_russia_one.fullmatch(
+            re.sub(r"\s*\[[^\]]+\]\s*$", "", name).strip()
+        )
+        for name in channel_names(channel, stream)
+    ):
         return FEDERAL_GROUP
 
     if is_music_channel(channel):
@@ -1029,6 +1046,189 @@ def probe_stream(url, user_agent="", referrer="", depth=0):
     return last_state
 
 
+def probe_audio_track(url, user_agent="", referrer=""):
+    """Confirm audio packets and decode a short sample with FFmpeg.
+
+    This does not guarantee that a particular TV can decode the codec or that
+    the broadcast contains audible sound. A missing track is definitive only
+    when video packets were read successfully and no audio stream was exposed.
+    Transient/unsupported probes remain 'unknown' and do not delete a channel.
+    """
+    ffprobe = shutil.which("ffprobe")
+    if not ffprobe:
+        return {
+            "status": "unknown",
+            "codecs": "",
+            "details": "ffprobe is not installed",
+        }
+
+    command = [
+        ffprobe,
+        "-v", "error",
+        "-rw_timeout", "10000000",
+        "-analyzeduration", "5000000",
+        "-probesize", "5000000",
+        "-read_intervals", "%+5",
+        "-show_streams",
+        "-show_packets",
+        "-show_entries",
+        "stream=index,codec_type,codec_name,channels,channel_layout,sample_rate:packet=stream_index,size",
+        "-of", "json",
+    ]
+
+    if user_agent:
+        command.extend(["-user_agent", user_agent])
+
+    if referrer:
+        safe_referrer = str(referrer).replace("\r", "").replace("\n", "")
+        command.extend(["-headers", f"Referer: {safe_referrer}\r\n"])
+
+    command.extend(["-i", url])
+
+    try:
+        completed = subprocess.run(
+            command,
+            capture_output=True,
+            text=True,
+            timeout=AUDIO_PROBE_TIMEOUT,
+            check=False,
+        )
+    except subprocess.TimeoutExpired:
+        return {"status": "unknown", "codecs": "", "details": "audio probe timeout"}
+    except OSError as error:
+        return {
+            "status": "unknown",
+            "codecs": "",
+            "details": f"ffprobe error: {str(error)[:120]}",
+        }
+
+    try:
+        payload = json.loads(completed.stdout or "{}")
+    except json.JSONDecodeError:
+        payload = {}
+
+    streams = payload.get("streams") or []
+    packets = payload.get("packets") or []
+    audio_streams = [stream for stream in streams if stream.get("codec_type") == "audio"]
+    video_streams = [stream for stream in streams if stream.get("codec_type") == "video"]
+
+    audio_indexes = {
+        str(stream.get("index")) for stream in audio_streams
+        if stream.get("index") is not None
+    }
+    video_indexes = {
+        str(stream.get("index")) for stream in video_streams
+        if stream.get("index") is not None
+    }
+
+    audio_packets = [
+        packet for packet in packets
+        if str(packet.get("stream_index")) in audio_indexes
+        and int(packet.get("size") or 0) > 0
+    ]
+    video_packets = [
+        packet for packet in packets
+        if str(packet.get("stream_index")) in video_indexes
+        and int(packet.get("size") or 0) > 0
+    ]
+
+    codec_labels = []
+    for stream in audio_streams:
+        codec = clean(stream.get("codec_name")) or "unknown-codec"
+        channels = stream.get("channels")
+        sample_rate = stream.get("sample_rate")
+        label = codec
+        if channels:
+            label += f"/{channels}ch"
+        if sample_rate:
+            label += f"/{sample_rate}Hz"
+        codec_labels.append(label)
+
+    codecs = "; ".join(dict.fromkeys(codec_labels))
+
+    if audio_streams and audio_packets:
+        # Presence of packets alone is not enough: try decoding five seconds
+        # of the first audio track to catch corrupt/unsupported audio payloads.
+        ffmpeg = shutil.which("ffmpeg")
+        if not ffmpeg:
+            return {
+                "status": "unknown",
+                "codecs": codecs,
+                "details": "audio packets found, but ffmpeg decoder is unavailable",
+            }
+
+        decode_command = [
+            ffmpeg,
+            "-hide_banner",
+            "-nostdin",
+            "-v", "error",
+            "-rw_timeout", "10000000",
+            "-analyzeduration", "5000000",
+            "-probesize", "5000000",
+        ]
+        if user_agent:
+            decode_command.extend(["-user_agent", user_agent])
+        if referrer:
+            safe_referrer = str(referrer).replace("\r", "").replace("\n", "")
+            decode_command.extend(["-headers", f"Referer: {safe_referrer}\r\n"])
+        decode_command.extend([
+            "-i", url,
+            "-map", "0:a:0",
+            "-t", "5",
+            "-vn", "-sn", "-dn",
+            "-f", "null", "-",
+        ])
+
+        try:
+            decoded = subprocess.run(
+                decode_command,
+                capture_output=True,
+                text=True,
+                timeout=AUDIO_PROBE_TIMEOUT,
+                check=False,
+            )
+        except subprocess.TimeoutExpired:
+            return {
+                "status": "unknown",
+                "codecs": codecs,
+                "details": "audio decoder timeout",
+            }
+        except OSError as error:
+            return {
+                "status": "unknown",
+                "codecs": codecs,
+                "details": f"audio decoder error: {str(error)[:120]}",
+            }
+
+        if decoded.returncode == 0:
+            return {
+                "status": "ok",
+                "codecs": codecs,
+                "details": "audio packets detected and decoded",
+            }
+
+        details = (decoded.stderr or "audio decoder returned an error").strip()
+        return {
+            "status": "unknown",
+            "codecs": codecs,
+            "details": f"audio packets found; decoding not confirmed: {details[-180:]}",
+        }
+
+    if not audio_streams and video_streams and video_packets and completed.returncode == 0:
+        return {
+            "status": "no_audio",
+            "codecs": "",
+            "details": "video packets detected, audio track absent",
+        }
+
+    details = (completed.stderr or "audio packets not confirmed").strip()
+    return {
+        "status": "unknown",
+        "codecs": codecs,
+        "details": details[-240:],
+    }
+
+
 def check_host_request(path):
     request = Request(
         CHECK_HOST_API + path,
@@ -1231,28 +1431,42 @@ def validate_m3u(output):
     if not output or not output[0].startswith("#EXTM3U"):
         raise ValueError("Ошибка формата M3U: нет заголовка #EXTM3U")
 
-    expect_url = False
+    current_info = None
+    current_group = ""
 
     for line in output[1:]:
         if line.startswith("#EXTINF:"):
-            if expect_url:
-                raise ValueError(f"Ошибка формата M3U: нет ссылки: {line}")
+            if current_info is not None:
+                raise ValueError(f"Ошибка формата M3U: нет ссылки: {current_info}")
 
             if not re.match(r"^#EXTINF:-?\d+(?:\.\d+)?(?:\s|,)", line):
                 raise ValueError(f"Ошибка формата M3U: {line}")
 
-            expect_url = True
+            current_info = line
+            current_group = ""
+        elif line.startswith("#EXTGRP:"):
+            if current_info is None:
+                raise ValueError(f"Ошибка формата M3U: EXTGRP без EXTINF: {line}")
+            current_group = line.split(":", 1)[1].strip()
         elif line.startswith("#"):
             continue
         else:
-            if not expect_url or not line.startswith(
-                ("http://", "https://")
-            ):
+            if current_info is None or not line.startswith(("http://", "https://")):
                 raise ValueError(f"Ошибка формата M3U: {line}")
+            if not current_group:
+                raise ValueError(f"Ошибка формата M3U: нет #EXTGRP для {current_info}")
 
-            expect_url = False
+            declared_group = get_attribute(current_info, "group-title")
+            if declared_group and declared_group != current_group:
+                raise ValueError(
+                    f"Ошибка формата M3U: group-title ({declared_group}) "
+                    f"не совпадает с EXTGRP ({current_group})"
+                )
 
-    if expect_url:
+            current_info = None
+            current_group = ""
+
+    if current_info is not None:
         raise ValueError("Ошибка формата M3U: последняя запись без ссылки")
 
 
@@ -1587,6 +1801,37 @@ def main():
                 targets,
             ))
 
+        # Audio verification runs only after a real video/media segment was
+        # confirmed. ffprobe reads stream metadata and a short sample of packets.
+        audio_targets = [item for item, result in zip(targets, results) if result == "ok"]
+        audio_results = []
+        if audio_targets:
+            print(f"Проверяю звуковые дорожки: {len(audio_targets)} ...")
+            with ThreadPoolExecutor(AUDIO_PROBE_WORKERS) as pool:
+                audio_results = list(pool.map(
+                    lambda item: probe_audio_track(
+                        item["url"],
+                        clean(item["stream"].get("user_agent")),
+                        clean(
+                            item["stream"].get("referrer")
+                            or item["stream"].get("http_referrer")
+                        ),
+                    ),
+                    audio_targets,
+                ))
+        audio_status = {
+            item["url"]: result
+            for item, result in zip(audio_targets, audio_results)
+        }
+
+        audio_counts = Counter(result.get("status", "unknown") for result in audio_results)
+        print(
+            "Звуковые дорожки: "
+            f"подтверждены {audio_counts['ok']}, "
+            f"отсутствуют {audio_counts['no_audio']}, "
+            f"не удалось подтвердить {audio_counts['unknown']}"
+        )
+
         candidates = sorted(
             (item for item, us in zip(targets, results) if us != "ok"),
             key=ru_priority,
@@ -1621,7 +1866,16 @@ def main():
             # A check-host HTTP 200 only proves that the URL responds; it does not
             # prove that HLS media segments are playable. Only the segment-aware
             # local probe may mark a stream as publishable.
-            if us == "ok":
+            audio = audio_status.get(item["url"], {})
+            audio_state = audio.get("status", "not_tested")
+
+            if us == "ok" and audio_state == "no_audio":
+                status = "no_audio"
+            elif us == "ok" and audio_state == "unknown":
+                # Do not silently delete a working video stream because the
+                # audio probe timed out or the container was not understood.
+                status = "audio_unverified"
+            elif us == "ok":
                 status = "ok"
             elif us == "dead" or ru == "dead":
                 status = "dead"
@@ -1630,10 +1884,13 @@ def main():
             else:
                 status = "unverified"
 
-            if status != "ok":
+            if status not in {"ok", "audio_unverified"}:
                 failed.add(item["url"])
 
             item["status"] = status
+            item["audio_status"] = audio_state
+            item["audio_codecs"] = audio.get("codecs", "")
+            item["audio_details"] = audio.get("details", "")
             probe[("новые" if new else "уже были", status)] += 1
 
         entries = [item for item in entries if item["url"] not in failed]
@@ -1642,17 +1899,25 @@ def main():
         # Human-readable audit trail: one row for every tested candidate.
         report_rows = []
         for item, result in zip(targets, results):
+            audio = audio_status.get(item["url"], {})
             report_rows.append({
                 "channel": clean(item["channel"].get("name")),
                 "url": item["url"],
                 "source": item["source"],
-                "probe_result": result,
-                "published": "yes" if result == "ok" else "no",
+                "video_probe": result,
+                "audio_status": audio.get("status", "not_tested"),
+                "audio_codecs": audio.get("codecs", ""),
+                "audio_details": audio.get("details", ""),
+                "published": (
+                    "no" if audio.get("status") == "no_audio" or result != "ok"
+                    else "yes" if audio.get("status") == "ok"
+                    else "yes - audio unverified"
+                ),
             })
         with CHECK_REPORT.open("w", newline="", encoding="utf-8-sig") as report_file:
             writer = csv.DictWriter(
                 report_file,
-                fieldnames=["channel", "url", "source", "probe_result", "published"],
+                fieldnames=["channel", "url", "source", "video_probe", "audio_status", "audio_codecs", "audio_details", "published"],
             )
             writer.writeheader()
             writer.writerows(report_rows)
@@ -1731,7 +1996,6 @@ def main():
     for item in entries:
         if item.get("manual_info"):
             output.append(item["manual_info"])
-            output.extend(item.get("manual_extras", []))
         else:
             output.append(
                 make_extinf(
@@ -1741,7 +2005,21 @@ def main():
                     item.get("epg_id", ""),
                 )
             )
+
+        # OTTPlayer's published M3U example uses EXTGRP. Put it immediately
+        # after EXTINF; keep group-title too for other IPTV players.
+        output.append(f'#EXTGRP:{clean(item["group"])}')
+
+        if item.get("manual_info"):
+            # Preserve source options, but replace any old EXTGRP with our
+            # normalized category above.
+            output.extend(
+                line for line in item.get("manual_extras", [])
+                if not line.upper().startswith("#EXTGRP:")
+            )
+        else:
             add_headers(output, item["stream"])
+
         output.append(item["url"])
         counts[item["group"]] += 1
 
@@ -1789,7 +2067,9 @@ def main():
     if CHECK_NEW_STREAMS:
         print("\nПроверка потоков (США, затем узлы check-host.net в Москве):")
         labels = {
-            "ok": "работает (проверено из США)",
+            "ok": "видео и аудиодорожка подтверждены",
+            "audio_unverified": "видео работает, звук не удалось подтвердить",
+            "no_audio": "видеопоток без аудиодорожки — исключён",
             "ok_ru": "HTTP доступен из России (сегмент не подтверждён)",
             "unverified": "не подтверждено сегментами, не опубликован",
             "blocked": "не подтверждено, не опубликован",
@@ -1810,7 +2090,7 @@ def main():
             f"{answer} — {count}" for answer, count in ru_answers.most_common(8)
         ))
 
-        working = {"ok", "ok_ru"}
+        working = {"ok", "audio_unverified"}
         federal = defaultdict(Counter)
         international = defaultdict(Counter)
 
