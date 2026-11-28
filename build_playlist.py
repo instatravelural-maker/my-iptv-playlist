@@ -20,7 +20,13 @@ from urllib.parse import urlencode, urljoin, urlparse
 from urllib.request import Request, urlopen
 
 API = "https://iptv-org.github.io/api"
-API_TIMEOUT = int(os.environ.get("IPTVORG_API_TIMEOUT", "30"))
+API_CONNECT_TIMEOUT = int(os.environ.get("IPTVORG_API_CONNECT_TIMEOUT", "15"))
+API_READ_TIMEOUT = int(os.environ.get("IPTVORG_API_READ_TIMEOUT", "30"))
+API_TOTAL_TIMEOUT = int(os.environ.get("IPTVORG_API_TOTAL_TIMEOUT", "180"))
+API_MAX_RETRIES = min(3, max(0, int(os.environ.get("IPTVORG_API_RETRIES", "3"))))
+API_CACHE_MAX_AGE = 24 * 60 * 60
+API_CACHE_DIR = Path(os.environ.get("IPTVORG_CACHE_DIR", ".cache/iptv-org"))
+_JSON_CACHE = {}
 SOURCE_TIMEOUT = int(os.environ.get("SOURCE_TIMEOUT", "45"))
 LOCAL_DATABASE_DIR = os.environ.get("IPTVORG_DATABASE_DIR", "")
 LOCAL_STREAMS_DIR = os.environ.get("IPTVORG_STREAMS_DIR", "")
@@ -331,31 +337,177 @@ MUSIC_NAME_RE = re.compile(
 
 
 def fetch_json(name):
+    """Fetch one iptv-org API document with bounded retries and safe caching."""
+    if name in _JSON_CACHE:
+        return _JSON_CACHE[name]
+
     url = f"{API}/{name}.json"
     request = Request(
         url,
         headers={"User-Agent": "OTTPlayer-Russian-Playlist/2.0"},
     )
+    meta_path = API_CACHE_DIR / f"{name}.json.meta"
 
-    print(f"Загружаю {name}.json ...", flush=True)
+    def validate(payload):
+        data = json.loads(payload.decode("utf-8-sig"))
+        if not isinstance(data, list) or not data:
+            raise ValueError("ожидался непустой JSON-массив")
+        required = {
+            "channels": ("id", "name"),
+            "feeds": ("id", "channel"),
+            # iptv-org legitimately includes unassociated streams with null
+            # channel IDs; URL is the required stream record field.
+            "streams": ("url",),
+        }.get(name, ())
+        if not all(isinstance(row, dict) for row in data):
+            raise ValueError("массив содержит элементы не-объекты")
+        if required and not all(all(row.get(key) for key in required) for row in data):
+            raise ValueError(f"записи должны содержать поля {', '.join(required)}")
+        if name == "streams" and not all(
+            urlparse(str(row.get("url", ""))).scheme.lower()
+            in {"http", "https", "rtmp", "rtmps", "rtsp", "srt"}
+            for row in data
+        ):
+            raise ValueError("в streams.json обнаружены некорректные URL")
+        return data
+
+    def read_recent_cache():
+        try:
+            metadata = json.loads(meta_path.read_text(encoding="utf-8"))
+            fetched_at = float(metadata["fetched_at"])
+            age = time.time() - fetched_at
+            if age < 0 or age > API_CACHE_MAX_AGE:
+                raise ValueError(f"кэш устарел ({age / 3600:.1f} ч)")
+            import hashlib
+            filename = str(metadata["filename"])
+            if (Path(filename).name != filename or not filename.startswith("streams-")
+                    or not filename.endswith(".json")):
+                raise ValueError("небезопасное имя файла в метаданных кэша")
+            payload = (API_CACHE_DIR / filename).read_bytes()
+            if hashlib.sha256(payload).hexdigest() != metadata["sha256"]:
+                raise ValueError("контрольная сумма кэша не совпала")
+            return validate(payload)
+        except (OSError, ValueError, KeyError, TypeError, json.JSONDecodeError):
+            return None
+
+    print(
+        f"Загружаю {name}.json (connect {API_CONNECT_TIMEOUT} с, "
+        f"read {API_READ_TIMEOUT} с) ...", flush=True,
+    )
+    last_error = None
+    for attempt in range(API_MAX_RETRIES + 1):
+        started = time.monotonic()
+        deadline = started + API_TOTAL_TIMEOUT
+        received = 0
+        next_progress = 1024 * 1024
+        chunks = []
+        try:
+            with urlopen(request, timeout=API_CONNECT_TIMEOUT) as response:
+                status = getattr(response, "status", response.getcode())
+                if status != 200:
+                    raise RuntimeError(f"HTTP {status}")
+                sock = getattr(
+                    getattr(getattr(response, "fp", None), "raw", None),
+                    "_sock", None,
+                )
+                if sock is not None:
+                    sock.settimeout(API_READ_TIMEOUT)
+                total = int(response.headers.get("Content-Length") or 0)
+                if total < 0:
+                    raise ValueError("некорректный Content-Length")
+                while True:
+                    if time.monotonic() >= deadline:
+                        raise TimeoutError(
+                            f"превышено общее время загрузки {API_TOTAL_TIMEOUT} с"
+                        )
+                    # read1 returns available data promptly instead of waiting
+                    # for a full megabyte, so the total deadline is checked
+                    # even when a server trickles bytes continuously.
+                    block = response.read1(1024 * 1024)
+                    if not block:
+                        break
+                    chunks.append(block)
+                    received += len(block)
+                    if received >= next_progress or (total and received == total):
+                        size_text = f"{total / 1048576:.2f}" if total else "неизвестен"
+                        print(
+                            f"  {received / 1048576:.2f} МБ / {size_text} МБ; "
+                            f"прошло {time.monotonic() - started:.1f} с",
+                            flush=True,
+                        )
+                        next_progress = received + 1024 * 1024
+                if not received or (total and received != total):
+                    raise ValueError(
+                        f"неполная загрузка: {received} из {total or 'неизвестно'} байт"
+                    )
+                size_text = f"{total / 1048576:.2f}" if total else "неизвестен"
+                print(
+                    f"  Загрузка завершена: {received / 1048576:.2f} МБ / "
+                    f"{size_text} МБ за {time.monotonic() - started:.1f} с",
+                    flush=True,
+                )
+            payload = b"".join(chunks)
+            data = validate(payload)
+            if name == "streams":
+                import hashlib
+                API_CACHE_DIR.mkdir(parents=True, exist_ok=True)
+                checksum = hashlib.sha256(payload).hexdigest()
+                version_name = f"streams-{checksum}.json"
+                version_path = API_CACHE_DIR / version_name
+                temp_path = API_CACHE_DIR / f"{version_name}.tmp"
+                temp_meta = meta_path.with_suffix(".meta.tmp")
+                temp_path.write_bytes(payload)
+                os.replace(temp_path, version_path)
+                temp_meta.write_text(json.dumps({
+                    "fetched_at": time.time(),
+                    "sha256": checksum,
+                    "size": len(payload),
+                    "filename": version_name,
+                }), encoding="utf-8")
+                os.replace(temp_meta, meta_path)
+                for old_path in API_CACHE_DIR.glob("streams-*.json"):
+                    if old_path != version_path:
+                        old_path.unlink(missing_ok=True)
+            _JSON_CACHE[name] = data
+            print(
+                f"  Загружено записей: {len(data)} за "
+                f"{time.monotonic() - started:.1f} с",
+                flush=True,
+            )
+            return data
+        except Exception as error:
+            last_error = error
+            if attempt < API_MAX_RETRIES:
+                pause = (1, 3, 7)[attempt]
+                print(
+                    f"  Попытка {attempt + 1}/{API_MAX_RETRIES + 1} не удалась: "
+                    f"{error} (за {time.monotonic() - started:.1f} с); "
+                    f"повтор через {pause} с", flush=True,
+                )
+                time.sleep(pause)
+
+    if name == "streams":
+        cached = read_recent_cache()
+        if cached is not None:
+            _JSON_CACHE[name] = cached
+            print("  Используется проверенный streams.json из кэша (не старше 24 ч).", flush=True)
+            return cached
+        raise RuntimeError(
+            f"Не удалось получить корректный iptv-org {name}.json после "
+            f"{API_MAX_RETRIES + 1} попыток; свежий проверенный кэш (24 ч) "
+            f"недоступен: {last_error}"
+        ) from last_error
 
     try:
-        with urlopen(request, timeout=API_TIMEOUT) as response:
-            data = json.loads(response.read().decode("utf-8"))
-    except Exception as api_error:
-        try:
-            data = load_local_iptvorg_data(name)
-        except Exception as local_error:
-            raise RuntimeError(
-                f"Не удалось загрузить iptv-org {name}.json: {api_error}; "
-                f"резервный каталог недоступен: {local_error}"
-            ) from local_error
-        print(f"  Использован локальный официальный каталог iptv-org для {name}")
-
-    if not isinstance(data, list):
-        raise ValueError(f"Некорректный ответ API: {name}.json")
-
-    print(f"  Получено записей: {len(data)}")
+        data = load_local_iptvorg_data(name)
+    except Exception as local_error:
+        raise RuntimeError(
+            f"Не удалось загрузить iptv-org {name}.json после "
+            f"{API_MAX_RETRIES + 1} попыток: {last_error}; "
+            f"резервный каталог недоступен: {local_error}"
+        ) from local_error
+    _JSON_CACHE[name] = data
+    print(f"  Использован локальный официальный каталог iptv-org для {name}")
     return data
 
 
@@ -443,14 +595,17 @@ def language_is_russian(languages):
     return False
 
 
-def is_music_channel(channel):
+def is_music_channel(channel, stream=None):
     categories = set(channel.get("categories") or [])
 
     if "music" in categories:
         return True
 
-    name = channel.get("name", "")
-    return bool(MUSIC_NAME_RE.search(name))
+    # Official channel names may be transliterated while the Russian music
+    # indicator appears only in an alias or stream title (e.g. Multimuzyka).
+    names = channel_names(channel, stream)
+    names.append(channel.get("id", ""))
+    return any(MUSIC_NAME_RE.search(name) for name in names)
 
 
 def is_radio_channel(channel, stream=None):
@@ -472,7 +627,7 @@ def channel_country(channel, stream=None):
 
 def allowed_tv_channel(channel, stream=None, feed=None):
     """Allow Russian-language TV or TV catalogued in a European country."""
-    if is_music_channel(channel) or is_radio_channel(channel, stream):
+    if is_music_channel(channel, stream) or is_radio_channel(channel, stream):
         return False, "Музыкальный канал или радио"
     country = channel_country(channel, stream)
     if country == "RU" or country in EUROPEAN_COUNTRIES:

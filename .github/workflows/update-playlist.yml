@@ -22,6 +22,13 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+      - name: Restore iptv-org JSON cache
+        uses: actions/cache@v4
+        with:
+          path: .cache/iptv-org
+          key: iptv-org-json-${{ runner.os }}-${{ github.run_id }}
+          restore-keys: |
+            iptv-org-json-${{ runner.os }}-
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
