@@ -10,22 +10,66 @@ on:
       - '.github/workflows/update-playlist.yml'
 permissions:
   contents: write
+concurrency:
+  group: build-iptv-playlist-main
+  cancel-in-progress: false
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 360
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Restore iptv-org JSON cache
+        uses: actions/cache@v4
+        with:
+          path: .cache/iptv-org
+          key: iptv-org-json-${{ runner.os }}-${{ github.run_id }}
+          restore-keys: |
+            iptv-org-json-${{ runner.os }}-
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.x'
+      - name: Install FFmpeg and FFprobe
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+          ffmpeg -version
+          ffprobe -version
+      - name: Fetch official iptv-org fallback catalog
+        run: |
+          git clone --depth 1 https://github.com/iptv-org/database.git "$RUNNER_TEMP/iptv-org-database"
+          git clone --depth 1 --filter=blob:none --sparse https://github.com/iptv-org/iptv.git "$RUNNER_TEMP/iptv-org-iptv"
+          git -C "$RUNNER_TEMP/iptv-org-iptv" sparse-checkout set streams
+          echo "IPTVORG_DATABASE_DIR=$RUNNER_TEMP/iptv-org-database" >> "$GITHUB_ENV"
+          echo "IPTVORG_STREAMS_DIR=$RUNNER_TEMP/iptv-org-iptv/streams" >> "$GITHUB_ENV"
       - name: Build playlist
         run: python build_playlist.py
+      - name: Upload audit reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playlist-audit-reports
+          path: |
+            stream_check_report.csv
+            excluded_channels.csv
+            discovery_status.csv
+          if-no-files-found: warn
+          retention-days: 7
       - name: Commit generated playlist
+        if: github.ref == 'refs/heads/main'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add playlist.m3u
-          git diff --cached --quiet || git commit -m "Update IPTV playlist"
-          git push
+          if git diff --cached --quiet; then
+            echo "No playlist changes to commit."
+          else
+            git commit -m "Update IPTV playlist"
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
+          fi

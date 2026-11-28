@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build a Russian-language IPTV playlist with music preserved and categories."""
+"""Build a Russian-language and European TV playlist for OTTPlayer."""
 
 import csv
 import gzip
@@ -20,14 +20,26 @@ from urllib.parse import urlencode, urljoin, urlparse
 from urllib.request import Request, urlopen
 
 API = "https://iptv-org.github.io/api"
+API_CONNECT_TIMEOUT = int(os.environ.get("IPTVORG_API_CONNECT_TIMEOUT", "15"))
+API_READ_TIMEOUT = int(os.environ.get("IPTVORG_API_READ_TIMEOUT", "30"))
+API_TOTAL_TIMEOUT = int(os.environ.get("IPTVORG_API_TOTAL_TIMEOUT", "180"))
+API_MAX_RETRIES = min(3, max(0, int(os.environ.get("IPTVORG_API_RETRIES", "3"))))
+API_CACHE_MAX_AGE = 24 * 60 * 60
+API_CACHE_DIR = Path(os.environ.get("IPTVORG_CACHE_DIR", ".cache/iptv-org"))
+_JSON_CACHE = {}
+SOURCE_TIMEOUT = int(os.environ.get("SOURCE_TIMEOUT", "45"))
+LOCAL_DATABASE_DIR = os.environ.get("IPTVORG_DATABASE_DIR", "")
+LOCAL_STREAMS_DIR = os.environ.get("IPTVORG_STREAMS_DIR", "")
+_LOCAL_STREAMS_CACHE = None
 
 OUT = Path("playlist.m3u")
 CHECK_REPORT = Path("stream_check_report.csv")
+EXCLUDED_REPORT = Path("excluded_channels.csv")
 INTERNATIONAL_FILE = Path("russian-international.m3u")
 REGIONAL_FILE = Path("regional.m3u")
 ADULT_FILE = Path("adult.m3u")
 
-ADULT_GROUP = "Для взрослых"
+ADULT_GROUP = "Для взрослых"  # Retained only to parse legacy M3U metadata.
 
 # Публичный бесплатный список официальных FTA-потоков.
 FREE_TV_URL = (
@@ -131,7 +143,7 @@ RU_DEAD_RE = re.compile(
     re.IGNORECASE,
 )
 PROBE_ALL = os.environ.get("PROBE_ALL", "1") != "0"
-EPG_TIMEOUT = 120
+EPG_TIMEOUT = int(os.environ.get("EPG_TIMEOUT", "60"))
 
 # Новые ссылки (которых ещё нет в playlist.m3u) проверяются перед
 # добавлением. Отключить: CHECK_NEW_STREAMS=0.
@@ -141,10 +153,31 @@ PROBE_WORKERS = 32
 AUDIO_PROBE_TIMEOUT = int(os.environ.get("AUDIO_PROBE_TIMEOUT", "12"))
 AUDIO_PROBE_WORKERS = int(os.environ.get("AUDIO_PROBE_WORKERS", "6"))
 PROBE_USER_AGENT = "VLC/3.0.20 LibVLC/3.0.20"
+UNSUPPORTED_CODEC_RE = re.compile(
+    r"decoder.*not found|unknown decoder|unsupported codec|"
+    r"codec .* not currently supported",
+    re.IGNORECASE,
+)
 
 # Защита рабочего плейлиста: не перезаписывать его, если новая сборка
 # резко меньше предыдущей.
-MIN_KEEP_RATIO = 0.6
+# Existing playlists contain large excluded music and non-European sections.
+# Keep a meaningful floor while allowing this intentional policy migration.
+MIN_KEEP_RATIO = 0.2
+MIN_KEEP_COUNT = 1
+
+EUROPEAN_COUNTRIES = set("""
+AL AD AT AX BA BE BG BY CH CY CZ DE DK EE ES FI FO FR GB GG GI GR HR HU IE
+IM IS IT JE LI LT LU LV MC MD ME MK MT NL NO PL PT RO RS RU SE SI SK SM UA
+VA XK
+""".split())
+RADIO_CATEGORY_RE = re.compile(r"\bradio\b|радио|\bfm\b", re.IGNORECASE)
+RADIO_NAME_RE = re.compile(r"\bradio\b|радио|\b\d{2,3}(?:[.,]\d)?\s*fm\b", re.IGNORECASE)
+MUSIC_SOURCE_GROUP_RE = re.compile(r"music|музык|radio|радио|\bfm\b", re.IGNORECASE)
+
+
+def music_source_group(value):
+    return bool(MUSIC_SOURCE_GROUP_RE.search(str(value or "")))
 
 # Сайты с HTML-страницами плеера, а не прямыми потоками.
 PAGE_HOSTS = (
@@ -267,7 +300,6 @@ FEDERAL_RE = re.compile(
 )
 
 CATEGORY_MAP = [
-    ("music", "Музыка"),
     ("movies", "Кино"),
     ("series", "Сериалы"),
     ("sports", "Спорт"),
@@ -298,80 +330,6 @@ CATEGORY_MAP = [
     ("general", "Общие"),
 ]
 
-MUSIC_GENRES = [
-    ("Шансон", r"шансон|shanson|chanson"),
-    ("Рок", r"rock|metal|punk|\bрок\b"),
-    ("Хип-хоп и R&B", r"hip ?-?hop|\brap\b|r&b|\brnb\b|urban|рэп"),
-    ("Танцевальная", r"dance|club|\bedm\b|techno|trance|house|"
-                     r"electro|электрон|танцев|\bdj\b"),
-    ("Ретро", r"retro|ретро|oldies|[6789]0s|[6789]0-|ностальг|"
-              r"nostalg|classic hits|\bgold"),
-    ("Джаз и блюз", r"jazz|blues|джаз|\bsoul\b"),
-    ("Классическая", r"classical|opera|symphon|классич|mezzo|"
-                     r"\bmedici"),
-    ("Кантри", r"country|кантри|bluegrass"),
-    ("Латино", r"latin|reggaeton|salsa|cumbia|tropical|banda|"
-               r"ranchera|sertanejo|bachata|merengue|vallenato"),
-    ("Релакс", r"relax|chill|lounge|ambient|релакс|\bcalm|"
-               r"meditat"),
-]
-
-MUSIC_GENRES = [
-    (genre, re.compile(pattern, re.IGNORECASE))
-    for genre, pattern in MUSIC_GENRES
-]
-
-MUSIC_STYLES = [
-    ("Фолк и народная", r"folk|folclor|folklor|народн|narod|volksmusik|"
-                        r"tambure|manele|slager|шлягер|chamame|"
-                        r"traditional|tiankov|disco polo|gugak|klape|"
-                        r"\borient"),
-    ("Религиозная", r"gospel|praise|worship|bibel|christ|peniel|"
-                    r"kuriakos|3abn|hope channel|spirit tv|nidae"),
-    ("Караоке и концерты", r"karaoke|concert|qello|live ?music|"
-                           r"livexlive|концерт|караоке"),
-]
-
-MUSIC_STYLES = [
-    (genre, re.compile(pattern, re.IGNORECASE))
-    for genre, pattern in MUSIC_STYLES
-]
-
-MUSIC_RADIO_RE = re.compile(
-    r"radio|\bfm\b|\d{2,3}[.,]\d ?fm|радио|estereo|stereo",
-    re.IGNORECASE,
-)
-
-MUSIC_REGIONS = [
-    ("Индия и Южная Азия", "IN PK BD NP LK"),
-    ("Арабская", "SA AE EG LB JO IQ SY KW QA BH OM YE MA DZ TN LY PS SD"),
-    ("Турецкая", "TR"),
-    ("Латино", "MX AR CO PE CL VE EC BO PY UY CR PA DO CU PR GT HN SV NI "
-               "BR ES"),
-    ("Африка и Карибы", "NG GH CI SN CM KE TZ UG ZA CD CG RW ET AO MZ "
-                        "ZW ZM ML BF BJ TG GA MG MU RE HT JM TT GP MQ "
-                        "AW CW BB BS LC GF"),
-    ("Англоязычная", "US CA GB IE AU NZ"),
-    ("Азиатская", "CN KR JP TH VN ID MY PH TW HK MN SG KH LA MM IR AF "
-                  "UZ TM TJ KG AZ AM GE"),
-    ("Европейская", "DE AT CH FR BE NL LU IT PT PL CZ SK HU RO BG GR RS "
-                    "HR SI BA ME MK AL XK MD LT LV EE FI SE NO DK IS "
-                    "MT CY"),
-]
-
-MUSIC_REGIONS = [
-    (genre, set(countries.split()))
-    for genre, countries in MUSIC_REGIONS
-]
-
-POP_MUSIC_RE = re.compile(
-    r"pop|hits|top|хит|muz-?tv|муз-?тв|\bmtv\b|vh1|music ?box|"
-    r"музык|эстрад|estrad",
-    re.IGNORECASE,
-)
-
-RUSSIAN_MUSIC_COUNTRIES = {"RU", "BY"}
-
 MUSIC_NAME_RE = re.compile(
     r"music|музык|муз[\s-]?тв|музон",
     re.IGNORECASE,
@@ -379,22 +337,243 @@ MUSIC_NAME_RE = re.compile(
 
 
 def fetch_json(name):
+    """Fetch one iptv-org API document with bounded retries and safe caching."""
+    if name in _JSON_CACHE:
+        return _JSON_CACHE[name]
+
     url = f"{API}/{name}.json"
     request = Request(
         url,
         headers={"User-Agent": "OTTPlayer-Russian-Playlist/2.0"},
     )
+    meta_path = API_CACHE_DIR / f"{name}.json.meta"
 
-    print(f"Загружаю {name}.json ...")
+    def validate(payload):
+        data = json.loads(payload.decode("utf-8-sig"))
+        if not isinstance(data, list) or not data:
+            raise ValueError("ожидался непустой JSON-массив")
+        required = {
+            "channels": ("id", "name"),
+            "feeds": ("id", "channel"),
+            # iptv-org legitimately includes unassociated streams with null
+            # channel IDs; URL is the required stream record field.
+            "streams": ("url",),
+        }.get(name, ())
+        if not all(isinstance(row, dict) for row in data):
+            raise ValueError("массив содержит элементы не-объекты")
+        if required and not all(all(row.get(key) for key in required) for row in data):
+            raise ValueError(f"записи должны содержать поля {', '.join(required)}")
+        if name == "streams" and not all(
+            urlparse(str(row.get("url", ""))).scheme.lower()
+            in {"http", "https", "rtmp", "rtmps", "rtsp", "srt"}
+            for row in data
+        ):
+            raise ValueError("в streams.json обнаружены некорректные URL")
+        return data
 
-    with urlopen(request, timeout=120) as response:
-        data = json.loads(response.read().decode("utf-8"))
+    def read_recent_cache():
+        try:
+            metadata = json.loads(meta_path.read_text(encoding="utf-8"))
+            fetched_at = float(metadata["fetched_at"])
+            age = time.time() - fetched_at
+            if age < 0 or age > API_CACHE_MAX_AGE:
+                raise ValueError(f"кэш устарел ({age / 3600:.1f} ч)")
+            import hashlib
+            filename = str(metadata["filename"])
+            if (Path(filename).name != filename or not filename.startswith("streams-")
+                    or not filename.endswith(".json")):
+                raise ValueError("небезопасное имя файла в метаданных кэша")
+            payload = (API_CACHE_DIR / filename).read_bytes()
+            if hashlib.sha256(payload).hexdigest() != metadata["sha256"]:
+                raise ValueError("контрольная сумма кэша не совпала")
+            return validate(payload)
+        except (OSError, ValueError, KeyError, TypeError, json.JSONDecodeError):
+            return None
 
-    if not isinstance(data, list):
-        raise ValueError(f"Некорректный ответ API: {name}.json")
+    print(
+        f"Загружаю {name}.json (connect {API_CONNECT_TIMEOUT} с, "
+        f"read {API_READ_TIMEOUT} с) ...", flush=True,
+    )
+    last_error = None
+    for attempt in range(API_MAX_RETRIES + 1):
+        started = time.monotonic()
+        deadline = started + API_TOTAL_TIMEOUT
+        received = 0
+        next_progress = 1024 * 1024
+        chunks = []
+        try:
+            with urlopen(request, timeout=API_CONNECT_TIMEOUT) as response:
+                status = getattr(response, "status", response.getcode())
+                if status != 200:
+                    raise RuntimeError(f"HTTP {status}")
+                sock = getattr(
+                    getattr(getattr(response, "fp", None), "raw", None),
+                    "_sock", None,
+                )
+                if sock is not None:
+                    sock.settimeout(API_READ_TIMEOUT)
+                total = int(response.headers.get("Content-Length") or 0)
+                if total < 0:
+                    raise ValueError("некорректный Content-Length")
+                while True:
+                    if time.monotonic() >= deadline:
+                        raise TimeoutError(
+                            f"превышено общее время загрузки {API_TOTAL_TIMEOUT} с"
+                        )
+                    # read1 returns available data promptly instead of waiting
+                    # for a full megabyte, so the total deadline is checked
+                    # even when a server trickles bytes continuously.
+                    block = response.read1(1024 * 1024)
+                    if not block:
+                        break
+                    chunks.append(block)
+                    received += len(block)
+                    if received >= next_progress or (total and received == total):
+                        size_text = f"{total / 1048576:.2f}" if total else "неизвестен"
+                        print(
+                            f"  {received / 1048576:.2f} МБ / {size_text} МБ; "
+                            f"прошло {time.monotonic() - started:.1f} с",
+                            flush=True,
+                        )
+                        next_progress = received + 1024 * 1024
+                if not received or (total and received != total):
+                    raise ValueError(
+                        f"неполная загрузка: {received} из {total or 'неизвестно'} байт"
+                    )
+                size_text = f"{total / 1048576:.2f}" if total else "неизвестен"
+                print(
+                    f"  Загрузка завершена: {received / 1048576:.2f} МБ / "
+                    f"{size_text} МБ за {time.monotonic() - started:.1f} с",
+                    flush=True,
+                )
+            payload = b"".join(chunks)
+            data = validate(payload)
+            if name == "streams":
+                import hashlib
+                API_CACHE_DIR.mkdir(parents=True, exist_ok=True)
+                checksum = hashlib.sha256(payload).hexdigest()
+                version_name = f"streams-{checksum}.json"
+                version_path = API_CACHE_DIR / version_name
+                temp_path = API_CACHE_DIR / f"{version_name}.tmp"
+                temp_meta = meta_path.with_suffix(".meta.tmp")
+                temp_path.write_bytes(payload)
+                os.replace(temp_path, version_path)
+                temp_meta.write_text(json.dumps({
+                    "fetched_at": time.time(),
+                    "sha256": checksum,
+                    "size": len(payload),
+                    "filename": version_name,
+                }), encoding="utf-8")
+                os.replace(temp_meta, meta_path)
+                for old_path in API_CACHE_DIR.glob("streams-*.json"):
+                    if old_path != version_path:
+                        old_path.unlink(missing_ok=True)
+            _JSON_CACHE[name] = data
+            print(
+                f"  Загружено записей: {len(data)} за "
+                f"{time.monotonic() - started:.1f} с",
+                flush=True,
+            )
+            return data
+        except Exception as error:
+            last_error = error
+            if attempt < API_MAX_RETRIES:
+                pause = (1, 3, 7)[attempt]
+                print(
+                    f"  Попытка {attempt + 1}/{API_MAX_RETRIES + 1} не удалась: "
+                    f"{error} (за {time.monotonic() - started:.1f} с); "
+                    f"повтор через {pause} с", flush=True,
+                )
+                time.sleep(pause)
 
-    print(f"  Получено записей: {len(data)}")
+    if name == "streams":
+        cached = read_recent_cache()
+        if cached is not None:
+            _JSON_CACHE[name] = cached
+            print("  Используется проверенный streams.json из кэша (не старше 24 ч).", flush=True)
+            return cached
+        raise RuntimeError(
+            f"Не удалось получить корректный iptv-org {name}.json после "
+            f"{API_MAX_RETRIES + 1} попыток; свежий проверенный кэш (24 ч) "
+            f"недоступен: {last_error}"
+        ) from last_error
+
+    try:
+        data = load_local_iptvorg_data(name)
+    except Exception as local_error:
+        raise RuntimeError(
+            f"Не удалось загрузить iptv-org {name}.json после "
+            f"{API_MAX_RETRIES + 1} попыток: {last_error}; "
+            f"резервный каталог недоступен: {local_error}"
+        ) from local_error
+    _JSON_CACHE[name] = data
+    print(f"  Использован локальный официальный каталог iptv-org для {name}")
     return data
+
+
+def _csv_values(value):
+    return [part.strip() for part in str(value or "").split(";") if part.strip()]
+
+
+def load_local_iptvorg_data(name):
+    """Fallback to the official iptv-org/database CSV and iptv stream M3Us."""
+    if not LOCAL_DATABASE_DIR or not LOCAL_STREAMS_DIR:
+        raise RuntimeError("IPTVORG_DATABASE_DIR/IPTVORG_STREAMS_DIR are not configured")
+
+    database = Path(LOCAL_DATABASE_DIR) / "data"
+    if name in {"channels", "feeds"}:
+        filename = database / f"{name}.csv"
+        with filename.open(encoding="utf-8-sig", newline="") as handle:
+            rows = list(csv.DictReader(handle))
+        if name == "channels":
+            return [{
+                **row,
+                "alt_names": _csv_values(row.get("alt_names")),
+                "categories": _csv_values(row.get("categories")),
+                "is_nsfw": str(row.get("is_nsfw", "")).lower() == "true",
+            } for row in rows]
+        return [{
+            **row,
+            "languages": _csv_values(row.get("languages")),
+        } for row in rows]
+
+    if name != "streams":
+        raise ValueError(f"Unsupported local iptv-org data file: {name}")
+
+    global _LOCAL_STREAMS_CACHE
+    if _LOCAL_STREAMS_CACHE is not None:
+        return _LOCAL_STREAMS_CACHE
+
+    collected = []
+    for playlist in sorted(Path(LOCAL_STREAMS_DIR).rglob("*.m3u")):
+        try:
+            content = playlist.read_text(encoding="utf-8-sig")
+        except (OSError, UnicodeError):
+            continue
+        for info, extras, url in parse_m3u(content):
+            raw_id = get_attribute(info, "tvg-id")
+            if "@" in raw_id:
+                channel_id, feed_id = raw_id.split("@", 1)
+            else:
+                channel_id, feed_id = raw_id, ""
+            if not channel_id or not url.startswith(("http://", "https://")):
+                continue
+            title, quality = split_title(info)
+            stream = stream_from_m3u(info, extras, title, quality)
+            collected.append({
+                "channel": channel_id,
+                "feed": feed_id,
+                "url": url,
+                "title": title,
+                "quality": quality,
+                "user_agent": stream.get("user_agent", ""),
+                "referrer": stream.get("referrer", ""),
+                "source_file": playlist.name,
+            })
+    _LOCAL_STREAMS_CACHE = collected
+    if not collected:
+        raise RuntimeError(f"No stream records found under {LOCAL_STREAMS_DIR}")
+    return collected
 
 
 def clean(value):
@@ -416,14 +595,53 @@ def language_is_russian(languages):
     return False
 
 
-def is_music_channel(channel):
+def is_music_channel(channel, stream=None):
     categories = set(channel.get("categories") or [])
 
     if "music" in categories:
         return True
 
-    name = channel.get("name", "")
-    return bool(MUSIC_NAME_RE.search(name))
+    # Official channel names may be transliterated while the Russian music
+    # indicator appears only in an alias or stream title (e.g. Multimuzyka).
+    names = channel_names(channel, stream)
+    names.append(channel.get("id", ""))
+    return any(MUSIC_NAME_RE.search(name) for name in names)
+
+
+def is_radio_channel(channel, stream=None):
+    categories = {str(value).lower() for value in (channel.get("categories") or [])}
+    if "radio" in categories:
+        return True
+    names = channel_names(channel, stream)
+    return any(RADIO_NAME_RE.search(name) for name in names)
+
+
+def channel_country(channel, stream=None):
+    """Read country metadata, including manually imported M3U metadata."""
+    values = [channel.get("country")]
+    if stream:
+        values.extend((stream.get("country"), stream.get("tvg_country")))
+    return next((str(value).strip().upper() for value in values
+                 if str(value or "").strip()), "")
+
+
+def allowed_tv_channel(channel, stream=None, feed=None):
+    """Allow Russian-language TV or TV catalogued in a European country."""
+    if is_music_channel(channel, stream) or is_radio_channel(channel, stream):
+        return False, "Музыкальный канал или радио"
+    country = channel_country(channel, stream)
+    if country == "RU" or country in EUROPEAN_COUNTRIES:
+        return True, ""
+    if feed and language_is_russian(feed.get("languages")):
+        return True, ""
+    return False, "Нет подтверждения русского языка или европейской страны"
+
+
+def discovery_brand(channel):
+    text = " ".join(channel_names(channel)).lower()
+    if "discovery" not in text:
+        return ""
+    return "Investigation Discovery (ID)" if "investigation" in text or "id discovery" in text else "Discovery Channel"
 
 
 def channel_names(channel, stream=None):
@@ -518,38 +736,6 @@ def display_channel_name(channel, stream):
     return original
 
 
-def music_group(channel, stream):
-    names = channel_names(channel, stream)
-    text = " | ".join(names)
-
-    for genre, pattern in MUSIC_GENRES:
-        if pattern.search(text):
-            return f"Музыка | {genre}"
-
-    country = str(channel.get("country") or "").upper()
-
-    if country in RUSSIAN_MUSIC_COUNTRIES or CYRILLIC_RE.search(
-        clean(channel.get("name")) or clean(stream.get("title"))
-    ):
-        return "Музыка | Русская"
-
-    for genre, pattern in MUSIC_STYLES:
-        if pattern.search(text):
-            return f"Музыка | {genre}"
-
-    if POP_MUSIC_RE.search(text):
-        return "Музыка | Поп и хиты"
-
-    if MUSIC_RADIO_RE.search(text):
-        return "Музыка | Радио в эфире"
-
-    for genre, countries in MUSIC_REGIONS:
-        if country in countries:
-            return f"Музыка | {genre}"
-
-    return "Музыка | Другие"
-
-
 def group_by_name(channel, stream):
     # Сначала имена канала, затем заголовок потока: так все потоки
     # одного канала попадают в одну группу.
@@ -586,9 +772,6 @@ def channel_group(channel, stream):
         for name in channel_names(channel, stream)
     ):
         return FEDERAL_GROUP
-
-    if is_music_channel(channel):
-        return music_group(channel, stream)
 
     group = group_by_name(channel, stream)
 
@@ -818,6 +1001,29 @@ def add_manual_file(path, default_group, entries, seen_urls, stats):
             stats[f"{excluded} исключена (ручные списки)"] += 1
             continue
 
+        title, quality = split_title(info)
+        country = get_attribute(info, "tvg-country").upper()
+        language = get_attribute(info, "tvg-language").lower()
+        manual_channel = {
+            "id": manual_channel_id,
+            "name": get_attribute(info, "tvg-name") or title,
+            "country": country,
+            "categories": (["music"] if "музык" in get_attribute(info, "group-title").lower()
+                            or "music" in get_attribute(info, "group-title").lower()
+                            else ["radio"] if RADIO_CATEGORY_RE.search(get_attribute(info, "group-title"))
+                            else []),
+        }
+        manual_stream = stream_from_m3u(info, extras, title, quality)
+        approved, reason = allowed_tv_channel(manual_channel, manual_stream)
+        if language in RUSSIAN_CODES:
+            approved = not is_music_channel(manual_channel) and not is_radio_channel(manual_channel, manual_stream)
+            reason = "" if approved else "Музыкальный канал или радио"
+        if default_group == ADULT_GROUP:
+            approved, reason = False, "Взрослый поток не является разрешённым телеканалом"
+        if not approved:
+            stats[f"Ручной список: {reason}"] += 1
+            continue
+
         if stream_url in seen_urls:
             stats["Дубликаты ссылок (ручные списки)"] += 1
             continue
@@ -827,8 +1033,6 @@ def add_manual_file(path, default_group, entries, seen_urls, stats):
 
         if default_group == ADULT_GROUP:
             group = ADULT_GROUP
-        elif "музык" in old_group.lower():
-            group = "Музыка | Другие"
         else:
             group = default_group
 
@@ -842,13 +1046,12 @@ def add_manual_file(path, default_group, entries, seen_urls, stats):
             prefix, duration, tail = match.groups()
             info = f'{prefix}{duration} group-title="{group}"{tail}'
 
-        title, quality = split_title(info)
         stream = stream_from_m3u(info, extras, title, quality)
         channel = {
             "id": manual_channel_id,
             "name": get_attribute(info, "tvg-name") or title,
             "categories": [],
-            "country": "RU" if default_group != ADULT_GROUP else "",
+            "country": country,
         }
         entries.append({
             "channel": channel,
@@ -857,6 +1060,7 @@ def add_manual_file(path, default_group, entries, seen_urls, stats):
             "url": stream_url,
             "quality": clean(quality),
             "source": f"Ручной список: {path.name}",
+            "language": language,
             "manual_info": info,
             "manual_extras": extras,
         })
@@ -980,8 +1184,6 @@ def probe_stream(url, user_agent="", referrer="", depth=0):
         headers["Referer"] = referrer
 
     context = ssl.create_default_context()
-    context.check_hostname = False
-    context.verify_mode = ssl.CERT_NONE
 
     last_state = "blocked"
     for attempt in range(2):
@@ -1006,7 +1208,7 @@ def probe_stream(url, user_agent="", referrer="", depth=0):
                                     break
                     if not variants:
                         return "dead"
-                    # Try up to two variants in case the first rendition is stale.
+                # Try up to two variants in case the first rendition is stale.
                     states = [probe_stream(urljoin(final_url, item), user_agent, referrer, depth + 1)
                               for item in variants[:2]]
                     return "ok" if "ok" in states else ("dead" if all(x == "dead" for x in states) else "blocked")
@@ -1018,7 +1220,7 @@ def probe_stream(url, user_agent="", referrer="", depth=0):
                 if not segments:
                     return "blocked"
                 checked = 0
-                for segment in segments[:2]:
+                for segment in segments[:3]:
                     segment_url = urljoin(final_url, segment)
                     try:
                         _segment_url, segment_headers, data = _read_url_bytes(
@@ -1029,8 +1231,10 @@ def probe_stream(url, user_agent="", referrer="", depth=0):
                             checked += 1
                     except Exception as error:
                         last_state = classify_probe_error(error)
-                if checked:
+                if checked >= 3:
                     return "ok"
+                if checked == 1:
+                    return "blocked"
                 return last_state if last_state != "blocked" else "dead"
 
             if "<MPD" in text:
@@ -1209,7 +1413,7 @@ def probe_audio_track(url, user_agent="", referrer=""):
 
         details = (decoded.stderr or "audio decoder returned an error").strip()
         return {
-            "status": "unknown",
+            "status": "unsupported" if UNSUPPORTED_CODEC_RE.search(details) else "unknown",
             "codecs": codecs,
             "details": f"audio packets found; decoding not confirmed: {details[-180:]}",
         }
@@ -1227,6 +1431,75 @@ def probe_audio_track(url, user_agent="", referrer=""):
         "codecs": codecs,
         "details": details[-240:],
     }
+
+
+def probe_audio_with_retry(url, user_agent="", referrer=""):
+    result = probe_audio_track(url, user_agent, referrer)
+    if result.get("status") == "unknown":
+        time.sleep(1)
+        retry = probe_audio_track(url, user_agent, referrer)
+        if retry.get("status") != "unknown":
+            return retry
+        if retry.get("details"):
+            result["details"] = f"retry: {retry['details']}"
+    return result
+
+
+def probe_video_decode(url, user_agent="", referrer=""):
+    """Require a real video stream, packets, and successful FFmpeg decoding."""
+    ffprobe, ffmpeg = shutil.which("ffprobe"), shutil.which("ffmpeg")
+    if not ffprobe or not ffmpeg:
+        return {"status": "unknown", "details": "ffmpeg/ffprobe unavailable"}
+    headers = ""
+    if referrer:
+        headers = f"Referer: {str(referrer).replace(chr(13), '').replace(chr(10), '')}\r\n"
+    common = ["-rw_timeout", "10000000"]
+    if user_agent:
+        common += ["-user_agent", user_agent]
+    if headers:
+        common += ["-headers", headers]
+    try:
+        probe = subprocess.run(
+            [ffprobe, "-v", "error", *common, "-select_streams", "v:0",
+             "-read_intervals", "%+5", "-show_packets",
+             "-show_streams", "-show_entries", "stream=codec_name:packet=size", "-of", "json", "-i", url],
+            capture_output=True, text=True, timeout=AUDIO_PROBE_TIMEOUT, check=False,
+        )
+        data = json.loads(probe.stdout or "{}")
+        if probe.returncode:
+            return {"status": "unknown", "details": "ffprobe could not inspect video packets"}
+        if not data.get("streams"):
+            return {"status": "no_video", "details": "no video track present"}
+        if not any(
+            int(packet.get("size") or 0) > 0 for packet in data.get("packets", [])
+        ):
+            return {"status": "unknown", "details": "video stream or packets not confirmed"}
+        decoded = subprocess.run(
+            [ffmpeg, "-hide_banner", "-nostdin", "-v", "error", *common,
+             "-i", url, "-map", "0:v:0", "-t", "5", "-an", "-sn", "-dn",
+             "-f", "null", "-"],
+            capture_output=True, text=True, timeout=AUDIO_PROBE_TIMEOUT, check=False,
+        )
+        decode_status = "ok" if decoded.returncode == 0 else (
+            "unsupported" if UNSUPPORTED_CODEC_RE.search(decoded.stderr or "") else "unknown"
+        )
+        return {"status": decode_status,
+                "details": "video packets decoded" if decoded.returncode == 0
+                else (decoded.stderr or "video decode failed")[-200:]}
+    except (subprocess.TimeoutExpired, OSError, ValueError) as error:
+        return {"status": "unknown", "details": f"video decode unverified: {str(error)[:160]}"}
+
+
+def probe_video_with_retry(url, user_agent="", referrer=""):
+    result = probe_video_decode(url, user_agent, referrer)
+    if result.get("status") == "unknown":
+        time.sleep(1)
+        retry = probe_video_decode(url, user_agent, referrer)
+        if retry.get("status") != "unknown":
+            return retry
+        if retry.get("details"):
+            result["details"] = f"retry: {retry['details']}"
+    return result
 
 
 def check_host_request(path):
@@ -1331,7 +1604,7 @@ def fetch_text(url):
         headers={"User-Agent": "OTTPlayer-Russian-Playlist/2.0"},
     )
 
-    with urlopen(request, timeout=120) as response:
+    with urlopen(request, timeout=SOURCE_TIMEOUT) as response:
         return response.read().decode("utf-8-sig", errors="replace")
 
 
@@ -1433,6 +1706,7 @@ def validate_m3u(output):
 
     current_info = None
     current_group = ""
+    seen_urls = set()
 
     for line in output[1:]:
         if line.startswith("#EXTINF:"):
@@ -1444,15 +1718,37 @@ def validate_m3u(output):
 
             current_info = line
             current_group = ""
+            title = line.rsplit(",", 1)[-1].strip()
+            if not title:
+                raise ValueError("Ошибка формата M3U: пустое название канала")
+            group = get_attribute(line, "group-title").strip()
+            if not group or group.lower() == "unsorted":
+                raise ValueError(f"Ошибка формата M3U: пустая/unsorted группа: {line}")
+            if "музык" in group.lower() or group == ADULT_GROUP:
+                raise ValueError(f"Запрещённая категория в итоговом плейлисте: {group}")
         elif line.startswith("#EXTGRP:"):
             if current_info is None:
                 raise ValueError(f"Ошибка формата M3U: EXTGRP без EXTINF: {line}")
             current_group = line.split(":", 1)[1].strip()
+        elif line.upper().startswith("#EXTVLCOPT:"):
+            if current_info is None:
+                raise ValueError(f"VLC-директива вне записи канала: {line}")
+            option = line.split(":", 1)[1].split("=", 1)[0].strip().lower()
+            if option not in {"http-user-agent", "http-referrer"}:
+                raise ValueError(f"Неподдерживаемая VLC-директива: {line}")
         elif line.startswith("#"):
             continue
         else:
             if current_info is None or not line.startswith(("http://", "https://")):
                 raise ValueError(f"Ошибка формата M3U: {line}")
+            parsed = urlparse(line)
+            if not parsed.hostname or line in seen_urls:
+                raise ValueError(f"Пустой/дублирующий URL в M3U: {line}")
+            if RADIO_NAME_RE.search(current_info.rsplit(",", 1)[-1]):
+                raise ValueError(f"Радиоканал в итоговом плейлисте: {current_info}")
+            if MUSIC_NAME_RE.search(current_info.rsplit(",", 1)[-1]):
+                raise ValueError(f"Музыкальный канал в итоговом плейлисте: {current_info}")
+            seen_urls.add(line)
             if not current_group:
                 raise ValueError(f"Ошибка формата M3U: нет #EXTGRP для {current_info}")
 
@@ -1507,6 +1803,19 @@ def main():
     duplicates = Counter()
     sources = Counter()
     entries = []
+    excluded_rows = []
+
+    def record_exclusion(name, country, language, group, source, url, reason):
+        excluded_rows.append({
+            "название": clean(name), "страна": clean(country),
+            "язык": clean(language), "категория": clean(group),
+            "источник": clean(source), "URL": clean(url),
+            "результат видео": "не проверялось",
+            "результат звука": "не проверялось",
+            "аудиокодек": "", "декодирование": "не проверялось",
+            "OTTPlayer": "не проверялся", "решение": "исключить",
+            "причина": clean(reason),
+        })
 
     def add_entry(channel, stream, group, stream_url, source):
         parsed = urlparse(stream_url)
@@ -1544,24 +1853,10 @@ def main():
             continue
 
         if not channel_id:
-            # Потоки без привязки к каталогу: берём только с русским
-            # названием на кириллице.
             title, _ = split_title("," + str(stream.get("title") or ""))
-
-            if not CYRILLIC_RE.search(title):
-                stats["Без канала в каталоге (не русские)"] += 1
-                continue
-
-            if excluded_title(title):
-                stats["Без канала: KZ/UA/не русская кириллица"] += 1
-                continue
-
-            channel = {"id": "", "name": title, "categories": []}
-            group = channel_group(channel, stream)
-            add_entry(
-                channel, stream, group, stream_url,
-                "iptv-org без channel-id",
-            )
+            stats["Без channel-id/надёжных метаданных"] += 1
+            record_exclusion(title, "", "", "", "iptv-org без channel-id", stream_url,
+                             "Нет каталожных метаданных страны или языка")
             continue
 
         channel = channels_by_id.get(channel_id)
@@ -1578,6 +1873,8 @@ def main():
 
         if excluded:
             stats[f"{excluded} исключена"] += 1
+            record_exclusion(channel.get("name"), channel.get("country"), "", "",
+                             "iptv-org", stream_url, f"Страна {excluded} исключена")
             continue
 
         feed = find_feed(
@@ -1591,34 +1888,26 @@ def main():
 
         if excluded:
             stats[f"{excluded} исключена (версия канала)"] += 1
+            record_exclusion(channel.get("name"), channel.get("country"),
+                             ",".join(feed.get("languages") or []) if feed else "", "",
+                             "iptv-org", stream_url, f"Версия канала для {excluded}")
             continue
 
-        adult = bool(channel.get("is_nsfw"))
-        music = is_music_channel(channel) and not adult
+        approved, reason = allowed_tv_channel(channel, stream, feed)
+        if not approved:
+            stats[f"Исключено политикой: {reason}"] += 1
+            record_exclusion(channel.get("name"), channel.get("country"),
+                             ",".join(feed.get("languages") or []) if feed else "",
+                             ";".join(channel.get("categories") or []),
+                             "iptv-org", stream_url, reason)
+            continue
 
-        if music:
-            group = music_group(channel, stream)
-            stats["Музыкальные потоки"] += 1
-
-        else:
-            if feed:
-                if not language_is_russian(feed.get("languages")):
-                    stats[
-                        "Другой язык (18+)" if adult else "Другой язык"
-                    ] += 1
-                    continue
-            elif channel_is_russian(channel, feeds_by_channel):
-                stats["Язык определён по каналу (нет feed)"] += 1
-            else:
-                stats["Нет подтверждения языка"] += 1
-                continue
-
-            group = ADULT_GROUP if adult else channel_group(
-                channel, stream
-            )
-            stats["Русскоязычные потоки"] += 1
+        group = channel_group(channel, stream)
+        stats["Разрешённые русские/европейские телеканалы"] += 1
 
         add_entry(channel, stream, group, stream_url, "iptv-org")
+        if entries and entries[-1]["url"] == stream_url:
+            entries[-1]["language"] = ",".join(feed.get("languages") or []) if feed else ""
 
     try:
         free_tv = list(parse_m3u(fetch_text(FREE_TV_URL)))
@@ -1664,9 +1953,19 @@ def main():
                 "country": get_attribute(info, "tvg-country"),
             }
 
+        approved, reason = allowed_tv_channel(
+            channel,
+            {"title": title, "country": get_attribute(info, "tvg-country")},
+        )
+        if not approved:
+            stats[f"Free-TV: {reason}"] += 1
+            continue
+
         stream = stream_from_m3u(info, extras, title, quality)
         group = channel_group(channel, stream)
         add_entry(channel, stream, group, stream_url, "Free-TV")
+        if entries and entries[-1]["url"] == stream_url:
+            entries[-1]["language"] = get_attribute(info, "tvg-language")
 
     for official_id, official_name, stream_url in OFFICIAL_STREAMS:
         channel = channels_by_id.get(official_id) or {
@@ -1692,6 +1991,10 @@ def main():
 
             if COMMUNITY_SKIP_GROUP_RE.search(source_group):
                 stats[f"{source}: кинозалы/рестримы пропущены"] += 1
+                continue
+
+            if music_source_group(source_group):
+                stats[f"{source}: музыка и радио исключены"] += 1
                 continue
 
             if not stream_url.startswith(("http://", "https://")):
@@ -1722,40 +2025,34 @@ def main():
                 stats[f"{source}: Казахстан/Украина исключены"] += 1
                 continue
 
-            if channel:
-                if not (
-                    is_music_channel(channel)
-                    or channel_is_russian(channel, feeds_by_channel)
-                ):
-                    stats[f"{source}: не русскоязычные"] += 1
-                    continue
-            elif not CYRILLIC_RE.search(title):
-                stats[f"{source}: не русскоязычные"] += 1
+            if not channel:
+                stats[f"{source}: нет каталожных метаданных страны/языка"] += 1
                 continue
-            else:
-                mapped = COMMUNITY_GROUP_MAP.get(source_group.lower(), "")
-                channel = {
-                    "id": "",
-                    "name": title,
-                    "categories": (
-                        ["music"] if "музык" in source_group.lower()
-                        else source_group.lower().split(";")
-                    ),
-                    "country": "RU",
-                    "source_group": mapped,
-                }
+
+            feed = find_feed(
+                tvg_id.split("@")[0], get_attribute(info, "tvg-feed"),
+                feeds_by_key, feeds_by_channel,
+            )
+            approved, reason = allowed_tv_channel(channel, None, feed)
+            if not approved:
+                stats[f"{source}: {reason}"] += 1
+                continue
 
             stream = stream_from_m3u(info, extras, title, quality)
             group = channel_group(channel, stream)
             add_entry(channel, stream, group, stream_url, source)
+            if entries and entries[-1]["url"] == stream_url:
+                entries[-1]["language"] = ",".join(feed.get("languages") or []) if feed else ""
 
     # Manual M3U files must pass through exactly the same media probe as API feeds.
     add_manual_file(INTERNATIONAL_FILE, "Зарубежные на русском", entries, seen_urls, stats)
     add_manual_file(REGIONAL_FILE, "Региональные", entries, seen_urls, stats)
-    add_manual_file(ADULT_FILE, ADULT_GROUP, entries, seen_urls, stats)
+    # Adult sources are intentionally not loaded into the television playlist.
 
     for item in entries:
         sources[item["source"]] += 1
+
+    discovery_candidates = [item for item in entries if discovery_brand(item["channel"])]
 
     def is_new(item):
         return (
@@ -1781,6 +2078,7 @@ def main():
 
     probe = Counter()
     ru_checked = Counter()
+    audio_status_counts = Counter()
 
     if CHECK_NEW_STREAMS:
         targets = entries if PROBE_ALL else [
@@ -1809,7 +2107,7 @@ def main():
             print(f"Проверяю звуковые дорожки: {len(audio_targets)} ...")
             with ThreadPoolExecutor(AUDIO_PROBE_WORKERS) as pool:
                 audio_results = list(pool.map(
-                    lambda item: probe_audio_track(
+                    lambda item: probe_audio_with_retry(
                         item["url"],
                         clean(item["stream"].get("user_agent")),
                         clean(
@@ -1823,8 +2121,20 @@ def main():
             item["url"]: result
             for item, result in zip(audio_targets, audio_results)
         }
+        video_results = []
+        if audio_targets:
+            print(f"Проверяю видеодорожки и декодирование: {len(audio_targets)} ...")
+            with ThreadPoolExecutor(AUDIO_PROBE_WORKERS) as pool:
+                video_results = list(pool.map(
+                    lambda item: probe_video_with_retry(
+                        item["url"], clean(item["stream"].get("user_agent")),
+                        clean(item["stream"].get("referrer") or item["stream"].get("http_referrer")),
+                    ), audio_targets,
+                ))
+        video_status = {item["url"]: result for item, result in zip(audio_targets, video_results)}
 
         audio_counts = Counter(result.get("status", "unknown") for result in audio_results)
+        audio_status_counts.update(audio_counts)
         print(
             "Звуковые дорожки: "
             f"подтверждены {audio_counts['ok']}, "
@@ -1868,10 +2178,15 @@ def main():
             # local probe may mark a stream as publishable.
             audio = audio_status.get(item["url"], {})
             audio_state = audio.get("status", "not_tested")
+            video_decode = video_status.get(item["url"], {}).get("status", "not_tested")
 
-            if us == "ok" and audio_state == "no_audio":
+            if us == "ok" and video_decode == "no_video":
+                status = "no_video"
+            elif us == "ok" and audio_state == "no_audio":
                 status = "no_audio"
-            elif us == "ok" and audio_state == "unknown":
+            elif us == "ok" and video_decode != "ok":
+                status = "video_unverified"
+            elif us == "ok" and audio_state in {"unknown", "unsupported"}:
                 # Do not silently delete a working video stream because the
                 # audio probe timed out or the container was not understood.
                 status = "audio_unverified"
@@ -1884,17 +2199,26 @@ def main():
             else:
                 status = "unverified"
 
-            if status not in {"ok", "audio_unverified"}:
+            if status not in {"ok", "audio_unverified", "video_unverified"}:
                 failed.add(item["url"])
 
             item["status"] = status
             item["audio_status"] = audio_state
             item["audio_codecs"] = audio.get("codecs", "")
             item["audio_details"] = audio.get("details", "")
+            item["video_decode"] = video_decode
+            item["video_details"] = video_status.get(item["url"], {}).get("details", "")
             probe[("новые" if new else "уже были", status)] += 1
 
-        entries = [item for item in entries if item["url"] not in failed]
-        seen_urls -= failed
+            if status == "unverified" and item["url"] in previous_urls:
+                item["group"] = UNVERIFIED_GROUP
+
+        retain_unverified = {item["url"] for item in targets
+                             if item.get("status") == "unverified"
+                             and item["url"] in previous_urls}
+        entries = [item for item in entries
+                   if item["url"] not in failed or item["url"] in retain_unverified]
+        seen_urls -= failed - retain_unverified
 
         # Human-readable audit trail: one row for every tested candidate.
         report_rows = []
@@ -1902,22 +2226,49 @@ def main():
             audio = audio_status.get(item["url"], {})
             report_rows.append({
                 "channel": clean(item["channel"].get("name")),
+                "country": channel_country(item["channel"]),
+                "language": clean(item.get("language", "")),
+                "category": clean(item["group"]),
                 "url": item["url"],
                 "source": item["source"],
                 "video_probe": result,
+                "video_decode": video_status.get(item["url"], {}).get("status", "not_tested"),
+                "video_details": video_status.get(item["url"], {}).get("details", ""),
                 "audio_status": audio.get("status", "not_tested"),
                 "audio_codecs": audio.get("codecs", ""),
                 "audio_details": audio.get("details", ""),
+                "decode_result": "video and audio decoded" if audio.get("status") == "ok"
+                                 and video_status.get(item["url"], {}).get("status") == "ok"
+                                 else "unverified",
+                "ottplayer_format": "valid" if result == "ok" else "valid structure; stream unverified",
+                "decision": "keep" if result == "ok" and video_status.get(item["url"], {}).get("status") in {"ok", "unknown"}
+                    and audio.get("status") in {"ok", "unknown", "unsupported"} else "exclude",
+                "exclusion_reason": "" if result == "ok" and video_status.get(item["url"], {}).get("status") in {"ok", "unknown"}
+                                    and audio.get("status") in {"ok", "unknown", "unsupported"}
+                                    else audio.get("details", "") or video_status.get(item["url"], {}).get("details", "")
+                                    or f"video probe: {result}; audio: {audio.get('status', 'not_tested')}",
                 "published": (
                     "no" if audio.get("status") == "no_audio" or result != "ok"
+                    or video_status.get(item["url"], {}).get("status") == "no_video"
                     else "yes" if audio.get("status") == "ok"
-                    else "yes - audio unverified"
+                    and video_status.get(item["url"], {}).get("status") == "ok"
+                    else "yes - probe incomplete"
                 ),
             })
+            last_row = report_rows[-1]
+            if last_row["decision"] == "exclude":
+                record_exclusion(
+                    last_row["channel"], last_row["country"], last_row["language"],
+                    last_row["category"], last_row["source"], last_row["url"],
+                    last_row["exclusion_reason"],
+                )
         with CHECK_REPORT.open("w", newline="", encoding="utf-8-sig") as report_file:
             writer = csv.DictWriter(
                 report_file,
-                fieldnames=["channel", "url", "source", "video_probe", "audio_status", "audio_codecs", "audio_details", "published"],
+                fieldnames=["channel", "country", "language", "category", "source", "url",
+                            "video_probe", "video_decode", "video_details", "audio_status",
+                            "audio_codecs", "audio_details", "decode_result", "ottplayer_format",
+                            "decision", "exclusion_reason", "published"],
             )
             writer.writeheader()
             writer.writerows(report_rows)
@@ -1926,6 +2277,81 @@ def main():
         for item in entries:
             if item["url"] in previous_unverified:
                 item["group"] = UNVERIFIED_GROUP
+        report_fields = ["channel", "country", "language", "category", "source", "url",
+                         "video_probe", "video_decode", "video_details", "audio_status",
+                         "audio_codecs", "audio_details", "decode_result", "ottplayer_format",
+                         "decision", "exclusion_reason", "published"]
+        with CHECK_REPORT.open("w", newline="", encoding="utf-8-sig") as report_file:
+            writer = csv.DictWriter(report_file, fieldnames=report_fields)
+            writer.writeheader()
+            for item in entries:
+                writer.writerow({
+                    "channel": clean(item["channel"].get("name")),
+                    "country": channel_country(item["channel"]),
+                    "language": item.get("language", ""),
+                    "category": item["group"], "source": item["source"], "url": item["url"],
+                    "video_probe": "not_checked", "video_decode": "not_checked",
+                    "video_details": "CHECK_NEW_STREAMS=0", "audio_status": "not_checked",
+                    "audio_codecs": "", "audio_details": "CHECK_NEW_STREAMS=0",
+                    "decode_result": "not_checked", "ottplayer_format": "structure validated; media not checked",
+                    "decision": "keep pending stream check",
+                    "exclusion_reason": "", "published": "yes - stream not rechecked",
+                })
+        print(f"Непроверенные потоки записаны в {CHECK_REPORT}: {len(entries)}")
+
+    # Discovery candidates are probed like other streams, but are published
+    # only when their source is explicitly marked official.
+    discovery_rows = []
+    for brand in ("Discovery Channel", "Investigation Discovery (ID)"):
+        relevant = [item for item in discovery_candidates if discovery_brand(item["channel"]) == brand]
+        usable = [item for item in relevant if item.get("status") == "ok"
+                  and item.get("video_decode") == "ok" and item.get("audio_status") == "ok"]
+        authorised = [item for item in usable if item.get("source") == "Официальные сайты"]
+        discovery_rows.append({
+            "канал": brand,
+            "тип записи": "итог",
+            "результат": "Официальный публичный поток прошёл проверку" if authorised else
+                         "Нет подтверждённого официального публичного потока; агрегаторные ссылки не включены",
+            "кандидатов": len(relevant),
+            "видео/звук подтверждены": len(usable),
+            "добавлено": len(authorised),
+            "URL": "", "источник": "", "видео": "", "декодирование видео": "",
+            "звук": "", "аудиокодек": "", "решение": "",
+        })
+        for item in relevant:
+            discovery_rows.append({
+                "канал": brand, "тип записи": "поток",
+                "результат": item.get("status", "not_checked"), "кандидатов": "",
+                "видео/звук подтверждены": "", "добавлено": "",
+                "URL": item["url"], "источник": item["source"],
+                "видео": item.get("status", "not_checked"),
+                "декодирование видео": item.get("video_decode", "not_checked"),
+                "звук": item.get("audio_status", "not_checked"),
+                "аудиокодек": item.get("audio_codecs", ""),
+                "решение": "добавить" if item in authorised else "не добавлять: источник/проверка не подтверждены",
+            })
+        for item in usable:
+            if item not in authorised:
+                record_exclusion(item["channel"].get("name"), channel_country(item["channel"]),
+                                 item.get("language", ""), item.get("group", ""), item["source"],
+                                 item["url"], "Поток технически доступен, но источник не подтверждён официальным")
+    entries = [item for item in entries if not discovery_brand(item["channel"])
+               or (item.get("source") == "Официальные сайты" and item.get("status") == "ok"
+                   and item.get("video_decode") == "ok" and item.get("audio_status") == "ok")]
+    with Path("discovery_status.csv").open("w", newline="", encoding="utf-8-sig") as f:
+        writer = csv.DictWriter(f, fieldnames=["канал", "тип записи", "результат", "кандидатов",
+                            "видео/звук подтверждены", "добавлено", "URL", "источник", "видео",
+                            "декодирование видео", "звук", "аудиокодек", "решение"])
+        writer.writeheader()
+        writer.writerows(discovery_rows)
+
+    with EXCLUDED_REPORT.open("w", newline="", encoding="utf-8-sig") as f:
+        fields = ["название", "страна", "язык", "категория", "источник", "URL",
+                  "результат видео", "результат звука", "аудиокодек", "декодирование",
+                  "OTTPlayer", "решение", "причина"]
+        writer = csv.DictWriter(f, fieldnames=fields)
+        writer.writeheader()
+        writer.writerows(excluded_rows)
 
     epg_names = load_epg_channels()
     epg_matched = 0
@@ -2015,7 +2441,9 @@ def main():
             # normalized category above.
             output.extend(
                 line for line in item.get("manual_extras", [])
-                if not line.upper().startswith("#EXTGRP:")
+                if line.lower().startswith((
+                    "#extvlcopt:http-user-agent=", "#extvlcopt:http-referrer=",
+                ))
             )
         else:
             add_headers(output, item["stream"])
@@ -2023,9 +2451,9 @@ def main():
         output.append(item["url"])
         counts[item["group"]] += 1
 
-    if len(entries) < 100:
+    if len(entries) < MIN_KEEP_COUNT:
         raise RuntimeError(
-            "Получено подозрительно мало каналов. "
+            "Не осталось ни одного разрешённого канала. "
             "Старый playlist.m3u оставлен без изменений."
         )
 
@@ -2050,6 +2478,30 @@ def main():
     print("\n========== РЕЗУЛЬТАТ ==========")
     print("Всего записей в плейлисте:", total)
     print("Было в предыдущей версии:", previous_total)
+
+    russian_channels = {
+        catalog_id(item["channel"]) or clean(item["channel"].get("name"))
+        for item in entries
+        if channel_country(item["channel"]) == "RU"
+        or language_is_russian(item.get("language", ""))
+    }
+    european_channels = {
+        catalog_id(item["channel"]) or clean(item["channel"].get("name"))
+        for item in entries
+        if channel_country(item["channel"]) in EUROPEAN_COUNTRIES
+        and channel_country(item["channel"]) != "RU"
+    }
+    confirmed_av = sum(1 for item in entries if item.get("status") == "ok")
+    audio_problems = (audio_status_counts["no_audio"] + audio_status_counts["unknown"]
+                      + audio_status_counts["unsupported"])
+    unverified_count = sum(count for (_kind, status), count in probe.items()
+                           if status in {"audio_unverified", "video_unverified", "unverified"})
+    print(f"Российские/русскоязычные каналы: {len(russian_channels)}")
+    print(f"Европейские каналы (по стране): {len(european_channels)}")
+    if CHECK_NEW_STREAMS:
+        print(f"Видео и звук подтверждены: {confirmed_av}; проблемы аудио: {audio_problems}; не удалось полностью проверить: {unverified_count}")
+    else:
+        print("Видео/аудио проверки отключены; результаты не подтверждены")
 
     print("\nИсточники (до проверки новых ссылок):")
     for name, count in sorted(sources.items()):

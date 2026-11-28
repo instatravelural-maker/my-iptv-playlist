@@ -1,2 +1,2 @@
 #EXTM3U
-# Add your permitted regional/local streams below as #EXTINF + URL pairs.
+# Add only public Russian-language or European television streams, with tvg-country or tvg-language metadata.
